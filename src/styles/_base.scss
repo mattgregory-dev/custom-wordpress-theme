@@ -1,0 +1,15 @@
+@use "./variables" as vars;
+
+body {
+  margin: 0;
+  padding: 48px;
+  background: vars.$bg;
+  color: vars.$text;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+#app {
+  font-size: 24px;
+  font-weight: 700;
+  color: vars.$primary;
+}
