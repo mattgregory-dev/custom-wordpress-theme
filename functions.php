@@ -1,4 +1,12 @@
 <?php
+add_action('after_setup_theme', function () {
+  register_nav_menus([
+    'primary' => __('Primary Menu', 'cwp'),
+    'mobile' => __('Mobile Menu', 'cwp'),
+    'footer' => __('Footer Menu', 'cwp'),
+  ]);
+});
+
 // Enqueue either Vite dev assets or the built /dist assets.
 add_action('wp_enqueue_scripts', function () {
   $theme_uri = get_template_directory_uri();

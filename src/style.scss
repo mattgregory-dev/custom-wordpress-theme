@@ -1,1 +1,13 @@
 @use "./styles/index";
+
+.image-blob {
+  width: 340px;
+  height: 320px;
+  background: radial-gradient(circle at 30% 30%, #e6ccd6 0%, #cbb5c4 65%, #b39fb2 100%);
+  border-radius: 58% 42% 62% 38%;
+  opacity: 0.75;
+}
+.image-mask {
+  border-radius: 28px;
+  background: linear-gradient(145deg, #ffffff 0%, #f0e8de 100%);
+}

@@ -2,7 +2,9 @@
 get_header();
 ?>
 <section class="py-12">
-    <h1 class="text-3xl font-semibold">Latest Posts</h1>
+    <h1 class="text-3xl font-semibold">
+        Search results for: <?php echo esc_html( get_search_query() ); ?>
+    </h1>
     <?php if ( have_posts() ) : ?>
         <div class="mt-6 space-y-10">
             <?php while ( have_posts() ) : the_post(); ?>
@@ -15,7 +17,7 @@ get_header();
             <?php endwhile; ?>
         </div>
     <?php else : ?>
-        <p>No posts found.</p>
+        <p class="mt-6 text-slate-600">No results found.</p>
     <?php endif; ?>
 </section>
 <?php
