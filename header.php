@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="preload"
-      href="<?php echo get_template_directory_uri(); ?>/assets/fonts/lato-400-regular.woff2"
+      href="<?php echo get_template_directory_uri(); ?>/fonts/lato-400-regular.woff2"
       as="font"
       type="font/woff2"
       crossorigin>
