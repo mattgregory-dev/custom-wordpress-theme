@@ -1,10 +1,11 @@
 {
-  "name": "lumina-vite",
+  "name": "custom-wp-theming",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build:css": "sass src/style.scss dist/assets/main.css --source-map --style=compressed",
+    "build": "vite build && npm run build:css",
     "preview": "vite preview"
   },
   "devDependencies": {

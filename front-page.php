@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Custom WordPress</title>
-    <link rel="stylesheet" href="/tailwind.css" />
+    <?php wp_head(); ?>
   </head>
   <body>
     <div id="app">Loading</div>
-    <script type="module" src="./main.js"></script>
+    <?php wp_footer(); ?>
   </body>
 </html>

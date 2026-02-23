@@ -1,19 +1,49 @@
 import { defineConfig } from "vite";
-import cssSourcemap from "vite-plugin-css-sourcemap";
+import { fileURLToPath } from "url";
+
+// Resolve the JS entry so Rollup/Vite use a stable, explicit input.
+const mainEntry = fileURLToPath(new URL("./src/main.js", import.meta.url));
 
 export default defineConfig({
+  // Use ./src as the project root for dev/build.
   root: "src",
-  plugins: [cssSourcemap()],
   server: {
+    // Local dev server port.
     port: 5175,
     strictPort: true
   },
   css: {
-    devSourcemap: true
+    // Enable CSS sourcemaps in dev (build maps handled by Sass CLI).
+    devSourcemap: true,
+    preprocessorOptions: {
+      scss: {
+        // Allow Sass to emit source maps during dev.
+        sourceMap: true,
+        sourceMapIncludeSources: true
+      }
+    }
   },
   build: {
+    // Emit build output into the theme's /dist folder.
     outDir: "../dist",
     emptyOutDir: true,
-    sourcemap: true
+    // Keep JS sourcemaps for debugging.
+    sourcemap: true,
+    rollupOptions: {
+      // Explicit JS entry for stable file naming.
+      input: mainEntry,
+      output: {
+        // Stable output names for theme enqueues.
+        entryFileNames: "assets/main.js",
+        chunkFileNames: "assets/[name].js",
+        assetFileNames: (assetInfo) => {
+          // Keep a fixed name for the CSS output.
+          if (assetInfo.name && assetInfo.name.endsWith(".css")) {
+            return "assets/main.css";
+          }
+          return "assets/[name][extname]";
+        }
+      }
+    }
   }
 });
