@@ -11,6 +11,7 @@ export default defineConfig({
     // Local dev server port.
     port: 5175,
     strictPort: true
+    //origin: "http://localhost:5175"
   },
   css: {
     // Enable CSS sourcemaps in dev (build maps handled by Sass CLI).
