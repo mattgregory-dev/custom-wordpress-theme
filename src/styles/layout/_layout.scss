@@ -1,0 +1,15 @@
+body.mobile-menu-open {
+  overflow: hidden;
+}
+main {
+  z-index: 0;
+  position: relative;
+}
+section {
+  position: relative;
+  z-index: 100;
+}
+section#preparation {
+  position: relative;
+  z-index: 0;
+}
