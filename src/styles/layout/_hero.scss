@@ -43,7 +43,6 @@
   position: relative;
   overflow: hidden;
   background: linear-gradient(120deg, rgba(23 122 196 / 0.65) 0%, rgba(240, 214, 214, 0.6) 55%, rgba(246, 236, 229, 0.75) 100%);
-  min-height: calc(100vh - 112px);
   &::before {
     content: "";
     position: absolute;

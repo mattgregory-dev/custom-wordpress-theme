@@ -18,3 +18,4 @@ pnpm-debug.log*
 
 # Dev build artifacts
 src/public/
+partials_copied/

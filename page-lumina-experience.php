@@ -7,9 +7,10 @@ get_header();
 
 <!-- HERO / THE CEREMONY -->
 <!-- Layout intent: two-column hero with premium calm -->
-<section id="ceremony-hero" class="w-full hero-band min-h-screen">
+<!-- min-h-screen -->
+<section id="hero-header" class="w-full hero-band pb-10">
   <div class="hero-content max-w-[1240px] mx-auto px-4 max-[1382px]:px-[6%]">
-    <div class="pt-[84px] min-h-screen flex items-center">
+    <div class="flex items-center">
       <div class="w-full grid grid-cols-[1.05fr_0.95fr] gap-16 items-center">
       <div class="space-y-6">
         <p class="label text-base uppercase tracking-[0.25em] text-[var(--muted)]">The ceremony</p>

@@ -30,10 +30,7 @@ const loadDrawSVGPlugin = () => {
   return drawSvgPromise;
 };
 
-// const prefersReducedMotion = window.matchMedia &&
-//     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-const initRevealUp = () => {
+const revealUpAnimation = () => {
   const elements = document.querySelectorAll(".reveal-up");
   if (!elements.length) return;
 
@@ -68,7 +65,7 @@ const initRevealUp = () => {
   elements.forEach((el) => io.observe(el));
 };
 
-const initRevealFade = () => {
+const revealFadeAnimation = () => {
   const elements = document.querySelectorAll(".reveal-fade");
   if (!elements.length) return;
 
@@ -102,7 +99,7 @@ const initRevealFade = () => {
   elements.forEach((el) => io.observe(el));
 };
 
-const initBackToTop = () => {
+const backToTop = () => {
   if (document.querySelector(".back-to-top")) return;
 
   const button = document.createElement("button");
@@ -139,7 +136,28 @@ const initBackToTop = () => {
   });
 };
 
-const initMobileMenu = () => {
+const initPreloader = () => {
+  const preloader = document.getElementById("preloader");
+  if (!preloader) return;
+
+  const transitionDuration = 500;
+  const fallbackDelay = 3000;
+
+  const hidePreloader = () => {
+    if (preloader.dataset.hidden === "true") return;
+    preloader.dataset.hidden = "true";
+    preloader.style.transition = `opacity ${transitionDuration}ms ease`;
+    preloader.style.opacity = "0";
+    window.setTimeout(() => {
+      preloader.style.display = "none";
+    }, transitionDuration);
+  };
+
+  window.addEventListener("load", hidePreloader, { once: true });
+  window.setTimeout(hidePreloader, fallbackDelay);
+};
+
+const openMobileMenu = () => {
   const menu = document.getElementById("mobile-menu");
   const toggle = document.querySelector(".mobile-menu-toggle");
   const closeButton = document.querySelector(".mobile-menu-close");
@@ -180,21 +198,9 @@ const initMobileMenu = () => {
     }
   });
 
-  let ticking = false;
-  const updateToggleBorder = () => {
-    toggle.classList.toggle("is-scrolled", window.scrollY > 0);
-    ticking = false;
-  };
-
-  updateToggleBorder();
-  window.addEventListener("scroll", () => {
-    if (ticking) return;
-    ticking = true;
-    window.requestAnimationFrame(updateToggleBorder);
-  }, { passive: true });
 };
 
-const initAyaMotif = () => {
+const ayaMotifSVGDraw = () => {
   const init = () => {
     const aya = document.getElementById("aya_motif");
     if (!aya) return;
@@ -277,12 +283,29 @@ const initAyaMotif = () => {
   startWhenVisible();
 };
 
+// Give hero header top padding based on header height
+const resizeHeaderHeight = () => {
+  const header = document.querySelector('header');
+  const hero = document.getElementById('hero-header');
+  if (!header || !hero) return;
+
+  const resizeObserver = new ResizeObserver((entries) => {
+    const entry = entries[0];
+    const height = entry.contentRect.height;
+    const heroPaddingBottom = parseFloat(getComputedStyle(hero).paddingBottom) || 0;
+    hero.style.paddingTop = `${height + heroPaddingBottom}px`;
+  });
+
+  resizeObserver.observe(header);
+};
+
 const init = () => {
-  initRevealUp();
-  initRevealFade();
-  initBackToTop();
-  initMobileMenu();
-  initAyaMotif();
+  revealUpAnimation();
+  revealFadeAnimation();
+  backToTop();
+  initPreloader();
+  openMobileMenu();
+  ayaMotifSVGDraw();
 };
 
 if (document.readyState === "loading") {
@@ -291,3 +314,6 @@ if (document.readyState === "loading") {
   init();
 }
 
+window.addEventListener('load', () => {
+  resizeHeaderHeight();
+});

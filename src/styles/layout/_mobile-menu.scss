@@ -1,3 +1,5 @@
+@use "../abstracts" as *;
+
 .mobile-menu-toggle {
   display: none;
   align-items: center;
@@ -166,12 +168,10 @@
   }
 }
 
-@media (max-width: 880px) {
+@media #{$lg-layout} {
   .mobile-menu-toggle {
     display: inline-flex;
-    position: fixed;
-    top: 18px;
-    right: 18px;
+    position: relative;
     z-index: 120;
   }
   .mobile-menu,

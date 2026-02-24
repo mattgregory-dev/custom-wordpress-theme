@@ -2,19 +2,13 @@
 get_header();
 ?>
 
-
-
-
-
-
-
 <!-- HERO -->
 <!-- Layout intent: full-width band with centered copy -->
-<section id="top" class="w-full hero-band min-h-screen">
+<section id="top" class="w-full hero-band">
   <div class="hero-content max-w-[1240px] mx-auto px-4">
     <!-- HERO: single-column centered -->
     <!-- Animation hook: slow fade-in on hero copy -->
-    <div class="pt-[84px] min-h-screen flex items-center">
+    <div class="flex items-center">
       <div class="max-w-3xl mx-auto text-center space-y-8">
         <p class="playfair accent text-xl text-[var(--dusk-soft)]" data-animate="hero-preline">
           A quiet return to what is already here
@@ -43,10 +37,6 @@ get_header();
     </div>
   </div>
 </section>
-
-
-
-
 
 <!-- WHY PEOPLE COME -->
 <!-- Layout intent: centered text with subtle flourish -->

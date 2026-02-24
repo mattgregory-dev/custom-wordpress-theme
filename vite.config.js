@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import { fileURLToPath } from "url";
+import fullReload from "vite-plugin-full-reload";
 
 // Resolve the JS entry so Rollup/Vite use a stable, explicit input.
 const mainEntry = fileURLToPath(new URL("./src/main.js", import.meta.url));
@@ -7,6 +8,12 @@ const mainEntry = fileURLToPath(new URL("./src/main.js", import.meta.url));
 export default defineConfig({
   // Use ./src as the project root for dev/build.
   root: "src",
+  plugins: [
+    fullReload([
+      "**/*.php",
+      "../**/*.php",
+    ]),
+  ],
   server: {
     // Local dev server port.
     port: 5175,
