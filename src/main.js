@@ -1,18 +1,39 @@
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
 
 // Dev-only: load SCSS through Vite for live style updates without affecting the production build.
 if (import.meta.env.DEV) {
   import("./style.scss");
 }
 
-gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
+gsap.registerPlugin(ScrollTrigger);
+
+let drawSvgReady = false;
+let drawSvgPromise = null;
+
+const loadDrawSVGPlugin = () => {
+  if (drawSvgReady) return Promise.resolve();
+  if (drawSvgPromise) return drawSvgPromise;
+
+  drawSvgPromise = import("gsap/DrawSVGPlugin")
+    .then((module) => {
+      const plugin = module.DrawSVGPlugin || module.default;
+      if (!plugin) return;
+      gsap.registerPlugin(plugin);
+      drawSvgReady = true;
+    })
+    .catch((error) => {
+      drawSvgPromise = null;
+      throw error;
+    });
+
+  return drawSvgPromise;
+};
 
 // const prefersReducedMotion = window.matchMedia &&
 //     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-document.addEventListener("DOMContentLoaded", () => {
+const initRevealUp = () => {
   const elements = document.querySelectorAll(".reveal-up");
   if (!elements.length) return;
 
@@ -45,9 +66,9 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   elements.forEach((el) => io.observe(el));
-});
+};
 
-document.addEventListener("DOMContentLoaded", () => {
+const initRevealFade = () => {
   const elements = document.querySelectorAll(".reveal-fade");
   if (!elements.length) return;
 
@@ -79,16 +100,19 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
   elements.forEach((el) => io.observe(el));
-});
+};
 
-document.addEventListener("DOMContentLoaded", () => {
+const initBackToTop = () => {
   if (document.querySelector(".back-to-top")) return;
 
   const button = document.createElement("button");
   button.type = "button";
   button.className = "back-to-top";
   button.setAttribute("aria-label", "Back to top");
-  button.innerHTML = '<span aria-hidden="true">↑</span>';
+  const icon = document.createElement("span");
+  icon.setAttribute("aria-hidden", "true");
+  icon.textContent = "\u2191";
+  button.appendChild(icon);
   document.body.appendChild(button);
 
   const threshold = 600;
@@ -113,9 +137,9 @@ document.addEventListener("DOMContentLoaded", () => {
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
   });
-});
+};
 
-document.addEventListener("DOMContentLoaded", () => {
+const initMobileMenu = () => {
   const menu = document.getElementById("mobile-menu");
   const toggle = document.querySelector(".mobile-menu-toggle");
   const closeButton = document.querySelector(".mobile-menu-close");
@@ -168,21 +192,21 @@ document.addEventListener("DOMContentLoaded", () => {
     ticking = true;
     window.requestAnimationFrame(updateToggleBorder);
   }, { passive: true });
-});
+};
 
-(function () {
-  var init = function () {
-    var aya = document.getElementById("aya_motif");
+const initAyaMotif = () => {
+  const init = () => {
+    const aya = document.getElementById("aya_motif");
     if (!aya) return;
-    if (!gsap || !DrawSVGPlugin) return;
+    if (!gsap) return;
 
-    var drawable = aya.querySelectorAll("path, line, polyline, polygon, ellipse, circle, rect");
+    const drawable = aya.querySelectorAll("path, line, polyline, polygon, ellipse, circle, rect");
     if (!drawable.length) return;
 
     // ensure SVG is visible before drawing
     gsap.set(aya, { opacity: 1, visibility: "visible" });
 
-    var prefersReducedMotion = window.matchMedia &&
+    const prefersReducedMotion = window.matchMedia &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (prefersReducedMotion) {
       // skip animation for reduced motion
@@ -192,14 +216,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // initial draw state
     gsap.set(drawable, { drawSVG: "0% 0%" });
 
-    var groups = {
+    const groups = {
       center: aya.querySelectorAll("#center path, #center line, #center polyline, #center polygon, #center ellipse, #center circle, #center rect"),
       centerRing: aya.querySelectorAll("#center_ring path, #center_ring line, #center_ring polyline, #center_ring polygon, #center_ring ellipse, #center_ring circle, #center_ring rect"),
       details: aya.querySelectorAll("#details path, #details line, #details polyline, #details polygon, #details ellipse, #details circle, #details rect"),
       circle: aya.querySelectorAll("#circle path, #circle line, #circle polyline, #circle polygon, #circle ellipse, #circle circle, #circle rect")
     };
 
-    var tl = gsap.timeline({
+    const tl = gsap.timeline({
       // dial: per-group draw duration + easing
       defaults: { duration: 0.7, ease: "power1.inOut" }
     });
@@ -224,29 +248,46 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  var startWhenVisible = function () {
-    var aya = document.getElementById("aya_motif");
+  const startWhenVisible = () => {
+    const aya = document.getElementById("aya_motif");
     if (!aya) return;
 
+    const runInit = () => {
+      loadDrawSVGPlugin()
+        .then(() => init())
+        .catch(() => {});
+    };
+
     if (!("IntersectionObserver" in window)) {
-      window.setTimeout(init, 300); // dial: delay before starting when IO is unavailable
+      window.setTimeout(runInit, 300); // dial: delay before starting when IO is unavailable
       return;
     }
 
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
         if (!entry || !entry.isIntersecting) return;
         io.unobserve(entry.target);
-        window.setTimeout(init, 300); // dial: delay after entering viewport
+        window.setTimeout(runInit, 300); // dial: delay after entering viewport
       });
     }, { threshold: 0.35 }); // dial: how much of SVG must be visible before starting
 
     io.observe(aya);
   };
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", startWhenVisible);
-  } else {
-    startWhenVisible();
-  }
-})();
+  startWhenVisible();
+};
+
+const init = () => {
+  initRevealUp();
+  initRevealFade();
+  initBackToTop();
+  initMobileMenu();
+  initAyaMotif();
+};
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", init);
+} else {
+  init();
+}
+
