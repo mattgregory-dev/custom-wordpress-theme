@@ -1,6 +1,11 @@
 @use "./paths" as *;
-@use "./base/index" as *;
-@use "./components/index" as *;
-@use "./layout/index" as *;
-@use "./pages/index" as *;
-@use "./utilities/index" as *;
+
+@use "./abstracts";
+@use "./base";
+@use "./layout";
+@use "./pages";
+@use "./components";
+@use "./utilities";
+
+// Inherit aero styles
+@use "./aero/style";
