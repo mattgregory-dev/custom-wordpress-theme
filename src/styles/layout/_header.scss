@@ -10,96 +10,6 @@ header {
   width: 100%;
   .header-menu-area {
     border: 1px solid transparent;
-    .logo-group {
-      width: 225px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      column-gap: 10px;
-      .logo-text-block {
-        .logo-text {
-          font-family: var(--font-primary);
-          font-weight: 400;
-          font-size: 24px;
-          line-height: 1em;
-          letter-spacing: 0.3em;
-          text-transform: uppercase;
-        }
-        .logo-sub-text {
-          font-family: var(--font-secondary);
-          font-weight: 400;
-          line-height: 1em;
-          letter-spacing: 0.13em;
-          font-size: 16px;
-        }
-        .logo-location {
-          display: inline-flex;
-          align-items: center;
-          text-transform: uppercase;
-          font-size: 13px;
-          letter-spacing: 8px;
-          margin-top: 3px;
-          &::before,
-          &::after {
-            content: "";
-            display: block;
-            width: 14px;
-            height: 1px;
-            background-color: currentColor;
-            opacity: 0.7;
-          }
-          &::before {
-            margin-right: 10px;
-          }
-          &::after {
-            margin-left: 10px;
-          }
-          span {
-            display: inline-block;
-            transform: translateX(4px); /* half of letter-spacing */
-          }
-        }
-      }
-      @media (#{$lg-layout}) {
-        .logo-group {
-          width: 225px;
-          column-gap: 10px;
-          .logo-text-block {
-            .logo-text {
-              font-size: 24px;
-              line-height: 1em;
-              letter-spacing: 0.3em;
-            }
-            .logo-sub-text {
-              line-height: 1em;
-              letter-spacing: 0.13em;
-              font-size: 16px;
-            }
-            .logo-location {
-              font-size: 13px;
-              letter-spacing: 8px;
-              margin-top: 3px;
-              &::before,
-              &::after {
-                width: 14px;
-                height: 1px;
-              }
-              &::before {
-                margin-right: 10px;
-              }
-              &::after {
-                margin-left: 10px;
-              }
-              span {
-                display: inline-block;
-                transform: translateX(4px);
-              }
-            }
-          }
-        }
-      }
-    }
     .header-nav {
       > ul.primary-nav {
         display: flex;
@@ -144,7 +54,7 @@ header {
               right: 21px;
               width: 6.63px;
               height: 6.97px;
-              background-image: url(#{$theme-asset-root}/images/icons/arrow.svg);
+              background-image: url(#{$theme-root}/images/icons/arrow.svg);
               background-repeat: no-repeat;
               background-size: cover;
               -webkit-transition: background-color 0.3s ease;

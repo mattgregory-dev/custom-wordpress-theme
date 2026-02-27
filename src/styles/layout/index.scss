@@ -1,5 +1,6 @@
-@use "./header";
-@use "./hero";
-@use "./layout";
-@use "./footer";
-@use "./mobile-menu";
+@forward "./header";
+@forward "./logo";
+@forward "./footer";
+@forward "./layout";
+@forward "./mobile-menu";
+@forward "./hero";

@@ -1,5 +1,5 @@
-@use "./components";
-@use "./back-to-top";
-@use "./buttons";
-@use "./forms";
-@use "./preloader";
+@forward "./components";
+@forward "./back-to-top";
+@forward "./buttons";
+@forward "./forms";
+@forward "./preloader";

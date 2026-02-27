@@ -9,115 +9,113 @@ function cwp_is_vite_dev() {
 
 // Register navigation menus
 function cwp_setup() {
-    add_theme_support( 'title-tag' );
-    add_theme_support( 'post-thumbnails' );
-    add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'style', 'script' ) );
+  add_theme_support( 'title-tag' );
+  add_theme_support( 'post-thumbnails' );
+  add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption', 'style', 'script' ) );
 
-    register_nav_menus( array(
-        'primary' => 'Primary Menu',
-        'footer' => 'Footer Menu',
-        'mobile' => 'Mobile Menu',
-    ) );
+  register_nav_menus( array(
+      'primary' => 'Primary Menu',
+      'footer' => 'Footer Menu',
+      'mobile' => 'Mobile Menu',
+  ) );
 }
 add_action( 'after_setup_theme', 'cwp_setup' );
 
 // Enqueue either Vite dev assets or the built /dist assets.
 function cwp_assets() {
-
   $theme_uri = get_template_directory_uri();
   $dist = $theme_uri . '/dist';
 
   // Toggle with: define('CUSTOM_WP_VITE_DEV', true); in wp-config.php
   $use_vite = cwp_is_vite_dev();
 
-  if ($use_vite) {
+  if ( $use_vite ) {
     // Vite dev server (no SSL, local container).
     $vite = 'http://localhost:5175';
 
     // Ensure dev scripts are output as ES modules.
-    add_filter('script_loader_tag', function ($tag, $handle, $src) {
-      $module_handles = ['vite-client', 'cwp-main'];
-      if (in_array($handle, $module_handles, true)) {
-        return '<script type="module" src="' . esc_url($src) . '"></script>';
+    add_filter( 'script_loader_tag', function ( $tag, $handle, $src ) {
+      $module_handles = array( 'vite-client', 'cwp-main' );
+      if ( in_array( $handle, $module_handles, true ) ) {
+        return '<script type="module" src="' . esc_url( $src ) . '"></script>';
       }
       return $tag;
-    }, 10, 3);
+    }, 10, 3 );
 
     // Vite HMR client.
-    wp_enqueue_script('vite-client', $vite . '/@vite/client', [], null, false);
+    wp_enqueue_script( 'vite-client', $vite . '/@vite/client', array(), null, false );
 
     // Main JS entry served by Vite (imports SCSS in dev).
-    wp_enqueue_script('cwp-main', $vite . '/main.js', [], null, false);
+    wp_enqueue_script( 'cwp-main', $vite . '/main.js', array(), null, false );
 
     // Static stylesheet served from Vite public/ during dev.
-    wp_enqueue_style('cwp-tailwind', $vite . '/tailwind.css', [], null);
+    wp_enqueue_style( 'cwp-tailwind', $vite . '/tailwind.css', array(), null );
 
     return;
   }
 
   // Static stylesheet (not processed by Vite).
-  wp_enqueue_style('cwp-tailwind', $dist . '/tailwind.css', [], null);
+  wp_enqueue_style( 'cwp-tailwind', $dist . '/tailwind.css', array(), null );
   // Main compiled CSS bundle.
-  wp_enqueue_style('cwp-main', $dist . '/assets/main.css', ['cwp-tailwind'], null);
+  wp_enqueue_style( 'cwp-main', $dist . '/assets/main.css', array( 'cwp-tailwind' ), null );
 
   // Main JS bundle (ES module).
-  wp_enqueue_script('cwp-main', $dist . '/assets/main.js', [], null, true);
+  wp_enqueue_script( 'cwp-main', $dist . '/assets/main.js', array(), null, true );
 
-  wp_script_add_data('cwp-main', 'type', 'module');
-
+  wp_script_add_data( 'cwp-main', 'type', 'module' );
 }
 add_action( 'wp_enqueue_scripts', 'cwp_assets', 999 );
 
 // Remove WordPress markup that is not needed
 function cwp_cleanup_head() {
-    remove_action( 'wp_head', 'rsd_link' );
-    remove_action( 'wp_head', 'wlwmanifest_link' );
-    remove_action( 'wp_head', 'wp_shortlink_wp_head' );
-    remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10 );
-    remove_action( 'wp_head', 'wp_generator' );
-    remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
-    remove_action( 'wp_head', 'wp_oembed_add_host_js' );
+  remove_action( 'wp_head', 'rsd_link' );
+  remove_action( 'wp_head', 'wlwmanifest_link' );
+  remove_action( 'wp_head', 'wp_shortlink_wp_head' );
+  remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10 );
+  remove_action( 'wp_head', 'wp_generator' );
+  remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
+  remove_action( 'wp_head', 'wp_oembed_add_host_js' );
 }
 add_action( 'after_setup_theme', 'cwp_cleanup_head' );
 
 function cwp_disable_oembed() {
-    wp_deregister_script( 'wp-embed' );
-    add_filter( 'embed_oembed_discover', '__return_false' );
-    remove_filter( 'oembed_dataparse', 'wp_filter_oembed_result', 10 );
-    remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
-    remove_action( 'wp_head', 'wp_oembed_add_host_js' );
+  wp_deregister_script( 'wp-embed' );
+  add_filter( 'embed_oembed_discover', '__return_false' );
+  remove_filter( 'oembed_dataparse', 'wp_filter_oembed_result', 10 );
+  remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
+  remove_action( 'wp_head', 'wp_oembed_add_host_js' );
 }
 add_action( 'init', 'cwp_disable_oembed', 20 );
 
 function cwp_dequeue_styles() {
-    remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
-    remove_action( 'wp_footer', 'wp_global_styles_render_svg_filters', 1 );
-    remove_action( 'wp_footer', 'wp_global_styles_render_svg_filters', 9 );
+  remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
+  remove_action( 'wp_footer', 'wp_global_styles_render_svg_filters', 1 );
+  remove_action( 'wp_footer', 'wp_global_styles_render_svg_filters', 9 );
 }
 add_action( 'wp_enqueue_scripts', 'cwp_dequeue_styles', 20 );
 
 function cwp_disable_emojis() {
-    remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-    remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-    remove_action( 'wp_print_styles', 'print_emoji_styles' );
-    remove_action( 'admin_print_styles', 'print_emoji_styles' );
-    remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
-    remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
-    remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
-    add_filter( 'tiny_mce_plugins', 'cwp_disable_emoji_tinymce' );
-    add_filter( 'wp_resource_hints', 'cwp_disable_emoji_dns_prefetch', 10, 2 );
+  remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+  remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+  remove_action( 'wp_print_styles', 'print_emoji_styles' );
+  remove_action( 'admin_print_styles', 'print_emoji_styles' );
+  remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+  remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+  remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+  add_filter( 'tiny_mce_plugins', 'cwp_disable_emoji_tinymce' );
+  add_filter( 'wp_resource_hints', 'cwp_disable_emoji_dns_prefetch', 10, 2 );
 }
 add_action( 'after_setup_theme', 'cwp_disable_emojis' );
 
 function cwp_disable_emoji_tinymce( $plugins ) {
-    return is_array( $plugins ) ? array_diff( $plugins, array( 'wpemoji' ) ) : array();
+  return is_array( $plugins ) ? array_diff( $plugins, array( 'wpemoji' ) ) : array();
 }
 
 function cwp_disable_emoji_dns_prefetch( $urls, $relation_type ) {
-    if ( 'dns-prefetch' === $relation_type ) {
-        $urls = array_diff( $urls, array( '//s.w.org' ) );
-    }
-    return $urls;
+  if ( 'dns-prefetch' === $relation_type ) {
+    $urls = array_diff( $urls, array( '//s.w.org' ) );
+  }
+  return $urls;
 }
 
 //////////////////////////////////////////////////////////////////
