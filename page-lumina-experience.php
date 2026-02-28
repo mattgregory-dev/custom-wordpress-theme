@@ -26,7 +26,7 @@ get_header();
         </div>
       </div>
       <div class="soft-shadow rounded-3xl border border-slate-300 bg-slate-200 h-[700px] w-full overflow-hidden">
-        <img class="h-full w-full object-cover" src="/wp-content/uploads/sedona-8.webp">
+        <img class="h-full w-full object-cover" src="/wp-content/uploads/sedona-cave-1.webp">
       </div>
       </div>
     </div>
