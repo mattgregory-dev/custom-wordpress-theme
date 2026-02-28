@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "node build-scripts/copy-fa-to-webfonts.js && vite",
     "dev:tw": "tailwindcss -i src/tailwind.css -o src/public/tailwind.css --watch",
     "dev:all": "concurrently -k \"npm run dev\" \"npm run dev:tw\"",
     "build:css": "sass src/style.scss dist/assets/main.css --load-path=node_modules --source-map --style=compressed",

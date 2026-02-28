@@ -303,6 +303,27 @@ header {
     opacity: 1;
   }
 }
+.close-popup {
+  position: absolute;
+  top: 38px;
+  right: 35px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none !important;
+  &::before{
+    content: '\e803';
+    font: 400 normal 16px / 16px 'fontello';
+    color: var(--color-content-black2);
+    font-size: 20px;
+  }
+}
+.close-popup:hover {
+  background: linear-gradient(to bottom, #45D0BD, #44B6E9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 @media #{$lg-layout} {
   header nav,

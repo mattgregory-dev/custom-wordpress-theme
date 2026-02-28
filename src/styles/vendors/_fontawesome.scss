@@ -1,3 +1,7 @@
+@use "../paths" as *;
+@use "@fortawesome/fontawesome-free/scss/variables" with (
+  $font-path: "#{$theme-root}/dist/webfonts"
+);
 @use "@fortawesome/fontawesome-free/scss/fontawesome";
 @use "@fortawesome/fontawesome-free/scss/solid";
 @use "@fortawesome/fontawesome-free/scss/regular";
