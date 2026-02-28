@@ -13,6 +13,7 @@ You may:
 - Regenerate compiled assets
 
 Do NOT:
+- Run NPM commands
 - Create commits
 - Push to remote
 - Modify WordPress core

@@ -32,6 +32,20 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "fontello";
+  src: url("#{$theme-root}/fonts/fontello.eot");
+  src:
+    url("#{$theme-root}/fonts/fontello.eot?#iefix") format("embedded-opentype"),
+    url("#{$theme-root}/fonts/fontello.woff2") format("woff2"),
+    url("#{$theme-root}/fonts/fontello.woff") format("woff"),
+    url("#{$theme-root}/fonts/fontello.ttf") format("truetype"),
+    url("#{$theme-root}/fonts/fontello.svg#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /*
 @font-face {
   font-family: "Lato";
