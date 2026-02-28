@@ -974,6 +974,71 @@ const openMobileMenu = () => {
 
 };
 
+// Active menu highlighting for desktop + mobile menus.
+const initActiveMenu = () => {
+  const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
+
+  const setActive = (menuLi) => {
+    const links = menuLi.querySelectorAll("a");
+    let found = false;
+
+    for (let i = 0; i < links.length; i++) {
+      const link = links[i];
+      const href = link.getAttribute("href");
+      if (!href || href === "#" || href.indexOf("mailto:") === 0 || href.indexOf("tel:") === 0) {
+        continue;
+      }
+
+      try {
+        const url = new URL(href, window.location.origin);
+        const linkPath = url.pathname.replace(/\/+$/, "") || "/";
+
+        if (linkPath === currentPath) {
+          link.classList.add("active");
+          found = true;
+        }
+      } catch (error) {
+        // Ignore malformed URLs.
+      }
+    }
+
+    const childLis = menuLi.querySelectorAll("li");
+    for (let j = 0; j < childLis.length; j++) {
+      if (setActive(childLis[j])) {
+        found = true;
+      }
+    }
+
+    let topLink = null;
+    for (let k = 0; k < menuLi.children.length; k++) {
+      if (menuLi.children[k].tagName === "A") {
+        topLink = menuLi.children[k];
+        break;
+      }
+    }
+
+    if (found) {
+      if (topLink) topLink.classList.add("active");
+      menuLi.classList.add("active");
+    } else {
+      if (topLink) topLink.classList.remove("active");
+      menuLi.classList.remove("active");
+    }
+
+    return found;
+  };
+
+  const topMenuItems = document.querySelectorAll(".menu-style1 > ul > li");
+  for (let i = 0; i < topMenuItems.length; i++) {
+    setActive(topMenuItems[i]);
+  }
+
+  const mobileMenuItems = document.querySelectorAll(".side-menu2 > ul > li");
+  for (let j = 0; j < mobileMenuItems.length; j++) {
+    setActive(mobileMenuItems[j]);
+  }
+};
+
 // GSAP animation orchestrator.
 const initGsapAnimations = () => {
   if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
@@ -1013,6 +1078,7 @@ const init = () => {
   LenisScroll.init();
   initAeroParallax();
   initThemeToggle();
+  initActiveMenu();
   initPasswordToggle();
   initSideMenu();
   initGsapAnimations();
