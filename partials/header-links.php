@@ -1,4 +1,17 @@
-<div class="col-auto">
+<?php /*
+  <nav class="header-nav">
+    <?php
+    wp_nav_menu( array(
+        'theme_location' => 'primary',
+        'container' => false,
+        'menu_class' => 'primary-nav',
+        'fallback_cb' => '__return_false',
+    ) );
+    ?>
+  </nav>
+*/ ?>
+
+<div>
   <nav class="main-menu menu-style1">
     <ul>
       <li class="no-sub-menu">
@@ -43,7 +56,7 @@
     </ul>
   </nav>
 </div>
-<div class="col-auto d-xl-block">
+<div>
   <div class="btn-box">
     <a href="#" class="popup-search" data-popup="1"><i class="fa fa-search"></i></a>
     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="" class="login-btn d-none">

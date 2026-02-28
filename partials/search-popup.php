@@ -1,4 +1,3 @@
-<!-- search-popup -->
 <div class="search-popup" data-popup="1">
   <div class="search-popup-content">
     <form>

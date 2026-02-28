@@ -2,7 +2,12 @@
 /**
  * Template Name: Lumina Experience (Tailwind)
  */
-get_header();
+get_header(
+  null,
+  array(
+    'header_variant' => 'absolute',
+  )
+);
 ?>
 
 <!-- HERO / THE CEREMONY -->
