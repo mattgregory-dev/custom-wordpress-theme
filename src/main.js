@@ -232,6 +232,7 @@ const initScrollToTop = () => {
 };
 
 // CWP original back to the top.
+/*
 const backToTop = () => {
   if (document.querySelector(".back-to-top")) return;
 
@@ -268,6 +269,7 @@ const backToTop = () => {
     window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
   });
 };
+*/
 
 // Sticky header class toggling.
 const initStickyHeader = () => {
@@ -419,19 +421,7 @@ const initSearchPopup = () => {
     }
   });
 
-  document.addEventListener(
-    "click",
-    (event) => {
-      const target = event.target;
-      if (
-        target.matches(".search-popup-content") ||
-        target.closest(".search-popup-content")
-      ) {
-        event.stopPropagation();
-      }
-    },
-    true
-  );
+  // No capture-phase listener needed; overlay click is handled above.
 };
 
 // Password visibility toggle.
@@ -1069,7 +1059,7 @@ const initGsapAnimations = () => {
 const init = () => {
   revealUpAnimation();
   revealFadeAnimation();
-  backToTop();
+  //backToTop();
   initPreloader();
   openMobileMenu();
   ayaMotifSVGDraw();

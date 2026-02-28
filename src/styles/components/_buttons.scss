@@ -1,3 +1,33 @@
+#scrollBtn {
+  display: none;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  width: 50px;
+  height: 70px;
+  font-size: 13px;
+  text-align: center;
+  line-height: 70px;
+  z-index: 100;
+  border: none;
+  outline: none;
+  background-color: var(--color-primary);
+  color: var(--color-heading);
+  cursor: pointer;
+  border-radius: 15px;
+  z-index: 9999999;
+  i{
+    transform: translateY(-8px);
+    transition: all 300ms ease;
+  }
+}
+
+#scrollBtn:hover {
+  i{
+    transform: translateY(0);
+  }
+}
+
 .ibt-btn {
   cursor: pointer;
   font-family: var(--font-secondary);

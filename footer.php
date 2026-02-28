@@ -54,6 +54,9 @@
     </div>
   </div>
 </footer>
+<button id="scrollBtn" title="Go to top">
+  <i class="fas fa-angle-up"></i>
+</button>
 <?php wp_footer(); ?>
 </body>
 </html>
