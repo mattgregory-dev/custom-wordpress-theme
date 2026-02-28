@@ -12,7 +12,7 @@
 */ ?>
 
 <div>
-  <nav class="main-menu menu-style1">
+  <nav class="main-menu">
     <ul>
       <li class="no-sub-menu">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
@@ -59,10 +59,10 @@
 <div>
   <div class="btn-box">
     <a href="#" class="popup-search" data-popup="1"><i class="fa fa-search"></i></a>
-    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="" class="login-btn d-none">
+    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="login-btn">
       <i class="fa fa-user"></i>login
     </a>
-    <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" title="" class="ibt-btn ibt-btn-outline-3 ibt-btn-rounded">
+    <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="ibt-btn ibt-btn-outline-3 ibt-btn-rounded">
       <span>Apply</span>
     </a>
   </div>

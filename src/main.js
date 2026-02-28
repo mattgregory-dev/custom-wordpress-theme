@@ -915,7 +915,8 @@ const resizeHeaderHeight = () => {
     const entry = entries[0];
     const height = entry.contentRect.height;
     const heroPaddingBottom = parseFloat(getComputedStyle(hero).paddingBottom) || 0;
-    hero.style.paddingTop = `${height + heroPaddingBottom + 20}px`;
+    // hero.style.paddingTop = `${height + heroPaddingBottom + 20}px`;
+    hero.style.paddingTop = `${height + heroPaddingBottom}px`;
   });
 
   resizeObserver.observe(header);
@@ -1018,7 +1019,7 @@ const initActiveMenu = () => {
     return found;
   };
 
-  const topMenuItems = document.querySelectorAll(".menu-style1 > ul > li");
+  const topMenuItems = document.querySelectorAll(".main-menu > ul > li");
   for (let i = 0; i < topMenuItems.length; i++) {
     setActive(topMenuItems[i]);
   }
