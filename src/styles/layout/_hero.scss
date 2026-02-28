@@ -55,15 +55,15 @@
     background-image: url("#{$theme-root}/images/background.webp");
     background-size: cover;
   }
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 6% 8%;
-    border-radius: 22px;
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.6);
-    pointer-events: none;
-    top: 133px;
-  }
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   inset: 6% 8%;
+  //   border-radius: 22px;
+  //   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+  //   pointer-events: none;
+  //   top: 133px;
+  // }
   &.regular-page {
     min-height: unset;
     padding-top: 100px;

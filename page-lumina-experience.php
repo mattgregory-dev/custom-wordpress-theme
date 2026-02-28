@@ -2,17 +2,11 @@
 /**
  * Template Name: Lumina Experience (Tailwind)
  */
-get_header(
-  null,
-  array(
-    'header_variant' => 'absolute',
-  )
-);
+get_header( null, array('header_variant' => 'absolute') );
 ?>
 
-<!-- HERO / THE CEREMONY -->
-<!-- Layout intent: two-column hero with premium calm -->
-<!-- min-h-screen -->
+
+
 <section id="hero-header" class="w-full hero-band pb-10">
   <div class="hero-content max-w-[1240px] mx-auto px-4 max-[1382px]:px-[6%]">
     <div class="flex items-center">
@@ -38,8 +32,10 @@ get_header(
   </div>
 </section>
 
-<!-- QUICK ORIENTATION STRIP -->
-<!-- Layout intent: short, clarifying strip -->
+
+
+
+
 <section id="orientation" class="w-full py-10">
   <div class="max-w-[1240px] mx-auto px-6">
     <div class="border-y border-slate-300 py-6">
