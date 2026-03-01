@@ -23,6 +23,10 @@
 .mobile-menu-backdrop {
   display: none;
   position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
   inset: 0;
   background: rgba(24, 20, 22, 0.4);
   opacity: 0;
@@ -45,7 +49,7 @@
   background: #ffffff;
   transform: translateX(100%);
   transition: transform 260ms ease;
-  z-index: 1000;
+  z-index: 99999999;
   box-shadow: -18px 0 40px rgba(48, 40, 36, 0.18);
   padding: 22px 24px 28px;
   flex-direction: column;

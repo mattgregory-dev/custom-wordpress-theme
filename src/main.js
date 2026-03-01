@@ -922,10 +922,10 @@ const resizeHeaderHeight = () => {
 
 const openMobileMenu = () => {
   const menu = document.getElementById("mobile-menu");
-  const toggle = document.querySelector(".mobile-menu-toggle");
+  const toggles = document.querySelectorAll(".mobile-menu-toggle, .hamburger");
   const closeButton = document.querySelector(".mobile-menu-close");
   const backdrop = document.querySelector(".mobile-menu-backdrop");
-  if (!menu || !toggle) return;
+  if (!menu || !toggles.length) return;
 
   const setMenuState = (isOpen) => {
     menu.classList.toggle("is-open", isOpen);
@@ -933,15 +933,20 @@ const openMobileMenu = () => {
     if (backdrop) {
       backdrop.classList.toggle("is-active", isOpen);
     }
-    toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    toggles.forEach((toggle) => {
+      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
     menu.setAttribute("aria-hidden", isOpen ? "false" : "true");
   };
 
   const closeMenu = () => setMenuState(false);
 
-  toggle.addEventListener("click", () => {
-    const isOpen = menu.classList.contains("is-open");
-    setMenuState(!isOpen);
+  toggles.forEach((toggle) => {
+    toggle.addEventListener("click", (event) => {
+      //event.preventDefault();
+      const isOpen = menu.classList.contains("is-open");
+      setMenuState(!isOpen);
+    });
   });
 
   if (closeButton) {
@@ -1072,6 +1077,7 @@ const init = () => {
   //sideMenu();
   gsapAnimations();
   //searchPopup();
+  //hamburgerClickTest();
 };
 
 if (document.readyState === "loading") {
