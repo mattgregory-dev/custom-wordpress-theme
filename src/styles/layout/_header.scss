@@ -2,54 +2,54 @@
 @use "../paths" as *;
 
 // Relative positioned top nav
-.vs-header15 {
+// vs-header15
+// -->
+.cwp-header-standard {
   position: relative;
+  z-index: 2;
   padding-left: 18px;
   padding-right: 18px;
-  .header-menu-area{
+  .header-menu-area {
     border: 1px solid #CACACA;
     background-color: unset;
     border-radius: 25px;
-    @include ml{
+    @include ml {
       border: 0;
+    }
+    .popup-search {
+      margin-right: 16px;
     }
   }
 }
 
-.vs-header2 {
+// vs-header2
+// -->
+.cwp-header-absolute {
   position: absolute;
   top: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
   margin-top: 8px;
-  @include xl{
-      padding: 10px 20px;
+  @include xl {
+    padding: 10px 20px;
   }
-  .header-logo{
-    img{
-      filter: brightness(10);
-    }
-  }
-  .header-menu-area{
+  .header-menu-area {
     background-color: unset;
     padding-top: 20px;
     margin-top: 0;
-    @include ml{
+    @include ml {
       padding-top: 12px;
     }
-    @include lg{
-          padding: 19px 23px 21px 23px;
+    @include lg {
+      padding: 19px 23px 21px 23px;
     }
-    .popup-search{
+    .popup-search {
       margin-right: 16px;
     }
   }
-  .ibt-btn-outline-3{
-    color: var(--color-content-white);
-  }
-  .popup-search{
-    color: var(--color-content-white);
-  }
+  // .popup-search {
+  //   color: var(--color-content-white);
+  // }
   // .main-menu {
   //   > ul {
   //     > li {
@@ -70,22 +70,22 @@
   //     }
   //   }
   // }
-  .sticky-active.is-sticky{
-    .header-menu-area{
+  .sticky-active.is-sticky {
+    .header-menu-area {
       background-color: var(--color-content-white);
     }
-    .active{
+    .active {
       color: var(--color-content-white);
       &::before{
         background-color: var(--color-content-white);
       }
     }
-    a{
+    a {
       color: var(--color-content-black2);
-      &::before{
+      &::before {
         background-color: var(--color-content-black2);
       }
-      &:hover{
+      &:hover {
         color: var(--color-content-white);
         &::before{
             background-color: var(--color-content-white);
@@ -93,22 +93,15 @@
       }
     }
   }
-  .hamburger{
-    span{
+  .hamburger {
+    span {
       background-color: var(--color-content-white);
     }
   }
 }
 
-
-
-
-
-
-
 .main-menu {
   position: relative;
-  margin-left: 24px;
   @include ml {
     display: none;
   }
@@ -260,7 +253,7 @@
                   visibility: hidden;
                   transition: all 300ms ease;
                 }
-                &:hover{
+                &:hover {
                   padding-left: 20px;
                   color: var(--color-primary);
                   background-color: unset;
@@ -414,10 +407,6 @@
   }
 }
 
-
-
-
-
 .header-menu-area {
   position: relative;
   background-color: #FFFFFF;
@@ -432,13 +421,6 @@
     background-color: unset;
   }
 }
-
-
-
-
-
-
-
 
 .sticky-active {
   position: fixed;
@@ -465,7 +447,6 @@
     border: 0;
   }
 }
-
 .sticky-active.is-sticky {
   transform: translateY(0);
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
@@ -474,7 +455,6 @@
     transform: translateY(0);
   }
 }
-
 .sticky-active:not(.is-sticky) {
   .header-menu-area {
     transition-delay: 0s;
@@ -629,43 +609,37 @@
   -webkit-text-fill-color: transparent;
 }
 
-.btn-box{
+.btn-box {
   display: flex;
   align-items: center;
-  .ibt-btn{
-    @include ml{
+  .ibt-btn {
+    @include ml {
       display: none;
     }
   }
 }
 
-.login-btn{
+.login-btn {
   position: relative;
   font-size: 14px;
   line-height: 27px;
   font-weight: 700;
-  color: var(--color-content-white);
+  // color: var(--color-content-white);
   display: inline-block;
   text-transform: uppercase;
   margin-right: 34px;
   transition: all 0.3s ease;
-  @include ml{
+  @include ml {
     display: none;
   }
-  i{
+  i {
     margin-right: 10px;
   }
-  &:hover{
+  &:hover {
     background: linear-gradient(to bottom, #45D0BD, #44B6E9);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: var(--color-content-white);
-  }
-}
-
-@media #{$lg-layout} {
-  header nav,
-  .header-button-group {
-    display: none;
   }
 }

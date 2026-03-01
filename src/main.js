@@ -210,7 +210,7 @@ const LenisScroll = {
 };
 
 // Scroll-to-top button behavior.
-const initScrollToTop = () => {
+const scrollToTop = () => {
   const scrollBtn = document.getElementById("scrollBtn");
   if (!scrollBtn) return;
 
@@ -232,47 +232,45 @@ const initScrollToTop = () => {
 };
 
 // CWP original back to the top.
-/*
-const backToTop = () => {
-  if (document.querySelector(".back-to-top")) return;
+// const backToTop = () => {
+//   if (document.querySelector(".back-to-top")) return;
 
-  const button = document.createElement("button");
-  button.type = "button";
-  button.className = "back-to-top";
-  button.setAttribute("aria-label", "Back to top");
-  const icon = document.createElement("span");
-  icon.setAttribute("aria-hidden", "true");
-  icon.textContent = "\u2191";
-  button.appendChild(icon);
-  document.body.appendChild(button);
+//   const button = document.createElement("button");
+//   button.type = "button";
+//   button.className = "back-to-top";
+//   button.setAttribute("aria-label", "Back to top");
+//   const icon = document.createElement("span");
+//   icon.setAttribute("aria-hidden", "true");
+//   icon.textContent = "\u2191";
+//   button.appendChild(icon);
+//   document.body.appendChild(button);
 
-  const threshold = 600;
-  let ticking = false;
+//   const threshold = 600;
+//   let ticking = false;
 
-  const updateVisibility = () => {
-    button.classList.toggle("is-visible", window.scrollY > threshold);
-    ticking = false;
-  };
+//   const updateVisibility = () => {
+//     button.classList.toggle("is-visible", window.scrollY > threshold);
+//     ticking = false;
+//   };
 
-  const onScroll = () => {
-    if (ticking) return;
-    ticking = true;
-    window.requestAnimationFrame(updateVisibility);
-  };
+//   const onScroll = () => {
+//     if (ticking) return;
+//     ticking = true;
+//     window.requestAnimationFrame(updateVisibility);
+//   };
 
-  updateVisibility();
-  window.addEventListener("scroll", onScroll, { passive: true });
+//   updateVisibility();
+//   window.addEventListener("scroll", onScroll, { passive: true });
 
-  button.addEventListener("click", () => {
-    const reduceMotion = window.matchMedia &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
-  });
-};
-*/
+//   button.addEventListener("click", () => {
+//     const reduceMotion = window.matchMedia &&
+//       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+//     window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+//   });
+// };
 
 // Sticky header class toggling.
-const initStickyHeader = () => {
+const stickyHeader = () => {
   const header = document.querySelector('.sticky-active');
   if (!header) return;
 
@@ -285,7 +283,7 @@ const initStickyHeader = () => {
 };
 
 // Preloader fade-out handling.
-const initPreloader = () => {
+const preloader = () => {
   const preloader = document.getElementById("preloader");
   if (!preloader) return;
 
@@ -307,46 +305,46 @@ const initPreloader = () => {
 };
 
 // Parallax effects for hero/section images.
-const initAeroParallax = () => {
-  const parallaxSections = document.querySelectorAll(
-    ".contact-banner3, .newsletter-banner, .video-banner4"
-  );
-  if (!parallaxSections.length) return;
+// const aeroParallax = () => {
+//   const parallaxSections = document.querySelectorAll(
+//     ".contact-banner3, .newsletter-banner, .video-banner4"
+//   );
+//   if (!parallaxSections.length) return;
 
-  const speed = 0.2;
-  let ticking = false;
+//   const speed = 0.2;
+//   let ticking = false;
 
-  const updateParallax = () => {
-    const scrollTop = window.scrollY || window.pageYOffset;
+//   const updateParallax = () => {
+//     const scrollTop = window.scrollY || window.pageYOffset;
 
-    parallaxSections.forEach((section) => {
-      const img = section.querySelector(".parallax-img");
-      if (!img) return;
+//     parallaxSections.forEach((section) => {
+//       const img = section.querySelector(".parallax-img");
+//       if (!img) return;
 
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      const distance = scrollTop - sectionTop;
+//       const sectionTop = section.offsetTop;
+//       const sectionHeight = section.offsetHeight;
+//       const distance = scrollTop - sectionTop;
 
-      if (distance >= -window.innerHeight && distance <= sectionHeight) {
-        img.style.transform = `translateY(${distance * speed}px)`;
-      }
-    });
+//       if (distance >= -window.innerHeight && distance <= sectionHeight) {
+//         img.style.transform = `translateY(${distance * speed}px)`;
+//       }
+//     });
 
-    ticking = false;
-  };
+//     ticking = false;
+//   };
 
-  const onScroll = () => {
-    if (ticking) return;
-    ticking = true;
-    window.requestAnimationFrame(updateParallax);
-  };
+//   const onScroll = () => {
+//     if (ticking) return;
+//     ticking = true;
+//     window.requestAnimationFrame(updateParallax);
+//   };
 
-  window.addEventListener("scroll", onScroll, { passive: true });
-  updateParallax();
-};
+//   window.addEventListener("scroll", onScroll, { passive: true });
+//   updateParallax();
+// };
 
 // Dark/light theme toggle logic.
-const initThemeToggle = () => {
+const themeToggle = () => {
   const body = document.body;
   const themeBtn = document.getElementById("themeBtn");
   const darkModeImages = document.querySelectorAll(
@@ -388,140 +386,140 @@ const initThemeToggle = () => {
 };
 
 // Search popup open/close controls.
-const initSearchPopup = () => {
-  document.addEventListener("click", (event) => {
-    const target = event.target;
-    if (target.matches(".popup-search") || target.closest(".popup-search")) {
-      event.preventDefault();
-      const button = target.matches(".popup-search")
-        ? target
-        : target.closest(".popup-search");
-      const popupId = button.getAttribute("data-popup");
-      const popup = document.querySelector(
-        `.search-popup[data-popup="${popupId}"]`
-      );
-      if (popup) {
-        popup.classList.add("active");
-      }
-    }
-  });
+// const searchPopup = () => {
+//   document.addEventListener("click", (event) => {
+//     const target = event.target;
+//     if (target.matches(".popup-search") || target.closest(".popup-search")) {
+//       event.preventDefault();
+//       const button = target.matches(".popup-search")
+//         ? target
+//         : target.closest(".popup-search");
+//       const popupId = button.getAttribute("data-popup");
+//       const popup = document.querySelector(
+//         `.search-popup[data-popup="${popupId}"]`
+//       );
+//       if (popup) {
+//         popup.classList.add("active");
+//       }
+//     }
+//   });
 
-  document.addEventListener("click", (event) => {
-    const target = event.target;
-    if (target.matches(".close-popup") || target.closest(".close-popup")) {
-      const closeBtn = target.matches(".close-popup")
-        ? target
-        : target.closest(".close-popup");
-      const popup = closeBtn.closest(".search-popup");
-      if (popup) {
-        popup.classList.remove("active");
-      }
-    } else if (target.matches(".search-popup")) {
-      target.classList.remove("active");
-    }
-  });
+//   document.addEventListener("click", (event) => {
+//     const target = event.target;
+//     if (target.matches(".close-popup") || target.closest(".close-popup")) {
+//       const closeBtn = target.matches(".close-popup")
+//         ? target
+//         : target.closest(".close-popup");
+//       const popup = closeBtn.closest(".search-popup");
+//       if (popup) {
+//         popup.classList.remove("active");
+//       }
+//     } else if (target.matches(".search-popup")) {
+//       target.classList.remove("active");
+//     }
+//   });
 
-  // No capture-phase listener needed; overlay click is handled above.
-};
+//   // No capture-phase listener needed; overlay click is handled above.
+// };
 
 // Password visibility toggle.
-const initPasswordToggle = () => {
-  const toggleBtn = document.getElementById("togglePassword");
-  const passwordInput = document.getElementById("passwordInput");
+// const passwordToggle = () => {
+//   const toggleBtn = document.getElementById("togglePassword");
+//   const passwordInput = document.getElementById("passwordInput");
 
-  if (!toggleBtn || !passwordInput) return;
+//   if (!toggleBtn || !passwordInput) return;
 
-  const icon = toggleBtn.querySelector("i");
-  if (!icon) return;
+//   const icon = toggleBtn.querySelector("i");
+//   if (!icon) return;
 
-  toggleBtn.addEventListener("click", () => {
-    if (passwordInput.type === "password") {
-      passwordInput.type = "text";
-      icon.classList.remove("fa-eye");
-      icon.classList.add("fa-eye-slash");
-      return;
-    }
+//   toggleBtn.addEventListener("click", () => {
+//     if (passwordInput.type === "password") {
+//       passwordInput.type = "text";
+//       icon.classList.remove("fa-eye");
+//       icon.classList.add("fa-eye-slash");
+//       return;
+//     }
 
-    passwordInput.type = "password";
-    icon.classList.remove("fa-eye-slash");
-    icon.classList.add("fa-eye");
-  });
-};
+//     passwordInput.type = "password";
+//     icon.classList.remove("fa-eye-slash");
+//     icon.classList.add("fa-eye");
+//   });
+// };
 
 // Side menu (off-canvas) interactions.
-const initSideMenu = () => {
-  const overlay = document.querySelector(".overlay2");
-  const toggles = document.querySelectorAll(".hamburger.popup-menu");
-  const sideMenus = document.querySelectorAll(".side-menu2");
-  const closeBtns = document.querySelectorAll(".side-menu2 .close-btn");
+// const sideMenu = () => {
+//   const overlay = document.querySelector(".overlay2");
+//   const toggles = document.querySelectorAll(".hamburger.popup-menu");
+//   const sideMenus = document.querySelectorAll(".side-menu2");
+//   const closeBtns = document.querySelectorAll(".side-menu2 .close-btn");
 
-  if (!toggles.length || !overlay) return;
+//   if (!toggles.length || !overlay) return;
 
-  toggles.forEach((toggle) => {
-    toggle.addEventListener("click", () => {
-      const menuName = toggle.getAttribute("data-menu");
-      const menu = document.querySelector(
-        `.side-menu2[data-menu="${menuName}"]`
-      );
+//   toggles.forEach((toggle) => {
+//     toggle.addEventListener("click", () => {
+//       const menuName = toggle.getAttribute("data-menu");
+//       const menu = document.querySelector(
+//         `.side-menu2[data-menu="${menuName}"]`
+//       );
 
-      if (menu) {
-        menu.classList.add("active");
-        overlay.classList.add("active");
-      }
-    });
-  });
+//       if (menu) {
+//         menu.classList.add("active");
+//         overlay.classList.add("active");
+//       }
+//     });
+//   });
 
-  closeBtns.forEach((closeBtn) => {
-    closeBtn.addEventListener("click", () => {
-      const menu = closeBtn.closest(".side-menu2");
-      if (!menu) return;
-      menu.classList.remove("active");
-      overlay.classList.remove("active");
-      menu.querySelectorAll(".active").forEach((el) => {
-        el.classList.remove("active");
-      });
-    });
-  });
+//   closeBtns.forEach((closeBtn) => {
+//     closeBtn.addEventListener("click", () => {
+//       const menu = closeBtn.closest(".side-menu2");
+//       if (!menu) return;
+//       menu.classList.remove("active");
+//       overlay.classList.remove("active");
+//       menu.querySelectorAll(".active").forEach((el) => {
+//         el.classList.remove("active");
+//       });
+//     });
+//   });
 
-  overlay.addEventListener("click", () => {
-    sideMenus.forEach((menu) => {
-      menu.classList.remove("active");
-      menu.querySelectorAll(".active").forEach((el) => {
-        el.classList.remove("active");
-      });
-    });
-    overlay.classList.remove("active");
-  });
+//   overlay.addEventListener("click", () => {
+//     sideMenus.forEach((menu) => {
+//       menu.classList.remove("active");
+//       menu.querySelectorAll(".active").forEach((el) => {
+//         el.classList.remove("active");
+//       });
+//     });
+//     overlay.classList.remove("active");
+//   });
 
-  const menuLinks = document.querySelectorAll(".menu-left li > a");
-  menuLinks.forEach((link) => {
-    link.addEventListener("click", (event) => {
-      const parentLi = link.parentElement;
-      const subMenu = parentLi ? parentLi.querySelector("ul") : null;
+//   const menuLinks = document.querySelectorAll(".menu-left li > a");
+//   menuLinks.forEach((link) => {
+//     link.addEventListener("click", (event) => {
+//       const parentLi = link.parentElement;
+//       const subMenu = parentLi ? parentLi.querySelector("ul") : null;
 
-      if (subMenu) {
-        event.preventDefault();
-        subMenu.classList.toggle("active");
-        parentLi.classList.toggle("active");
-      }
-    });
-  });
+//       if (subMenu) {
+//         event.preventDefault();
+//         subMenu.classList.toggle("active");
+//         parentLi.classList.toggle("active");
+//       }
+//     });
+//   });
 
-  const sideMenuItems = document.querySelectorAll(".side-menu2 > ul > li");
-  sideMenuItems.forEach((item) => {
-    item.addEventListener("click", () => {
-      item.classList.toggle("active");
-    });
-  });
+//   const sideMenuItems = document.querySelectorAll(".side-menu2 > ul > li");
+//   sideMenuItems.forEach((item) => {
+//     item.addEventListener("click", () => {
+//       item.classList.toggle("active");
+//     });
+//   });
 
-  const sideSubMenus = document.querySelectorAll(".side-menu2 .sub-menu");
-  sideSubMenus.forEach((subMenu) => {
-    subMenu.addEventListener("click", (event) => {
-      event.stopPropagation();
-      subMenu.classList.toggle("active");
-    });
-  });
-};
+//   const sideSubMenus = document.querySelectorAll(".side-menu2 .sub-menu");
+//   sideSubMenus.forEach((subMenu) => {
+//     subMenu.addEventListener("click", (event) => {
+//       event.stopPropagation();
+//       subMenu.classList.toggle("active");
+//     });
+//   });
+// };
 
 // Original reveal animation
 const revealUpAnimation = () => {
@@ -966,7 +964,7 @@ const openMobileMenu = () => {
 };
 
 // Active menu highlighting for desktop + mobile menus.
-const initActiveMenu = () => {
+const activeMenu = () => {
   const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
 
   const setActive = (menuLi) => {
@@ -1031,7 +1029,7 @@ const initActiveMenu = () => {
 };
 
 // GSAP animation orchestrator.
-const initGsapAnimations = () => {
+const gsapAnimations = () => {
   if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
 
   //////////////////////////////////////////
@@ -1061,19 +1059,19 @@ const init = () => {
   revealUpAnimation();
   revealFadeAnimation();
   //backToTop();
-  initPreloader();
+  preloader();
   openMobileMenu();
   ayaMotifSVGDraw();
-  initScrollToTop();
-  initStickyHeader();
+  scrollToTop();
+  stickyHeader();
   LenisScroll.init();
-  initAeroParallax();
-  initThemeToggle();
-  initActiveMenu();
-  initPasswordToggle();
-  initSideMenu();
-  initGsapAnimations();
-  initSearchPopup();
+  //aeroParallax();
+  themeToggle();
+  activeMenu();
+  //preloader();
+  //sideMenu();
+  gsapAnimations();
+  //searchPopup();
 };
 
 if (document.readyState === "loading") {

@@ -20,23 +20,21 @@
 <?php
 $header_args = isset( $args ) && is_array( $args ) ? $args : array();
 $header_variant = isset( $header_args['header_variant'] ) ? $header_args['header_variant'] : 'default';
-$header_class = $header_variant === 'absolute' ? 'vs-header2' : 'vs-header15';
+$header_class = $header_variant === 'absolute' ? 'cwp-header-absolute' : 'cwp-header-standard';
 ?>
-<header class="<?php echo esc_attr( $header_class ); ?> header-theme-dark">
-  <div class="position-relative">
-    <div class="header-menu-area">
-      <div class="flex items-center justify-between">
-        <div class="header-logo">
-          <?php get_template_part( 'partials/logo' ); ?>
-        </div>
-        <?php get_template_part( 'partials/header-links' ); ?>
+<header class="<?php echo esc_attr( $header_class ); ?>">
+  <div class="header-menu-area">
+    <div class="flex items-center justify-between">
+      <div class="header-logo">
+        <?php get_template_part( 'partials/logo' ); ?>
       </div>
-      <button class="hamburger popup-menu" data-menu="mobileMenu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <?php get_template_part( 'partials/header-links' ); ?>
     </div>
+    <button class="hamburger popup-menu" data-menu="mobileMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
 </header>
 <div class="mobile-menu-backdrop" data-mobile-menu-close></div>
