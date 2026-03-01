@@ -22,25 +22,25 @@
   @include vxs {
     padding: 81px 0 132px;
   }
-  &::before {
-    content: "";
-    position: absolute;
-    top: -29%;
-    left: 0;
-    width: 100%;
-    height: 1118px;
-    background-image: url(#{$theme-root}/images/aero/layers/bg-layer2.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -1;
-    @include ml {
-      height: 400px;
-    }
-    @include vxs {
-      background-size: contain;
-      top: -28%;
-    }
-  }
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   top: -29%;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 1118px;
+  //   background-image: url(#{$theme-root}/images/aero/layers/bg-layer2.png);
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
+  //   z-index: -1;
+  //   @include ml {
+  //     height: 400px;
+  //   }
+  //   @include vxs {
+  //     background-size: contain;
+  //     top: -28%;
+  //   }
+  // }
 }
 .page-content {
   position: relative;
@@ -54,7 +54,7 @@
     font-size: 80px;
     line-height: 90px;
     font-weight: 400;
-    color: var(--color-content-white);
+    //color: var(--color-content-white);
     letter-spacing: -0.03em;
     margin-bottom: 0;
     @include lg {

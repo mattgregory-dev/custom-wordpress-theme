@@ -7,6 +7,10 @@
   justify-content: center;
   flex-shrink: 0;
   column-gap: 10px;
+  img {
+    width: 66px;
+    height: 72px;
+  }
   .logo-text-block {
     .logo-text {
       font-family: var(--font-primary);
@@ -51,40 +55,41 @@
       }
     }
   }
-  @media (#{$lg-layout}) {
-    .logo-group {
-      width: 225px;
-      column-gap: 10px;
-      .logo-text-block {
-        .logo-text {
-          font-size: 24px;
-          line-height: 1em;
-          letter-spacing: 0.3em;
+}
+@media (max-width: 767px) {
+  .logo-group {
+    width: 195px;
+    column-gap: 5px;
+    img {
+      width: 50px;
+      height: 58px;
+      position: relative;
+      top: -2px;
+    }
+    .logo-text-block {
+      .logo-text {
+        font-size: 22px;
+      }
+      .logo-sub-text {
+        font-size: 15px;
+      }
+      .logo-location {
+        font-size: 13px;
+        margin-top: 3px;
+        &::before,
+        &::after {
+          width: 9px;
+          height: 1px;
         }
-        .logo-sub-text {
-          line-height: 1em;
-          letter-spacing: 0.13em;
-          font-size: 16px;
+        &::before {
+          margin-right: 10px;
         }
-        .logo-location {
-          font-size: 13px;
-          letter-spacing: 8px;
-          margin-top: 3px;
-          &::before,
-          &::after {
-            width: 14px;
-            height: 1px;
-          }
-          &::before {
-            margin-right: 10px;
-          }
-          &::after {
-            margin-left: 10px;
-          }
-          span {
-            display: inline-block;
-            transform: translateX(4px);
-          }
+        &::after {
+          margin-left: 10px;
+        }
+        span {
+          display: inline-block;
+          transform: translateX(4px);
         }
       }
     }

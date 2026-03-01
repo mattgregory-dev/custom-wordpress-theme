@@ -7,8 +7,6 @@
 .cwp-header-standard {
   position: relative;
   z-index: 2;
-  padding-left: 18px;
-  padding-right: 18px;
   .header-menu-area {
     border: 1px solid #CACACA;
     background-color: unset;
@@ -26,23 +24,11 @@
 // -->
 .cwp-header-absolute {
   position: absolute;
+  z-index: 2;
   top: 0;
   width: 100%;
-  z-index: 2;
-  margin-top: 8px;
-  @include xl {
-    padding: 10px 20px;
-  }
   .header-menu-area {
     background-color: unset;
-    padding-top: 20px;
-    margin-top: 0;
-    @include ml {
-      padding-top: 12px;
-    }
-    @include lg {
-      padding: 19px 23px 21px 23px;
-    }
     .popup-search {
       margin-right: 16px;
     }
@@ -93,11 +79,11 @@
       }
     }
   }
-  .hamburger {
-    span {
-      background-color: var(--color-content-white);
-    }
-  }
+  // .hamburger {
+  //   span {
+  //     background-color: var(--color-content-white);
+  //   }
+  // }
 }
 
 .main-menu {
@@ -411,15 +397,14 @@
   position: relative;
   background-color: #FFFFFF;
   border-radius: 25px;
-  padding: 19px 28px 21px 37px;
+  padding: 19px 28px 21px 28px;
   transition: all 0.3s ease;
-  margin-top: 18px;
-  @include ml{
-    padding: 12px 4px 15px;
-    margin-top: 0;
-    border: 0;
-    background-color: unset;
-  }
+  // @include ml{
+  //   padding: 12px 4px 15px;
+  //   margin-top: 0;
+  //   border: 0;
+  //   background-color: unset;
+  // }
 }
 
 .sticky-active {
@@ -625,7 +610,7 @@
   line-height: 27px;
   font-weight: 700;
   // color: var(--color-content-white);
-  display: inline-block;
+  //display: inline-block;
   text-transform: uppercase;
   margin-right: 34px;
   transition: all 0.3s ease;
@@ -641,5 +626,53 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: var(--color-content-white);
+  }
+}
+
+.sticky-active {
+  .header-menu-area {
+    padding-top: 18px;
+    padding-bottom: 18px;
+    @media (max-width: 1202px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+.cwp-header-standard {
+  padding-left: 18px;
+  padding-right: 18px;
+  .header-menu-area {
+    padding-left: 18px;
+    padding-right: 18px;
+    margin-top: 18px;
+    @media (max-width: 1202px) {
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 18px;
+      padding-bottom: 18px;
+      margin-top: 0;
+    }
+  }
+}
+.cwp-header-absolute {
+  padding-left: 26px;
+  padding-right: 33px;
+  .header-menu-area {
+    padding-left: 0;
+    padding-right: 0;
+    @media (max-width: 1202px) {
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 18px;
+      padding-bottom: 18px;
+    }
+  }
+  @media (max-width:1201px) {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  @media (min-width: 1202px) {
+    top: 9px;
   }
 }
