@@ -1,5 +1,5 @@
 <!-- New Mobile Menu -->
-<div data-menu="mobileMenu" class="side-menu">
+<div data-menu="mobileMenu" class="side-menu" data-lenis-prevent>
   <div class="menu-btns">
     <a href="#" class="popup-search" data-popup="1"><i class="fa fa-search"></i></a>
     <button id="mobileCloseBtn" class="close-btn"></button>

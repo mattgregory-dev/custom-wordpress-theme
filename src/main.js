@@ -455,6 +455,16 @@ const sideMenu = () => {
 
   if (!toggles.length || !overlay) return;
 
+  const lockScroll = () => {
+    document.body.classList.add("mobile-menu-open");
+    LenisScroll.stop();
+  };
+
+  const unlockScroll = () => {
+    document.body.classList.remove("mobile-menu-open");
+    LenisScroll.start();
+  };
+
   toggles.forEach((toggle) => {
     toggle.addEventListener("click", () => {
       const menuName = toggle.getAttribute("data-menu");
@@ -465,6 +475,7 @@ const sideMenu = () => {
       if (menu) {
         menu.classList.add("active");
         overlay.classList.add("active");
+        lockScroll();
       }
     });
   });
@@ -475,6 +486,7 @@ const sideMenu = () => {
       if (!menu) return;
       menu.classList.remove("active");
       overlay.classList.remove("active");
+      unlockScroll();
       menu.querySelectorAll(".active").forEach((el) => {
         el.classList.remove("active");
       });
@@ -489,6 +501,7 @@ const sideMenu = () => {
       });
     });
     overlay.classList.remove("active");
+    unlockScroll();
   });
 
   const menuLinks = document.querySelectorAll(".menu-left li > a");

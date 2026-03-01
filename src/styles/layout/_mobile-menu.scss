@@ -34,6 +34,7 @@
   border: 1px solid #cacaca;
   overflow-y: auto;
   overflow-x: hidden;
+  overscroll-behavior: contain;
   z-index: 111111111;
   transition: right 0.3s ease-in-out;
 
