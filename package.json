@@ -7,7 +7,7 @@
     "dev:tw": "tailwindcss -i src/tailwind.css -o src/public/tailwind.css --watch",
     "dev:all": "concurrently -k \"npm run dev\" \"npm run dev:tw\"",
     "build:css": "sass src/style.scss dist/assets/main.css --load-path=node_modules --source-map --style=compressed",
-    "build:fa": "node build-scripts/copy-fontawesome-webfonts.js",
+    "build:fa": "node build-scripts/copy-fa-to-webfonts.js",
     "build:tw": "postcss src/tailwind.css -o dist/tailwind.css",
     "build": "vite build && npm run build:css && npm run build:tw && npm run build:fa",
     "preview": "vite preview"

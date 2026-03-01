@@ -12,7 +12,7 @@
   border: none;
   outline: none;
   background-color: var(--color-primary);
-  color: var(--color-heading);
+  color: var(--black);
   cursor: pointer;
   border-radius: 15px;
   z-index: 9999999;
@@ -40,18 +40,18 @@
   text-align: center;
   border-radius: 50%;
   background-color: #1a1a1a;
-  color: var(--color-content-white);
+  color: var(--white);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   border: 0;
   outline: none;
-  display: inline-block;
+  //display: inline-block;
+  display: none;
   z-index: 99999;
   padding: 0;
   @media (max-width: 980px) {
     display: none;
   }
 }
-
 
 .ibt-btn {
   cursor: pointer;
@@ -67,7 +67,7 @@
   justify-content: center;
   align-items: center;
   background: var(--color-surface-light-3);
-  color: var(--color-body);
+  color: var(--body);
   border-radius: var(--radius-lg);
   border: none;
   position: relative;
@@ -108,8 +108,8 @@
   }
 
   &:hover {
-    background: var(--color-surface-dark-2);
-    color: var(--color-content-white);
+    background: var(--black);
+    color: var(--white);
 
     i[class="icon-arrow-top"],
     span[class="icon-arrow-top"] {
@@ -215,7 +215,7 @@
     }
 
     &:hover {
-      color: var(--color-body);
+      color: var(--body);
 
       &::after {
         opacity: 1;
@@ -275,7 +275,7 @@
   // button colors
   &.ibt-btn-secondary {
     background: var(--color-secondary);
-    color: var(--color-content-white);
+    color: var(--white);
     position: relative;
     overflow: hidden;
     i[class="icon-arrow-top"],
@@ -290,8 +290,8 @@
   }
 
   &.ibt-btn-dark {
-    background: var(--color-surface-dark-2);
-    color: var(--color-content-white);
+    background: var(--black);
+    color: var(--white);
     position: relative;
     overflow: hidden;
 

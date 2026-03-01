@@ -1,10 +1,12 @@
 <?php
 ?>
 </main>
-<footer class="footer bg-[#1f2f2a]">
+<footer class="footer">
   <div class="mx-auto max-w-[1080px] px-6 py-16 space-y-10">
-    <div class="footer-top flex items-start justify-between gap-12">
-      <div class="footer-brand max-w-[420px] space-y-4 text-center lg:text-left">
+
+
+    <div class="footer-top flex flex-col items-center justify-center gap-12 text-center">
+      <div class="footer-brand max-w-[420px] space-y-4">
         <?php get_template_part('partials/logo') ?>
         <p class="footer-desc">
           Retreats for clarity, steadiness, and grounded care.
@@ -16,12 +18,14 @@
           wp_nav_menu(array(
             'theme_location'=> 'footer',
             'container'=> false,
-            'menu_class'=> 'footer-nav-list flex flex-wrap justify-end gap-6',
+            'menu_class'=> 'footer-nav-list flex flex-wrap justify-center gap-6',
             'fallback_cb'=> '__return_false',
           ));
         ?>
         </nav> 
     </div>
+    
+
     <div class="h-px bg-white/20 hidden sm:block"></div>
     <div class="footer-links grid grid-cols-3 gap-12 items-start hidden sm:grid">
       <div><a class="footer-link block" href="<?php echo esc_url( home_url( '/faq' ) ); ?>">FAQs</a><a class="footer-link block" href="<?php echo esc_url( home_url( '/contact' ) ); ?>">Contact</a><a class="footer-link block" href="<?php echo esc_url( home_url( '/apply' ) ); ?>">Apply</a></div>

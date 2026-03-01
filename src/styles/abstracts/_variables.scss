@@ -1,17 +1,24 @@
 :root {
 
   // Colors
+  --body: #333333;
+  --white: #ffffff;
+  --black: #000000;
+  
   --ink: #2e2a24;
   --muted: #8a8176;
+
   --light-sage: #ebf7f6;
+  --sage: #b7d2c3;
+
   --sand: #f1e6dc;
   --mist: #f8f2ec;
   --dusk: #3c3338;
   --dusk-soft: #4c4449;
+
   --accent: #d5c1c9;
-  --sage: #b7d2c3;
+
   --shadow: rgba(48, 40, 36, 0.12);
-  --white: #ffffff;
 
   --dev-bg: rgb(128 0 128 / 15%);
 
@@ -19,6 +26,8 @@
   --color-primary: #45d0bd; // turquoise blue
   --color-secondary: #ef6464;
   --color-secondary-alt: #f57e7e;
+
+  // Aero color classes
 
   // Content
   --color-content-white: #ffffff;

@@ -2,7 +2,7 @@
 @use "../abstracts" as *;
 
 .active-btn {
-  background-color: var(--color-content-white) !important;
+  background-color: var(--white) !important;
   &::before {
     content: "";
     position: absolute;
@@ -21,7 +21,7 @@
 }
 
 .active-body {
-  background-color: var(--color-surface-dark-2);
+  background-color: var(--black);
   p,
   h1,
   h2,
@@ -30,27 +30,27 @@
   h5,
   h6,
   li {
-    color: var(--color-content-white) !important;
+    color: var(--white) !important;
   }
   #preloader {
-    background-color: var(--color-surface-dark-2);
+    background-color: var(--black);
     img {
       filter: brightness(9) !important;
     }
   }
   .sec-title {
     span {
-      color: var(--color-content-white);
+      color: var(--white);
       &::before,
       &::after {
-        color: var(--color-content-white);
+        color: var(--white);
       }
     }
   }
   ul {
     li {
       &::before {
-        background-color: var(--color-content-white);
+        background-color: var(--white);
       }
     }
   }
@@ -65,22 +65,22 @@
       }
     }
     a {
-      color: var(--color-content-white);
+      color: var(--white);
     }
     .main-menu {
       > ul {
         > li {
           > a {
-            color: var(--color-content-white);
+            color: var(--white);
             &:hover {
-              background-color: var(--color-surface-dark-2);
+              background-color: var(--black);
             }
             &::before {
               filter: brightness(9);
             }
           }
           > .active {
-            background-color: var(--color-surface-dark-2);
+            background-color: var(--black);
           }
         }
       }
@@ -94,7 +94,7 @@
   }
   .cwp-header-standard {
     @include ml {
-      background-color: var(--color-surface-dark-2);
+      background-color: var(--black);
     }
     .header-menu-area {
       background-color: unset;
@@ -109,22 +109,22 @@
       }
     }
     a {
-      color: var(--color-content-white);
+      color: var(--white);
     }
     .main-menu {
       > ul {
         > li {
           > a {
-            color: var(--color-content-white);
+            color: var(--white);
             &:hover {
-              background-color: var(--color-surface-dark-2);
+              background-color: var(--black);
             }
             &::before {
               filter: brightness(9);
             }
           }
           > .active {
-            background-color: var(--color-surface-dark-2);
+            background-color: var(--black);
           }
         }
       }
@@ -145,22 +145,22 @@
       }
     }
     a {
-      color: var(--color-content-white);
+      color: var(--white);
     }
     .main-menu {
       > ul {
         > li {
           > a {
-            color: var(--color-content-white);
+            color: var(--white);
             &:hover {
-              background-color: var(--color-surface-dark-2);
+              background-color: var(--black);
             }
             &::before {
               filter: brightness(9);
             }
           }
           > .active {
-            background-color: var(--color-surface-dark-2);
+            background-color: var(--black);
           }
         }
       }
@@ -178,7 +178,7 @@
   }
 
   .ibt-btn.ibt-btn-outline {
-    color: var(--color-content-white) !important;
+    color: var(--white) !important;
   }
   .shape {
     &::before {
@@ -191,16 +191,16 @@
     }
   }
   .breadcrumbs {
-    background-color: var(--color-surface-dark-2);
+    background-color: var(--black);
     &::before,
     &:after {
       background-image: url(#{$theme-root}/images/aero/layers/corner3-dark.png);
       transform: rotate(90deg);
     }
     li {
-      color: var(--color-content-white);
+      color: var(--white);
       a {
-        color: var(--color-content-white);
+        color: var(--white);
       }
     }
   }
@@ -213,7 +213,7 @@
     }
   }
   .shape4 {
-    background-color: var(--color-surface-dark-2);
+    background-color: var(--black);
     &::before {
       background-image: url(#{$theme-root}/images/aero/layers/corner3-dark3.png);
     }
@@ -222,7 +222,7 @@
     }
   }
   .shape2 {
-    background-color: var(--color-surface-dark-2);
+    background-color: var(--black);
     &::before {
       background-image: url(#{$theme-root}/images/aero/layers/corner3-dark3.png);
     }
@@ -232,26 +232,26 @@
   }
   .hamburger {
     span {
-      background-color: var(--color-content-white);
+      background-color: var(--white);
     }
   }
   .search-popup-content {
     background-color: #1a1a1a;
     .close-popup {
       &::before {
-        color: var(--color-content-white);
+        color: var(--white);
       }
     }
   }
   .search-popup {
     input {
-      color: var(--color-content-white);
+      color: var(--white);
       &::placeholder {
-        color: var(--color-content-white);
+        color: var(--white);
       }
     }
     button {
-      color: var(--color-content-white) !important;
+      color: var(--white) !important;
     }
   }
 
@@ -262,6 +262,6 @@
   input[type="tel"],
   input[type="date"],
   textarea {
-    color: var(--color-content-white);
+    color: var(--white);
   }
 }

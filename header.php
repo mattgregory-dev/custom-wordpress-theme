@@ -37,6 +37,5 @@ $header_class = $header_variant === 'absolute' ? 'cwp-header-absolute' : 'cwp-he
     </button>
   </div>
 </header>
-<div class="mobile-menu-backdrop" data-mobile-menu-close></div>
 <?php get_template_part('partials/mobile-menu') ?>
 <main id="main-content">
