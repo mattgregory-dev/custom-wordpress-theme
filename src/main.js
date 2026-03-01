@@ -922,7 +922,7 @@ const resizeHeaderHeight = () => {
 
 const openMobileMenu = () => {
   const menu = document.getElementById("mobile-menu");
-  const toggles = document.querySelectorAll(".mobile-menu-toggle, .hamburger");
+  const toggles = document.querySelectorAll(".hamburger");
   const closeButton = document.querySelector(".mobile-menu-close");
   const backdrop = document.querySelector(".mobile-menu-backdrop");
   if (!menu || !toggles.length) return;
@@ -942,8 +942,7 @@ const openMobileMenu = () => {
   const closeMenu = () => setMenuState(false);
 
   toggles.forEach((toggle) => {
-    toggle.addEventListener("click", (event) => {
-      //event.preventDefault();
+    toggle.addEventListener("click", () => {
       const isOpen = menu.classList.contains("is-open");
       setMenuState(!isOpen);
     });
