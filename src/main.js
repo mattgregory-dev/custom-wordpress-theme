@@ -344,46 +344,48 @@ const preloader = () => {
 // };
 
 // Dark/light theme toggle logic.
-const themeToggle = () => {
-  const body = document.body;
-  const themeBtn = document.getElementById("themeBtn");
-  const darkModeImages = document.querySelectorAll(
-    ".darkModeTrigger, .darkModeTriggerImg, .darkModeTriggerImg2"
-  );
+/*
+  const themeToggle = () => {
+    const body = document.body;
+    const themeBtn = document.getElementById("themeBtn");
+    const darkModeImages = document.querySelectorAll(
+      ".darkModeTrigger, .darkModeTriggerImg, .darkModeTriggerImg2"
+    );
 
-  if (localStorage.getItem("themeMode") === "active") {
-    body.classList.add("active-body", "dark-mode");
-    if (themeBtn) themeBtn.classList.add("active-btn");
-  }
-
-  const toggleDarkMode = () => {
-    if (!body.classList.contains("active-body")) {
+    if (localStorage.getItem("themeMode") === "active") {
       body.classList.add("active-body", "dark-mode");
       if (themeBtn) themeBtn.classList.add("active-btn");
-      localStorage.setItem("themeMode", "active");
-      localStorage.setItem("darkMode", "enabled");
-      return;
     }
 
-    body.classList.remove("active-body", "dark-mode");
-    if (themeBtn) themeBtn.classList.remove("active-btn");
-    localStorage.setItem("themeMode", "inactive");
-    localStorage.setItem("darkMode", "disabled");
+    const toggleDarkMode = () => {
+      if (!body.classList.contains("active-body")) {
+        body.classList.add("active-body", "dark-mode");
+        if (themeBtn) themeBtn.classList.add("active-btn");
+        localStorage.setItem("themeMode", "active");
+        localStorage.setItem("darkMode", "enabled");
+        return;
+      }
+
+      body.classList.remove("active-body", "dark-mode");
+      if (themeBtn) themeBtn.classList.remove("active-btn");
+      localStorage.setItem("themeMode", "inactive");
+      localStorage.setItem("darkMode", "disabled");
+    };
+
+    if (themeBtn) {
+      themeBtn.addEventListener("click", () => {
+        toggleDarkMode();
+      });
+    }
+
+    darkModeImages.forEach((el) => {
+      el.addEventListener("click", (event) => {
+        event.preventDefault();
+        toggleDarkMode();
+      });
+    });
   };
-
-  if (themeBtn) {
-    themeBtn.addEventListener("click", () => {
-      toggleDarkMode();
-    });
-  }
-
-  darkModeImages.forEach((el) => {
-    el.addEventListener("click", (event) => {
-      event.preventDefault();
-      toggleDarkMode();
-    });
-  });
-};
+*/
 
 // Search popup open/close controls.
 // const searchPopup = () => {
@@ -535,75 +537,79 @@ const sideMenu = () => {
 };
 
 // Original reveal animation
-const revealUpAnimation = () => {
-  const elements = document.querySelectorAll(".reveal-up");
-  if (!elements.length) return;
+/*
+  const revealUpAnimation = () => {
+    const elements = document.querySelectorAll(".reveal-up");
+    if (!elements.length) return;
 
-  elements.forEach((el) => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(30px) scale(0.98)";
-    el.style.willChange = "transform, opacity";
-    el.style.transition = "opacity 1.1s ease-out, transform 1.1s ease-out";
-  });
-
-  if (!("IntersectionObserver" in window)) {
     elements.forEach((el) => {
-      el.style.opacity = "1";
-      el.style.transform = "translateY(0) scale(1)";
+      el.style.opacity = "0";
+      el.style.transform = "translateY(30px) scale(0.98)";
+      el.style.willChange = "transform, opacity";
+      el.style.transition = "opacity 1.1s ease-out, transform 1.1s ease-out";
     });
-    return;
-  }
 
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry || !entry.isIntersecting) return;
-        const el = entry.target;
+    if (!("IntersectionObserver" in window)) {
+      elements.forEach((el) => {
         el.style.opacity = "1";
         el.style.transform = "translateY(0) scale(1)";
-        io.unobserve(el);
       });
-    },
-    { threshold: 0.45 }
-  );
+      return;
+    }
 
-  elements.forEach((el) => io.observe(el));
-};
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry || !entry.isIntersecting) return;
+          const el = entry.target;
+          el.style.opacity = "1";
+          el.style.transform = "translateY(0) scale(1)";
+          io.unobserve(el);
+        });
+      },
+      { threshold: 0.45 }
+    );
+
+    elements.forEach((el) => io.observe(el));
+  };
+*/
 
 // Original fade animation
-const revealFadeAnimation = () => {
-  const elements = document.querySelectorAll(".reveal-fade");
-  if (!elements.length) return;
+/*
+  const revealFadeAnimation = () => {
+    const elements = document.querySelectorAll(".reveal-fade");
+    if (!elements.length) return;
 
-  elements.forEach((el) => {
-    el.style.opacity = "0";
-    el.style.willChange = "opacity";
-    // fade duration + easing
-    el.style.transition = "opacity 1.2s ease-out";
-  });
-
-  if (!("IntersectionObserver" in window)) {
     elements.forEach((el) => {
-      el.style.opacity = "1";
+      el.style.opacity = "0";
+      el.style.willChange = "opacity";
+      // fade duration + easing
+      el.style.transition = "opacity 1.2s ease-out";
     });
-    return;
-  }
 
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry || !entry.isIntersecting) return;
-        const el = entry.target;
+    if (!("IntersectionObserver" in window)) {
+      elements.forEach((el) => {
         el.style.opacity = "1";
-        io.unobserve(el);
       });
-    },
-    // trigger point: 0 = on entry, 1 = fully in view
-    { threshold: 0.8 }
-  );
+      return;
+    }
 
-  elements.forEach((el) => io.observe(el));
-};
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry || !entry.isIntersecting) return;
+          const el = entry.target;
+          el.style.opacity = "1";
+          io.unobserve(el);
+        });
+      },
+      // trigger point: 0 = on entry, 1 = fully in view
+      { threshold: 0.8 }
+    );
+
+    elements.forEach((el) => io.observe(el));
+  };
+*/
 
 // GSAP subtitle reveal animation.
 const animateSubtitles = () => {
@@ -676,310 +682,329 @@ const animateHeadings = () => {
 };
 
 // GSAP hero slide transition choreography.
-const animateSlide = (slide) => {
-  if (!slide) return;
+/*
+  const animateSlide = (slide) => {
+    if (!slide) return;
 
-  gsap.set(slide, { visibility: 'visible' });
+    gsap.set(slide, { visibility: 'visible' });
 
-  const elements = slide.querySelectorAll(
-    '.title, .hero-btn2 p, .ibt-btn, .exp-box'
-  );
-  gsap.set(elements, { y: 50, opacity: 0 });
-
-  const tl = gsap.timeline();
-  const title = slide.querySelector('.title');
-  const paragraph = slide.querySelector('.hero-btn2 p');
-  const btn = slide.querySelector('.ibt-btn');
-  const expBox = slide.querySelector('.exp-box');
-
-  if (title) {
-    tl.to(title, { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out' });
-  }
-  if (paragraph) {
-    tl.to(
-      paragraph,
-      { y: 0, opacity: 1, duration: 0.5, ease: 'power3.out' },
-      '-=0.4'
+    const elements = slide.querySelectorAll(
+      '.title, .hero-btn2 p, .ibt-btn, .exp-box'
     );
-  }
-  if (btn) {
-    tl.to(
-      btn,
-      { y: 0, opacity: 1, duration: 0.5, ease: 'power3.out' },
-      '-=0.4'
-    );
-  }
-  if (expBox) {
-    tl.to(
-      expBox,
-      { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out' },
-      '-=0.3'
-    );
-  }
-};
+    gsap.set(elements, { y: 50, opacity: 0 });
+
+    const tl = gsap.timeline();
+    const title = slide.querySelector('.title');
+    const paragraph = slide.querySelector('.hero-btn2 p');
+    const btn = slide.querySelector('.ibt-btn');
+    const expBox = slide.querySelector('.exp-box');
+
+    if (title) {
+      tl.to(title, { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out' });
+    }
+    if (paragraph) {
+      tl.to(
+        paragraph,
+        { y: 0, opacity: 1, duration: 0.5, ease: 'power3.out' },
+        '-=0.4'
+      );
+    }
+    if (btn) {
+      tl.to(
+        btn,
+        { y: 0, opacity: 1, duration: 0.5, ease: 'power3.out' },
+        '-=0.4'
+      );
+    }
+    if (expBox) {
+      tl.to(
+        expBox,
+        { y: 0, opacity: 1, duration: 0.6, ease: 'power3.out' },
+        '-=0.3'
+      );
+    }
+  };
+*/
 
 // Swiper hero slider bootstrapping.
-const initHeroSlider = () => {
-  if (typeof Swiper === 'undefined') return;
+/*
+  const initHeroSlider = () => {
+    if (typeof Swiper === 'undefined') return;
 
-  const heroSlider = document.querySelector('.hero-slider2');
-  if (!heroSlider) return;
+    const heroSlider = document.querySelector('.hero-slider2');
+    if (!heroSlider) return;
 
-  new Swiper('.hero-slider2', {
-    loop: true,
-    effect: 'fade',
-    speed: 800,
-    fadeEffect: { crossFade: true },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    on: {
-      init() {
-        animateSlide(this.slides[this.activeIndex]);
+    new Swiper('.hero-slider2', {
+      loop: true,
+      effect: 'fade',
+      speed: 800,
+      fadeEffect: { crossFade: true },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
       },
-      slideChange() {
-        animateSlide(this.slides[this.activeIndex]);
+      on: {
+        init() {
+          animateSlide(this.slides[this.activeIndex]);
+        },
+        slideChange() {
+          animateSlide(this.slides[this.activeIndex]);
+        },
       },
-    },
-  });
-};
+    });
+  };
+*/
 
 // GSAP hover animations for contact buttons.
-const animateContactButtons = () => {
-  const buttons = document.querySelectorAll('.contact-btn');
+/*
+  const animateContactButtons = () => {
+    const buttons = document.querySelectorAll('.contact-btn');
 
-  buttons.forEach((btn) => {
-    const text = btn.querySelector('.text');
-    const outer = btn.querySelector('.border-outer');
-    const inner = btn.querySelector('.border-inner');
-    let moveTimeout;
+    buttons.forEach((btn) => {
+      const text = btn.querySelector('.text');
+      const outer = btn.querySelector('.border-outer');
+      const inner = btn.querySelector('.border-inner');
+      let moveTimeout;
 
-    btn.addEventListener('mousemove', (event) => {
-      clearTimeout(moveTimeout);
+      btn.addEventListener('mousemove', (event) => {
+        clearTimeout(moveTimeout);
 
-      const rect = btn.getBoundingClientRect();
-      const x = event.clientX - rect.left - rect.width / 2;
-      const y = event.clientY - rect.top - rect.height / 2;
+        const rect = btn.getBoundingClientRect();
+        const x = event.clientX - rect.left - rect.width / 2;
+        const y = event.clientY - rect.top - rect.height / 2;
 
-      if (inner) {
-        gsap.to(inner, {
-          x: x * 0.35,
-          y: y * 0.35,
-          duration: 0.08,
-          ease: 'power2.out',
-        });
-      }
+        if (inner) {
+          gsap.to(inner, {
+            x: x * 0.35,
+            y: y * 0.35,
+            duration: 0.08,
+            ease: 'power2.out',
+          });
+        }
 
-      if (outer) {
-        gsap.to(outer, {
-          x: x * 0.15,
-          y: y * 0.15,
-          duration: 0.25,
-          ease: 'power2.out',
-        });
-      }
+        if (outer) {
+          gsap.to(outer, {
+            x: x * 0.15,
+            y: y * 0.15,
+            duration: 0.25,
+            ease: 'power2.out',
+          });
+        }
 
-      if (text) {
-        gsap.to(text, {
-          x: x * 0.1,
-          y: y * 0.1,
-          duration: 0.2,
-          ease: 'power2.out',
-        });
-      }
-
-      moveTimeout = setTimeout(() => {
-        const targets = [inner, outer].filter(Boolean);
-        if (targets.length) {
-          gsap.to(targets, {
+        if (text) {
+          gsap.to(text, {
             x: x * 0.1,
             y: y * 0.1,
             duration: 0.2,
             ease: 'power2.out',
           });
         }
-        if (text) {
-          gsap.to(text, {
-            x: x * 0.1,
-            y: y * 0.1,
-            duration: 0.25,
-            ease: 'power2.out',
-          });
-        }
-      }, 100);
-    });
 
-    btn.addEventListener('mouseleave', () => {
-      clearTimeout(moveTimeout);
-      const targets = [inner, outer, text].filter(Boolean);
-      if (!targets.length) return;
-      gsap.to(targets, {
-        x: 0,
-        y: 0,
-        duration: 0.25,
-        ease: 'power2.out',
+        moveTimeout = setTimeout(() => {
+          const targets = [inner, outer].filter(Boolean);
+          if (targets.length) {
+            gsap.to(targets, {
+              x: x * 0.1,
+              y: y * 0.1,
+              duration: 0.2,
+              ease: 'power2.out',
+            });
+          }
+          if (text) {
+            gsap.to(text, {
+              x: x * 0.1,
+              y: y * 0.1,
+              duration: 0.25,
+              ease: 'power2.out',
+            });
+          }
+        }, 100);
+      });
+
+      btn.addEventListener('mouseleave', () => {
+        clearTimeout(moveTimeout);
+        const targets = [inner, outer, text].filter(Boolean);
+        if (!targets.length) return;
+        gsap.to(targets, {
+          x: 0,
+          y: 0,
+          duration: 0.25,
+          ease: 'power2.out',
+        });
       });
     });
-  });
-};
+  };
+*/
 
 // GSAP entrance animations for demo images.
-const animateDemoImages = () => {
-  const demoImgs = document.querySelectorAll('.demo-img, .ser-anim');
-  if (!demoImgs.length) return;
+/*
+  const animateDemoImages = () => {
+    const demoImgs = document.querySelectorAll('.demo-img, .ser-anim');
+    if (!demoImgs.length) return;
 
-  gsap.utils.toArray(demoImgs).forEach((img, index) => {
-    gsap.fromTo(
-      img,
-      { y: 80, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-        ease: 'power3.out',
-        delay: index * 0.03,
-        scrollTrigger: {
-          trigger: img,
-          start: 'top 95%',
-          end: 'bottom 80%',
-          toggleActions: 'play none none none',
-          once: true,
-        },
-      }
-    );
-  });
-};
+    gsap.utils.toArray(demoImgs).forEach((img, index) => {
+      gsap.fromTo(
+        img,
+        { y: 80, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power3.out',
+          delay: index * 0.03,
+          scrollTrigger: {
+            trigger: img,
+            start: 'top 95%',
+            end: 'bottom 80%',
+            toggleActions: 'play none none none',
+            once: true,
+          },
+        }
+      );
+    });
+  };
+*/
 
 // GSAP entrance animations for service cards.
-const animateServiceCards = () => {
-  const serviceCards = document.querySelectorAll(
-    '.ser-card14-card1, .ser-card14-card2, .ser-card14-card3, .ser-card14-card4, .ser-card14-card5'
-  );
+/*
+  const animateServiceCards = () => {
+    const serviceCards = document.querySelectorAll(
+      '.ser-card14-card1, .ser-card14-card2, .ser-card14-card3, .ser-card14-card4, .ser-card14-card5'
+    );
 
-  if (!serviceCards.length) return;
+    if (!serviceCards.length) return;
 
-  gsap.utils.toArray(serviceCards).forEach((card, index) => {
-    gsap.fromTo(
-      card,
-      { y: 50, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.1,
+    gsap.utils.toArray(serviceCards).forEach((card, index) => {
+      gsap.fromTo(
+        card,
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.1,
+          ease: 'power3.out',
+          delay: index * 0.2,
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 90%',
+            end: 'bottom 80%',
+            toggleActions: 'play none none none',
+            once: true,
+          },
+        }
+      );
+    });
+  };
+*/
+
+// GSAP animations for section 24 content blocks.
+/*
+  const animateSection24 = () => {
+    const funfact = document.querySelector('.funfact-content24');
+    if (funfact) {
+      gsap.from('.funfact-content24', {
+        x: 100,
+        opacity: 0,
+        duration: 1,
         ease: 'power3.out',
-        delay: index * 0.2,
         scrollTrigger: {
-          trigger: card,
-          start: 'top 90%',
-          end: 'bottom 80%',
+          trigger: '.funfact-content24',
+          start: 'top 85%',
           toggleActions: 'play none none none',
           once: true,
         },
-      }
-    );
-  });
-};
+      });
+    }
 
-// GSAP animations for section 24 content blocks.
-const animateSection24 = () => {
-  const funfact = document.querySelector('.funfact-content24');
-  if (funfact) {
-    gsap.from('.funfact-content24', {
-      x: 100,
-      opacity: 0,
-      duration: 1,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: '.funfact-content24',
-        start: 'top 85%',
-        toggleActions: 'play none none none',
-        once: true,
-      },
-    });
-  }
-
-  const serContent = document.querySelector('.ser-content24');
-  if (serContent) {
-    gsap.from('.ser-content24', {
-      x: -100,
-      opacity: 0,
-      duration: 1,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: '.ser-content24',
-        start: 'top 85%',
-        toggleActions: 'play none none none',
-        once: true,
-      },
-    });
-  }
-};
+    const serContent = document.querySelector('.ser-content24');
+    if (serContent) {
+      gsap.from('.ser-content24', {
+        x: -100,
+        opacity: 0,
+        duration: 1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: '.ser-content24',
+          start: 'top 85%',
+          toggleActions: 'play none none none',
+          once: true,
+        },
+      });
+    }
+  };
+*/
 
 // Give hero header top padding based on header height
 const resizeHeaderHeight = () => {
-  const header = document.querySelector('header');
+  const header = document.querySelector('.cwp-header-absolute');
   const hero = document.getElementById('hero-header');
   if (!header || !hero) return;
 
   const resizeObserver = new ResizeObserver((entries) => {
     const entry = entries[0];
+
     const height = entry.contentRect.height;
+    console.log('header height ' + height);
+
     const heroPaddingBottom = parseFloat(getComputedStyle(hero).paddingBottom) || 0;
-    // hero.style.paddingTop = `${height + heroPaddingBottom + 20}px`;
-    hero.style.paddingTop = `${height + heroPaddingBottom}px`;
+    console.log('hero bottom padding ' + height);
+
+    const top = parseFloat(getComputedStyle(header).paddingTop) || 0;
+    console.log('header top padding ' + top);
+
+    hero.style.paddingTop = `${height + top + heroPaddingBottom}px`;
   });
 
   resizeObserver.observe(header);
 };
 
 /*
-const openMobileMenu = () => {
-  const menu = document.getElementById("mobile-menu");
-  const toggles = document.querySelectorAll(".hamburger");
-  const closeButton = document.querySelector(".mobile-menu-close");
-  const backdrop = document.querySelector(".mobile-menu-backdrop");
-  if (!menu || !toggles.length) return;
+  const openMobileMenu = () => {
+    const menu = document.getElementById("mobile-menu");
+    const toggles = document.querySelectorAll(".hamburger");
+    const closeButton = document.querySelector(".mobile-menu-close");
+    const backdrop = document.querySelector(".mobile-menu-backdrop");
+    if (!menu || !toggles.length) return;
 
-  const setMenuState = (isOpen) => {
-    menu.classList.toggle("is-open", isOpen);
-    document.body.classList.toggle("mobile-menu-open", isOpen);
-    if (backdrop) {
-      backdrop.classList.toggle("is-active", isOpen);
-    }
+    const setMenuState = (isOpen) => {
+      menu.classList.toggle("is-open", isOpen);
+      document.body.classList.toggle("mobile-menu-open", isOpen);
+      if (backdrop) {
+        backdrop.classList.toggle("is-active", isOpen);
+      }
+      toggles.forEach((toggle) => {
+        toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+      menu.setAttribute("aria-hidden", isOpen ? "false" : "true");
+    };
+
+    const closeMenu = () => setMenuState(false);
+
     toggles.forEach((toggle) => {
-      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      toggle.addEventListener("click", () => {
+        const isOpen = menu.classList.contains("is-open");
+        setMenuState(!isOpen);
+      });
     });
-    menu.setAttribute("aria-hidden", isOpen ? "false" : "true");
-  };
 
-  const closeMenu = () => setMenuState(false);
-
-  toggles.forEach((toggle) => {
-    toggle.addEventListener("click", () => {
-      const isOpen = menu.classList.contains("is-open");
-      setMenuState(!isOpen);
-    });
-  });
-
-  if (closeButton) {
-    closeButton.addEventListener("click", closeMenu);
-  }
-  if (backdrop) {
-    backdrop.addEventListener("click", closeMenu);
-  }
-
-  menu.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", closeMenu);
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      closeMenu();
+    if (closeButton) {
+      closeButton.addEventListener("click", closeMenu);
     }
-  });
+    if (backdrop) {
+      backdrop.addEventListener("click", closeMenu);
+    }
 
-};
+    menu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeMenu();
+      }
+    });
+
+  };
 */
 
 // Active menu highlighting for desktop + mobile menus.
@@ -1067,16 +1092,16 @@ const gsapAnimations = () => {
 
   //animateSubtitles();
   //animateHeadings();
-  initHeroSlider();
-  animateContactButtons();
-  animateDemoImages();
-  animateSection24();
-  animateServiceCards();
+  //initHeroSlider();
+  //animateContactButtons();
+  //animateDemoImages();
+  //animateSection24();
+  //animateServiceCards();
 };
 
 const init = () => {
-  revealUpAnimation();
-  revealFadeAnimation();
+  //revealUpAnimation();
+  //revealFadeAnimation();
   //backToTop();
   preloader();
   //openMobileMenu();
@@ -1085,7 +1110,7 @@ const init = () => {
   stickyHeader();
   LenisScroll.init();
   //aeroParallax();
-  themeToggle();
+  //themeToggle();
   activeMenu();
   //preloader();
   sideMenu();

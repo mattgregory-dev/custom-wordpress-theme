@@ -469,11 +469,22 @@
     cursor: pointer;
     text-align: center;
     background: var(--body);
-    margin-bottom: 4px;
-    &:last-child {
-      margin-bottom: 0;
-      width: 10px;
-      margin-left: auto;
+    margin-bottom: 5px;
+    transform-origin: right center;
+    transition: transform 220ms ease, opacity 220ms ease;
+  }
+  span:nth-child(3) {
+    transform: scaleX(0.38);
+  }
+  &:hover {
+    span:nth-child(1) {
+      transform: scaleX(1.12);
+    }
+    span:nth-child(2) {
+      transform: scaleX(0.86);
+    }
+    span:nth-child(3) {
+      transform: scaleX(1.12);
     }
   }
 }
@@ -649,6 +660,7 @@
     padding-left: 18px;
     padding-right: 18px;
     margin-top: 18px;
+    margin-bottom: 18px;
     @media (max-width: 1202px) {
       padding-left: 0;
       padding-right: 0;
@@ -661,6 +673,7 @@
 .cwp-header-absolute {
   padding-left: 26px;
   padding-right: 33px;
+  padding-top: 9px;
   .header-menu-area {
     padding-left: 0;
     padding-right: 0;
@@ -674,8 +687,5 @@
   @media (max-width:1201px) {
     padding-left: 18px;
     padding-right: 18px;
-  }
-  @media (min-width: 1202px) {
-    top: 9px;
   }
 }
