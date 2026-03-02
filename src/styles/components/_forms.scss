@@ -1,4 +1,4 @@
-/* Forminator: align with Lumina form styling */
+
 .forminator-ui.forminator-custom-form {
   font-family: "Lato", "Trebuchet MS", sans-serif !important;
   color: var(--ink) !important;
@@ -33,7 +33,7 @@
   .forminator-textarea,
   select.forminator-select {
     border: 1px solid rgba(92, 81, 88, 0.45) !important;
-    border-radius: 14px !important;
+    border-radius: 24px !important;
     padding: 14px 16px !important;
     background: #fffdfb !important;
     color: var(--ink) !important;
