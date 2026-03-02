@@ -62,7 +62,7 @@
   <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="login-btn hidden">
     <i class="fa fa-user"></i>login
   </a>
-  <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="ibt-btn ibt-btn-outline-3 ibt-btn-rounded">
+  <a href="<?php echo esc_url( home_url( '/apply/' ) ); ?>" class="ibt-btn ibt-btn-outline-3 ibt-btn-rounded">
     <span>Apply</span>
   </a>
 </div>

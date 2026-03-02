@@ -2,18 +2,19 @@
 ?>
 </main>
 <footer class="footer">
-  <div class="mx-auto max-w-[1080px] px-6 py-16 space-y-10">
+  <div class="footer-wrapper mx-auto max-w-[1080px] space-y-10">
 
+    <div class="footer-top">
 
-    <div class="footer-top flex flex-col items-center justify-center gap-12 text-center">
-      <div class="footer-brand max-w-[420px] space-y-4">
+      <div class="footer-brand">
         <?php get_template_part('partials/logo') ?>
         <p class="footer-desc">
           Retreats for clarity, steadiness, and grounded care.
           A calm path back to what is already present. 
         </p>
       </div>
-      <nav class="footer-nav hidden sm:block">
+
+      <nav class="footer-nav">
         <?php 
           wp_nav_menu(array(
             'theme_location'=> 'footer',
@@ -22,33 +23,42 @@
             'fallback_cb'=> '__return_false',
           ));
         ?>
-        </nav> 
-    </div>
-    
+      </nav>
 
-    <div class="h-px bg-white/20 hidden sm:block"></div>
-    <div class="footer-links grid grid-cols-3 gap-12 items-start hidden sm:grid">
-      <div><a class="footer-link block" href="<?php echo esc_url( home_url( '/faq' ) ); ?>">FAQs</a><a class="footer-link block" href="<?php echo esc_url( home_url( '/contact' ) ); ?>">Contact</a><a class="footer-link block" href="<?php echo esc_url( home_url( '/apply' ) ); ?>">Apply</a></div>
-      <div><a class="footer-link block" href="<?php echo esc_url( home_url( '/blog' ) ); ?>">Blog</a></div>
-      <div class="space-y-4">
+    </div>
+
+    <div class="footer-links grid grid-cols-2 gap-12 hidden sm:grid">
+
+      <div class="text-center">
+        <h3 class="mb-4">Site Links</h3>
+        <a class="footer-link" href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">Blog</a>
+        <a class="footer-link" href="<?php echo esc_url( home_url( '/faq/' ) ); ?>">FAQs</a>
+      </div>
+
+      <div class="text-center space-y-4">
+        <h3>Contat Us</h3>
         <div>
           <div class="footer-meta-label">Phone:</div>
-          <a class="footer-link block" href="tel:9284755551">928-475-5551</a>
+          <a class="footer-link" href="tel:9284755551">928-475-5551</a>
         </div>
         <div>
-          <div class="footer-meta-label">Location:</div>
-          <span class="location block">Sedona, Arizona</span>
+          <div class="footer-meta-label">Contact Form:</div>
+          <a class="footer-link" href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">Leave A Message</a>
         </div>
       </div>
     </div>
-    <div class="footer-disclosure space-y-4 text-center">
-      <p class="mx-auto max-w-[980px]">
+
+
+    <div class="footer-disclosure">
+      <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis luctus massa, eu maximus nisi tristique eu. Donec ut orci vestibulum, ultrices massa ut, finibus turpis. Sed hendrerit, nisl rhoncus vestibulum efficitur, tortor mauris facilisis purus, nec cursus lacus nibh eleifend arcu. 
       </p>
-      <p class="mx-auto max-w-[760px]">
+      <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis luctus massa, eu maximus nisi tristique eu. Donec ut orci vestibulum. 
       </p>
     </div>
+
+
     <div class="footer-bottom flex items-center justify-center gap-3">
       <span>© 2026 Lumina, Inc. All rights reserved.</span>
       <span class="opacity-50">|</span>
@@ -56,6 +66,7 @@
       <span class="opacity-50">|</span>
       <a class="footer-link" href="<?php echo esc_url( home_url( '/privacy' ) ); ?>">Privacy</a>
     </div>
+
   </div>
 </footer>
 <button id="scrollBtn" title="Go to top">
