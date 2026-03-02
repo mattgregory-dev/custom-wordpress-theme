@@ -1,27 +1,21 @@
 <?php
 /**
- * Template Name: Lumina Approach (Tailwind)
+ * Template Name: Approach
  */
 get_header();
 ?>
 
-<!-- HERO / OUR APPROACH -->
-<section id="approach-hero" class="w-full hero-band min-h-screen">
-  <div class="hero-content max-w-[1240px] mx-auto px-4 max-[1382px]:px-[6%]">
-    <div class="pt-[84px] min-h-screen flex items-center">
-      <div class="max-w-3xl space-y-6">
-        <p class="label text-base uppercase tracking-[0.25em] text-[var(--muted)]">Our approach</p>
-        <h1 class="text-5xl leading-tight">A grounded methodology for deep, steady work.</h1>
-        <p class="text-lg leading-relaxed text-[var(--muted)]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim, augue in interdum lacinia, eros
-          massa malesuada nibh, non sagittis erat lorem sed velit.
-        </p>
-      </div>
-    </div>
+<section id="approach-hero" class="page-header">
+  <div class="header-content">
+    <p class="label">Our approach</p>
+    <h1>A grounded methodology for deep, steady work.</h1>
+    <p class="description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim, augue in interdum lacinia, eros
+      massa malesuada nibh, non sagittis erat lorem sed velit.
+    </p>
   </div>
 </section>
 
-<!-- CORE PRINCIPLE -->
 <section id="core-principle" class="w-full pt-20">
   <div class="max-w-[1240px] mx-auto px-6">
     <div class="max-w-3xl space-y-6">
@@ -39,7 +33,6 @@ get_header();
   </div>
 </section>
 
-<!-- HOW WE WORK -->
 <section id="how-we-work" class="w-full py-20">
   <div class="max-w-[1240px] mx-auto px-6 space-y-10">
     <div class="max-w-3xl space-y-4">
@@ -76,7 +69,6 @@ get_header();
   </div>
 </section>
 
-<!-- SHOWPIECE / METHOD OVERVIEW -->
 <section id="approach-showpiece" class="w-full px-10">
   <div class="w-full band-dusk text-white py-24 rounded-2xl">
     <div class="max-w-[1240px] mx-auto px-6 grid grid-cols-[1.05fr_0.95fr] gap-16 items-center">
@@ -111,7 +103,6 @@ get_header();
   </div>
 </section>
 
-<!-- WHAT GUIDES DECISIONS -->
 <section id="guiding-decisions" class="w-full py-20">
   <div class="max-w-[1240px] mx-auto px-6 grid grid-cols-[1.05fr_0.95fr] gap-16 items-start">
     <div class="space-y-6">
@@ -147,7 +138,6 @@ get_header();
   </div>
 </section>
 
-<!-- WHAT WE DO / WHAT WE DO NOT -->
 <section id="boundaries" class="w-full py-20">
   <div class="max-w-[1240px] mx-auto px-6 grid grid-cols-2 gap-12">
     <div class="space-y-4">
@@ -175,7 +165,6 @@ get_header();
   </div>
 </section>
 
-<!-- CONNECTION TO THE EXPERIENCE -->
 <section id="connection" class="w-full py-20">
   <div class="max-w-[1240px] mx-auto px-6">
     <div class="max-w-3xl space-y-4">
@@ -193,7 +182,6 @@ get_header();
   </div>
 </section>
 
-<!-- CLOSING -->
 <section id="approach-closing" class="w-full py-20">
   <div class="max-w-[1240px] mx-auto px-6">
     <div class="max-w-3xl space-y-4">
@@ -207,3 +195,4 @@ get_header();
 </section>
 
 <?php get_footer(); ?>
+

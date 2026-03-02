@@ -1,20 +1,21 @@
 <?php
 /**
- * Template Name: Lumina Preparation (Tailwind)
+ * Template Name: Preparation
  */
 get_header();
 ?>
 
-<!-- HERO / PREPARATION -->
-<!-- Layout intent: two-column hero with support panel -->
-<section id="preparation-hero" class="w-full hero-band min-h-screen">
-  <div class="hero-content max-w-[1240px] mx-auto px-4 max-[1382px]:px-[6%]">
-    <div class="pt-[84px] min-h-screen flex items-center">
-      <div class="w-full grid grid-cols-[1.05fr_0.95fr] gap-16 items-center">
+<section id="preparation-hero" class="page-header">
+
+  <div class="header-content">
+
+    <div class="grid grid-cols-2 gap-16 items-center">
+
       <div class="space-y-6">
-        <p class="label text-base uppercase tracking-[0.25em] text-[var(--muted)]">Preparation</p>
-        <h1 class="text-5xl leading-tight">Preparation is not a test.</h1>
-        <p class="text-lg leading-relaxed text-[var(--muted)]">
+
+        <p class="label">Preparation</p>
+        <h1>Preparation is not a test.</h1>
+        <p class="description">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vulputate, magna ac vulputate varius,
           sapien nisl pretium ligula, in placerat ipsum sem sed libero.
         </p>
@@ -23,9 +24,13 @@ get_header();
           <span class="mini-pill border border-slate-300">1:1 sessions</span>
           <span class="mini-pill border border-slate-300">Ongoing support</span>
         </div>
+
       </div>
+
       <div class="soft-shadow rounded-3xl bg-white/95 p-8 space-y-4">
+
         <p class="label text-base uppercase tracking-[0.25em] text-[var(--muted)]">What this includes</p>
+
         <div class="space-y-3 text-[var(--muted)]">
           <div class="space-y-1">
             <p class="text-sm uppercase tracking-[0.2em]">Orientation</p>
@@ -40,14 +45,15 @@ get_header();
             <p class="text-lg">Lorem ipsum dolor sit amet.</p>
           </div>
         </div>
+
       </div>
-      </div>
+
     </div>
+
   </div>
+
 </section>
 
-<!-- WHY PRE-CARE EXISTS -->
-<!-- Layout intent: centered reassurance -->
 <section id="why-precare" class="w-full py-20">
   <div class="max-w-[1240px] mx-auto px-6">
     <div class="mx-auto max-w-3xl text-center space-y-6">
@@ -68,8 +74,6 @@ get_header();
   </div>
 </section>
 
-<!-- THE PRE-CARE PATH -->
-<!-- Layout intent: step grid with reassurance note -->
 <section id="precare-path" class="w-full py-10">
   <div class="max-w-[1240px] mx-auto px-6 space-y-10">
     <div class="max-w-3xl space-y-4">
@@ -118,8 +122,6 @@ get_header();
   </div>
 </section>
 
-<!-- WHAT WE EXPLORE IN SESSIONS -->
-<!-- Layout intent: theme grid with second row for rhythm -->
 <section id="session-themes" class="w-full pt-20 pb-24">
   <div class="max-w-[1240px] mx-auto px-6 space-y-10">
     <div class="max-w-3xl space-y-4">
@@ -172,8 +174,6 @@ get_header();
   </div>
 </section>
 
-<!-- SHOWPIECE FULL-WIDTH SECTION -->
-<!-- Layout intent: grounded contrast with checklist and inset note -->
 <section id="showpiece" class="w-full px-10">
   <div class="w-full band-dusk text-white py-24 rounded-2xl">
     <div class="max-w-[1240px] mx-auto px-6 grid grid-cols-[1.05fr_0.95fr] gap-16 items-center">
@@ -200,8 +200,6 @@ get_header();
   </div>
 </section>
 
-<!-- READINESS & CONTRAINDICATIONS -->
-<!-- Layout intent: clean, split clarity section -->
 <section id="readiness" class="w-full py-20">
   <div class="max-w-[1240px] mx-auto px-6 grid grid-cols-[1.05fr_0.95fr] gap-16 items-start">
     <div class="space-y-6">
@@ -232,8 +230,6 @@ get_header();
   </div>
 </section>
 
-<!-- FREQUENT QUESTIONS -->
-<!-- Layout intent: static accordion grid -->
 <section id="faq" class="w-full py-20">
   <div class="max-w-[1240px] mx-auto px-6 space-y-10">
     <div class="max-w-3xl space-y-3">
@@ -269,8 +265,6 @@ get_header();
   </div>
 </section>
 
-<!-- CLOSING -->
-<!-- Layout intent: calm, centered close -->
 <section id="closing" class="w-full py-20">
   <div class="max-w-[1240px] mx-auto px-6">
     <div class="mx-auto max-w-3xl text-center space-y-4">
@@ -284,3 +278,5 @@ get_header();
 </section>
 
 <?php get_footer(); ?>
+
+

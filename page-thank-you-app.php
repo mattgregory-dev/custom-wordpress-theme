@@ -1,26 +1,20 @@
 <?php
 /**
- * Template Name: Lumina Thank You (Tailwind)
+ * Template Name: TY Application
  */
 get_header();
 ?>
 
-<!-- PAGE HEADER / CONFIRMATION -->
-<section id="thank-you-header" class="w-full hero-band min-h-screen">
-  <div class="hero-content max-w-[1240px] mx-auto px-4">
-    <div class="pt-[84px] min-h-screen flex items-center">
-      <div class="max-w-3xl space-y-4">
-      <h1 class="text-5xl leading-tight">Thank You</h1>
-      <p class="text-lg leading-relaxed text-[var(--muted)]">Your application has been received.</p>
-      <p class="text-lg leading-relaxed text-[var(--muted)]">
-        We will review your information and respond within a few business days with next steps or questions.
-      </p>
-      </div>
-    </div>
+<section id="thank-you-header" class="page-header">
+  <div class="header-content">
+    <h1>Thank You</h1>
+    <p class="description">Your application has been received.</p>
+    <p class="description">
+      We will review your information and respond within a few business days with next steps or questions.
+    </p>
   </div>
 </section>
 
-<!-- WHAT HAPPENS NEXT -->
 <section id="thank-you-next" class="w-full py-16">
   <div class="max-w-[1240px] mx-auto px-6">
     <div class="max-w-3xl space-y-4">
@@ -34,7 +28,6 @@ get_header();
   </div>
 </section>
 
-<!-- SUPPORT NOTE -->
 <section id="thank-you-support" class="w-full py-12">
   <div class="max-w-[1240px] mx-auto px-6">
     <div class="max-w-3xl space-y-3">
@@ -45,7 +38,6 @@ get_header();
   </div>
 </section>
 
-<!-- FOOTER NAVIGATION -->
 <section id="thank-you-footer" class="w-full pb-20">
   <div class="max-w-[1240px] mx-auto px-6">
     <div class="max-w-3xl flex items-center gap-6 text-sm uppercase tracking-[0.2em] text-[var(--muted)]">
@@ -56,3 +48,4 @@ get_header();
 </section>
 
 <?php get_footer(); ?>
+

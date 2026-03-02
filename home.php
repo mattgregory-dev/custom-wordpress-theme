@@ -65,33 +65,49 @@ $grid_query = new WP_Query(array(
 ));
 ?>
 
-<!-- HEADER / INTRO -->
-<section id="blog-header" class="w-full hero-band regular-page">
-  <div class="hero-content max-w-[1240px] mx-auto px-4 pb-[56px]">
-    <div class="pt-[84px] flex items-center">
-      <div class="max-w-3xl space-y-6">
-        <p class="label text-base uppercase tracking-[0.25em] text-[var(--muted)]">Journal</p>
-        <h1 class="text-5xl leading-tight"><?php echo esc_html($page_title ? $page_title : 'Blog'); ?></h1>
-        <p class="text-lg leading-relaxed text-[var(--muted)]"><?php echo esc_html($intro_copy); ?></p>
-        <?php if (!empty($categories)) : ?>
-          <div class="flex flex-wrap gap-3 pt-2">
-            <?php foreach ($categories as $category) : ?>
-              <a
-                class="mini-pill border border-slate-300 text-xs uppercase tracking-[0.2em] text-[var(--muted)]"
-                href="<?php echo esc_url(get_category_link($category)); ?>"
-              >
-                <?php echo esc_html($category->name); ?>
-              </a>
-            <?php endforeach; ?>
-          </div>
-        <?php endif; ?>
-      </div>
+
+<section id="blog-header" class="page-header">
+
+  <div class="header-content">
+
+    <div class="space-y-6">
+
+      <p class="label">Journal</p>
+
+      <h1><?php echo esc_html($page_title ? $page_title : 'Blog'); ?></h1>
+
+      <p class="description"><?php echo esc_html($intro_copy); ?></p>
+
+      <?php if (!empty($categories)) : ?>
+
+        <div class="flex flex-wrap gap-3 pt-2">
+
+          <?php foreach ($categories as $category) : ?>
+
+            <a
+              class="mini-pill border border-slate-300 text-xs uppercase tracking-[0.2em] text-[var(--muted)]"
+              href="<?php echo esc_url(get_category_link($category)); ?>"
+            >
+              <?php echo esc_html($category->name); ?>
+            </a>
+
+          <?php endforeach; ?>
+
+        </div>
+
+      <?php endif; ?>
+
     </div>
+
   </div>
 </section>
 
+
+
+
+
 <?php if ($paged === 1 && $featured_id) : ?>
-  <!-- FEATURED / HERO STORY -->
+
   <section id="featured-story" class="w-full py-16">
     <div class="max-w-[1240px] mx-auto px-6 space-y-8">
       <div class="flex items-end justify-between">
@@ -139,7 +155,7 @@ $grid_query = new WP_Query(array(
 <?php endif; ?>
 
 <?php if ($paged === 1 && !empty($highlight_posts)) : ?>
-  <!-- HIGHLIGHTS + ASIDE -->
+
   <section id="highlight-row" class="w-full py-10">
     <div class="max-w-[1240px] mx-auto px-6 grid grid-cols-[1.25fr_0.75fr] gap-10 items-start">
       <div class="space-y-6">
@@ -209,7 +225,8 @@ $grid_query = new WP_Query(array(
   </section>
 <?php endif; ?>
 
-<!-- MAIN GRID -->
+
+
 <section id="editorial-grid" class="w-full py-16">
   <div class="max-w-[1240px] mx-auto px-6 space-y-10">
     <div class="space-y-3">

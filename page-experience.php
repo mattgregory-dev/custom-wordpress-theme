@@ -1,40 +1,38 @@
 <?php
 /**
- * Template Name: Lumina Experience (Tailwind)
+ * Template Name: Experience
  */
 get_header( null, array('header_variant' => 'absolute') );
 ?>
 
+<section id="hero-header" class="page-header">
+  <div class="header-content">
+    <div class="grid grid-cols-2 gap-16 items-center">
 
-
-<section id="hero-header" class="w-full hero-band pb-10">
-  <div class="hero-content max-w-[1240px] mx-auto px-4 max-[1382px]:px-[6%]">
-    <div class="flex items-center">
-      <div class="w-full grid grid-cols-[1.05fr_0.95fr] gap-16 items-center">
       <div class="space-y-6">
-        <p class="label text-base uppercase tracking-[0.25em] text-[var(--muted)]">The ceremony</p>
-        <h1 class="text-5xl leading-tight">A guided return to what is already here.</h1>
-        <p class="text-lg leading-relaxed text-[var(--muted)]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi auctor, nibh at efficitur mollis, justo
-          turpis tincidunt lectus, in varius ligula lorem non nisl.
+
+        <p class="label">The ceremony</p>
+        <h1>A guided return to what is already here.</h1>
+        <p class="description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
+
         <div class="flex items-center gap-4 text-xs uppercase tracking-[0.2em] text-[var(--muted)]">
           <span class="mini-pill border border-slate-300">3 nights</span>
           <span class="mini-pill border border-slate-300">Small group</span>
           <span class="mini-pill border border-slate-300">Quiet setting</span>
         </div>
+
       </div>
+
       <div class="soft-shadow rounded-3xl border border-slate-300 bg-slate-200 h-[700px] w-full overflow-hidden">
         <img class="h-full w-full object-cover" src="/wp-content/uploads/sedona-cave-1.webp">
       </div>
-      </div>
+
     </div>
+
   </div>
 </section>
-
-
-
-
 
 <section id="orientation" class="w-full py-10">
   <div class="max-w-[1240px] mx-auto px-6">
@@ -61,8 +59,6 @@ get_header( null, array('header_variant' => 'absolute') );
   </div>
 </section>
 
-<!-- PHASES OF THE EXPERIENCE -->
-<!-- Layout intent: timeline with focused content panel -->
 <section id="phases" class="w-full py-20">
   <div class="max-w-[1240px] mx-auto px-6 space-y-10">
     <div class="max-w-3xl space-y-4">
@@ -128,8 +124,6 @@ get_header( null, array('header_variant' => 'absolute') );
   </div>
 </section>
 
-<!-- SHOWPIECE FULL-WIDTH SECTION -->
-<!-- Layout intent: high-contrast two-column with inset callout -->
 <section id="showpiece" class="w-full px-10">
   <div class="w-full band-dusk text-white py-24 rounded-2xl">
     <div class="max-w-[1240px] mx-auto px-6 grid grid-cols-[1.05fr_0.95fr] gap-16 items-center">
@@ -158,8 +152,6 @@ get_header( null, array('header_variant' => 'absolute') );
   </div>
 </section>
 
-<!-- WHAT IT CAN FEEL LIKE -->
-<!-- Layout intent: immersive card grid -->
 <section id="what-it-feels-like" class="w-full py-20">
   <div class="max-w-[1240px] mx-auto px-6 space-y-10">
     <div class="max-w-3xl space-y-4">
@@ -217,8 +209,6 @@ get_header( null, array('header_variant' => 'absolute') );
   </div>
 </section>
 
-<!-- SAFETY, SUPPORT, AND FACILITATION -->
-<!-- Layout intent: trustworthy split with support panel -->
 <section id="safety-support" class="w-full band-mist py-20">
   <div class="max-w-[1240px] mx-auto px-6 grid grid-cols-[1.05fr_0.95fr] gap-16 items-start">
     <div class="space-y-6">
@@ -255,8 +245,6 @@ get_header( null, array('header_variant' => 'absolute') );
   </div>
 </section>
 
-<!-- LOGISTICS AT A GLANCE -->
-<!-- Layout intent: concise grid of details -->
 <section id="logistics" class="w-full py-20">
   <div class="max-w-[1240px] mx-auto px-6 space-y-8">
     <div class="max-w-3xl space-y-3">
@@ -292,8 +280,6 @@ get_header( null, array('header_variant' => 'absolute') );
   </div>
 </section>
 
-<!-- CLOSING -->
-<!-- Layout intent: quiet, centered close -->
 <section id="closing" class="w-full py-20">
   <div class="max-w-[1240px] mx-auto px-6">
     <div class="mx-auto max-w-3xl text-center space-y-4">
@@ -307,3 +293,4 @@ get_header( null, array('header_variant' => 'absolute') );
 </section>
 
 <?php get_footer(); ?>
+

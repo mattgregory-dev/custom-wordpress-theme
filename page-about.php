@@ -1,29 +1,20 @@
 <?php
 /**
- * Template Name: Lumina About (Tailwind)
+ * Template Name: About
  */
 get_header();
 ?>
 
-<!-- Layout intent: centered intro with generous spacing -->
-<!-- HERO / ABOUT -->
-<section id="about-hero" class="w-full hero-band min-h-screen">
-  <div class="hero-content max-w-[1240px] mx-auto px-4 max-[1382px]:px-[6%]">
-    <div class="pt-[84px] min-h-screen flex items-center">
-      <div class="max-w-3xl space-y-6">
-        <p class="label text-base uppercase tracking-[0.25em] text-[var(--muted)]">About Lumina</p>
-        <h1 class="text-5xl leading-tight">A grounded space for real inner work.</h1>
-        <p class="text-lg leading-relaxed text-[var(--muted)]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dignissim, augue in interdum lacinia, eros
-          massa malesuada nibh, non sagittis erat lorem sed velit.
-        </p>
-      </div>
-    </div>
+<section id="about-hero" class="page-header">
+  <div class="header-content">
+    <p class="label">About Lumina</p>
+    <h1>A grounded space for real inner work.</h1>
+    <p class="description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </p>
   </div>
 </section>
 
-<!-- ORIGIN / WHY THIS EXISTS -->
-<!-- Layout intent: two-column with supporting image placeholder -->
 <section id="origin" class="w-full py-20">
   <div class="max-w-[1240px] mx-auto px-6 grid grid-cols-[1.05fr_0.95fr] gap-16 items-center">
     <div class="space-y-5">
@@ -46,8 +37,6 @@ get_header();
   </div>
 </section>
 
-<!-- GUIDING PHILOSOPHY / VALUES -->
-<!-- Layout intent: centered intro with three-column rhythm -->
 <section id="values" class="w-full py-20">
   <div class="max-w-[1240px] mx-auto px-6 space-y-10">
     <div class="mx-auto max-w-3xl text-center space-y-4">
@@ -82,8 +71,6 @@ get_header();
   </div>
 </section>
 
-<!-- FACILITATOR / STEWARD -->
-<!-- Layout intent: reversed two-column with larger image placeholder -->
 <section id="steward" class="w-full py-20">
   <div class="max-w-[1240px] mx-auto px-6 grid grid-cols-[0.95fr_1.05fr] gap-16 items-center">
     <div class="soft-shadow rounded-3xl border border-slate-300 bg-slate-200 h-[520px] w-full"></div>
@@ -105,8 +92,6 @@ get_header();
   </div>
 </section>
 
-<!-- HOW THIS DIFFERS -->
-<!-- Layout intent: single-column with subtle background contrast -->
 <section id="difference" class="w-full band-mist py-20">
   <div class="max-w-[1240px] mx-auto px-6">
     <div class="max-w-3xl space-y-6">
@@ -126,8 +111,6 @@ get_header();
   </div>
 </section>
 
-<!-- CLOSING / INVITATION -->
-<!-- Layout intent: minimal closing with generous spacing -->
 <section id="closing" class="w-full py-20">
   <div class="max-w-[1240px] mx-auto px-6">
     <div class="max-w-3xl space-y-4">
@@ -141,3 +124,4 @@ get_header();
 </section>
 
 <?php get_footer(); ?>
+

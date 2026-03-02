@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Thank You
+ * Template Name: TY Contact
  */
 get_header();
 ?>

@@ -1,25 +1,20 @@
 <?php
 /**
- * Template Name: Lumina FAQ (Tailwind)
+ * Template Name: FAQ
  */
 get_header();
 ?>
 
-<!-- PAGE HEADER -->
-<section id="faq-header" class="w-full hero-band regular-page">
-  <div class="hero-content max-w-[1240px] mx-auto px-4 pb-[56px]">
-    <div class="pt-[84px] flex items-center">
-      <div class="max-w-3xl space-y-4">
-      <h1 class="text-5xl leading-tight">Frequently Asked Questions</h1>
-      <p class="text-lg leading-relaxed text-[var(--muted)]">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet neque ut nulla posuere vehicula.
-      </p>
-      </div>
-    </div>
+<section id="faq-header" class="page-header">
+  <div class="header-content">
+    <h1>Frequently Asked Questions</h1>
+    <p class="description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </p>
   </div>
 </section>
 
-<!-- TOP NAV -->
+
 <section id="faq-topics" class="w-full py-8">
   <div class="max-w-[1240px] mx-auto px-6">
     <div class="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.2em] text-[var(--muted)]">
@@ -34,7 +29,6 @@ get_header();
   </div>
 </section>
 
-<!-- FAQ GROUP: THE RETREAT -->
 <section id="topic-retreat" class="w-full py-16">
   <div class="max-w-[1240px] mx-auto px-6 space-y-8">
     <h2 class="text-4xl leading-tight">The Retreat</h2>
@@ -71,7 +65,6 @@ get_header();
   </div>
 </section>
 
-<!-- FAQ GROUP: PREPARATION -->
 <section id="topic-preparation" class="w-full py-16">
   <div class="max-w-[1240px] mx-auto px-6 space-y-8">
     <h2 class="text-4xl leading-tight">Preparation</h2>
@@ -108,7 +101,6 @@ get_header();
   </div>
 </section>
 
-<!-- FAQ GROUP: THE CEREMONY -->
 <section id="topic-ceremony" class="w-full py-16">
   <div class="max-w-[1240px] mx-auto px-6 space-y-8">
     <h2 class="text-4xl leading-tight">The Ceremony</h2>
@@ -145,7 +137,6 @@ get_header();
   </div>
 </section>
 
-<!-- FAQ GROUP: AFTERCARE -->
 <section id="topic-aftercare" class="w-full py-16">
   <div class="max-w-[1240px] mx-auto px-6 space-y-8">
     <h2 class="text-4xl leading-tight">Aftercare</h2>
@@ -182,7 +173,6 @@ get_header();
   </div>
 </section>
 
-<!-- FAQ GROUP: SAFETY -->
 <section id="topic-safety" class="w-full py-16">
   <div class="max-w-[1240px] mx-auto px-6 space-y-8">
     <h2 class="text-4xl leading-tight">Safety</h2>
@@ -219,7 +209,6 @@ get_header();
   </div>
 </section>
 
-<!-- FAQ GROUP: LOGISTICS -->
 <section id="topic-logistics" class="w-full py-16">
   <div class="max-w-[1240px] mx-auto px-6 space-y-8">
     <h2 class="text-4xl leading-tight">Logistics</h2>
@@ -256,7 +245,6 @@ get_header();
   </div>
 </section>
 
-<!-- FAQ GROUP: PAYMENT -->
 <section id="topic-payment" class="w-full py-16">
   <div class="max-w-[1240px] mx-auto px-6 space-y-8">
     <h2 class="text-4xl leading-tight">Payment</h2>
@@ -293,7 +281,6 @@ get_header();
   </div>
 </section>
 
-<!-- STILL HAVE QUESTIONS -->
 <section id="faq-close" class="w-full py-20">
   <div class="max-w-[1240px] mx-auto px-6">
     <div class="mx-auto max-w-3xl text-center space-y-4">
@@ -309,3 +296,4 @@ get_header();
 </section>
 
 <?php get_footer(); ?>
+

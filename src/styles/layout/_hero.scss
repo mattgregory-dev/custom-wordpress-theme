@@ -12,7 +12,6 @@
   background-position: center;
 }
 
-/* Making this with fixed position adds texture to the background */
 .preparation-band {
   position: relative;
   overflow: hidden;
@@ -54,6 +53,7 @@
     pointer-events: none;
     background-image: url("#{$theme-root}/images/background.webp");
     background-size: cover;
+    z-index: -1;
   }
   // &::after {
   //   content: "";
@@ -64,13 +64,13 @@
   //   pointer-events: none;
   //   top: 133px;
   // }
-  &.regular-page {
-    min-height: unset;
-    padding-top: 100px;
-    &::after {
-      display: none;
-    }
-  }
+  // &.regular-page {
+  //   min-height: unset;
+  //   padding-top: 100px;
+  //   &::after {
+  //     display: none;
+  //   }
+  // }
   .hero-content {
     position: relative;
     z-index: 1;
@@ -79,5 +79,34 @@
 @media (max-width: 920px) {
   .home .hero-band::after {
     display: none;
+  }
+}
+
+.page-header {
+  background-image: url("#{$theme-root}/images/background.webp");
+  background-size: cover;
+  .header-content {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 70px 18px;
+    .label {
+      font-size: 16px;
+      text-transform: uppercase;
+      line-height: 1.5em;
+      color: var(--muted);
+      letter-spacing: 4px;
+      &::before {
+        filter: grayscale(100%) brightness(70%) contrast(110%);
+      }
+    }
+    h1 {
+      font-size: 48px;
+      line-height: 1.3em;
+    }
+    .description {
+      font-size: 18px;
+      line-height: 1.6em;
+      color: var(--muted);
+    }
   }
 }

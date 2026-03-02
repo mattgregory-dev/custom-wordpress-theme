@@ -1,32 +1,27 @@
 <?php
 /**
- * Template Name: Lumina Application (Tailwind)
+ * Template Name: Application
  */
 get_header();
 ?>
 
-<!-- PAGE HEADER -->
-<section id="application-header" class="w-full hero-band regular-page">
-  <div class="hero-content max-w-[1240px] mx-auto px-4 pb-[56px]">
-    <div class="pt-[84px] flex items-center">
-      <div class="max-w-3xl space-y-4">
-        <h1 class="text-5xl leading-tight">Retreat Application</h1>
-        <p class="text-lg leading-relaxed text-[var(--muted)]">
-          This is a prescreen application for retreat consideration. This application takes about 10-15 minutes to
-          complete.
-        </p>
-        <p class="text-sm text-[var(--muted)]">Fields marked with * are required.</p>
-      </div>
-    </div>
+<section id="application-header" class="page-header">
+  <div class="header-content">
+    <p class="label">Getting to know you</p>
+    <h1>Retreat Application</h1>
+    <p class="description">
+      This is a prescreen application for retreat consideration. This application takes about 10-15 minutes to
+      complete.
+    </p>
+    <p class="text-sm text-[var(--muted)]">Fields marked with * are required.</p>
   </div>
 </section>
 
-<!-- FORM CONTAINER -->
 <section id="application-form" class="w-full py-20">
   <div class="max-w-[1240px] mx-auto px-6">
     <div class="max-w-4xl">
       <form action="#" method="post" class="soft-shadow rounded-3xl border border-slate-300 bg-white/95 p-10 space-y-10">
-        <!-- BASIC INFORMATION -->
+        
         <fieldset class="space-y-6">
           <legend class="text-2xl">Basic information</legend>
           <div class="grid grid-cols-2 gap-6">
@@ -129,7 +124,7 @@ get_header();
           </label>
         </fieldset>
 
-        <!-- RETREAT INTEREST -->
+        
         <fieldset class="space-y-6">
           <legend class="text-2xl">Retreat interest</legend>
           <label class="space-y-2 text-sm uppercase tracking-[0.2em] text-[var(--muted)]">
@@ -179,7 +174,7 @@ get_header();
           </label>
         </fieldset>
 
-        <!-- HEALTH & SAFETY -->
+        
         <fieldset class="space-y-6">
           <legend class="text-2xl">Health and safety</legend>
           <div class="space-y-3">
@@ -237,7 +232,7 @@ get_header();
           </div>
         </fieldset>
 
-        <!-- SUPPORT & PREPARATION -->
+        
         <fieldset class="space-y-6">
           <legend class="text-2xl">Support and preparation</legend>
           <label class="space-y-2 text-sm uppercase tracking-[0.2em] text-[var(--muted)]">
@@ -260,7 +255,7 @@ get_header();
           </label>
         </fieldset>
 
-        <!-- LOGISTICS -->
+        
         <fieldset class="space-y-6">
           <legend class="text-2xl">Logistics</legend>
           <div class="space-y-3">
@@ -307,7 +302,7 @@ get_header();
           </div>
         </fieldset>
 
-        <!-- AGREEMENTS -->
+        
         <fieldset class="space-y-4">
           <legend class="text-2xl">Agreements</legend>
           <label class="flex items-start gap-3 text-sm text-[var(--muted)]">
@@ -324,7 +319,7 @@ get_header();
           </label>
         </fieldset>
 
-        <!-- SUBMIT FOOTER -->
+        
         <div class="border-t border-slate-300 pt-6 space-y-4">
           <div class="flex items-center gap-4">
             <button
@@ -348,3 +343,4 @@ get_header();
 </section>
 
 <?php get_footer(); ?>
+

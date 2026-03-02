@@ -1,12 +1,21 @@
 <?php
 /**
- * Template Name: Lumina Contact (Tailwind)
+ * Template Name: Contact
  */
 get_header();
 ?>
 
-<!-- PAGE HEADER -->
-<section id="contact-header" class="w-full hero-band regular-page">
+<section id="about-hero" class="page-header">
+  <div class="header-content">
+    <p class="label">Leave us a message</p>
+    <h1>Contact</h1>
+    <p class="description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </p>
+  </div>
+</section>
+
+<section id="contact-header" class="w-full hero-band regular-page hidden">
   <div class="hero-content max-w-[1240px] mx-auto px-4 pb-[56px]">
     <div class="pt-[84px] flex items-center">
       <div class="max-w-3xl space-y-4">
@@ -19,7 +28,6 @@ get_header();
   </div>
 </section>
 
-<!-- MAIN CONTENT -->
 <section id="contact-main" class="w-full py-20">
   <div class="max-w-[1240px] mx-auto px-6 grid grid-cols-[1.1fr_0.9fr] gap-16 items-start">
     <div class="soft-shadow rounded-3xl border border-slate-300 bg-white/95 p-8">
@@ -115,7 +123,6 @@ get_header();
   </div>
 </section>
 
-<!-- FOOTNOTE -->
 <section id="contact-footnote" class="w-full pb-20">
   <div class="max-w-[1240px] mx-auto px-6">
     <p class="text-sm text-[var(--muted)]">We typically respond within 2–3 business days.</p>
@@ -123,3 +130,4 @@ get_header();
 </section>
 
 <?php get_footer(); ?>
+

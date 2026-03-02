@@ -1,33 +1,28 @@
 <?php
 /**
- * Template Name: Lumina Retreats (Tailwind)
+ * Template Name: Retreats
  */
 get_header();
 ?>
 
-<!-- HERO / RETREATS -->
-<!-- Layout intent: two-column hero with strong product emphasis -->
-<section id="retreats-hero" class="w-full hero-band min-h-screen">
-  <div class="hero-content max-w-[1240px] mx-auto px-4 max-[1382px]:px-[6%]">
-    <div class="pt-[84px] min-h-screen flex items-center">
-      <div class="w-full grid grid-cols-[1.05fr_0.95fr] gap-16 items-center">
+<section id="retreats-hero" class="page-header">
+
+  <div class="header-content">
+
+    <div class="grid grid-cols-2 gap-16 items-center">
+
       <div class="space-y-6">
-        <p class="label text-base uppercase tracking-[0.25em] text-[var(--muted)]">Retreats</p>
-        <h1 class="text-5xl leading-tight">Immersive retreats held with care and clarity.</h1>
-        <p class="text-lg leading-relaxed text-[var(--muted)]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer mattis, erat sed sodales suscipit, lorem
-          nibh pulvinar ligula, nec convallis risus elit ut orci.
+        <p class="label">Retreats</p>
+        <h1>Immersive retreats held with care and clarity.</h1>
+        <p class="description">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </p>
         <div class="flex items-center gap-4 pt-2">
-          <a
-              class="btn rounded-full bg-[var(--sage)] px-6 py-3 text-sm uppercase tracking-[0.25em] text-[var(--ink)]"
-              href="#retreat-list">
-              View Upcoming Retreats
+          <a class="btn rounded-full bg-[var(--sage)] px-6 py-3 text-sm uppercase tracking-[0.25em] text-[var(--ink)]" href="#retreat-list">
+            View Upcoming Retreats
           </a>
-          <a
-              class="btn btn--white rounded-full border border-slate-300 bg-white/70 px-6 py-3 text-sm uppercase tracking-[0.25em]"
-              href="#">
-              Apply
+          <a class="btn btn--white rounded-full border border-slate-300 bg-white/70 px-6 py-3 text-sm uppercase tracking-[0.25em]" href="#">
+            Apply
           </a>
         </div>
         <div class="flex items-center gap-4 text-xs uppercase tracking-[0.2em] text-[var(--muted)]">
@@ -36,16 +31,16 @@ get_header();
           <span class="mini-pill border border-slate-300">Aftercare</span>
         </div>
       </div>
+
       <div class="soft-shadow rounded-3xl border border-slate-300 bg-slate-200 h-[520px] w-full overflow-hidden">
         <img class="h-full w-full object-cover" src="/wp-content/uploads/sedona-7.webp">
       </div>
-      </div>
+
     </div>
+
   </div>
 </section>
 
-<!-- UPCOMING RETREATS -->
-<!-- Layout intent: product listing with filters and premium cards -->
 <section id="retreat-list" class="w-full py-20">
   <div class="max-w-[1240px] mx-auto px-6 space-y-10">
     <div class="flex items-end justify-between">
@@ -154,8 +149,6 @@ get_header();
   </div>
 </section>
 
-<!-- WHAT'S INCLUDED -->
-<!-- Layout intent: clear value grid + signature inclusion -->
 <section id="included" class="w-full py-20">
   <div class="max-w-[1240px] mx-auto px-6 space-y-10">
     <div class="max-w-3xl space-y-4">
@@ -202,8 +195,6 @@ get_header();
   </div>
 </section>
 
-<!-- SHOWPIECE FULL-WIDTH SECTION -->
-<!-- Layout intent: premium contrast with collage + callout -->
 <section id="showpiece" class="w-full px-10">
   <div class="w-full band-dusk text-white py-24 rounded-2xl">
     <div class="max-w-[1240px] mx-auto px-6 grid grid-cols-[1.05fr_0.95fr] gap-16 items-center">
@@ -245,8 +236,6 @@ get_header();
   </div>
 </section>
 
-<!-- WHO IT'S FOR -->
-<!-- Layout intent: fit framing with supportive panel -->
 <section id="fit" class="w-full band-mist py-20">
   <div class="max-w-[1240px] mx-auto px-6 grid grid-cols-[1.05fr_0.95fr] gap-16 items-start">
     <div class="space-y-6">
@@ -278,8 +267,6 @@ get_header();
   </div>
 </section>
 
-<!-- RETREAT FORMAT -->
-<!-- Layout intent: practical schedule snapshot -->
 <section id="format" class="w-full py-20">
   <div class="max-w-[1240px] mx-auto px-6 grid grid-cols-[1.05fr_0.95fr] gap-16 items-start">
     <div class="space-y-6">
@@ -317,8 +304,6 @@ get_header();
   </div>
 </section>
 
-<!-- PRICING / APPLY -->
-<!-- Layout intent: clear conversion cards -->
 <section id="pricing" class="w-full py-20">
   <div class="max-w-[1240px] mx-auto px-6 space-y-10">
     <div class="max-w-3xl space-y-4">
@@ -381,8 +366,6 @@ get_header();
   </div>
 </section>
 
-<!-- FAQ -->
-<!-- Layout intent: static accordion grid -->
 <section id="faq" class="w-full py-20">
   <div class="max-w-[1240px] mx-auto px-6 space-y-10">
     <div class="max-w-3xl space-y-3">
@@ -418,8 +401,6 @@ get_header();
   </div>
 </section>
 
-<!-- CLOSING -->
-<!-- Layout intent: calm close with CTA row -->
 <section id="closing" class="w-full py-20">
   <div class="max-w-[1240px] mx-auto px-6">
     <div class="mx-auto max-w-3xl text-center space-y-6">
@@ -445,3 +426,4 @@ get_header();
 </section>
 
 <?php get_footer(); ?>
+

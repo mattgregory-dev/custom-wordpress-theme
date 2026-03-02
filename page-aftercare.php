@@ -1,31 +1,45 @@
 <?php
 /**
- * Template Name: Lumina Aftercare (Tailwind)
+ * Template Name: Aftercare
  */
 get_header();
 ?>
 
-<!-- HERO / AFTERCARE -->
-<!-- Layout intent: two-column hero with aftercare panel -->
-<section id="aftercare-hero" class="w-full hero-band min-h-screen">
-  <div class="hero-content max-w-[1240px] mx-auto px-4 max-[1382px]:px-[6%]">
-    <div class="pt-[84px] min-h-screen flex items-center">
-      <div class="w-full grid grid-cols-[1.05fr_0.95fr] gap-16 items-center">
+<section id="aftercare-hero" class="page-header">
+
+  <div class="header-content">
+
+    <div class="grid grid-cols-2 gap-16 items-center">
+
       <div class="space-y-6">
-        <p class="label text-base uppercase tracking-[0.25em] text-[var(--muted)]">Aftercare</p>
-        <h1 class="text-5xl leading-tight">The ceremony ends. Support continues.</h1>
-        <p class="text-lg leading-relaxed text-[var(--muted)]">
+
+        <p class="label">Aftercare</p>
+
+        <h1>The ceremony ends. Support continues.</h1>
+
+        <p class="description">
+
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dictum felis non nisi luctus, ac
           pharetra risus ultricies. In at enim ut sem eleifend pulvinar.
+
         </p>
+
         <div class="flex items-center gap-4 text-xs uppercase tracking-[0.2em] text-[var(--muted)]">
+
           <span class="mini-pill border border-slate-300">6 weeks</span>
+
           <span class="mini-pill border border-slate-300">Check-ins</span>
+
           <span class="mini-pill border border-slate-300">Steady support</span>
+
         </div>
+
       </div>
+
       <div class="soft-shadow rounded-3xl bg-white/95 p-8 space-y-4">
+
         <p class="label text-base uppercase tracking-[0.25em] text-[var(--muted)]">Aftercare includes</p>
+
         <div class="space-y-3 text-[var(--muted)]">
           <div class="space-y-1">
             <p class="text-sm uppercase tracking-[0.2em]">Check-ins</p>
@@ -44,14 +58,16 @@ get_header();
             <p class="text-lg">Lorem ipsum dolor sit amet.</p>
           </div>
         </div>
+
       </div>
-      </div>
+
     </div>
+
+
   </div>
 </section>
 
-<!-- WHY INTEGRATION MATTERS -->
-<!-- Layout intent: centered reassurance -->
+
 <section id="why-integration" class="w-full py-20">
   <div class="max-w-[1240px] mx-auto px-6">
     <div class="mx-auto max-w-3xl text-center space-y-6">
@@ -71,8 +87,6 @@ get_header();
   </div>
 </section>
 
-<!-- THE INTEGRATION ARC -->
-<!-- Layout intent: three-phase structure with note -->
 <section id="integration-arc" class="w-full pt-10 pb-24">
   <div class="max-w-[1240px] mx-auto px-6 space-y-10">
     <div class="max-w-3xl space-y-4">
@@ -126,8 +140,6 @@ get_header();
   </div>
 </section>
 
-<!-- SHOWPIECE FULL-WIDTH SECTION -->
-<!-- Layout intent: strong contrast with support modalities -->
 <section id="showpiece" class="w-full px-10">
   <div class="w-full band-dusk text-white py-24 rounded-2xl">
     <div class="max-w-[1240px] mx-auto px-6 grid grid-cols-[1.05fr_0.95fr] gap-16 items-center">
@@ -168,8 +180,6 @@ get_header();
   </div>
 </section>
 
-<!-- PRACTICES THAT HELP -->
-<!-- Layout intent: scannable practice grid -->
 <section id="practices" class="w-full py-20">
   <div class="max-w-[1240px] mx-auto px-6 space-y-10">
     <div class="max-w-3xl space-y-4">
@@ -208,8 +218,6 @@ get_header();
   </div>
 </section>
 
-<!-- WHEN TO REACH OUT -->
-<!-- Layout intent: supportive split with panel -->
 <section id="reach-out" class="w-full band-mist py-20">
   <div class="max-w-[1240px] mx-auto px-6 grid grid-cols-[1.05fr_0.95fr] gap-16 items-start">
     <div class="space-y-6">
@@ -239,8 +247,6 @@ get_header();
   </div>
 </section>
 
-<!-- FAQ -->
-<!-- Layout intent: static accordion grid -->
 <section id="faq" class="w-full py-20">
   <div class="max-w-[1240px] mx-auto px-6 space-y-10">
     <div class="max-w-3xl space-y-3">
@@ -276,8 +282,6 @@ get_header();
   </div>
 </section>
 
-<!-- CLOSING -->
-<!-- Layout intent: calm, centered close -->
 <section id="closing" class="w-full py-20">
   <div class="max-w-[1240px] mx-auto px-6">
     <div class="mx-auto max-w-3xl text-center space-y-4">
@@ -291,3 +295,4 @@ get_header();
 </section>
 
 <?php get_footer(); ?>
+
