@@ -130,7 +130,6 @@
       }
     }
   }
-
   .cwp-header-absolute {
     .header-menu-area {
       background-color: unset;
@@ -166,17 +165,6 @@
       }
     }
   }
-
-  .cwp-header-absolute {
-    .header-menu-area {
-      .logo-group {
-        img {
-          filter: invert(1);
-        }
-      }
-    }
-  }
-
   .ibt-btn.ibt-btn-outline {
     color: var(--white) !important;
   }
@@ -253,6 +241,9 @@
     button {
       color: var(--white) !important;
     }
+  }
+  .page-header {
+    background-image: none;
   }
 
   input[type="text"],

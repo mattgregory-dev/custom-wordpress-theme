@@ -30,7 +30,7 @@ get_header(
 
       </div>
 
-      <div class="soft-shadow rounded-3xl border border-slate-300 bg-slate-200 h-[700px] w-full overflow-hidden">
+      <div class="soft-shadow rounded-3xl h-[700px] w-full overflow-hidden">
         <img class="h-full w-full object-cover" src="/wp-content/uploads/sedona-cave-1.webp">
       </div>
 
@@ -250,8 +250,7 @@ get_header(
 
 
 
-<!-- ROLE OF THE MEDICINE -->
-<!-- Layout intent: two-column with circular mask visual -->
+
 <section id="experience" class="w-full pt-14 pb-14">
   <div class="max-w-[1240px] mx-auto px-6 grid grid-cols-1 gap-10 items-start lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
     <div class="space-y-5 flex flex-col justify-center content-center h-full">
@@ -267,16 +266,15 @@ get_header(
       <p class="accent text-xl text-[var(--muted)]">Awareness does not advertise itself.</p>
     </div>
     <div class="relative">
-      <!-- Masked image treatment with goddess artwork -->
-        <div class="soft-shadow rounded-3xl bg-white/90">
-          <div class="image-mask h-[700px] w-full overflow-hidden">
-            <img
-              src="/wp-content/uploads/ceremony.webp"
-              alt="Goddess holding a ceremonial cup"
-              class="h-full w-full object-cover"
-            />
-          </div>
+      <div class="soft-shadow">
+        <div class="h-[700px] w-full">
+          <img
+            src="/wp-content/uploads/ceremony.webp"
+            alt="Goddess holding a ceremonial cup"
+            class="h-full w-full object-cover rounded-3xl"
+          />
         </div>
+      </div>
     </div>
   </div>
 </section>
@@ -285,8 +283,6 @@ get_header(
 
 
 
-<!-- WHAT IT CAN FEEL LIKE -->
-<!-- Layout intent: centered heading + 3-card grid -->
 <section id="feel" class="w-full pt-14 pb-20">
   <div class="max-w-[1240px] mx-auto px-6 space-y-12">
     <div class="text-center space-y-4">
@@ -320,8 +316,7 @@ get_header(
 
 
 
-<!-- PREPARATION + RESPONSIBILITY -->
-<!-- Layout intent: dark band with checklist card -->
+
 <section id="preparation" class="w-full px-4 sm:px-6 lg:px-10">
   <div class="w-full band-dusk text-white preparation-band py-20 rounded-2xl">
     <div class="max-w-[1240px] mx-auto px-6 grid grid-cols-1 gap-10 items-start lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
@@ -348,8 +343,7 @@ get_header(
 </section>
 
 
-<!-- RETREAT PATHWAYS -->
-<!-- Layout intent: four-card grid + pill -->
+
 <section id="retreats" class="w-full pt-20 pb-14">
   <div class="max-w-[1240px] mx-auto px-6 space-y-10">
     <div class="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-end">
@@ -392,18 +386,16 @@ get_header(
 
 
 
-<!-- ABOUT -->
-<!-- Layout intent: asymmetrical two-column with image + values -->
-<!-- band-mist -->
+
 <section id="about" class="w-full pt-14 pb-14">
   <div class="max-w-[1240px] mx-auto px-6 grid grid-cols-1 gap-10 items-center lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
     <div class="relative">
-      <div class="soft-shadow relative z-10 rounded-[260px_260px_28px_28px] bg-white/90">
-        <div class="image-mask h-[700px] w-full rounded-[260px_260px_28px_28px] overflow-hidden">
+      <div class="soft-shadow relative z-10">
+        <div class="h-[700px] w-full overflow-hidden">
           <img
             src="/wp-content/uploads/sedona.webp"
             alt="Portrait in soft light"
-            class="h-full w-full object-cover"
+            class="h-full w-full object-cover rounded-3xl"
           />
         </div>
       </div>

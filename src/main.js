@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import Lenis from 'lenis';
+//import Lenis from 'lenis';
 
 //////////////////////////////////////////
 /////// START DEV ENV ASSET FIX //////////
@@ -132,82 +132,84 @@ const ayaMotifSVGDraw = () => {
 };
 
 // Lenis smooth scrolling with GSAP ticker integration.
-const LenisScroll = {
-  setupLenis() {
-    const lenis = new Lenis({
-      duration: 2.8,
-      easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
-      direction: "vertical",
-      gestureDirection: "vertical",
-      smooth: true,
-      mouseMultiplier: 0.8,
-      smoothTouch: false,
-      touchMultiplier: 1.5,
-      infinite: false,
-      orientation: "vertical",
-      lerp: 0.05,
-      wheelEventsTarget: document.body,
-    });
-
-    this.lenis = lenis;
-
-    lenis.on("scroll", ScrollTrigger.update);
-
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
-    });
-
-    gsap.ticker.lagSmoothing(0);
-
-    lenis.on("scroll", () => {});
-
-    const stopElements = document.querySelectorAll("[data-lenis-prevent]");
-    stopElements.forEach((el) => {
-      el.addEventListener("wheel", (e) => {
-        e.stopPropagation();
+/*
+  const LenisScroll = {
+    setupLenis() {
+      const lenis = new Lenis({
+        duration: 2.8,
+        easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+        direction: "vertical",
+        gestureDirection: "vertical",
+        smooth: true,
+        mouseMultiplier: 0.8,
+        smoothTouch: false,
+        touchMultiplier: 1.5,
+        infinite: false,
+        orientation: "vertical",
+        lerp: 0.05,
+        wheelEventsTarget: document.body,
       });
-    });
-  },
 
-  init() {
-    const self = this;
+      this.lenis = lenis;
 
-    setTimeout(() => {
-      if (
-        typeof Lenis !== "function" ||
-        typeof gsap === "undefined" ||
-        typeof ScrollTrigger === "undefined"
-      ) {
-        console.error("Lenis library not loaded. Check your install.");
-        return;
+      lenis.on("scroll", ScrollTrigger.update);
+
+      gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+      });
+
+      gsap.ticker.lagSmoothing(0);
+
+      lenis.on("scroll", () => {});
+
+      const stopElements = document.querySelectorAll("[data-lenis-prevent]");
+      stopElements.forEach((el) => {
+        el.addEventListener("wheel", (e) => {
+          e.stopPropagation();
+        });
+      });
+    },
+
+    init() {
+      const self = this;
+
+      setTimeout(() => {
+        if (
+          typeof Lenis !== "function" ||
+          typeof gsap === "undefined" ||
+          typeof ScrollTrigger === "undefined"
+        ) {
+          console.error("Lenis library not loaded. Check your install.");
+          return;
+        }
+
+        self.setupLenis();
+      }, 0);
+    },
+
+    getInstance() {
+      return this.lenis;
+    },
+
+    stop() {
+      if (this.lenis) {
+        this.lenis.stop();
       }
+    },
 
-      self.setupLenis();
-    }, 0);
-  },
+    start() {
+      if (this.lenis) {
+        this.lenis.start();
+      }
+    },
 
-  getInstance() {
-    return this.lenis;
-  },
-
-  stop() {
-    if (this.lenis) {
-      this.lenis.stop();
-    }
-  },
-
-  start() {
-    if (this.lenis) {
-      this.lenis.start();
-    }
-  },
-
-  scrollTo(target, options = {}) {
-    if (this.lenis) {
-      this.lenis.scrollTo(target, options);
-    }
-  },
-};
+    scrollTo(target, options = {}) {
+      if (this.lenis) {
+        this.lenis.scrollTo(target, options);
+      }
+    },
+  };
+*/
 
 // Scroll-to-top button behavior.
 const scrollToTop = () => {
@@ -219,10 +221,10 @@ const scrollToTop = () => {
   });
 
   scrollBtn.addEventListener("click", () => {
-    if (LenisScroll.getInstance()) {
-      LenisScroll.scrollTo(0, { duration: 1.2 });
-      return;
-    }
+    // if (LenisScroll.getInstance()) {
+    //   LenisScroll.scrollTo(0, { duration: 1.2 });
+    //   return;
+    // }
 
     window.scrollTo({
       top: 0,
@@ -232,42 +234,44 @@ const scrollToTop = () => {
 };
 
 // CWP original back to the top.
-// const backToTop = () => {
-//   if (document.querySelector(".back-to-top")) return;
+/*
+  const backToTop = () => {
+    if (document.querySelector(".back-to-top")) return;
 
-//   const button = document.createElement("button");
-//   button.type = "button";
-//   button.className = "back-to-top";
-//   button.setAttribute("aria-label", "Back to top");
-//   const icon = document.createElement("span");
-//   icon.setAttribute("aria-hidden", "true");
-//   icon.textContent = "\u2191";
-//   button.appendChild(icon);
-//   document.body.appendChild(button);
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "back-to-top";
+    button.setAttribute("aria-label", "Back to top");
+    const icon = document.createElement("span");
+    icon.setAttribute("aria-hidden", "true");
+    icon.textContent = "\u2191";
+    button.appendChild(icon);
+    document.body.appendChild(button);
 
-//   const threshold = 600;
-//   let ticking = false;
+    const threshold = 600;
+    let ticking = false;
 
-//   const updateVisibility = () => {
-//     button.classList.toggle("is-visible", window.scrollY > threshold);
-//     ticking = false;
-//   };
+    const updateVisibility = () => {
+      button.classList.toggle("is-visible", window.scrollY > threshold);
+      ticking = false;
+    };
 
-//   const onScroll = () => {
-//     if (ticking) return;
-//     ticking = true;
-//     window.requestAnimationFrame(updateVisibility);
-//   };
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(updateVisibility);
+    };
 
-//   updateVisibility();
-//   window.addEventListener("scroll", onScroll, { passive: true });
+    updateVisibility();
+    window.addEventListener("scroll", onScroll, { passive: true });
 
-//   button.addEventListener("click", () => {
-//     const reduceMotion = window.matchMedia &&
-//       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-//     window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
-//   });
-// };
+    button.addEventListener("click", () => {
+      const reduceMotion = window.matchMedia &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+    });
+  };
+*/
 
 // Sticky header class toggling.
 const stickyHeader = () => {
@@ -305,46 +309,48 @@ const preloader = () => {
 };
 
 // Parallax effects for hero/section images.
-// const aeroParallax = () => {
-//   const parallaxSections = document.querySelectorAll(
-//     ".contact-banner3, .newsletter-banner, .video-banner4"
-//   );
-//   if (!parallaxSections.length) return;
+/*
+  const aeroParallax = () => {
+    const parallaxSections = document.querySelectorAll(
+      ".contact-banner3, .newsletter-banner, .video-banner4"
+    );
+    if (!parallaxSections.length) return;
 
-//   const speed = 0.2;
-//   let ticking = false;
+    const speed = 0.2;
+    let ticking = false;
 
-//   const updateParallax = () => {
-//     const scrollTop = window.scrollY || window.pageYOffset;
+    const updateParallax = () => {
+      const scrollTop = window.scrollY || window.pageYOffset;
 
-//     parallaxSections.forEach((section) => {
-//       const img = section.querySelector(".parallax-img");
-//       if (!img) return;
+      parallaxSections.forEach((section) => {
+        const img = section.querySelector(".parallax-img");
+        if (!img) return;
 
-//       const sectionTop = section.offsetTop;
-//       const sectionHeight = section.offsetHeight;
-//       const distance = scrollTop - sectionTop;
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const distance = scrollTop - sectionTop;
 
-//       if (distance >= -window.innerHeight && distance <= sectionHeight) {
-//         img.style.transform = `translateY(${distance * speed}px)`;
-//       }
-//     });
+        if (distance >= -window.innerHeight && distance <= sectionHeight) {
+          img.style.transform = `translateY(${distance * speed}px)`;
+        }
+      });
 
-//     ticking = false;
-//   };
+      ticking = false;
+    };
 
-//   const onScroll = () => {
-//     if (ticking) return;
-//     ticking = true;
-//     window.requestAnimationFrame(updateParallax);
-//   };
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(updateParallax);
+    };
 
-//   window.addEventListener("scroll", onScroll, { passive: true });
-//   updateParallax();
-// };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    updateParallax();
+  };
+*/
 
 // Dark/light theme toggle logic.
-/*
+
   const themeToggle = () => {
     const body = document.body;
     const themeBtn = document.getElementById("themeBtn");
@@ -385,68 +391,72 @@ const preloader = () => {
       });
     });
   };
-*/
+
 
 // Search popup open/close controls.
-// const searchPopup = () => {
-//   document.addEventListener("click", (event) => {
-//     const target = event.target;
-//     if (target.matches(".popup-search") || target.closest(".popup-search")) {
-//       event.preventDefault();
-//       const button = target.matches(".popup-search")
-//         ? target
-//         : target.closest(".popup-search");
-//       const popupId = button.getAttribute("data-popup");
-//       const popup = document.querySelector(
-//         `.search-popup[data-popup="${popupId}"]`
-//       );
-//       if (popup) {
-//         popup.classList.add("active");
-//       }
-//     }
-//   });
+/*
+  const searchPopup = () => {
+    document.addEventListener("click", (event) => {
+      const target = event.target;
+      if (target.matches(".popup-search") || target.closest(".popup-search")) {
+        event.preventDefault();
+        const button = target.matches(".popup-search")
+          ? target
+          : target.closest(".popup-search");
+        const popupId = button.getAttribute("data-popup");
+        const popup = document.querySelector(
+          `.search-popup[data-popup="${popupId}"]`
+        );
+        if (popup) {
+          popup.classList.add("active");
+        }
+      }
+    });
 
-//   document.addEventListener("click", (event) => {
-//     const target = event.target;
-//     if (target.matches(".close-popup") || target.closest(".close-popup")) {
-//       const closeBtn = target.matches(".close-popup")
-//         ? target
-//         : target.closest(".close-popup");
-//       const popup = closeBtn.closest(".search-popup");
-//       if (popup) {
-//         popup.classList.remove("active");
-//       }
-//     } else if (target.matches(".search-popup")) {
-//       target.classList.remove("active");
-//     }
-//   });
+    document.addEventListener("click", (event) => {
+      const target = event.target;
+      if (target.matches(".close-popup") || target.closest(".close-popup")) {
+        const closeBtn = target.matches(".close-popup")
+          ? target
+          : target.closest(".close-popup");
+        const popup = closeBtn.closest(".search-popup");
+        if (popup) {
+          popup.classList.remove("active");
+        }
+      } else if (target.matches(".search-popup")) {
+        target.classList.remove("active");
+      }
+    });
 
-//   // No capture-phase listener needed; overlay click is handled above.
-// };
+    // No capture-phase listener needed; overlay click is handled above.
+  };
+*/
 
 // Password visibility toggle.
-// const passwordToggle = () => {
-//   const toggleBtn = document.getElementById("togglePassword");
-//   const passwordInput = document.getElementById("passwordInput");
+/*
+  const passwordToggle = () => {
+    const toggleBtn = document.getElementById("togglePassword");
+    const passwordInput = document.getElementById("passwordInput");
 
-//   if (!toggleBtn || !passwordInput) return;
+    if (!toggleBtn || !passwordInput) return;
 
-//   const icon = toggleBtn.querySelector("i");
-//   if (!icon) return;
+    const icon = toggleBtn.querySelector("i");
+    if (!icon) return;
 
-//   toggleBtn.addEventListener("click", () => {
-//     if (passwordInput.type === "password") {
-//       passwordInput.type = "text";
-//       icon.classList.remove("fa-eye");
-//       icon.classList.add("fa-eye-slash");
-//       return;
-//     }
+    toggleBtn.addEventListener("click", () => {
+      if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+        return;
+      }
 
-//     passwordInput.type = "password";
-//     icon.classList.remove("fa-eye-slash");
-//     icon.classList.add("fa-eye");
-//   });
-// };
+      passwordInput.type = "password";
+      icon.classList.remove("fa-eye-slash");
+      icon.classList.add("fa-eye");
+    });
+  };
+*/
 
 // Side menu (off-canvas) interactions.
 const sideMenu = () => {
@@ -1108,9 +1118,9 @@ const init = () => {
   ayaMotifSVGDraw();
   scrollToTop();
   stickyHeader();
-  LenisScroll.init();
+  //LenisScroll.init();
   //aeroParallax();
-  //themeToggle();
+  themeToggle();
   activeMenu();
   //preloader();
   sideMenu();
