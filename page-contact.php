@@ -5,8 +5,8 @@
 get_header();
 ?>
 
-<section id="about-hero" class="page-header">
-  <div class="header-content">
+<section id="about-hero" class="page-hero section">
+  <div class="section-container">
     <p class="label">Leave us a message</p>
     <h1>Contact</h1>
     <p class="description">

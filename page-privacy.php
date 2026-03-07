@@ -5,7 +5,7 @@
 get_header();
 ?>
 
-<section id="privacy-header" class="page-header">
+<section id="privacy-header" class="page-hero">
   <div class="header-content">
     <h1>Privacy Policy</h1>
     <p class="description">

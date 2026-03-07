@@ -93,30 +93,17 @@ h4,
 h5,
 h6,
 .heading,
-.label {
+.label,
+.emphasis {
   font-family: "Marcellus", "Times New Roman", serif;
   font-weight: 400;
 }
-.label {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  &::before {
-  content: "";
-    width: 17px;
-    height: 17px;
-    border-radius: 999px;
-    background: url("#{$theme-root}/images/spindle.webp") center/cover no-repeat;
-  }
-}
+
 .accent {
   font-family: "Playfair Display", "Times New Roman", serif;
   font-style: italic;
   font-weight: 400;
 }
-
-
-
 
 .post-content {
   font-size: 18px;

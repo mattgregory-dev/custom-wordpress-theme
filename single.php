@@ -14,7 +14,7 @@ get_header();
     ?>
 
     <!-- ARTICLE HERO / HEADER -->
-    <section id="article-hero" class="w-full pt-[140px] pb-12">
+    <section id="article-hero" class="w-full py-12">
       <div class="max-w-[1240px] mx-auto px-6">
         <div class="max-w-3xl space-y-5">
           <p class="label text-base uppercase tracking-[0.25em] text-[var(--muted)]"><?php echo esc_html($primary_category); ?></p>

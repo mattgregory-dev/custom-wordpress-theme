@@ -2,56 +2,28 @@
 /**
  * Template Name: Preparation
  */
-get_header();
+get_header(
+  null,
+  array(
+    'header_variant' => 'absolute',
+    'header_color' => 'white',
+  )
+);
 ?>
 
-<section id="preparation-hero" class="page-header">
-
-  <div class="header-content">
-
-    <div class="grid grid-cols-2 gap-16 items-center">
-
-      <div class="space-y-6">
-
-        <p class="label">Preparation</p>
-        <h1>Preparation is not a test.</h1>
-        <p class="description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vulputate, magna ac vulputate varius,
-          sapien nisl pretium ligula, in placerat ipsum sem sed libero.
-        </p>
-        <div class="flex items-center gap-4 text-xs uppercase tracking-[0.2em] text-[var(--muted)]">
-          <span class="mini-pill border border-slate-300">4 weeks</span>
-          <span class="mini-pill border border-slate-300">1:1 sessions</span>
-          <span class="mini-pill border border-slate-300">Ongoing support</span>
-        </div>
-
+<section id="preparation-hero" class="section page-hero white full">
+  <div class="section-container grid grid-cols-2 gap-16">
+    <div class="space-y-6">
+      <p class="label">Preparation</p>
+      <div class="sec-title">
+        <h1 class="title animated-heading">Preparation is not a test</h1>
       </div>
-
-      <div class="soft-shadow rounded-3xl bg-white/95 p-8 space-y-4">
-
-        <p class="label text-base uppercase tracking-[0.25em] text-[var(--muted)]">What this includes</p>
-
-        <div class="space-y-3 text-[var(--muted)]">
-          <div class="space-y-1">
-            <p class="text-sm uppercase tracking-[0.2em]">Orientation</p>
-            <p class="text-lg">Lorem ipsum dolor sit amet.</p>
-          </div>
-          <div class="space-y-1">
-            <p class="text-sm uppercase tracking-[0.2em]">Readiness</p>
-            <p class="text-lg">Lorem ipsum dolor sit amet.</p>
-          </div>
-          <div class="space-y-1">
-            <p class="text-sm uppercase tracking-[0.2em]">Support</p>
-            <p class="text-lg">Lorem ipsum dolor sit amet.</p>
-          </div>
-        </div>
-
-      </div>
-
+      <p class="description">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi auctor, nibh at efficitur mollis, justo
+        turpis tincidunt lectus, in varius ligula lorem non nisl.
+      </p>
     </div>
-
   </div>
-
 </section>
 
 <section id="why-precare" class="w-full py-20">

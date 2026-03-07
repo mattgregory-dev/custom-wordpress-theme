@@ -65,10 +65,9 @@ $grid_query = new WP_Query(array(
 ));
 ?>
 
+<section id="blog-header" class="page-hero section">
 
-<section id="blog-header" class="page-header">
-
-  <div class="header-content">
+  <div class="section-container">
 
     <div class="space-y-6">
 

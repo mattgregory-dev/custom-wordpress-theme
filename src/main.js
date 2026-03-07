@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-//import Lenis from 'lenis';
+import Lenis from 'lenis';
 
 //////////////////////////////////////////
 /////// START DEV ENV ASSET FIX //////////
@@ -132,84 +132,82 @@ const ayaMotifSVGDraw = () => {
 };
 
 // Lenis smooth scrolling with GSAP ticker integration.
-/*
-  const LenisScroll = {
-    setupLenis() {
-      const lenis = new Lenis({
-        duration: 2.8,
-        easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
-        direction: "vertical",
-        gestureDirection: "vertical",
-        smooth: true,
-        mouseMultiplier: 0.8,
-        smoothTouch: false,
-        touchMultiplier: 1.5,
-        infinite: false,
-        orientation: "vertical",
-        lerp: 0.05,
-        wheelEventsTarget: document.body,
+const LenisScroll = {
+  setupLenis() {
+    const lenis = new Lenis({
+      duration: 2.8,
+      easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+      direction: "vertical",
+      gestureDirection: "vertical",
+      smooth: true,
+      mouseMultiplier: 0.8,
+      smoothTouch: false,
+      touchMultiplier: 1.5,
+      infinite: false,
+      orientation: "vertical",
+      lerp: 0.05,
+      wheelEventsTarget: document.body,
+    });
+
+    this.lenis = lenis;
+
+    lenis.on("scroll", ScrollTrigger.update);
+
+    gsap.ticker.add((time) => {
+      lenis.raf(time * 1000);
+    });
+
+    gsap.ticker.lagSmoothing(0);
+
+    lenis.on("scroll", () => {});
+
+    const stopElements = document.querySelectorAll("[data-lenis-prevent]");
+    stopElements.forEach((el) => {
+      el.addEventListener("wheel", (e) => {
+        e.stopPropagation();
       });
+    });
+  },
 
-      this.lenis = lenis;
+  init() {
+    const self = this;
 
-      lenis.on("scroll", ScrollTrigger.update);
-
-      gsap.ticker.add((time) => {
-        lenis.raf(time * 1000);
-      });
-
-      gsap.ticker.lagSmoothing(0);
-
-      lenis.on("scroll", () => {});
-
-      const stopElements = document.querySelectorAll("[data-lenis-prevent]");
-      stopElements.forEach((el) => {
-        el.addEventListener("wheel", (e) => {
-          e.stopPropagation();
-        });
-      });
-    },
-
-    init() {
-      const self = this;
-
-      setTimeout(() => {
-        if (
-          typeof Lenis !== "function" ||
-          typeof gsap === "undefined" ||
-          typeof ScrollTrigger === "undefined"
-        ) {
-          console.error("Lenis library not loaded. Check your install.");
-          return;
-        }
-
-        self.setupLenis();
-      }, 0);
-    },
-
-    getInstance() {
-      return this.lenis;
-    },
-
-    stop() {
-      if (this.lenis) {
-        this.lenis.stop();
+    setTimeout(() => {
+      if (
+        typeof Lenis !== "function" ||
+        typeof gsap === "undefined" ||
+        typeof ScrollTrigger === "undefined"
+      ) {
+        console.error("Lenis library not loaded. Check your install.");
+        return;
       }
-    },
 
-    start() {
-      if (this.lenis) {
-        this.lenis.start();
-      }
-    },
+      self.setupLenis();
+    }, 0);
+  },
 
-    scrollTo(target, options = {}) {
-      if (this.lenis) {
-        this.lenis.scrollTo(target, options);
-      }
-    },
-  };
-*/
+  getInstance() {
+    return this.lenis;
+  },
+
+  stop() {
+    if (this.lenis) {
+      this.lenis.stop();
+    }
+  },
+
+  start() {
+    if (this.lenis) {
+      this.lenis.start();
+    }
+  },
+
+  scrollTo(target, options = {}) {
+    if (this.lenis) {
+      this.lenis.scrollTo(target, options);
+    }
+  },
+};
 
 // Scroll-to-top button behavior.
 const scrollToTop = () => {
@@ -233,53 +231,13 @@ const scrollToTop = () => {
   });
 };
 
-// CWP original back to the top.
-/*
-  const backToTop = () => {
-    if (document.querySelector(".back-to-top")) return;
-
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "back-to-top";
-    button.setAttribute("aria-label", "Back to top");
-    const icon = document.createElement("span");
-    icon.setAttribute("aria-hidden", "true");
-    icon.textContent = "\u2191";
-    button.appendChild(icon);
-    document.body.appendChild(button);
-
-    const threshold = 600;
-    let ticking = false;
-
-    const updateVisibility = () => {
-      button.classList.toggle("is-visible", window.scrollY > threshold);
-      ticking = false;
-    };
-
-    const onScroll = () => {
-      if (ticking) return;
-      ticking = true;
-      window.requestAnimationFrame(updateVisibility);
-    };
-
-    updateVisibility();
-    window.addEventListener("scroll", onScroll, { passive: true });
-
-    button.addEventListener("click", () => {
-      const reduceMotion = window.matchMedia &&
-        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
-    });
-  };
-*/
-
 // Sticky header class toggling.
 const stickyHeader = () => {
   const header = document.querySelector('.sticky-active');
   if (!header) return;
 
   const onScroll = () => {
-    header.classList.toggle('is-sticky', window.scrollY > 100);
+    header.classList.toggle('is-sticky', window.scrollY > 400);
   };
 
   onScroll();
@@ -309,89 +267,86 @@ const preloader = () => {
 };
 
 // Parallax effects for hero/section images.
-/*
-  const aeroParallax = () => {
-    const parallaxSections = document.querySelectorAll(
-      ".contact-banner3, .newsletter-banner, .video-banner4"
-    );
-    if (!parallaxSections.length) return;
+const aeroParallax = () => {
+  const parallaxSections = document.querySelectorAll(
+    ".contact-banner3, .newsletter-banner, .video-banner4"
+  );
+  if (!parallaxSections.length) return;
 
-    const speed = 0.2;
-    let ticking = false;
+  const speed = 0.2;
+  let ticking = false;
 
-    const updateParallax = () => {
-      const scrollTop = window.scrollY || window.pageYOffset;
+  const updateParallax = () => {
+    const scrollTop = window.scrollY || window.pageYOffset;
 
-      parallaxSections.forEach((section) => {
-        const img = section.querySelector(".parallax-img");
-        if (!img) return;
+    parallaxSections.forEach((section) => {
+      const img = section.querySelector(".parallax-img");
+      if (!img) return;
 
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const distance = scrollTop - sectionTop;
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      const distance = scrollTop - sectionTop;
 
-        if (distance >= -window.innerHeight && distance <= sectionHeight) {
-          img.style.transform = `translateY(${distance * speed}px)`;
-        }
-      });
+      if (distance >= -window.innerHeight && distance <= sectionHeight) {
+        img.style.transform = `translateY(${distance * speed}px)`;
+      }
+    });
 
-      ticking = false;
-    };
-
-    const onScroll = () => {
-      if (ticking) return;
-      ticking = true;
-      window.requestAnimationFrame(updateParallax);
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    updateParallax();
+    ticking = false;
   };
-*/
+
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(updateParallax);
+  };
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  updateParallax();
+};
+
 
 // Dark/light theme toggle logic.
+const themeToggle = () => {
+  const body = document.body;
+  const themeBtn = document.getElementById("themeBtn");
+  const darkModeImages = document.querySelectorAll(
+    ".darkModeTrigger, .darkModeTriggerImg, .darkModeTriggerImg2"
+  );
 
-  const themeToggle = () => {
-    const body = document.body;
-    const themeBtn = document.getElementById("themeBtn");
-    const darkModeImages = document.querySelectorAll(
-      ".darkModeTrigger, .darkModeTriggerImg, .darkModeTriggerImg2"
-    );
+  if (localStorage.getItem("themeMode") === "active") {
+    body.classList.add("active-body", "dark-mode");
+    if (themeBtn) themeBtn.classList.add("active-btn");
+  }
 
-    if (localStorage.getItem("themeMode") === "active") {
+  const toggleDarkMode = () => {
+    if (!body.classList.contains("active-body")) {
       body.classList.add("active-body", "dark-mode");
       if (themeBtn) themeBtn.classList.add("active-btn");
+      localStorage.setItem("themeMode", "active");
+      localStorage.setItem("darkMode", "enabled");
+      return;
     }
 
-    const toggleDarkMode = () => {
-      if (!body.classList.contains("active-body")) {
-        body.classList.add("active-body", "dark-mode");
-        if (themeBtn) themeBtn.classList.add("active-btn");
-        localStorage.setItem("themeMode", "active");
-        localStorage.setItem("darkMode", "enabled");
-        return;
-      }
-
-      body.classList.remove("active-body", "dark-mode");
-      if (themeBtn) themeBtn.classList.remove("active-btn");
-      localStorage.setItem("themeMode", "inactive");
-      localStorage.setItem("darkMode", "disabled");
-    };
-
-    if (themeBtn) {
-      themeBtn.addEventListener("click", () => {
-        toggleDarkMode();
-      });
-    }
-
-    darkModeImages.forEach((el) => {
-      el.addEventListener("click", (event) => {
-        event.preventDefault();
-        toggleDarkMode();
-      });
-    });
+    body.classList.remove("active-body", "dark-mode");
+    if (themeBtn) themeBtn.classList.remove("active-btn");
+    localStorage.setItem("themeMode", "inactive");
+    localStorage.setItem("darkMode", "disabled");
   };
 
+  if (themeBtn) {
+    themeBtn.addEventListener("click", () => {
+      toggleDarkMode();
+    });
+  }
+
+  darkModeImages.forEach((el) => {
+    el.addEventListener("click", (event) => {
+      event.preventDefault();
+      toggleDarkMode();
+    });
+  });
+};
 
 // Search popup open/close controls.
 /*
@@ -968,55 +923,6 @@ const resizeHeaderHeight = () => {
   resizeObserver.observe(header);
 };
 
-/*
-  const openMobileMenu = () => {
-    const menu = document.getElementById("mobile-menu");
-    const toggles = document.querySelectorAll(".hamburger");
-    const closeButton = document.querySelector(".mobile-menu-close");
-    const backdrop = document.querySelector(".mobile-menu-backdrop");
-    if (!menu || !toggles.length) return;
-
-    const setMenuState = (isOpen) => {
-      menu.classList.toggle("is-open", isOpen);
-      document.body.classList.toggle("mobile-menu-open", isOpen);
-      if (backdrop) {
-        backdrop.classList.toggle("is-active", isOpen);
-      }
-      toggles.forEach((toggle) => {
-        toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      });
-      menu.setAttribute("aria-hidden", isOpen ? "false" : "true");
-    };
-
-    const closeMenu = () => setMenuState(false);
-
-    toggles.forEach((toggle) => {
-      toggle.addEventListener("click", () => {
-        const isOpen = menu.classList.contains("is-open");
-        setMenuState(!isOpen);
-      });
-    });
-
-    if (closeButton) {
-      closeButton.addEventListener("click", closeMenu);
-    }
-    if (backdrop) {
-      backdrop.addEventListener("click", closeMenu);
-    }
-
-    menu.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", closeMenu);
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
-        closeMenu();
-      }
-    });
-
-  };
-*/
-
 // Active menu highlighting for desktop + mobile menus.
 const activeMenu = () => {
   const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
@@ -1100,8 +1006,6 @@ const gsapAnimations = () => {
   /////// END DEV ENV ANIMATE FIX //////////
   //////////////////////////////////////////
 
-  //animateSubtitles();
-  //animateHeadings();
   //initHeroSlider();
   //animateContactButtons();
   //animateDemoImages();
@@ -1110,23 +1014,19 @@ const gsapAnimations = () => {
 };
 
 const init = () => {
-  //revealUpAnimation();
-  //revealFadeAnimation();
-  //backToTop();
   preloader();
-  //openMobileMenu();
   ayaMotifSVGDraw();
   scrollToTop();
   stickyHeader();
   //LenisScroll.init();
-  //aeroParallax();
+  aeroParallax();
   themeToggle();
   activeMenu();
-  //preloader();
   sideMenu();
   gsapAnimations();
   //searchPopup();
-  //hamburgerClickTest();
+  //revealUpAnimation();
+  //revealFadeAnimation();
 };
 
 if (document.readyState === "loading") {

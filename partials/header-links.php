@@ -20,25 +20,26 @@
       </a>
     </li>
     <li class="no-sub-menu">
-      <a href="<?php echo esc_url( home_url( '/about/' ) ); ?>">
-        <span class="menu-item">About</span>
-        <span class="menu-item2">About</span>
+      <a href="<?php echo esc_url( home_url( '/approach/' ) ); ?>">
+        <span class="menu-item">Approach</span>
+        <span class="menu-item2">Approach</span>
       </a>
     </li>
 
-    <!-- Start: Strengths -->
+
     <li>
       <a href="#">
-        <span class="menu-item">Experience</span>
-        <span class="menu-item2">Experience</span>
+        <span class="menu-item">The Experience</span>
+        <span class="menu-item2">The Experience</span>
       </a>
       <ul class="sub-menu">
-        <li><a href="<?php echo esc_url( home_url( '/experience/' ) ); ?>">The Ceremony</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/experience/preparation/' ) ); ?>">Preparation</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/experience/integration/' ) ); ?>">Integration</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/ceremony/' ) ); ?>">The Ceremony</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/preparation/' ) ); ?>">Preparation</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/integration/' ) ); ?>">Integration</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/safety/' ) ); ?>">Safety</a></li>
       </ul>
     </li>
-    <!-- End: Strengths -->
+
     
     <li class="no-sub-menu">
       <a href="<?php echo esc_url( home_url( '/retreats/' ) ); ?>">
@@ -46,6 +47,14 @@
         <span class="menu-item2">Retreats</span>
       </a>
     </li>
+
+    <li class="no-sub-menu">
+      <a href="<?php echo esc_url( home_url( '/community/' ) ); ?>">
+        <span class="menu-item">Community</span>
+        <span class="menu-item2">Community</span>
+      </a>
+    </li>
+
     <li class="no-sub-menu">
       <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">
         <span class="menu-item">Contact</span>

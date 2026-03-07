@@ -5,7 +5,7 @@
 get_header();
 ?>
 
-<section id="terms-header" class="page-header">
+<section id="terms-header" class="page-hero">
   <div class="header-content">
     <h1>Terms &amp; Conditions</h1>
     <p class="description">

@@ -2,18 +2,25 @@
 /**
  * Template Name: FAQ
  */
-get_header();
+get_header(
+  null,
+  array(
+    //'header_variant' => 'absolute',
+    //'header_color' => 'white',
+  )
+);
 ?>
 
-<section id="faq-header" class="page-header">
-  <div class="header-content">
+<section id="faq-hero" class="page-hero section">
+  <div class="section-container">
+    <p class="label">About Lumina</p>
     <h1>Frequently Asked Questions</h1>
     <p class="description">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      This is a prescreen application for retreat consideration. This application takes about 10-15 minutes to
+      complete.
     </p>
   </div>
 </section>
-
 
 <section id="faq-topics" class="w-full py-8">
   <div class="max-w-[1240px] mx-auto px-6">

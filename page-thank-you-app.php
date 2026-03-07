@@ -5,7 +5,7 @@
 get_header();
 ?>
 
-<section id="thank-you-header" class="page-header">
+<section id="thank-you-header" class="page-hero">
   <div class="header-content">
     <h1>Thank You</h1>
     <p class="description">Your application has been received.</p>

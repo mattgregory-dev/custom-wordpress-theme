@@ -2,16 +2,29 @@
 /**
  * Template Name: About
  */
-get_header();
+get_header(
+  null,
+  array(
+    'header_variant' => 'absolute',
+    //'header_color' => 'white',
+  )
+);
 ?>
 
-<section id="about-hero" class="page-header">
+<section id="about-hero" class="page-hero min-h-screen flex items-center">
   <div class="header-content">
-    <p class="label">About Lumina</p>
-    <h1>A grounded space for real inner work.</h1>
-    <p class="description">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    </p>
+    <div class="grid grid-cols-2 gap-16 items-center">
+      <div class="space-y-6">
+        <div class="sec-title">
+            <p class="label">About Lumina</p>
+            <h1 class="title animated-heading">A grounded space for real inner work.</h1>
+            <p class="description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi auctor, nibh at efficitur mollis, justo
+              turpis tincidunt lectus, in varius ligula lorem non nisl.
+            </p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 

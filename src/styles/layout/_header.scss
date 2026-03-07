@@ -20,6 +20,7 @@
   }
 }
 
+// Full width hero header with overlapping top nav
 // vs-header2
 // -->
 .cwp-header-absolute {
@@ -84,6 +85,42 @@
   //     background-color: var(--white);
   //   }
   // }
+}
+// Full width hero header for dark backgrounds
+.cwp-header-absolute.white {
+  .header-menu-area {
+    background-color: unset;
+    border-color: #454545;
+    @include ml {
+      background-color: unset;
+    }
+    .logo-group {
+      img {
+        filter: invert(1);
+      }
+    }
+  }
+  a {
+    color: var(--white);
+  }
+  .main-menu {
+    > ul {
+      > li {
+        > a {
+          color: var(--white);
+          &:hover {
+            background-color: var(--black);
+          }
+          &::before {
+            filter: brightness(9);
+          }
+        }
+        > .active {
+          background-color: var(--black);
+        }
+      }
+    }
+  }
 }
 
 .main-menu {

@@ -2,42 +2,42 @@
 /**
  * Template Name: Retreats
  */
-get_header();
+get_header(
+  null,
+  array(
+    //'header_variant' => 'absolute',
+    //'header_color' => 'white',
+  )
+);
 ?>
 
-<section id="retreats-hero" class="page-header">
+<section id="retreats-hero" class="section page-hero">
+  <div class="section-container grid grid-cols-2 gap-16">
+    <div class="space-y-6">
 
-  <div class="header-content">
-
-    <div class="grid grid-cols-2 gap-16 items-center">
-
-      <div class="space-y-6">
-        <p class="label">Retreats</p>
-        <h1>Immersive retreats held with care and clarity.</h1>
-        <p class="description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-        <div class="flex items-center gap-4 pt-2">
-          <a class="btn rounded-full bg-[var(--sage)] px-6 py-3 text-sm uppercase tracking-[0.25em] text-[var(--ink)]" href="#retreat-list">
-            View Upcoming Retreats
-          </a>
-          <a class="btn btn--white rounded-full border border-slate-300 bg-white/70 px-6 py-3 text-sm uppercase tracking-[0.25em]" href="#">
-            Apply
-          </a>
-        </div>
-        <div class="flex items-center gap-4 text-xs uppercase tracking-[0.2em] text-[var(--muted)]">
-          <span class="mini-pill border border-slate-300">Small groups</span>
-          <span class="mini-pill border border-slate-300">Guided</span>
-          <span class="mini-pill border border-slate-300">Aftercare</span>
-        </div>
+      <p class="label">Retreats</p>
+      <div class="sec-title">
+        <h1 class="title animated-heading">Immersive retreats held with care and clarity</h1>
       </div>
+      <p class="description">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi auctor, nibh at efficitur mollis, justo
+        turpis tincidunt lectus, in varius ligula lorem non nisl.
+      </p>
 
-      <div class="soft-shadow rounded-3xl border border-slate-300 bg-slate-200 h-[520px] w-full overflow-hidden">
-        <img class="h-full w-full object-cover" src="/wp-content/uploads/sedona-7.webp">
+      <div class="flex items-center gap-4 pt-2">
+        <a class="btn rounded-full bg-[var(--sage)] px-6 py-3 text-sm uppercase tracking-[0.25em] text-[var(--ink)]" href="#retreat-list">
+          View Upcoming Retreats
+        </a>
+        <a class="btn btn--white rounded-full border border-slate-300 bg-white/70 px-6 py-3 text-sm uppercase tracking-[0.25em]" href="#">
+          Apply
+        </a>
       </div>
-
+      <div class="flex items-center gap-4 text-xs uppercase tracking-[0.2em] text-[var(--muted)]">
+        <span class="mini-pill border border-slate-300">Small groups</span>
+        <span class="mini-pill border border-slate-300">Guided</span>
+        <span class="mini-pill border border-slate-300">Aftercare</span>
+      </div>
     </div>
-
   </div>
 </section>
 

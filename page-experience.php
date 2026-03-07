@@ -2,35 +2,27 @@
 /**
  * Template Name: Experience
  */
-get_header( null, array('header_variant' => 'absolute') );
+get_header(
+  null,
+  array(
+    'header_variant' => 'absolute',
+    'header_color' => 'white',
+  )
+);
 ?>
 
-<section id="hero-header" class="page-header">
-  <div class="header-content">
-    <div class="grid grid-cols-2 gap-16 items-center">
-
-      <div class="space-y-6">
-
-        <p class="label">The ceremony</p>
-        <h1>A guided return to what is already here.</h1>
-        <p class="description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-
-        <div class="flex items-center gap-4 text-xs uppercase tracking-[0.2em] text-[var(--muted)]">
-          <span class="mini-pill border border-slate-300">3 nights</span>
-          <span class="mini-pill border border-slate-300">Small group</span>
-          <span class="mini-pill border border-slate-300">Quiet setting</span>
-        </div>
-
+<section id="ceremony-hero" class="section page-hero white full">
+  <div class="section-container grid grid-cols-2 gap-16">
+    <div class="space-y-6">
+      <p class="label">Approach</p>
+      <div class="sec-title">
+        <h1 class="title animated-heading">This retreat is not about becoming whole. It is about noticing that wholeness was never missing.</h1>
       </div>
-
-      <div class="soft-shadow rounded-3xl border border-slate-300 bg-slate-200 h-[700px] w-full overflow-hidden">
-        <img class="h-full w-full object-cover" src="/wp-content/uploads/sedona-cave-1.webp">
-      </div>
-
+      <p class="description">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi auctor, nibh at efficitur mollis, justo
+        turpis tincidunt lectus, in varius ligula lorem non nisl.
+      </p>
     </div>
-
   </div>
 </section>
 

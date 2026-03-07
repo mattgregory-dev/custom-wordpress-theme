@@ -5,8 +5,8 @@
 get_header();
 ?>
 
-<section id="application-header" class="page-header">
-  <div class="header-content">
+<section id="application-hero" class="page-hero section">
+  <div class="section-container">
     <p class="label">Getting to know you</p>
     <h1>Retreat Application</h1>
     <p class="description">
