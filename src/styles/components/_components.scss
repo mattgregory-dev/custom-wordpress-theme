@@ -2,12 +2,11 @@
   letter-spacing: 1px;
 }
 
-
 .aya-motif {
   margin-inline: auto;
   height: 200px;
   width: 200px;
-  @apply border border-slate-300 bg-white mb-8 rounded-full;
+  @apply border border-slate-300 bg-white mb-8 rounded-full mx-auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,6 +27,12 @@
       stroke-linecap: round;
       stroke-linejoin: round;
       stroke-miterlimit: 10;
+    }
+  }
+  &.on {
+    svg {
+      opacity: 1;
+      visibility: visible;
     }
   }
 }

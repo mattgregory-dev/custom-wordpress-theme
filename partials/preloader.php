@@ -1,9 +1,8 @@
 <!-- Preloader -->
 <div id="preloader">
   <div class="loader">
-
   
-      <div class="aya-motif-wrap mx-auto h-[200px] w-[200px] rounded-full border border-slate-300 bg-white p-0 flex reveal-up">
+      <div class="aya-motif on">
         <svg xmlns="http://www.w3.org/2000/svg"
             viewBox="107.88 171.25 395.88 399.3"
             xml:space="preserve">

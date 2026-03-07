@@ -1,9 +1,9 @@
 @use "../abstracts" as *;
 @use "../paths" as *;
 
-// body.mobile-menu-open {
-//   overflow: hidden;
-// }
+
+
+
 main {
   z-index: 0;
   position: relative;
@@ -17,6 +17,9 @@ section#preparation {
   z-index: 0;
 }
 
+
+
+
 // For letter by letter animated reveal effect
 .title.animated-heading .word {
   display: inline-block;
@@ -29,6 +32,22 @@ section#preparation {
 
 
 
+/* Move to utilities when done */
+.soft-shadow {
+  box-shadow: 0 24px 60px var(--shadow);
+}
+.band-gradient {
+  background: linear-gradient(120deg, #f3e3e6 0%, #f8f1eb 40%, #efe4e9 100%);
+}
+.band-dusk {
+  background: linear-gradient(120deg, #3b3136 0%, #433a3f 55%, #342c30 100%);
+}
+.band-mist {
+  background: linear-gradient(120deg, #f7efe8 0%, #f4edf3 60%, #ece3ef 100%);
+}
+.border-soft {
+  border: 1px solid rgba(92, 81, 88, 0.16);
+}
 
 
 
@@ -37,6 +56,10 @@ section#preparation {
 
 
 
+
+
+
+/* Used on Approach page */
 .emphasis {
   font-family: "Marcellus", "Times New Roman", serif;
   font-size: 24px;
@@ -55,13 +78,28 @@ section#preparation {
 
 
 
+
 .section {
-  @apply w-full py-24;
+  @apply w-full py-12;
   .section-container {
     @apply max-w-6xl mx-auto px-6;
   }
   &.full {
     @apply py-0 min-h-screen flex items-center;
+  }
+  p {
+    @apply text-lg;
+    color: var(--muted);
+  }
+  h2 {
+    @apply text-4xl;
+  }
+  &.solid-background {
+    @apply px-4 sm:px-6 lg:px-12;
+    .section-container {
+      background: linear-gradient(120deg, #3b3136 0%, #433a3f 55%, #342c30 100%);
+      @apply max-w-full rounded-2xl;
+    }
   }
 }
 
@@ -71,7 +109,6 @@ section#preparation {
   line-height: 1.5em;
   color: var(--muted);
   letter-spacing: 4px;
-
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -84,9 +121,9 @@ section#preparation {
   }
 }
 
+
 // Hero header images
 .page-hero {
-
   h1 {
     @apply text-4xl;
     line-height: 1.4;
@@ -96,7 +133,6 @@ section#preparation {
     line-height: 1.6;
     color: var(--muted);
   }
-
   &.white {
     .label {
       color: var(--white);
@@ -111,14 +147,12 @@ section#preparation {
       color: var(--white);
     }
   }
-
   // Fallback image - Pink / Green Watercolor
   background-image: url("#{$theme-root}/images/background.webp");
   background-size: cover;
   background-position-x: center;
   background-position-y: center;
   overflow: hidden;
-
   &::before {
     background-color: rgb(255 255 255 / 0%);
     content: '';
@@ -131,7 +165,6 @@ section#preparation {
     left: 0;
     right: 0;
   }
-
   // Homepage
   &#front-page-hero {
     background-image: url("#{$theme-root}/images/47JaGXkaZU.webp");
@@ -139,7 +172,6 @@ section#preparation {
       background-color: rgb(103 197 191 / 40%);
     }
   }
-
   // Approach
   &#approach-hero {
     background-image: url("#{$theme-root}/images/1zikZJVXSfA.webp");
@@ -149,7 +181,6 @@ section#preparation {
       background-color: rgb(136 211 222 / 40%);
     }
   }
-
   // Experience - The Ceremony
   &#ceremony-hero {
     background-image: url("#{$theme-root}/images/WspQMlCy3QM.webp");
@@ -183,6 +214,47 @@ section#preparation {
   }
 }
 
+// Parallax section
+.parallax-banner {
+  @apply flex flex-col items-center mx-6 my-16;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 25px;
+  .parallax-wrap {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 130%;
+    overflow: hidden;
+    z-index: -1;
+    .parallax-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: translateY(0);
+      transition: transform 0.05s linear;
+      will-change: transform;
+    }
+  }
+  .content {
+    @apply flex flex-col items-center mx-auto max-w-2xl py-36;
+    text-align: center;
+
+    .title {
+      @apply text-4xl leading-snug mb-6;
+      font-weight: 400;
+      color: var(--ink);
+    }
+    p {
+      @apply text-lg max-w-2xl;
+      font-weight: 400;
+      color: var(--ink);
+    }
+  }
+}
 
 
 

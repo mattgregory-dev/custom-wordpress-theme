@@ -10,26 +10,28 @@
   align-items: center;
   justify-content: center;
   z-index: 99999999;
-  img {
-    width: 70px;
-    height: auto;
+  .aya-motif {
     animation: scalePulse 1.5s infinite ease-in-out;
-    filter: brightness(0);
-  }
-  .aya-motif-wrap {
+    height: 150px;
+    width: 150px;
+    border: none;
     svg {
-      width: 170px;
-      height: 170px;
-      background: #c1e9cd;
-      clip-path: circle(50% at 50% 50%);
+      width: 130px;
+      height: 130px;
+      background: #fff;
       .stroke {
-        fill: none;
-        stroke: #699769;
+        stroke: #000;
         stroke-width: 3;
       }
     }
   }
 }
-.preloader-wrapper{
-  overflow: hidden;
+// .preloader-wrapper {
+//   overflow: hidden;
+// }
+
+@keyframes scalePulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
 }

@@ -76,9 +76,7 @@ get_header(
 <section id="approach" class="w-full pt-14 pb-14">
   <div class="max-w-[1240px] mx-auto px-6">
     <div class="mx-auto max-w-3xl text-center space-y-6">
-      <div class="aya-motif mx-auto h-[200px] w-[200px] rounded-full border border-slate-300 bg-white p-0 flex reveal-up">
-        <?php get_template_part('partials/aya-motif') ?>
-      </div>
+      <?php get_template_part('partials/aya-motif') ?>
       <p class="label text-base uppercase tracking-[0.25em] text-[var(--muted)] reveal-up">The orientation</p>
       <h2 class="text-4xl leading-tight reveal-fade">We do not come because something is wrong.</h2>
       <p class="text-lg leading-relaxed text-[var(--muted)] reveal-fade">

@@ -269,7 +269,7 @@ const preloader = () => {
 // Parallax effects for hero/section images.
 const aeroParallax = () => {
   const parallaxSections = document.querySelectorAll(
-    ".contact-banner3, .newsletter-banner, .video-banner4"
+    ".parallax-banner"
   );
   if (!parallaxSections.length) return;
 

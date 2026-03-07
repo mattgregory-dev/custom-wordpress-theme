@@ -11,360 +11,295 @@ get_header(
 );
 ?>
 
+
+
 <section id="approach-hero" class="section page-hero white full">
-  <div class="section-container grid grid-cols-2 gap-16">
-    <div class="space-y-6">
+  <div class="section-container grid grid-cols-12 gap-12">
+    <div class="col-span-7 space-y-6">
       <p class="label">Approach</p>
       <div class="sec-title">
         <h1 class="title animated-heading">This retreat is not about becoming whole. It is about noticing that wholeness was never missing.</h1>
       </div>
       <p class="description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi auctor, nibh at efficitur mollis, justo
-        turpis tincidunt lectus, in varius ligula lorem non nisl.
+        Lumina offers a safe, structured retreat for people seeking deep healing through guided plant medicine experiences.
       </p>
     </div>
   </div>
 </section>
 
-<section class="py-24 text-center px-4">
-  <?php get_template_part('partials/aya-motif') ?>
-  <p class="label">Orientation</p>
-  <div class="emphasis mt-12">
-    <p>Before we talk about preparation…</p>
-    <p>before ceremony…</p>
-    <p>before the medicine, the dieta, the intentions, or the calendar…</p>
-    <p class="mb-16">let's pause.</p>
-    <p>Right here, right now, something is already effortlessly present.</p>
-    <p class="mb-16"><strong>Awareness.</strong></p>
-    <p>Not as a concept.</p>
-    <p>Not as a spiritual achievement.</p>
-    <p>Simply the undeniable fact that this moment is being known.</p>
-    <p>Nothing you do will improve Awareness.</p>
-    <p>Nothing you experience could damage it.</p>
-    <p class="mb-10">Nothing you forgot, suffered, or survived ever left a mark on it.</p>
-    <p><strong>This retreat is not about becoming whole.</strong></p>
-    <p><strong>It is about gently noticing that wholeness was never missing.</strong></p>
+
+
+<section id="approach-hero" class="page-hero border border-black/30 min-h-screen flex items-center hidden">
+  <div class="max-w-6xl mx-auto px-10 py-20 w-full">
+    <div class="grid grid-cols-12 gap-12 items-center">
+      <div class="col-span-7">
+        <p class="text-xs uppercase tracking-[0.25em]">Approach</p>
+        <h1 class="mt-6 text-5xl font-semibold leading-tight">
+          This retreat is not about becoming whole. It is about noticing that wholeness was never missing.
+        </h1>
+        <p class="mt-6 text-lg leading-relaxed max-w-xl">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere, elit a bibendum placerat,
+          risus velit ultricies metus, ac interdum nulla turpis at orci.
+        </p>
+        <div class="mt-10 flex gap-4">
+          <span class="border border-black/40 px-6 py-3 text-sm">Primary CTA</span>
+          <span class="border border-black/40 px-6 py-3 text-sm">Secondary CTA</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="section">
-  <div class="section-container grid grid-cols-1 gap-10 items-start lg:grid-cols-2 lg:gap-16">
-    <div class="space-y-5 flex flex-col justify-center content-center h-full">
-      <p class="label text-base uppercase tracking-[0.25em] text-[var(--muted)]">The ceremony</p>
-      <!-- <p><hr></p> -->
-      <h2 class="text-4xl leading-tight">The medicine does not give you truth.</h2>
+<section class="border-b border-black/10">
+  <div class="max-w-2xl mx-auto px-6 py-20 text-center">
+    <?php get_template_part('partials/aya-motif') ?>
+    <p class="mt-6 text-xs uppercase tracking-[0.2em]">Orientation</p>
+    <div class="mt-10 space-y-6 text-lg leading-relaxed">
+      <p>Before we talk about preparation...</p>
+      <p>before ceremony...</p>
+      <p>before the medicine, the dieta, the intentions, or the calendar...</p>
+      <p>let's pause.</p>
+    </div>
+    <div class="mt-10 space-y-6 text-lg leading-relaxed">
+      <p>Right here, right now, something is already effortlessly present.</p>
+      <p class="text-lg font-semibold">Awareness.</p>
+    </div>
+    <div class="mt-10 space-y-6 text-lg leading-relaxed">
+      <p>Not as a concept.</p>
+      <p>Not as a spiritual achievement.</p>
+      <p>Simply the undeniable fact that this moment is being known.</p>
+    </div>
+    <div class="mt-10 space-y-6 text-lg leading-relaxed">
+      <p>Nothing you are about to do will improve Awareness.</p>
+      <p>Nothing you are about to experience could damage it.</p>
+      <p>Nothing you forgot, suffered, or survived ever left a mark on it.</p>
+    </div>
+    <div class="mt-12 space-y-4 text-lg font-semibold">
+      <p>This retreat is not about becoming whole.</p>
+      <p>It is about gently noticing that wholeness was never missing.</p>
+    </div>
+  </div>
+</section>
 
+<section class="border-b border-black/10">
+  <div class="max-w-3xl mx-auto px-6 py-20 text-center">
+    <p class="text-xs uppercase tracking-[0.2em]">Core Orientation</p>
+    <p class="mt-6 text-4xl font-semibold">Awareness is already here.</p>
+    <div class="mt-6 space-y-2 text-lg">
+      <p>Nothing needs to be added.</p>
+      <p>Nothing real can be taken away.</p>
+    </div>
+  </div>
+</section>
 
+<section class="border-b border-black/10">
+  <div class="max-w-6xl mx-auto px-6 py-20">
+    <div class="grid grid-cols-12 gap-12 items-start">
+      <div class="col-span-7">
+        <p class="text-xs uppercase tracking-[0.2em]">Overview</p>
+        <h2 class="mt-4 text-4xl font-semibold">What Lumina Is</h2>
+        <div class="mt-6 space-y-4 text-lg leading-relaxed">
+          <p>
+            Lumina is a retreat for people seeking meaningful personal healing and inner clarity.
+          </p>
+          <p>
+            Our work centers around carefully guided plant medicine ceremonies held in a safe and supportive
+            environment. These ceremonies are not treated as isolated events, but as part of a larger process
+            that includes preparation, integration, and thoughtful support throughout the experience.
+          </p>
+          <p>
+            The approach at Lumina blends traditional ceremonial wisdom with modern therapeutic practices. Each
+            retreat is intentionally structured to help guests explore personal insight, emotional healing, and
+            lasting change.
+          </p>
+          <p>
+            Everything we do is guided by clear standards of safety, ethics, and responsible facilitation.
+          </p>
+        </div>
+      </div>
+      <div class="col-span-5">
+        <div class="border border-black/40 h-96 mt-10 flex items-center justify-center text-sm uppercase tracking-widest">
+          Editorial Image Placeholder
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <p class="text-lg leading-relaxed text-[var(--muted)]">
-Lumina is a retreat for people seeking meaningful personal healing and inner clarity.
-
-Our work centers around carefully guided plant medicine ceremonies held in a safe and supportive environment. These ceremonies are not treated as isolated events, but as part of a larger process that includes preparation, integration, and thoughtful support throughout the experience.
-
-The approach at Lumina blends traditional ceremonial wisdom with modern therapeutic practices. Each retreat is intentionally structured to help guests explore personal insight, emotional healing, and lasting change.
-
-Everything we do is guided by clear standards of safety, ethics, and responsible facilitation.
+<section>
+  <div class="max-w-6xl mx-auto px-6 py-20">
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 class="text-4xl font-semibold">The Lumina Framework</h2>
+      <p class="mt-4 text-lg">
+        The retreat experience is held within a broader structure of preparation, ceremony, support, and reflection.
       </p>
-
-      <p class="accent text-xl text-[var(--muted)]">Awareness does not advertise itself.</p>
-
-
-
-
     </div>
-    <div class="relative">
-      <div class="soft-shadow">
-        <div class="h-[700px] w-full">
-          <img
-            src="/wp-content/uploads/ceremony.webp"
-            alt="Goddess holding a ceremonial cup"
-            class="h-full w-full object-cover rounded-3xl"
-          />
+    <div class="mt-12 grid grid-cols-3 gap-6">
+      <article class="border border-black/30 p-6">
+        <div class="h-10 w-10 border border-black/40 rounded-full flex items-center justify-center text-xs">
+          Icon
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-
-<section id="approach-container" class="w-full py-24">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="approach-dusk rounded-3xl p-10 lg:p-14 text-white grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
-      <div class="space-y-6">
-        <p class="label text-sm uppercase tracking-[0.35em] text-white/70">The container</p>
-        <h2 class="text-4xl leading-tight text-white">The Container</h2>
-        <p class="text-lg leading-relaxed text-white/70">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse aliquet massa et lorem porttitor
-          facilisis.
+        <h3 class="mt-4 text-lg font-semibold">Medicine Ceremony</h3>
+        <p class="mt-3 text-base leading-relaxed">
+          Placeholder summary describing guided ceremonial sessions and intentional support.
         </p>
-        <ul class="space-y-3 text-lg text-white/80">
-          <li class="flex items-start gap-3">
-            <span class="mt-2 h-2 w-2 rounded-full bg-white/70"></span>
-            Lorem ipsum dolor sit amet.
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="mt-2 h-2 w-2 rounded-full bg-white/70"></span>
-            Lorem ipsum dolor sit amet.
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="mt-2 h-2 w-2 rounded-full bg-white/70"></span>
-            Lorem ipsum dolor sit amet.
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="mt-2 h-2 w-2 rounded-full bg-white/70"></span>
-            Lorem ipsum dolor sit amet.
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="mt-2 h-2 w-2 rounded-full bg-white/70"></span>
-            Lorem ipsum dolor sit amet.
-          </li>
-        </ul>
-        <div class="flex flex-wrap items-center gap-4 pt-2">
-          <a
-            class="btn rounded-full bg-[var(--sage)] px-6 py-3 text-sm uppercase tracking-[0.25em] text-[var(--ink)]"
-            href="<?php echo esc_url( home_url( '/apply' ) ); ?>"
-          >
-            Apply
-          </a>
+      </article>
+      <article class="border border-black/30 p-6">
+        <div class="h-10 w-10 border border-black/40 rounded-full flex items-center justify-center text-xs">
+          Icon
         </div>
-      </div>
-      <div class="approach-image h-[420px] w-full rounded-3xl flex items-center justify-center text-sm uppercase tracking-[0.2em] text-white/70">
-        Image placeholder
-      </div>
+        <h3 class="mt-4 text-lg font-semibold">Somatic Therapy</h3>
+        <p class="mt-3 text-base leading-relaxed">
+          Placeholder summary highlighting body-based practices for release and grounding.
+        </p>
+      </article>
+      <article class="border border-black/30 p-6">
+        <div class="h-10 w-10 border border-black/40 rounded-full flex items-center justify-center text-xs">
+          Icon
+        </div>
+        <h3 class="mt-4 text-lg font-semibold">Self Inquiry</h3>
+        <p class="mt-3 text-base leading-relaxed">
+          Placeholder summary focused on reflection, journaling, and inner exploration.
+        </p>
+      </article>
+      <article class="border border-black/30 p-6">
+        <div class="h-10 w-10 border border-black/40 rounded-full flex items-center justify-center text-xs">
+          Icon
+        </div>
+        <h3 class="mt-4 text-lg font-semibold">Movement Practices</h3>
+        <p class="mt-3 text-base leading-relaxed">
+          Placeholder summary describing breath, movement, and embodied awareness.
+        </p>
+      </article>
+      <article class="border border-black/30 p-6">
+        <div class="h-10 w-10 border border-black/40 rounded-full flex items-center justify-center text-xs">
+          Icon
+        </div>
+        <h3 class="mt-4 text-lg font-semibold">Nourishing Meals</h3>
+        <p class="mt-3 text-base leading-relaxed">
+          Placeholder summary referencing simple, supportive food and ritual care.
+        </p>
+      </article>
+      <article class="border border-black/30 p-6">
+        <div class="h-10 w-10 border border-black/40 rounded-full flex items-center justify-center text-xs">
+          Icon
+        </div>
+        <h3 class="mt-4 text-lg font-semibold">Reflective Space</h3>
+        <p class="mt-3 text-base leading-relaxed">
+          Placeholder summary about quiet integration time and supportive pacing.
+        </p>
+      </article>
     </div>
   </div>
 </section>
 
-<section id="approach-medicine" class="w-full py-24">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="max-w-2xl mx-auto text-center space-y-6">
-      <p class="label text-sm uppercase tracking-[0.35em] text-[var(--muted)]">Plant medicine</p>
-      <h2 class="text-4xl leading-tight">Plant Medicine</h2>
-      <div class="space-y-3 text-lg text-[var(--muted)]">
-        <p>Lorem ipsum dolor sit.</p>
-        <p>Lorem ipsum dolor sit.</p>
-        <p>Lorem ipsum dolor sit.</p>
-      </div>
-      <div class="space-y-6 text-lg leading-relaxed text-[var(--muted)]">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut sem ut ligula interdum lacinia eget
-          non urna.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Phasellus ac ligula non massa
-          commodo viverra.
-        </p>
-      </div>
-      <div class="approach-card rounded-2xl px-6 py-4 text-sm uppercase tracking-[0.2em] text-[var(--muted)]">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      </div>
-    </div>
+<section class="parallax-banner">
+  <div class="parallax-wrap">
+    <img src="<?php echo esc_url( get_template_directory_uri() . '/images/background.webp' ); ?>" alt="Banner" class="parallax-img">
+  </div>
+  <div class="content">
+    <h2 class="title">
+      Elevate your experience with Interactive conversations and exclusive updates
+    </h2>
+    <p>Halosaur duckbilled barracudina, goosefish gar pleco, chum salmon armoured catfish gudgeon sawfish whitefish orbicular batfish mummichog paradise fish!</p>
   </div>
 </section>
 
-<section id="approach-somatic" class="w-full py-24">
-  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-14 items-center">
-    <div class="approach-image h-[420px] w-full rounded-3xl flex items-center justify-center text-sm uppercase tracking-[0.2em] text-[var(--muted)]">
-      Image placeholder
-    </div>
-    <div class="space-y-6">
-      <p class="label text-sm uppercase tracking-[0.35em] text-[var(--muted)]">Somatic therapy</p>
-      <h2 class="text-4xl leading-tight">Somatic Therapy</h2>
-      <p class="text-lg leading-relaxed text-[var(--muted)]">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sagittis, velit at porta iaculis, erat magna
-        ullamcorper justo, eu ultricies lacus nisl at ligula.
+<section class="border-b border-black/10">
+  <div class="max-w-6xl mx-auto px-6 py-20">
+    <div class="max-w-3xl">
+      <h2 class="text-4xl font-semibold">Safety and Responsibility</h2>
+      <p class="mt-4 text-lg leading-relaxed">
+        While the deeper work is spiritual in nature, the human experience must be held with care, clarity, and responsibility.
       </p>
-      <p class="text-lg leading-relaxed text-[var(--muted)]">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae malesuada odio, sit amet tincidunt
-        lectus.
-      </p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="approach-card rounded-2xl p-4 space-y-2">
-          <h3 class="text-base uppercase tracking-[0.2em] text-[var(--muted)]">Feature title</h3>
-          <p class="text-sm text-[var(--muted)]">Lorem ipsum dolor sit amet.</p>
+    </div>
+    <div class="mt-12 grid grid-cols-3 gap-6">
+      <article class="border border-black/30 p-6">
+        <div class="h-10 w-10 border border-black/40 rounded-full flex items-center justify-center text-xs">
+          Icon
         </div>
-        <div class="approach-card rounded-2xl p-4 space-y-2">
-          <h3 class="text-base uppercase tracking-[0.2em] text-[var(--muted)]">Feature title</h3>
-          <p class="text-sm text-[var(--muted)]">Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div class="approach-card rounded-2xl p-4 space-y-2">
-          <h3 class="text-base uppercase tracking-[0.2em] text-[var(--muted)]">Feature title</h3>
-          <p class="text-sm text-[var(--muted)]">Lorem ipsum dolor sit amet.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="approach-preparation" class="w-full py-24 approach-soft">
-  <div class="max-w-6xl mx-auto px-6 text-center">
-    <p class="label text-sm uppercase tracking-[0.35em] text-[var(--muted)]">Preparation</p>
-    <h2 class="mt-4 text-4xl leading-tight">Preparation</h2>
-    <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
-      <div class="approach-card rounded-2xl p-5 space-y-2">
-        <p class="text-xs uppercase tracking-[0.25em] text-[var(--muted)]">01 Phase title</p>
-        <p class="text-sm text-[var(--muted)]">Lorem ipsum dolor sit amet.</p>
-      </div>
-      <div class="approach-card rounded-2xl p-5 space-y-2">
-        <p class="text-xs uppercase tracking-[0.25em] text-[var(--muted)]">02 Phase title</p>
-        <p class="text-sm text-[var(--muted)]">Lorem ipsum dolor sit amet.</p>
-      </div>
-      <div class="approach-card rounded-2xl p-5 space-y-2">
-        <p class="text-xs uppercase tracking-[0.25em] text-[var(--muted)]">03 Phase title</p>
-        <p class="text-sm text-[var(--muted)]">Lorem ipsum dolor sit amet.</p>
-      </div>
-      <div class="approach-card rounded-2xl p-5 space-y-2">
-        <p class="text-xs uppercase tracking-[0.25em] text-[var(--muted)]">04 Phase title</p>
-        <p class="text-sm text-[var(--muted)]">Lorem ipsum dolor sit amet.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="approach-framework" class="w-full py-24">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center space-y-4">
-      <p class="label text-sm uppercase tracking-[0.35em] text-[var(--muted)]">Holistic framework</p>
-      <h2 class="text-4xl leading-tight">Holistic Framework</h2>
-    </div>
-    <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="approach-card rounded-2xl p-6 space-y-3">
-        <div class="h-9 w-9 rounded-full bg-slate-200"></div>
-        <h3 class="text-xl">Card title</h3>
-        <p class="text-sm text-[var(--muted)]">Lorem ipsum dolor sit amet.</p>
-      </div>
-      <div class="approach-card rounded-2xl p-6 space-y-3">
-        <div class="h-9 w-9 rounded-full bg-slate-200"></div>
-        <h3 class="text-xl">Card title</h3>
-        <p class="text-sm text-[var(--muted)]">Lorem ipsum dolor sit amet.</p>
-      </div>
-      <div class="approach-card rounded-2xl p-6 space-y-3">
-        <div class="h-9 w-9 rounded-full bg-slate-200"></div>
-        <h3 class="text-xl">Card title</h3>
-        <p class="text-sm text-[var(--muted)]">Lorem ipsum dolor sit amet.</p>
-      </div>
-      <div class="approach-card rounded-2xl p-6 space-y-3">
-        <div class="h-9 w-9 rounded-full bg-slate-200"></div>
-        <h3 class="text-xl">Card title</h3>
-        <p class="text-sm text-[var(--muted)]">Lorem ipsum dolor sit amet.</p>
-      </div>
-      <div class="approach-card rounded-2xl p-6 space-y-3">
-        <div class="h-9 w-9 rounded-full bg-slate-200"></div>
-        <h3 class="text-xl">Card title</h3>
-        <p class="text-sm text-[var(--muted)]">Lorem ipsum dolor sit amet.</p>
-      </div>
-      <div class="approach-card rounded-2xl p-6 space-y-3">
-        <div class="h-9 w-9 rounded-full bg-slate-200"></div>
-        <h3 class="text-xl">Card title</h3>
-        <p class="text-sm text-[var(--muted)]">Lorem ipsum dolor sit amet.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="approach-integration" class="w-full py-24">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="approach-dusk rounded-3xl p-10 lg:p-14 text-white grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center">
-      <div class="approach-image h-[420px] w-full rounded-3xl flex items-center justify-center text-sm uppercase tracking-[0.2em] text-white/70">
-        Image placeholder
-      </div>
-      <div class="space-y-6">
-        <p class="label text-sm uppercase tracking-[0.35em] text-white/70">Integration</p>
-        <h2 class="text-4xl leading-tight text-white">Integration</h2>
-        <p class="text-lg leading-relaxed text-white/70">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas commodo lorem et dui bibendum, sit amet
-          porta odio posuere.
+        <h3 class="mt-4 text-lg font-semibold">Safety</h3>
+        <p class="mt-3 text-base leading-relaxed">
+          Placeholder copy about screening, preparation, and responsible facilitation practices.
         </p>
-        <p class="text-lg leading-relaxed text-white/70">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquet libero eu tincidunt tincidunt.
+      </article>
+      <article class="border border-black/30 p-6">
+        <div class="h-10 w-10 border border-black/40 rounded-full flex items-center justify-center text-xs">
+          Icon
+        </div>
+        <h3 class="mt-4 text-lg font-semibold">Ethics</h3>
+        <p class="mt-3 text-base leading-relaxed">
+          Placeholder copy about respect, integrity, and careful stewardship of the work.
         </p>
-        <ul class="space-y-3 text-lg text-white/80">
-          <li class="flex items-start gap-3">
-            <span class="mt-2 h-2 w-2 rounded-full bg-white/70"></span>
-            Lorem ipsum dolor sit amet.
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="mt-2 h-2 w-2 rounded-full bg-white/70"></span>
-            Lorem ipsum dolor sit amet.
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="mt-2 h-2 w-2 rounded-full bg-white/70"></span>
-            Lorem ipsum dolor sit amet.
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="mt-2 h-2 w-2 rounded-full bg-white/70"></span>
-            Lorem ipsum dolor sit amet.
-          </li>
-        </ul>
-      </div>
+      </article>
+      <article class="border border-black/30 p-6">
+        <div class="h-10 w-10 border border-black/40 rounded-full flex items-center justify-center text-xs">
+          Icon
+        </div>
+        <h3 class="mt-4 text-lg font-semibold">Integration</h3>
+        <p class="mt-3 text-base leading-relaxed">
+          Placeholder copy about support before, during, and after the retreat experience.
+        </p>
+      </article>
+    </div>
+    <div class="mt-10 grid grid-cols-4 gap-4">
+      <div class="border border-black/30 px-4 py-3 text-center text-sm">Medical Screening</div>
+      <div class="border border-black/30 px-4 py-3 text-center text-sm">Dieta Guidance</div>
+      <div class="border border-black/30 px-4 py-3 text-center text-sm">Nervous System Care</div>
+      <div class="border border-black/30 px-4 py-3 text-center text-sm">Ongoing Support</div>
     </div>
   </div>
 </section>
 
-<section id="approach-standards" class="w-full py-24">
-  <div class="max-w-6xl mx-auto px-6 text-center space-y-6">
-    <p class="label text-sm uppercase tracking-[0.35em] text-[var(--muted)]">Standards</p>
-    <h2 class="text-4xl leading-tight">Standards</h2>
-    <p class="text-lg leading-relaxed text-[var(--muted)]">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ac luctus lorem, vel tempor neque.
+<section class="border-b border-black/10">
+  <div class="max-w-6xl mx-auto px-6 py-20">
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 class="text-4xl font-semibold">Meet Your Guides</h2>
+    </div>
+    <div class="mt-12 grid grid-cols-2 gap-8">
+      <article class="border border-black/30 p-6">
+        <div class="border border-black/40 h-48 flex items-center justify-center text-sm uppercase tracking-widest">
+          Portrait Placeholder
+        </div>
+        <h3 class="mt-5 text-lg font-semibold">Ash</h3>
+        <p class="mt-1 text-sm uppercase tracking-widest">Ceremony Facilitator</p>
+        <p class="mt-4 text-sm leading-relaxed">
+          Placeholder bio describing spiritual leadership, ceremony facilitation, and compassionate presence.
+        </p>
+        <div class="mt-4 text-sm border border-black/30 inline-block px-3 py-1">Read Bio</div>
+      </article>
+      <article class="border border-black/30 p-6">
+        <div class="border border-black/40 h-48 flex items-center justify-center text-sm uppercase tracking-widest">
+          Portrait Placeholder
+        </div>
+        <h3 class="mt-5 text-lg font-semibold">Marco</h3>
+        <p class="mt-1 text-sm uppercase tracking-widest">Founder / Retreat Host</p>
+        <p class="mt-4 text-sm leading-relaxed">
+          Placeholder bio describing retreat vision, stewardship, guest care, and thoughtful structure.
+        </p>
+        <div class="mt-4 text-sm border border-black/30 inline-block px-3 py-1">Read Bio</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="max-w-2xl mx-auto px-6 py-20 text-center">
+    <div class="border-t border-black/20 w-full mb-10"></div>
+    <p class="text-xs uppercase tracking-[0.2em]">A Final Word</p>
+    <h2 class="mt-5 text-4xl font-semibold leading-snug">
+      A retreat does not make you whole. It creates the space to remember what has always been here.
+    </h2>
+    <p class="mt-4 text-lg">
+      Placeholder supporting line that gently guides visitors toward a next step.
     </p>
-    <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
-      <div class="approach-card rounded-2xl p-5 space-y-2">
-        <h3 class="text-lg">Title</h3>
-        <p class="text-sm text-[var(--muted)]">Lorem ipsum dolor sit amet.</p>
-      </div>
-      <div class="approach-card rounded-2xl p-5 space-y-2">
-        <h3 class="text-lg">Title</h3>
-        <p class="text-sm text-[var(--muted)]">Lorem ipsum dolor sit amet.</p>
-      </div>
-      <div class="approach-card rounded-2xl p-5 space-y-2">
-        <h3 class="text-lg">Title</h3>
-        <p class="text-sm text-[var(--muted)]">Lorem ipsum dolor sit amet.</p>
-      </div>
-      <div class="approach-card rounded-2xl p-5 space-y-2">
-        <h3 class="text-lg">Title</h3>
-        <p class="text-sm text-[var(--muted)]">Lorem ipsum dolor sit amet.</p>
-      </div>
+    <div class="mt-8 flex justify-center gap-4">
+      <span class="border border-black/40 px-6 py-2 text-sm">Apply</span>
+      <span class="border border-black/40 px-6 py-2 text-sm">Contact</span>
     </div>
   </div>
 </section>
 
-<section id="approach-invitation" class="w-full py-24 approach-soft">
-  <div class="max-w-4xl mx-auto px-6 text-center space-y-6">
-    <h2 class="text-4xl leading-tight">Final Invitation</h2>
-    <p class="text-lg leading-relaxed text-[var(--muted)]">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed lacus ac augue hendrerit lacinia.
-    </p>
-    <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
-      <a
-        class="btn rounded-full bg-[var(--sage)] px-6 py-3 text-sm uppercase tracking-[0.25em] text-[var(--ink)]"
-        href="<?php echo esc_url( home_url( '/apply' ) ); ?>"
-      >
-        Apply
-      </a>
-      <a class="text-sm uppercase tracking-[0.2em] text-[var(--muted)]" href="#">
-        Learn about retreats
-      </a>
-    </div>
-  </div>
-</section>
 
--->
 
 <?php get_footer(); ?>
