@@ -1,5 +1,5 @@
 <div class="aya-motif mx-auto h-[200px] w-[200px] rounded-full border border-slate-300 bg-white p-0 flex reveal-up">
-  <svg id="aya_motif" xmlns="http://www.w3.org/2000/svg"
+  <svg height="170" width="170" id="aya_motif" xmlns="http://www.w3.org/2000/svg"
     viewBox="107.88 171.25 395.88 399.3"
     xml:space="preserve">
     <!-- CENTER -->

@@ -3,7 +3,7 @@
   <div class="loader">
   
       <div class="aya-motif on">
-        <svg xmlns="http://www.w3.org/2000/svg"
+        <svg height="150" width="150" xmlns="http://www.w3.org/2000/svg"
             viewBox="107.88 171.25 395.88 399.3"
             xml:space="preserve">
 

@@ -23,6 +23,10 @@ get_header(
       <p class="description">
         Lumina offers a safe, structured retreat for people seeking deep healing through guided plant medicine experiences.
       </p>
+      <div class="mt-10 flex gap-4">
+        <span class="border border-black/40 px-6 py-3 text-sm">Primary CTA</span>
+        <span class="border border-black/40 px-6 py-3 text-sm">Secondary CTA</span>
+      </div>
     </div>
   </div>
 </section>
@@ -54,38 +58,38 @@ get_header(
   <div class="max-w-2xl mx-auto px-6 py-20 text-center">
     <?php get_template_part('partials/aya-motif') ?>
     <p class="mt-6 text-xs uppercase tracking-[0.2em]">Orientation</p>
-    <div class="mt-10 space-y-6 text-lg leading-relaxed">
+    <div class="mt-10 space-y-6 text-2xl leading-relaxed">
       <p>Before we talk about preparation...</p>
       <p>before ceremony...</p>
       <p>before the medicine, the dieta, the intentions, or the calendar...</p>
       <p>let's pause.</p>
     </div>
-    <div class="mt-10 space-y-6 text-lg leading-relaxed">
+    <div class="mt-10 space-y-6 text-2xl leading-relaxed">
       <p>Right here, right now, something is already effortlessly present.</p>
-      <p class="text-lg font-semibold">Awareness.</p>
+      <p class="text-2xl font-semibold">Awareness.</p>
     </div>
-    <div class="mt-10 space-y-6 text-lg leading-relaxed">
+    <div class="mt-10 space-y-6 text-2xl leading-relaxed">
       <p>Not as a concept.</p>
       <p>Not as a spiritual achievement.</p>
       <p>Simply the undeniable fact that this moment is being known.</p>
     </div>
-    <div class="mt-10 space-y-6 text-lg leading-relaxed">
+    <div class="mt-10 space-y-6 text-2xl leading-relaxed">
       <p>Nothing you are about to do will improve Awareness.</p>
       <p>Nothing you are about to experience could damage it.</p>
       <p>Nothing you forgot, suffered, or survived ever left a mark on it.</p>
     </div>
-    <div class="mt-12 space-y-4 text-lg font-semibold">
+    <div class="mt-12 space-y-4 text-2xl font-semibold">
       <p>This retreat is not about becoming whole.</p>
       <p>It is about gently noticing that wholeness was never missing.</p>
     </div>
   </div>
 </section>
 
-<section class="border-b border-black/10">
+<section class="border-b border-black/10 bg-[#d8e8e7] hidden">
   <div class="max-w-3xl mx-auto px-6 py-20 text-center">
     <p class="text-xs uppercase tracking-[0.2em]">Core Orientation</p>
     <p class="mt-6 text-4xl font-semibold">Awareness is already here.</p>
-    <div class="mt-6 space-y-2 text-lg">
+    <div class="mt-6 space-y-2 text-2xl">
       <p>Nothing needs to be added.</p>
       <p>Nothing real can be taken away.</p>
     </div>
@@ -94,18 +98,18 @@ get_header(
 
 <section class="border-b border-black/10">
   <div class="max-w-6xl mx-auto px-6 py-20">
-    <div class="grid grid-cols-12 gap-12 items-start">
-      <div class="col-span-7">
-        <p class="text-xs uppercase tracking-[0.2em]">Overview</p>
-        <h2 class="mt-4 text-4xl font-semibold">What Lumina Is</h2>
+    <div class="grid grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="label">Our Work</p>
+        <h2 class="mt-4 text-4xl">Who We Are</h2>
         <div class="mt-6 space-y-4 text-lg leading-relaxed">
           <p>
             Lumina is a retreat for people seeking meaningful personal healing and inner clarity.
           </p>
           <p>
             Our work centers around carefully guided plant medicine ceremonies held in a safe and supportive
-            environment. These ceremonies are not treated as isolated events, but as part of a larger process
-            that includes preparation, integration, and thoughtful support throughout the experience.
+            environment. These ceremonies are part of a larger process that includes preparation, integration,
+            and thoughtful support throughout the experience.
           </p>
           <p>
             The approach at Lumina blends traditional ceremonial wisdom with modern therapeutic practices. Each
@@ -113,13 +117,17 @@ get_header(
             lasting change.
           </p>
           <p>
-            Everything we do is guided by clear standards of safety, ethics, and responsible facilitation.
+            Everything we do is guided by clear standards of safety, and responsible facilitation.
           </p>
         </div>
       </div>
-      <div class="col-span-5">
-        <div class="border border-black/40 h-96 mt-10 flex items-center justify-center text-sm uppercase tracking-widest">
-          Editorial Image Placeholder
+      <div class="flex items-center justify-center">
+        <div class="editorial-image-mask w-full max-w-md">
+          <img
+            src="<?php echo esc_url( get_template_directory_uri() . '/images/V8NoTp7Y10.webp' ); ?>"
+            class="editorial-image-media"
+            alt=""
+          >
         </div>
       </div>
     </div>
@@ -287,7 +295,7 @@ get_header(
   <div class="max-w-2xl mx-auto px-6 py-20 text-center">
     <div class="border-t border-black/20 w-full mb-10"></div>
     <p class="text-xs uppercase tracking-[0.2em]">A Final Word</p>
-    <h2 class="mt-5 text-4xl font-semibold leading-snug">
+    <h2 class="mt-5 text-5xl leading-snug">
       A retreat does not make you whole. It creates the space to remember what has always been here.
     </h2>
     <p class="mt-4 text-lg">
