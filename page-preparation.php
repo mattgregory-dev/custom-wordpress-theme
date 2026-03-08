@@ -11,7 +11,7 @@ get_header(
 );
 ?>
 
-<section id="preparation-hero" class="page-hero border border-black/30 min-h-screen flex items-center bg-slate-300">
+<section id="preparation-hero" class="page-hero min-h-screen flex items-center bg-slate-300">
   <div class="max-w-6xl mx-auto px-10 py-20 w-full">
     <div class="grid grid-cols-12 gap-12 items-center">
       <div class="col-span-7">

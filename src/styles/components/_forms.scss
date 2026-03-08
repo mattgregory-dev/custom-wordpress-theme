@@ -4,7 +4,7 @@
   color: var(--ink) !important;
 
   .forminator-row {
-    margin-bottom: 16px !important;
+    margin-bottom: 1rem !important;
   }
 
   .forminator-label {
@@ -13,7 +13,7 @@
     color: #000 !important;
     letter-spacing: 0.08em !important;
     text-transform: uppercase !important;
-    font-size: 15px !important;
+    font-size: 0.9375rem !important;
   }
 
   .forminator-checkbox-label,
@@ -22,7 +22,7 @@
     font-weight: 400 !important;
     color: #5c5c5c !important;
     letter-spacing: 0.08em !important;
-    font-size: 16px !important;
+    font-size: 1rem !important;
   }
 
   .forminator-required {
@@ -33,11 +33,11 @@
   .forminator-textarea,
   select.forminator-select {
     border: 1px solid rgba(92, 81, 88, 0.45) !important;
-    border-radius: 24px !important;
-    padding: 14px 16px !important;
+    border-radius: 1.5rem !important;
+    padding: 0.875rem 1rem !important;
     background: #fffdfb !important;
     color: var(--ink) !important;
-    font-size: 16px !important;
+    font-size: 1rem !important;
     line-height: 1.4 !important;
     box-shadow: none !important;
     &:hover {
@@ -59,22 +59,22 @@
 
   .forminator-error-message {
     color: #a44b4b !important;
-    font-size: 12px !important;
-    margin-top: 6px !important;
+    font-size: 0.75rem !important;
+    margin-top: 0.375rem !important;
   }
 
   .forminator-response-message {
-    border-radius: 14px !important;
-    padding: 10px 14px !important;
-    font-size: 13px !important;
+    border-radius: 0.875rem !important;
+    padding: 0.625rem 0.875rem !important;
+    font-size: 0.8125rem !important;
   }
 
   .forminator-checkbox,
   .forminator-radio {
     display: inline-flex !important;
     align-items: center !important;
-    gap: 10px !important;
-    margin: 6px 14px 6px 0 !important;
+    gap: 0.625rem !important;
+    margin: 0.375rem 0.875rem 0.375rem 0 !important;
     color: var(--muted) !important;
   }
 
@@ -92,10 +92,10 @@
     border-radius: 9999px !important;
     background: var(--sage) !important;
     color: var(--ink) !important;
-    padding: 12px 24px !important;
+    padding: 0.75rem 1.5rem !important;
     text-transform: uppercase !important;
     letter-spacing: 0.25em !important;
-    font-size: 16px !important;
+    font-size: 1rem !important;
     border: none !important;
     transition: transform 220ms ease, box-shadow 220ms ease !important;
     &:hover {
@@ -114,8 +114,8 @@
 }
 
 .forminator-error-message {
-  border-radius: 6px !important;
-  padding: 8px 12px !important;
+  border-radius: 0.375rem !important;
+  padding: 0.5rem 0.75rem !important;
 }
 
 /* Hide inline field errors until the form has an accessible error summary (post-submit) */

@@ -11,7 +11,7 @@ get_header(
 );
 ?>
 
-<section id="approach-hero" class="page-hero border border-black/30 min-h-screen flex items-center bg-slate-300">
+<section id="approach-hero" class="page-hero border min-h-screen flex items-center bg-slate-300">
   <div class="max-w-6xl mx-auto px-10 py-20 w-full">
     <div class="grid grid-cols-12 gap-12 items-center">
       <div class="col-span-7">
@@ -24,11 +24,6 @@ get_header(
         <a href="#" class="cwp-btn cwp-btn--primary">Primary CTA</a>
         <a href="#" class="cwp-btn cwp-btn--secondary">Secondary CTA</a>
       </div>
-      </div>
-      <div class="col-span-5">
-        <div class="border border-black/40 h-80 flex items-center justify-center text-sm uppercase tracking-widest">
-          Hero Image Placeholder
-        </div>
       </div>
     </div>
   </div>

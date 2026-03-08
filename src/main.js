@@ -267,44 +267,78 @@ const preloader = () => {
 };
 
 // Parallax effects for hero/section images.
-const aeroParallax = () => {
-  const parallaxSections = document.querySelectorAll(
-    ".parallax-banner"
-  );
+const cwpParallax = () => {
+  const parallaxSections = Array.from(
+    document.querySelectorAll(".parallax-banner")
+  )
+    .map((section) => {
+      const wrap = section.querySelector(".parallax-wrap");
+      const img = section.querySelector(".parallax-img");
+      if (!wrap || !img) return null;
+      return {
+        section,
+        wrap,
+        img,
+        maxTranslate: 0,
+      };
+    })
+    .filter(Boolean);
+
   if (!parallaxSections.length) return;
 
-  const speed = 0.2;
   let ticking = false;
 
+  const updateMetrics = () => {
+    parallaxSections.forEach((item) => {
+      const sectionHeight = item.section.offsetHeight;
+      const wrapHeight = item.wrap.offsetHeight;
+      const extra = Math.max(0, wrapHeight - sectionHeight);
+      item.maxTranslate = extra / 2;
+    });
+  };
+
   const updateParallax = () => {
-    const scrollTop = window.scrollY || window.pageYOffset;
+    const viewportHeight = window.innerHeight;
 
-    parallaxSections.forEach((section) => {
-      const img = section.querySelector(".parallax-img");
-      if (!img) return;
+    parallaxSections.forEach((item) => {
+      const rect = item.section.getBoundingClientRect();
+      if (rect.bottom < 0 || rect.top > viewportHeight) return;
 
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      const distance = scrollTop - sectionTop;
+      const progress = (viewportHeight - rect.top) / (viewportHeight + rect.height);
+      const clamped = Math.min(1, Math.max(0, progress));
+      const translate = (clamped - 0.5) * 2 * item.maxTranslate;
 
-      if (distance >= -window.innerHeight && distance <= sectionHeight) {
-        img.style.transform = `translateY(${distance * speed}px)`;
-      }
+      item.img.style.transform = `translate3d(0, ${translate.toFixed(2)}px, 0)`;
     });
 
     ticking = false;
   };
 
-  const onScroll = () => {
+  const requestUpdate = () => {
     if (ticking) return;
     ticking = true;
     window.requestAnimationFrame(updateParallax);
   };
 
-  window.addEventListener("scroll", onScroll, { passive: true });
+  const onResize = () => {
+    updateMetrics();
+    requestUpdate();
+  };
+
+  window.addEventListener("scroll", requestUpdate, { passive: true });
+  window.addEventListener("resize", onResize);
+
+  if ("ResizeObserver" in window) {
+    const ro = new ResizeObserver(() => {
+      updateMetrics();
+      requestUpdate();
+    });
+    parallaxSections.forEach((item) => ro.observe(item.section));
+  }
+
+  updateMetrics();
   updateParallax();
 };
-
 
 // Dark/light theme toggle logic.
 const themeToggle = () => {
@@ -1019,7 +1053,7 @@ const init = () => {
   scrollToTop();
   stickyHeader();
   //LenisScroll.init();
-  aeroParallax();
+  cwpParallax();
   themeToggle();
   activeMenu();
   sideMenu();

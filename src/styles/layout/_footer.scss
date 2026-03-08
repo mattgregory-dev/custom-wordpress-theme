@@ -5,11 +5,11 @@
   position: relative;
 
   .footer-wrapper {
-    padding: 64px 24px;
+    padding: 4rem 1.5rem;
   }
 
   .footer-desc {
-    font-size: 15px;
+    font-size: 0.9375rem;
     font-weight: 300;
     color: #fff;
     line-height: 1.625;
@@ -17,7 +17,7 @@
   }
 
   .footer-nav-list {
-    font-size: 15px;
+    font-size: 0.9375rem;
     font-weight: 400;
     color: #fff;
     text-transform: uppercase;
@@ -40,12 +40,12 @@
     text-align: justify;
     margin: 0 auto;
     p {
-      margin-bottom: 18px;
+      margin-bottom: 1.125rem;
     }
   }
 
   .footer-links {
-    font-size: 15px;
+    font-size: 0.9375rem;
     font-weight: 300;
     color: #fff;
     text-transform: uppercase;
@@ -57,7 +57,7 @@
   .footer-link {
     text-decoration: none;
     transition: color 250ms ease;
-    padding: 11px 0;
+    padding: 0.6875rem 0;
     display: block;
     &:hover {
       opacity: 0.7;
@@ -65,7 +65,7 @@
   }
 
   .location {
-    padding: 11px 0;
+    padding: 0.6875rem 0;
   }
 
   .footer-nav {
@@ -81,7 +81,7 @@
   }
 
   .footer-bottom {
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 300;
     color: rgba(255, 255, 255, 0.7);
     a {
@@ -92,7 +92,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    row-gap: 13px;
+    row-gap: 0.8125rem;
     text-align: center;
     img {
       filter: invert(1);
@@ -100,12 +100,12 @@
   }
   .footer-top {
     border-bottom: 1px solid rgb(255 255 255 / 30%);
-    padding-bottom: 24px;
+    padding-bottom: 1.5rem;
     display: none;
     display: none;
     flex-direction: column;
     align-items: center;
-    row-gap: 40px;
+    row-gap: 2.5rem;
     width: 650px;
     margin: 0 auto;
   }
