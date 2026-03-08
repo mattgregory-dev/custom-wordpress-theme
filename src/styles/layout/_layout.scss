@@ -55,19 +55,30 @@ section#preparation {
 
 
 
+/* Mask on images, full rounded top, smaller bottom rounded */
+.editorial-image-mask {
+  --editorial-top-radius: clamp(160px, 30vw, 260px);
+  border-radius: var(--editorial-top-radius) var(--editorial-top-radius) 36px 36px;
+  clip-path: inset(0 round var(--editorial-top-radius) var(--editorial-top-radius) 36px 36px);
+  overflow: hidden;
+}
 
-
+.editorial-image-media {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 
 /* Used on Approach page */
 .emphasis {
   font-family: "Marcellus", "Times New Roman", serif;
-  font-size: 24px;
-  p:not([class^="mb-"]) {
-    margin-bottom: 24px;
-  }
 }
-
+.emphasis-bold {
+  font-family: "Marcellus", "Times New Roman", serif;
+  font-weight: 600;
+}
 
 
 

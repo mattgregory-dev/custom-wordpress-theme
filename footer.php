@@ -50,12 +50,15 @@
 
 
     <div class="footer-disclosure">
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis luctus massa, eu maximus nisi tristique eu. Donec ut orci vestibulum, ultrices massa ut, finibus turpis. Sed hendrerit, nisl rhoncus vestibulum efficitur, tortor mauris facilisis purus, nec cursus lacus nibh eleifend arcu. 
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis luctus massa, eu maximus nisi tristique eu. Donec ut orci vestibulum. 
-      </p>
+
+      <p>Lumina provides guided retreats and educational experiences designed to support personal reflection, emotional awareness, and spiritual exploration. Our facilitators offer guidance, practices, and frameworks that many people have found supportive in their healing and growth journeys. These approaches are not rigid systems or guaranteed outcomes, and each person’s experience will be unique.</p>
+
+      <p>Lumina and its facilitators do not provide medical, psychological, or psychiatric diagnosis or treatment, and our services are not a substitute for professional healthcare. Nothing offered through this retreat should be interpreted as medical or mental health advice.</p>
+
+      <p>If you are experiencing a medical or mental health condition, or if you require immediate support, please seek care from a licensed healthcare professional or qualified mental health provider.</p>
+
+      <p>Participation in any retreat or program is voluntary and undertaken with personal responsibility. We encourage all guests to approach this work with honesty about their physical and mental health and to consult qualified professionals when appropriate.</p>
+
     </div>
 
 

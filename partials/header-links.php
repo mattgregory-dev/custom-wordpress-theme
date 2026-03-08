@@ -33,8 +33,8 @@
         <span class="menu-item2">The Experience</span>
       </a>
       <ul class="sub-menu">
-        <li><a href="<?php echo esc_url( home_url( '/ceremony/' ) ); ?>">The Ceremony</a></li>
         <li><a href="<?php echo esc_url( home_url( '/preparation/' ) ); ?>">Preparation</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/ceremony/' ) ); ?>">The Ceremony</a></li>
         <li><a href="<?php echo esc_url( home_url( '/integration/' ) ); ?>">Integration</a></li>
         <li><a href="<?php echo esc_url( home_url( '/safety/' ) ); ?>">Safety</a></li>
       </ul>

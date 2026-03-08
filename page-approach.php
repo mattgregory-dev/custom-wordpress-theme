@@ -11,8 +11,6 @@ get_header(
 );
 ?>
 
-
-
 <section id="approach-hero" class="section page-hero white full">
   <div class="section-container grid grid-cols-12 gap-12">
     <div class="col-span-7 space-y-6">
@@ -30,8 +28,6 @@ get_header(
     </div>
   </div>
 </section>
-
-
 
 <section id="approach-hero" class="page-hero border border-black/30 min-h-screen flex items-center hidden">
   <div class="max-w-6xl mx-auto px-10 py-20 w-full">
@@ -55,32 +51,32 @@ get_header(
 </section>
 
 <section class="border-b border-black/10">
-  <div class="max-w-2xl mx-auto px-6 py-20 text-center">
+  <div class="max-w-6xl mx-auto px-6 py-20 text-center">
     <?php get_template_part('partials/aya-motif') ?>
-    <p class="mt-6 text-xs uppercase tracking-[0.2em]">Orientation</p>
+    <p class="mt-6 text-xs uppercase tracking-[0.2em]">Lorem ipsum dolor</p>
     <div class="mt-10 space-y-6 text-2xl leading-relaxed">
-      <p>Before we talk about preparation...</p>
-      <p>before ceremony...</p>
-      <p>before the medicine, the dieta, the intentions, or the calendar...</p>
-      <p>let's pause.</p>
+      <p class="emphasis">Before we talk about preparation...</p>
+      <p class="emphasis">Before ceremony...</p>
+      <p class="emphasis">Before the medicine, the dieta, the intentions, or the calendar...</p>
+      <p class="emphasis">Let's pause.</p>
     </div>
-    <div class="mt-10 space-y-6 text-2xl leading-relaxed">
-      <p>Right here, right now, something is already effortlessly present.</p>
-      <p class="text-2xl font-semibold">Awareness.</p>
+    <div class="mt-16 space-y-6 text-2xl leading-relaxed">
+      <p class="emphasis">Right here, right now, something is already effortlessly present.</p>
+      <p class="text-2xl font-semibold emphasis-bold">Awareness.</p>
     </div>
-    <div class="mt-10 space-y-6 text-2xl leading-relaxed">
-      <p>Not as a concept.</p>
-      <p>Not as a spiritual achievement.</p>
-      <p>Simply the undeniable fact that this moment is being known.</p>
+    <div class="mt-16 space-y-6 text-2xl leading-relaxed">
+      <p class="emphasis">Not as a concept.</p>
+      <p class="emphasis">Not as a spiritual achievement.</p>
+      <p class="emphasis">Simply the undeniable fact that this moment is being known.</p>
     </div>
-    <div class="mt-10 space-y-6 text-2xl leading-relaxed">
-      <p>Nothing you are about to do will improve Awareness.</p>
-      <p>Nothing you are about to experience could damage it.</p>
-      <p>Nothing you forgot, suffered, or survived ever left a mark on it.</p>
+    <div class="mt-16 space-y-6 text-2xl leading-relaxed">
+      <p class="emphasis">Nothing you are about to do will improve Awareness.</p>
+      <p class="emphasis">Nothing you are about to experience could damage it.</p>
+      <p class="emphasis">Nothing you forgot, suffered, or survived ever left a mark on it.</p>
     </div>
-    <div class="mt-12 space-y-4 text-2xl font-semibold">
-      <p>This retreat is not about becoming whole.</p>
-      <p>It is about gently noticing that wholeness was never missing.</p>
+    <div class="mt-16 space-y-6 text-2xl font-semibold">
+      <p class="emphasis-bold">This retreat is not about becoming whole.</p>
+      <p class="emphasis-bold">It is about gently noticing that wholeness was never missing.</p>
     </div>
   </div>
 </section>
@@ -96,7 +92,7 @@ get_header(
   </div>
 </section>
 
-<section class="border-b border-black/10">
+<section class="border-b border-black/10 bg-[rgba(255,245,240,0.67)]">
   <div class="max-w-6xl mx-auto px-6 py-20">
     <div class="grid grid-cols-2 gap-12 items-center">
       <div>
@@ -137,7 +133,7 @@ get_header(
 <section>
   <div class="max-w-6xl mx-auto px-6 py-20">
     <div class="text-center max-w-3xl mx-auto">
-      <h2 class="text-4xl font-semibold">The Lumina Framework</h2>
+      <h2 class="text-4xl">The Lumina Framework</h2>
       <p class="mt-4 text-lg">
         The retreat experience is held within a broader structure of preparation, ceremony, support, and reflection.
       </p>
@@ -207,16 +203,16 @@ get_header(
   </div>
   <div class="content">
     <h2 class="title">
-      Elevate your experience with Interactive conversations and exclusive updates
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis luctus massa.
     </h2>
-    <p>Halosaur duckbilled barracudina, goosefish gar pleco, chum salmon armoured catfish gudgeon sawfish whitefish orbicular batfish mummichog paradise fish!</p>
+    <p>Eu maximus nisi tristique eu. Donec ut orci vestibulum, ultrices massa ut, finibus turpis. Sed hendrerit, nisl rhoncus vestibulum efficitur</p>
   </div>
 </section>
 
 <section class="border-b border-black/10">
   <div class="max-w-6xl mx-auto px-6 py-20">
     <div class="max-w-3xl">
-      <h2 class="text-4xl font-semibold">Safety and Responsibility</h2>
+      <h2 class="text-4xl">Safety and Responsibility</h2>
       <p class="mt-4 text-lg leading-relaxed">
         While the deeper work is spiritual in nature, the human experience must be held with care, clarity, and responsibility.
       </p>
@@ -262,7 +258,7 @@ get_header(
 <section class="border-b border-black/10">
   <div class="max-w-6xl mx-auto px-6 py-20">
     <div class="text-center max-w-3xl mx-auto">
-      <h2 class="text-4xl font-semibold">Meet Your Guides</h2>
+      <h2 class="text-4xl">Meet Your Guides</h2>
     </div>
     <div class="mt-12 grid grid-cols-2 gap-8">
       <article class="border border-black/30 p-6">
@@ -291,7 +287,7 @@ get_header(
   </div>
 </section>
 
-<section>
+<section class="bg-[#c3ddd5]">
   <div class="max-w-2xl mx-auto px-6 py-20 text-center">
     <div class="border-t border-black/20 w-full mb-10"></div>
     <p class="text-xs uppercase tracking-[0.2em]">A Final Word</p>
@@ -307,7 +303,5 @@ get_header(
     </div>
   </div>
 </section>
-
-
 
 <?php get_footer(); ?>
