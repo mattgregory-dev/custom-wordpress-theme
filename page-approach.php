@@ -11,19 +11,24 @@ get_header(
 );
 ?>
 
-<section id="approach-hero" class="section page-hero white full">
-  <div class="section-container grid grid-cols-12 gap-12">
-    <div class="col-span-7 space-y-6">
-      <p class="label">Approach</p>
-      <div class="sec-title">
-        <h1 class="title animated-heading">This retreat is not about becoming whole. It is about noticing that wholeness was never missing.</h1>
-      </div>
-      <p class="description">
-        Lumina offers a safe, structured retreat for people seeking deep healing through guided plant medicine experiences.
-      </p>
+<section id="approach-hero" class="page-hero border border-black/30 min-h-screen flex items-center bg-slate-300">
+  <div class="max-w-6xl mx-auto px-10 py-20 w-full">
+    <div class="grid grid-cols-12 gap-12 items-center">
+      <div class="col-span-7">
+        <p class="text-xs uppercase tracking-[0.25em]">Approach</p>
+        <h1 class="mt-6 text-4xl font-semibold leading-tight">This retreat is not about becoming whole. It is about noticing that wholeness was never missing.</h1>
+        <p class="mt-6 text-lg leading-relaxed max-w-xl">
+          Lumina offers a safe, structured retreat for people seeking deep healing through guided plant medicine experiences.
+        </p>
       <div class="mt-10 flex gap-4">
-        <span class="border border-black/40 px-6 py-3 text-sm">Primary CTA</span>
-        <span class="border border-black/40 px-6 py-3 text-sm">Secondary CTA</span>
+        <a href="#" class="cwp-btn cwp-btn--primary">Primary CTA</a>
+        <a href="#" class="cwp-btn cwp-btn--secondary">Secondary CTA</a>
+      </div>
+      </div>
+      <div class="col-span-5">
+        <div class="border border-black/40 h-80 flex items-center justify-center text-sm uppercase tracking-widest">
+          Hero Image Placeholder
+        </div>
       </div>
     </div>
   </div>
@@ -42,8 +47,8 @@ get_header(
           risus velit ultricies metus, ac interdum nulla turpis at orci.
         </p>
         <div class="mt-10 flex gap-4">
-          <span class="border border-black/40 px-6 py-3 text-sm">Primary CTA</span>
-          <span class="border border-black/40 px-6 py-3 text-sm">Secondary CTA</span>
+          <a href="#" class="cwp-btn cwp-btn--primary">Primary CTA</a>
+          <a href="#" class="cwp-btn cwp-btn--secondary">Secondary CTA</a>
         </div>
       </div>
     </div>
@@ -288,7 +293,7 @@ get_header(
 </section>
 
 <section class="bg-[#c3ddd5]">
-  <div class="max-w-2xl mx-auto px-6 py-20 text-center">
+  <div class="max-w-4xl mx-auto px-6 py-20 text-center">
     <div class="border-t border-black/20 w-full mb-10"></div>
     <p class="text-xs uppercase tracking-[0.2em]">A Final Word</p>
     <h2 class="mt-5 text-5xl leading-snug">
@@ -298,8 +303,8 @@ get_header(
       Placeholder supporting line that gently guides visitors toward a next step.
     </p>
     <div class="mt-8 flex justify-center gap-4">
-      <span class="border border-black/40 px-6 py-2 text-sm">Apply</span>
-      <span class="border border-black/40 px-6 py-2 text-sm">Contact</span>
+      <a href="#" class="cwp-btn cwp-btn--primary">Apply</a>
+      <a href="#" class="cwp-btn cwp-btn--secondary">Contact</a>
     </div>
   </div>
 </section>

@@ -251,7 +251,7 @@ section#preparation {
     }
   }
   .content {
-    @apply flex flex-col items-center mx-auto max-w-2xl py-36;
+    @apply flex flex-col items-center mx-auto max-w-4xl py-36;
     text-align: center;
 
     .title {
@@ -260,7 +260,7 @@ section#preparation {
       color: var(--ink);
     }
     p {
-      @apply text-lg max-w-2xl;
+      @apply text-lg max-w-4xl;
       font-weight: 400;
       color: var(--ink);
     }
