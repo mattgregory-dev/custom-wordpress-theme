@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Orientation
+ * Template Name: Approach v2
  */
 get_header(
   null,
@@ -11,6 +11,6 @@ get_header(
 );
 ?>
 
-<h1>Orientation</h1>
+<h1>Approach v2</h1>
 
 <?php get_footer(); ?>

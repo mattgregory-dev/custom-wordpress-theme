@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Aftercare
+ * Template Name: Integration
  */
 get_header(
   null,

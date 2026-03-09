@@ -29,8 +29,8 @@
 
     <li>
       <a href="#">
-        <span class="menu-item">The Experience</span>
-        <span class="menu-item2">The Experience</span>
+        <span class="menu-item">Your Journey</span>
+        <span class="menu-item2">Your Journey</span>
       </a>
       <ul class="sub-menu">
         <li><a href="<?php echo esc_url( home_url( '/orientation/' ) ); ?>">Orientation</a></li>
@@ -38,15 +38,20 @@
         <li><a href="<?php echo esc_url( home_url( '/preparation/' ) ); ?>">Preparation</a></li>
         <li><a href="<?php echo esc_url( home_url( '/ceremony/' ) ); ?>">The Ceremony</a></li>
         <li><a href="<?php echo esc_url( home_url( '/integration-v2/' ) ); ?>">Integration</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/safety-v2/' ) ); ?>">Safety</a></li>
       </ul>
     </li>
 
-    
     <li class="no-sub-menu">
       <a href="<?php echo esc_url( home_url( '/retreats/' ) ); ?>">
         <span class="menu-item">Retreats</span>
         <span class="menu-item2">Retreats</span>
+      </a>
+    </li>
+
+    <li class="no-sub-menu">
+      <a href="<?php echo esc_url( home_url( '/safety/' ) ); ?>">
+        <span class="menu-item">Safety</span>
+        <span class="menu-item2">Safety</span>
       </a>
     </li>
 

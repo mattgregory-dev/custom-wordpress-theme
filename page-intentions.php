@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Orientation
+ * Template Name: Intentions
  */
 get_header(
   null,
@@ -11,6 +11,6 @@ get_header(
 );
 ?>
 
-<h1>Orientation</h1>
+<h1>Intentions</h1>
 
 <?php get_footer(); ?>

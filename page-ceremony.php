@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Experience
+ * Template Name: Ceremony
  */
 get_header(
   null,
