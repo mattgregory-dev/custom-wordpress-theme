@@ -3,385 +3,551 @@ get_header(
   null,
   array(
     'header_variant' => 'absolute',
-    'header_color' => 'white',
+    //'header_color' => 'white',
   )
 );
 ?>
 
-<section id="front-page-hero" class="section full page-hero white">
-  <div class="section-container grid grid-cols-2 gap-16">
-    <div class="space-y-6">
-      <p class="label">The ceremony</p>
-      <div class="sec-title">
-        <h1 class="title animated-heading">A guided return to what is already here.</h1>
+<div class="min-h-screen bg-white">
+  <section class="relative min-h-[90vh] flex items-center justify-center px-8 py-32">
+    <div class="absolute inset-0 bg-gray-300 border-2 border-gray-400">
+      <div class="absolute inset-0 flex items-center justify-center">
       </div>
-      <p class="description mt-8 mb-8">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi auctor, nibh at efficitur mollis, justo
-        turpis tincidunt lectus, in varius ligula lorem non nisl.
+    </div>
+
+    <div class="relative z-10 max-w-3xl mx-auto text-center space-y-8">
+      <div class="text-gray-600 text-sm uppercase tracking-[0.2em]">
+        LUMINA SEDONA
+      </div>
+
+      <h1 class="text-5xl md:text-6xl text-gray-900 font-normal leading-[1.2]">
+        A space for deep personal healing and inner clarity.
+      </h1>
+
+      <p class="text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto">
+        Small-group retreats in Sedona designed to support meaningful transformation through preparation, ceremony, and integration.
       </p>
-      <div class="flex items-center gap-4 text-xs uppercase tracking-[0.2em] text-[var(--muted)]">
-        <span class="mini-pill border border-slate-300">3 nights</span>
-        <span class="mini-pill border border-slate-300">Small group</span>
-        <span class="mini-pill border border-slate-300">Quiet setting</span>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+        <a class="px-8 py-3 bg-gray-900 text-white hover:bg-gray-800 transition-colors" href="#">
+          Explore the Journey
+        </a>
+        <a class="px-8 py-3 border-2 border-gray-900 text-gray-900 hover:bg-gray-50 transition-colors" href="#">
+          View Retreats
+        </a>
+      </div>
+
+      <div class="flex flex-wrap gap-3 justify-center pt-6">
+        <span class="px-4 py-2 bg-white/80 backdrop-blur-sm border border-gray-300 text-sm text-gray-700">
+          Small Groups
+        </span>
+        <span class="px-4 py-2 bg-white/80 backdrop-blur-sm border border-gray-300 text-sm text-gray-700">
+          Sedona, Arizona
+        </span>
+        <span class="px-4 py-2 bg-white/80 backdrop-blur-sm border border-gray-300 text-sm text-gray-700">
+          Guided Retreats
+        </span>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="top" class="w-full hero-band hidden">
-  <div class="hero-content max-w-[1240px] mx-auto px-4">
-    <div class="flex items-center">
-      <div class="max-w-3xl mx-auto text-center space-y-8">
-        <p class="playfair accent text-xl text-[var(--dusk-soft)]" data-animate="hero-preline">
-          A quiet return to what is already here
-        </p>
-        <h1 class="text-5xl leading-tight" data-animate="hero-headline">Nothing about you is broken.</h1>
-        <p class="text-lg leading-relaxed text-[var(--dusk-soft)]" data-animate="hero-copy">
-          This is not a place to fix yourself. It is a space to remember what never left. Before preparation. Before
-          ceremony. Before anything. Something is already present -- effortlessly whole.
-        </p>
-        <p class="text-base uppercase tracking-[0.2em] text-[var(--dusk-soft)]">
-          Guided plant-medicine retreats held with clear preparation, screening, and ongoing support.
-        </p>
-        <div class="flex flex-col items-center justify-center gap-4 pt-4 sm:flex-row" data-animate="hero-cta">
-          <a
-              class="btn rounded-full bg-[var(--sage)] px-6 py-3 text-sm uppercase tracking-[0.25em] text-[var(--ink)]"
-              href="#contact">
-              Start a Conversation
-          </a>
-          <a
-              class="btn btn--white rounded-full border border-slate-300 bg-white/70 px-6 py-3 text-sm uppercase tracking-[0.25em]"
-              href="#retreats">
-              Explore the Retreats
-          </a>
-        </div>
+  <section class="py-32 px-8">
+    <div class="max-w-3xl mx-auto text-center space-y-8">
+      <div class="w-12 h-12 mx-auto rounded-full bg-gray-200 border-2 border-gray-400 flex items-center justify-center">
+        <span class="text-gray-500 text-xs">&bull;</span>
       </div>
-    </div>
-  </div>
-</section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<section id="approach" class="w-full pt-14 pb-14">
-  <div class="max-w-[1240px] mx-auto px-6">
-    <div class="mx-auto max-w-3xl text-center space-y-6">
-      <?php get_template_part('partials/aya-motif') ?>
-      <p class="label text-base uppercase tracking-[0.25em] text-[var(--muted)] reveal-up">The orientation</p>
-      <h2 class="text-4xl leading-tight reveal-fade">We do not come because something is wrong.</h2>
-      <p class="text-lg leading-relaxed text-[var(--muted)] reveal-fade">
-        We come because life gets loud. Attention narrows.
-        We learn to live inside stories, roles, and identities that feel solid -- even when they are not.
-        Over time we forget the simplicity of being here. Not through failure. Through conditioning.
-        This work does not add anything to you. It helps quiet what is in the way.
-      </p>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-<section id="experience" class="w-full pt-14 pb-14">
-  <div class="max-w-[1240px] mx-auto px-6 grid grid-cols-1 gap-10 items-start lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
-    <div class="space-y-5 flex flex-col justify-center content-center h-full">
-      <p class="label text-base uppercase tracking-[0.25em] text-[var(--muted)]">The ceremony</p>
-      <!-- <p><hr></p> -->
-      <h2 class="text-4xl leading-tight">The medicine does not give you truth.</h2>
-      <p class="text-lg leading-relaxed text-[var(--muted)]">
-        It does not awaken awareness. It appears within it.
-        It does not complete you. It can interrupt the habit of believing you are incomplete.
-        Experiences may be vivid, subtle, uncomfortable, beautiful -- or none of the above.
-        None of these are measures of success. What matters is the noticing of what is happening.
-      </p>
-      <p class="accent text-xl text-[var(--muted)]">Awareness does not advertise itself.</p>
-    </div>
-    <div class="relative">
-      <div class="soft-shadow">
-        <div class="h-[700px] w-full">
-          <img
-            src="/wp-content/uploads/ceremony.webp"
-            alt="Goddess holding a ceremonial cup"
-            class="h-full w-full object-cover rounded-3xl"
-          />
-        </div>
+      <div class="text-gray-600 text-sm uppercase tracking-[0.2em]">
+        OUR ORIENTATION
       </div>
-    </div>
-  </div>
-</section>
 
+      <h2 class="text-4xl md:text-5xl text-gray-900 font-normal leading-[1.3]">
+        Nothing about you is broken.
+      </h2>
 
-
-
-
-<section id="feel" class="w-full pt-14 pb-20">
-  <div class="max-w-[1240px] mx-auto px-6 space-y-12">
-    <div class="text-center space-y-4">
-      <p class="label text-base uppercase tracking-[0.25em] text-[var(--muted)]">In practice</p>
-      <h2 class="text-4xl leading-tight">What the experience can feel like</h2>
-    </div>
-    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-      <article class="soft-shadow rounded-3xl bg-white/90 p-8 space-y-4">
-        <div class="h-[120px] w-[120px] rounded-full border border-slate-300 bg-slate-200"></div>
-        <h3 class="text-2xl">Sensation</h3>
-        <p class="text-[var(--muted)] text-lg">Heat, cold, pressure, release, stillness.</p>
-      </article>
-      <article class="soft-shadow rounded-3xl bg-white/90 p-8 space-y-4">
-        <div class="h-[120px] w-[120px] rounded-full border border-slate-300 bg-slate-200"></div>
-        <h3 class="text-2xl">Emotion</h3>
-        <p class="text-[var(--muted)] text-lg">Tears without story. Joy without reason. Fear without an object.</p>
-      </article>
-      <article class="soft-shadow rounded-3xl bg-white/90 p-8 space-y-4">
-        <div class="h-[120px] w-[120px] rounded-full border border-slate-300 bg-slate-200"></div>
-        <h3 class="text-2xl">Quiet</h3>
-        <p class="text-[var(--muted)] text-lg">
-          Sometimes nothing dramatic happens -- and something essential softens anyway.
+      <div class="space-y-6 text-gray-700 leading-relaxed pt-4">
+        <p>
+          Many people come to this work believing they need to be fixed.
         </p>
-      </article>
-    </div>
-    <p class="text-center text-base uppercase tracking-[0.2em] text-[var(--muted)]">
-      There are no right experiences here.
-    </p>
-  </div>
-</section>
-
-
-
-
-<section id="preparation" class="w-full px-4 sm:px-6 lg:px-10">
-  <div class="w-full band-dusk text-white preparation-band py-20 rounded-2xl">
-    <div class="max-w-[1240px] mx-auto px-6 grid grid-cols-1 gap-10 items-start lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
-      <div class="space-y-6">
-        <p class="label text-base uppercase tracking-[0.25em] text-white/70">Care &amp; respect</p>
-        <h2 class="text-4xl leading-tight text-white">Preparation is not a test.</h2>
-        <p class="text-lg leading-relaxed text-white/70">
-          Preparation is not about earning a good ceremony. It is an act of care for the body and nervous system you
-          inhabit. We emphasize clear preparation, honest screening, and steady support -- not as rules, but as
-          respect.
+        <p class="pt-2">
+          At Lumina, we approach it differently.
+        </p>
+        <p class="pt-2">
+          The retreat experience is not about becoming someone new.
+          <br />
+          It is about creating the space to see more clearly what has always been here.
+        </p>
+        <p class="pt-4">
+          Through preparation, ceremony, and reflection, participants are supported in reconnecting with clarity, presence, and the deeper intelligence of life.
         </p>
       </div>
-      <div class="soft-shadow rounded-3xl bg-white/95 p-8 text-[var(--ink)] space-y-4">
-        <p class="label text-base uppercase tracking-[0.25em] text-[var(--muted)]">What is included</p>
-        <ul class="space-y-3 text-lg text-[var(--muted)]">
-          <li>Clear preparation guidance</li>
-          <li>Medical screening and transparency</li>
-          <li>Skilled facilitation and boundaries</li>
-          <li>Support before and after you return home</li>
-        </ul>
-      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
-
-<section id="retreats" class="w-full pt-20 pb-14">
-  <div class="max-w-[1240px] mx-auto px-6 space-y-10">
-    <div class="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-end">
-      <div class="space-y-3">
-        <p class="label text-base uppercase tracking-[0.25em] text-[var(--muted)]">Choose your container</p>
-        <h2 class="text-4xl leading-tight">Different lengths. The same invitation.</h2>
-      </div>
-      <span class="mini-pill border border-slate-300">Aftercare included</span>
-    </div>
-    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      <article class="rounded-3xl border border-slate-300 soft-shadow bg-white/90 p-6 space-y-3">
-        <h3 class="text-2xl">5 Days</h3>
-        <p class="text-lg text-[var(--muted)]">Grounding &amp; Clarity</p>
-        <p class="text-base text-[var(--muted)]">A gentle entry point.</p>
-        <p><span class="text-sm uppercase tracking-[0.2em] text-[var(--muted)]">Learn more</span></p>
-      </article>
-      <article class="rounded-3xl border border-slate-300 soft-shadow bg-white/90 p-6 space-y-3">
-        <h3 class="text-2xl">7 Days</h3>
-        <p class="text-lg text-[var(--muted)]">Embodied Transformation</p>
-        <p class="text-base text-[var(--muted)]">More space to deepen.</p>
-        <p><span class="text-sm uppercase tracking-[0.2em] text-[var(--muted)]">Learn more</span></p>
-      </article>
-      <article class="rounded-3xl border border-slate-300 soft-shadow bg-white/90 p-6 space-y-3">
-        <h3 class="text-2xl">14 Days</h3>
-        <p class="text-lg text-[var(--muted)]">Renewal &amp; Repatterning</p>
-        <p class="text-base text-[var(--muted)]">Extended integration and insight.</p>
-        <p><span class="text-sm uppercase tracking-[0.2em] text-[var(--muted)]">Learn more</span></p>
-      </article>
-      <article class="rounded-3xl border border-slate-300 soft-shadow bg-white/90 p-6 space-y-3">
-        <h3 class="text-2xl">21 Days</h3>
-        <p class="text-lg text-[var(--muted)]">Rebirth &amp; Embodiment</p>
-        <p class="text-base text-[var(--muted)]">A spacious arc for profound inquiry.</p>
-        <p><span class="text-sm uppercase tracking-[0.2em] text-[var(--muted)]">Learn more</span></p>
-      </article>
-    </div>
-    <p class="accent text-xl text-[var(--muted)]">Length does not determine depth. Choose the container that fits your life.</p>
-  </div>
-</section>
-
-
-
-
-
-<section id="about" class="w-full pt-14 pb-14">
-  <div class="max-w-[1240px] mx-auto px-6 grid grid-cols-1 gap-10 items-center lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
-    <div class="relative">
-      <div class="soft-shadow relative z-10">
-        <div class="h-[700px] w-full overflow-hidden">
-          <img
-            src="/wp-content/uploads/sedona.webp"
-            alt="Portrait in soft light"
-            class="h-full w-full object-cover rounded-3xl"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="space-y-6">
-      <p class="label text-base uppercase tracking-[0.25em] text-[var(--muted)]">Who we are</p>
-      <h2 class="text-4xl leading-tight">A sanctuary for deep, intentional inner work.</h2>
-      <p class="text-lg leading-relaxed text-[var(--muted)]">
-        Lumina is a purpose-built space for people who feel called to pause, listen, and meet themselves honestly.
-        We do not promise the moon. We create the conditions for real inquiry, supported with care.
-      </p>
-      <p class="text-lg leading-relaxed text-[var(--muted)]">
-        Our work blends ceremony, body-based practices, nourishing meals, quiet, and integration support.
-        The goal is not a peak experience. The goal is a lived return to clarity, steadiness, and wholeness.
-      </p>
-      <div class="flex flex-wrap items-center gap-4 text-xs uppercase tracking-[0.2em] text-[var(--muted)]">
-        <span class="mini-pill border border-slate-300">Calm professionalism</span>
-        <span class="mini-pill border border-slate-300">Respect for the body</span>
-        <span class="mini-pill border border-slate-300">Integration over intensity</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-
-
-<!-- TESTIMONIALS -->
-<!-- Layout intent: soft gradient band with 3 cards -->
-<section id="testimonials" class="w-full testimonials-band pt-14 pb-14">
-  <div class="max-w-[1240px] mx-auto px-6 space-y-12">
-    <div class="text-center space-y-3">
-      <p class="label text-base uppercase tracking-[0.25em] text-[var(--muted)]">Voices</p>
-      <h2 class="text-4xl leading-tight">What guests discovered</h2>
-    </div>
-    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-      <article class="soft-shadow rounded-[28px] bg-white/95 px-10 py-12 text-center space-y-8">
-        <div class="star-row text-2xl text-[var(--sage)]">★★★★★</div>
-        <p class="text-lg leading-relaxed text-[var(--dusk-soft)]">
-          “I came to this retreat overwhelmed by life. Each practice, each meal, each moment of stillness helped
-          me soften. I found a sense of peace I hadn't felt in years — it truly changed something deep inside.”
+  <section class="py-32 px-8 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center space-y-4 mb-16">
+        <h2 class="text-4xl text-gray-900 font-normal">
+          The Journey of the Work
+        </h2>
+        <p class="text-gray-700 leading-relaxed max-w-2xl mx-auto">
+          Each retreat unfolds through a thoughtful process designed to support safety, insight, and integration.
         </p>
-        <div class="flex flex-col items-center gap-4">
-          <div class="avatar h-14 w-14 rounded-full border border-slate-300 flex items-center justify-center">
-            <img src="/wp-content/uploads/kandy-avatar.png">
+      </div>
+
+      <div class="grid md:grid-cols-5 gap-8">
+        <div class="space-y-4 relative">
+          <div class="w-12 h-12 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center text-gray-600 font-light text-lg">
+            1
           </div>
-          <p class="text-sm uppercase tracking-[0.2em] text-[var(--dusk-soft)]">
-            Emily R., Roots of Stillness — Tuscany
+          <div class="space-y-2">
+            <h3 class="text-xl text-gray-900 font-normal">Orientation</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Begin with perspective and grounding.</p>
+          </div>
+          <div class="hidden md:block absolute top-6 left-full w-8 h-0.5 bg-gray-300" style="transform: translateX(-50%);"></div>
+        </div>
+
+        <div class="space-y-4 relative">
+          <div class="w-12 h-12 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center text-gray-600 font-light text-lg">
+            2
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-xl text-gray-900 font-normal">Intentions</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Clarify curiosity and inner direction.</p>
+          </div>
+          <div class="hidden md:block absolute top-6 left-full w-8 h-0.5 bg-gray-300" style="transform: translateX(-50%);"></div>
+        </div>
+
+        <div class="space-y-4 relative">
+          <div class="w-12 h-12 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center text-gray-600 font-light text-lg">
+            3
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-xl text-gray-900 font-normal">Preparation</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Support the body and nervous system.</p>
+          </div>
+          <div class="hidden md:block absolute top-6 left-full w-8 h-0.5 bg-gray-300" style="transform: translateX(-50%);"></div>
+        </div>
+
+        <div class="space-y-4 relative">
+          <div class="w-12 h-12 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center text-gray-600 font-light text-lg">
+            4
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-xl text-gray-900 font-normal">Ceremony</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Engage the experience with guidance and care.</p>
+          </div>
+          <div class="hidden md:block absolute top-6 left-full w-8 h-0.5 bg-gray-300" style="transform: translateX(-50%);"></div>
+        </div>
+
+        <div class="space-y-4">
+          <div class="w-12 h-12 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center text-gray-600 font-light text-lg">
+            5
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-xl text-gray-900 font-normal">Integration</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Living the insights into daily life.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-32 px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center space-y-4 mb-16">
+        <h2 class="text-4xl text-gray-900 font-normal">
+          A Retreat Designed for Depth
+        </h2>
+        <p class="text-gray-700 leading-relaxed max-w-2xl mx-auto">
+          Lumina retreats are intentionally structured to support meaningful personal exploration within a calm and steady environment.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="space-y-4 p-8 bg-gray-50 border border-gray-200">
+          <div class="w-10 h-10 rounded-full bg-gray-200 border-2 border-gray-300 flex items-center justify-center">
+            <span class="text-gray-500 text-xs">&bull;</span>
+          </div>
+          <div class="space-y-3">
+            <h3 class="text-xl text-gray-900 font-normal">Preparation</h3>
+            <p class="text-gray-600 leading-relaxed text-sm">
+              Guidance before the retreat to help guests arrive grounded and ready.
+            </p>
+          </div>
+        </div>
+
+        <div class="space-y-4 p-8 bg-gray-50 border border-gray-200">
+          <div class="w-10 h-10 rounded-full bg-gray-200 border-2 border-gray-300 flex items-center justify-center">
+            <span class="text-gray-500 text-xs">&bull;</span>
+          </div>
+          <div class="space-y-3">
+            <h3 class="text-xl text-gray-900 font-normal">Ceremony</h3>
+            <p class="text-gray-600 leading-relaxed text-sm">
+              Held within a safe and supportive ceremonial environment.
+            </p>
+          </div>
+        </div>
+
+        <div class="space-y-4 p-8 bg-gray-50 border border-gray-200">
+          <div class="w-10 h-10 rounded-full bg-gray-200 border-2 border-gray-300 flex items-center justify-center">
+            <span class="text-gray-500 text-xs">&bull;</span>
+          </div>
+          <div class="space-y-3">
+            <h3 class="text-xl text-gray-900 font-normal">Integration</h3>
+            <p class="text-gray-600 leading-relaxed text-sm">
+              Space for reflection and continued support after the retreat.
+            </p>
+          </div>
+        </div>
+
+        <div class="space-y-4 p-8 bg-gray-50 border border-gray-200">
+          <div class="w-10 h-10 rounded-full bg-gray-200 border-2 border-gray-300 flex items-center justify-center">
+            <span class="text-gray-500 text-xs">&bull;</span>
+          </div>
+          <div class="space-y-3">
+            <h3 class="text-xl text-gray-900 font-normal">Support</h3>
+            <p class="text-gray-600 leading-relaxed text-sm">
+              Experienced facilitators and a small group container.
+            </p>
+          </div>
+        </div>
+
+        <div class="space-y-4 p-8 bg-gray-50 border border-gray-200">
+          <div class="w-10 h-10 rounded-full bg-gray-200 border-2 border-gray-300 flex items-center justify-center">
+            <span class="text-gray-500 text-xs">&bull;</span>
+          </div>
+          <div class="space-y-3">
+            <h3 class="text-xl text-gray-900 font-normal">Nature</h3>
+            <p class="text-gray-600 leading-relaxed text-sm">
+              Quiet landscapes and natural beauty support presence and grounding.
+            </p>
+          </div>
+        </div>
+
+        <div class="space-y-4 p-8 bg-gray-50 border border-gray-200">
+          <div class="w-10 h-10 rounded-full bg-gray-200 border-2 border-gray-300 flex items-center justify-center">
+            <span class="text-gray-500 text-xs">&bull;</span>
+          </div>
+          <div class="space-y-3">
+            <h3 class="text-xl text-gray-900 font-normal">Small Groups</h3>
+            <p class="text-gray-600 leading-relaxed text-sm">
+              Limited group sizes allow for meaningful connection and personal attention.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-32 px-8 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="aspect-[4/3] bg-gray-200 border-2 border-gray-400 flex items-center justify-center">
+          <span class="text-gray-500 text-sm uppercase tracking-wider">Sedona Landscape</span>
+        </div>
+
+        <div class="space-y-6">
+          <h2 class="text-4xl text-gray-900 font-normal">
+            Held by the Landscape
+          </h2>
+
+          <div class="space-y-6 text-gray-700 leading-relaxed">
+            <p>
+              Sedona offers a natural environment for deep inner work.
+            </p>
+            <p class="pt-2">
+              Quiet desert landscapes, open sky, and expansive red rock terrain create space for reflection, presence, and grounding.
+            </p>
+            <p class="pt-2">
+              At Lumina, retreats are designed to work in harmony with this environment &mdash; allowing nature itself to become part of the experience.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-32 px-8">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center space-y-4 mb-16">
+        <h2 class="text-4xl text-gray-900 font-normal">
+          Upcoming Retreats
+        </h2>
+        <p class="text-gray-700 leading-relaxed">
+          Explore upcoming retreat opportunities held in Sedona.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div class="border border-gray-200 overflow-hidden">
+          <div class="aspect-[16/10] bg-gray-200 border-b-2 border-gray-400 flex items-center justify-center">
+            <span class="text-gray-500 text-sm uppercase tracking-wider">Retreat Image</span>
+          </div>
+          <div class="p-8 space-y-6">
+            <div class="space-y-3">
+              <h3 class="text-2xl text-gray-900 font-normal">Quiet River Retreat</h3>
+              <div class="text-sm text-gray-600">
+                <div>May 12&ndash;16</div>
+                <div>5 Days &bull; Sedona, Arizona</div>
+              </div>
+            </div>
+            <p class="text-gray-700 leading-relaxed">
+              A small group retreat designed for deep personal reflection, guided ceremony, and integration support.
+            </p>
+            <div class="flex gap-3 pt-2">
+              <a class="px-6 py-2.5 bg-gray-900 text-white hover:bg-gray-800 transition-colors text-sm" href="#">Apply</a>
+              <a class="px-6 py-2.5 border border-gray-900 text-gray-900 hover:bg-gray-50 transition-colors text-sm" href="#">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="border border-gray-200 overflow-hidden">
+          <div class="aspect-[16/10] bg-gray-200 border-b-2 border-gray-400 flex items-center justify-center">
+            <span class="text-gray-500 text-sm uppercase tracking-wider">Retreat Image</span>
+          </div>
+          <div class="p-8 space-y-6">
+            <div class="space-y-3">
+              <h3 class="text-2xl text-gray-900 font-normal">Desert Spring Retreat</h3>
+              <div class="text-sm text-gray-600">
+                <div>June 8&ndash;12</div>
+                <div>5 Days &bull; Sedona, Arizona</div>
+              </div>
+            </div>
+            <p class="text-gray-700 leading-relaxed">
+              An intimate retreat experience focused on inner clarity, nervous system care, and supported transformation.
+            </p>
+            <div class="flex gap-3 pt-2">
+              <a class="px-6 py-2.5 bg-gray-900 text-white hover:bg-gray-800 transition-colors text-sm" href="#">Apply</a>
+              <a class="px-6 py-2.5 border border-gray-900 text-gray-900 hover:bg-gray-50 transition-colors text-sm" href="#">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <a href="/retreats" class="inline-block text-gray-900 hover:text-gray-700 border-b border-gray-900 pb-1">
+          View All Retreats
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-32 px-8 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl text-gray-900 font-normal">
+          What Guests Discovered
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 border border-gray-200 space-y-6">
+          <p class="text-gray-700 leading-relaxed italic">
+            &ldquo;This retreat helped me reconnect with clarity and compassion for myself in a way I hadn&rsquo;t experienced before.&rdquo;
+          </p>
+          <div class="pt-4 border-t border-gray-200">
+            <div class="text-sm text-gray-900 font-normal">Sarah M.</div>
+            <div class="text-sm text-gray-600">Portland, OR</div>
+          </div>
+        </div>
+
+        <div class="bg-white p-8 border border-gray-200 space-y-6">
+          <p class="text-gray-700 leading-relaxed italic">
+            &ldquo;The careful preparation and integration support made all the difference. I felt held throughout the entire process.&rdquo;
+          </p>
+          <div class="pt-4 border-t border-gray-200">
+            <div class="text-sm text-gray-900 font-normal">David L.</div>
+            <div class="text-sm text-gray-600">Austin, TX</div>
+          </div>
+        </div>
+
+        <div class="bg-white p-8 border border-gray-200 space-y-6">
+          <p class="text-gray-700 leading-relaxed italic">
+            &ldquo;Lumina created a space where I could finally slow down and listen to what was already within me.&rdquo;
+          </p>
+          <div class="pt-4 border-t border-gray-200">
+            <div class="text-sm text-gray-900 font-normal">Jennifer K.</div>
+            <div class="text-sm text-gray-600">Seattle, WA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-32 px-8">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl text-gray-900 font-normal">
+          Meet Your Guides
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12">
+        <div class="space-y-6">
+          <div class="aspect-[3/4] bg-gray-200 border-2 border-gray-400 flex items-center justify-center">
+            <span class="text-gray-500 text-sm uppercase tracking-wider">Portrait</span>
+          </div>
+          <div class="space-y-3">
+            <div>
+              <h3 class="text-2xl text-gray-900 font-normal">Ash</h3>
+              <div class="text-sm text-gray-600 uppercase tracking-wider mt-1">Ceremony Facilitator</div>
+            </div>
+            <p class="text-gray-700 leading-relaxed">
+              Ash holds the ceremonial container and supports participants through guided presence, inquiry, and compassionate awareness.
+            </p>
+          </div>
+        </div>
+
+        <div class="space-y-6">
+          <div class="aspect-[3/4] bg-gray-200 border-2 border-gray-400 flex items-center justify-center">
+            <span class="text-gray-500 text-sm uppercase tracking-wider">Portrait</span>
+          </div>
+          <div class="space-y-3">
+            <div>
+              <h3 class="text-2xl text-gray-900 font-normal">Marco</h3>
+              <div class="text-sm text-gray-600 uppercase tracking-wider mt-1">Retreat Director</div>
+            </div>
+            <p class="text-gray-700 leading-relaxed">
+              Marco helps steward the retreat environment, ensuring the experience is structured with clarity, safety, and care.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-32 px-8 bg-gray-50">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center space-y-6 mb-16">
+        <h2 class="text-4xl text-gray-900 font-normal">
+          Safety and Care
+        </h2>
+
+        <div class="space-y-4 text-gray-700 leading-relaxed max-w-2xl mx-auto">
+          <p>
+            Retreats are held within a thoughtful framework of preparation, ethical facilitation, and integration support.
+          </p>
+          <p class="pt-2">
+            Participants are guided through clear preparation steps and supported throughout the entire experience.
           </p>
         </div>
-      </article>
-      <article class="soft-shadow rounded-[28px] bg-white/95 px-10 py-12 text-center space-y-8">
-        <div class="star-row text-2xl text-[var(--sage)]">★★★★★</div>
-        <p class="text-lg leading-relaxed text-[var(--dusk-soft)]">
-          “The retreat felt gentle, not performative. The practices were quiet but powerful, and I left with a
-          steadier relationship to my own body.”
-        </p>
-        <div class="flex flex-col items-center gap-4">
-          <div class="avatar h-14 w-14 rounded-full border border-slate-300 flex items-center justify-center">
-            <img src="/wp-content/uploads/xavier-avatar.png">
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="bg-white p-6 border border-gray-200 text-center space-y-4">
+          <div class="w-12 h-12 mx-auto rounded-full bg-gray-100 border-2 border-gray-300 flex items-center justify-center">
+            <span class="text-gray-500 text-sm">&bull;</span>
           </div>
-          <p class="text-sm uppercase tracking-[0.2em] text-[var(--dusk-soft)]">
-            Sabine M., Rooted Days — Provence
-          </p>
+          <h3 class="text-sm text-gray-900 font-normal">Medical Screening</h3>
         </div>
-      </article>
-      <article class="soft-shadow rounded-[28px] bg-white/95 px-10 py-12 text-center space-y-8">
-        <div class="star-row text-2xl text-[var(--sage)]">★★★★★</div>
-        <p class="text-lg leading-relaxed text-[var(--dusk-soft)]">
-          “I didn't feel fixed. I felt met. The simplicity of the space and the care in the details made
-          everything land.”
-        </p>
-        <div class="flex flex-col items-center gap-4">
-          <div class="avatar h-14 w-14 rounded-full border border-slate-300 flex items-center justify-center">
-            <img src="/wp-content/uploads/max-avatar.png">
+        <div class="bg-white p-6 border border-gray-200 text-center space-y-4">
+          <div class="w-12 h-12 mx-auto rounded-full bg-gray-100 border-2 border-gray-300 flex items-center justify-center">
+            <span class="text-gray-500 text-sm">&bull;</span>
           </div>
-          <p class="text-sm uppercase tracking-[0.2em] text-[var(--dusk-soft)]">
-            Noor T., Quiet Bloom — Atlas
-          </p>
+          <h3 class="text-sm text-gray-900 font-normal">Dieta Guidance</h3>
         </div>
-      </article>
+        <div class="bg-white p-6 border border-gray-200 text-center space-y-4">
+          <div class="w-12 h-12 mx-auto rounded-full bg-gray-100 border-2 border-gray-300 flex items-center justify-center">
+            <span class="text-gray-500 text-sm">&bull;</span>
+          </div>
+          <h3 class="text-sm text-gray-900 font-normal">Nervous System Care</h3>
+        </div>
+        <div class="bg-white p-6 border border-gray-200 text-center space-y-4">
+          <div class="w-12 h-12 mx-auto rounded-full bg-gray-100 border-2 border-gray-300 flex items-center justify-center">
+            <span class="text-gray-500 text-sm">&bull;</span>
+          </div>
+          <h3 class="text-sm text-gray-900 font-normal">Integration Support</h3>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
+  <section class="py-32 px-8">
+    <div class="max-w-3xl mx-auto text-center space-y-8">
+      <h2 class="text-4xl md:text-5xl text-gray-900 font-normal leading-[1.3]">
+        Begin the Journey
+      </h2>
 
-<!-- INTEGRATION / LIFE AFTER -->
-<!-- Layout intent: centered text with small image row -->
-<section id="integration" class="w-full pt-14 pb-20">
-  <div class="max-w-[1240px] mx-auto px-6 space-y-10">
-    <div class="mx-auto max-w-3xl text-center space-y-4">
-      <p class="label text-base uppercase tracking-[0.25em] text-[var(--muted)]">After the retreat</p>
-      <h2 class="text-4xl leading-tight">The ceremony ends. Nothing essential does.</h2>
-      <p class="text-lg leading-relaxed text-[var(--muted)]">
-        Experiences fade. Life continues.
-        Integration is not about holding onto an insight. It is about living from what did not come and go.
-        The ordinary moments -- conversations, work, rest, boundaries -- become the practice.
-        We offer ongoing support to help you re-enter life with steadiness and care.
+      <p class="text-lg text-gray-700 leading-relaxed">
+        If you feel called to explore this work, we invite you to learn more about the retreat process or begin a conversation.
       </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+        <a class="px-8 py-3 bg-gray-900 text-white hover:bg-gray-800 transition-colors" href="#">
+          Explore the Journey
+        </a>
+        <a class="px-8 py-3 border-2 border-gray-900 text-gray-900 hover:bg-gray-50 transition-colors" href="#">
+          Contact Us
+        </a>
+      </div>
     </div>
-    <!-- <div class="grid grid-cols-3 gap-6">
-      <div class="image-mask h-40 rounded-3xl"></div>
-      <div class="image-mask h-40 rounded-3xl"></div>
-      <div class="image-mask h-40 rounded-3xl"></div>
-    </div> -->
-  </div>
-</section>
-<!-- CONTACT BAND + SHORT FORM -->
-<!-- Layout intent: gradient band with form card -->
-<!-- band-mist -->
-<section id="contact" class="w-full pt-14 pb-20">
-  <div class="max-w-[1240px] mx-auto px-6 grid grid-cols-1 gap-10 items-start lg:grid-cols-[1fr_1fr] lg:gap-16">
-    <div class="space-y-6">
-      <p class="label text-base uppercase tracking-[0.25em] text-[var(--muted)]">Start here</p>
-      <h2 class="text-4xl leading-tight">Begin a conversation.</h2>
-      <p class="text-lg leading-relaxed text-[var(--muted)]">
-        Not to commit. Not to perform. Just to ask questions and feel into whether this is right for you.
-      </p>
-      <ul class="text-sm text-[var(--muted)] space-y-2">
-        <li>Ask anything. Practical or personal.</li>
-        <li>No pressure. No rush.</li>
-        <li>If it is not a fit, we will say so.</li>
-      </ul>
+  </section>
+
+  <section class="py-32 px-8 bg-gray-50">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center space-y-4 mb-12">
+        <h2 class="text-4xl text-gray-900 font-normal">
+          Begin a Conversation
+        </h2>
+        <p class="text-gray-700 leading-relaxed">
+          If you have questions or would like to learn more, reach out and we will respond with care.
+        </p>
+      </div>
+
+      <form class="space-y-6">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="space-y-2">
+            <label for="firstName" class="block text-sm text-gray-700">First Name</label>
+            <input type="text" id="firstName" class="w-full px-4 py-3 border border-gray-300 bg-white focus:outline-none focus:border-gray-500 transition-colors" />
+          </div>
+          <div class="space-y-2">
+            <label for="lastName" class="block text-sm text-gray-700">Last Name</label>
+            <input type="text" id="lastName" class="w-full px-4 py-3 border border-gray-300 bg-white focus:outline-none focus:border-gray-500 transition-colors" />
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <label for="email" class="block text-sm text-gray-700">Email</label>
+          <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 bg-white focus:outline-none focus:border-gray-500 transition-colors" />
+        </div>
+
+        <div class="space-y-2">
+          <label for="phone" class="block text-sm text-gray-700">Phone Number</label>
+          <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 bg-white focus:outline-none focus:border-gray-500 transition-colors" />
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="space-y-2">
+            <label for="city" class="block text-sm text-gray-700">City</label>
+            <input type="text" id="city" class="w-full px-4 py-3 border border-gray-300 bg-white focus:outline-none focus:border-gray-500 transition-colors" />
+          </div>
+          <div class="space-y-2">
+            <label for="state" class="block text-sm text-gray-700">State</label>
+            <input type="text" id="state" class="w-full px-4 py-3 border border-gray-300 bg-white focus:outline-none focus:border-gray-500 transition-colors" />
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <label for="referral" class="block text-sm text-gray-700">How did you hear about us?</label>
+          <input type="text" id="referral" class="w-full px-4 py-3 border border-gray-300 bg-white focus:outline-none focus:border-gray-500 transition-colors" />
+        </div>
+
+        <div class="space-y-2">
+          <label for="message" class="block text-sm text-gray-700">Message</label>
+          <textarea id="message" rows="6" class="w-full px-4 py-3 border border-gray-300 bg-white focus:outline-none focus:border-gray-500 transition-colors resize-none"></textarea>
+        </div>
+
+        <div class="pt-4">
+          <button type="submit" class="w-full px-8 py-3.5 bg-gray-900 text-white hover:bg-gray-800 transition-colors">
+            Submit
+          </button>
+        </div>
+      </form>
     </div>
-    <div class="soft-shadow rounded-3xl bg-white/95 p-8">
-      <?php echo do_shortcode('[forminator_form id="213"]'); ?>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-
-
-
-
+  </section>
+</div>
 
 <?php
 get_footer();
+?>

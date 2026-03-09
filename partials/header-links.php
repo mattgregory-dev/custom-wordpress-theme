@@ -43,7 +43,7 @@
     </li>
 
     <li class="no-sub-menu">
-      <a href="<?php echo esc_url( home_url( '/retreats/' ) ); ?>">
+      <a href="<?php echo esc_url( home_url( '/retreats-v2/' ) ); ?>">
         <span class="menu-item">Retreats</span>
         <span class="menu-item2">Retreats</span>
       </a>

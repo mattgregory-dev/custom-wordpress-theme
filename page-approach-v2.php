@@ -6,7 +6,7 @@ get_header(
   null,
   array(
     'header_variant' => 'absolute',
-    'header_color' => 'white',
+    //'header_color' => 'white',
   )
 );
 ?>
@@ -15,7 +15,6 @@ get_header(
   <section class="relative h-screen flex items-center justify-center">
     <div class="absolute inset-0 border-2 border-gray-400 bg-[#c3ddd5]">
       <div class="absolute inset-0 flex items-center justify-center">
-        <span class="text-gray-500 text-sm uppercase tracking-wider">Image Placeholder</span>
       </div>
     </div>
 
