@@ -214,37 +214,66 @@ section#preparation {
       background-color: rgb(136 211 222 / 40%);
     }
   }
-  // Experience - The Ceremony
-  &#ceremony-hero {
-    background-image: url("#{$theme-root}/images/WspQMlCy3QM.webp");
-    background-position-y: -398px;
+  // Your Journey - Orientation
+  &#orientation-hero {
+    background-image: url("#{$theme-root}/images/EwKXn5CapA4.webp");
+    background-position-x: center;
+    background-position-y: center;
     &::before {
-      background-color: rgb(88 70 113 / 40%);
+      background-color: rgb(136 211 222 / 40%);
     }
   }
-  // Experience - Preparation
+  // Your Journey - Intentions
+  &#intentions-hero {
+    background-image: url("#{$theme-root}/images/tt7kqCbqGDI.webp");
+    background-position-x: center;
+    background-position-y: center;
+    &::before {
+      background-color: rgb(136 211 222 / 40%);
+    }
+  }
+  // Your Journey - Preparation
   &#preparation-hero {
     background-image: url("#{$theme-root}/images/TEWLhkplCOo2.webp");
     &::before {
       background-color: rgb(136 211 222 / 40%);
     }
   }
-  // Experience - Integration
-  &#aftercare-hero {
+  // Your Journey - The Ceremony
+  &#ceremony-hero {
+    background-image: url("#{$theme-root}/images/eodA_8CTOFo.webp");
+    background-position-y: center;
+    background-position-y: center;
+    &::before {
+      background-color: rgb(88 70 113 / 40%);
+    }
+  }
+  // Your Journey - Integration
+  &#integration-hero {
     background-image: url("#{$theme-root}/images/3Rw2JLz1wo.webp");
     background-position-y: -110px;
     &::before {
       background-color: rgb(136 211 222 / 40%);
     }
   }
-  // Experience - Safety
+  // Your Journey - Safety
   &#safety-hero {
-    background-image: url("#{$theme-root}/images/jldllCkFsU.webp");
-    background-position-y: -1470px;
+    background-image: url("#{$theme-root}/images/Ydj_lckko4M.webp");
+    background-position-y: center;
+    background-position-y: center;
     &::before {
       background-color: rgb(136 211 222 / 40%);
     }
   }
+  // Retreats
+  // &#retreats-hero {
+  //   background-image: url("#{$theme-root}/images/eodA_8CTOFo.webp");
+  //   background-position-y: center;
+  //   background-position-y: center;
+  //   &::before {
+  //     background-color: rgb(136 211 222 / 40%);
+  //   }
+  // }
 }
 
 // Parallax section

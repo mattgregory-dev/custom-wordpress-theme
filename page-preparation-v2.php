@@ -12,8 +12,8 @@ get_header(
 ?>
 
 <div class="bg-white">
-  <section class="h-screen relative border-b-2 border-gray-300">
-    <div class="absolute inset-0 bg-[#c3ddd5] border-2 border-gray-300">
+  <section id="preparation-hero" class="page-hero h-screen relative border-b-2 border-gray-300">
+    <div class="absolute inset-0">
       <div class="flex items-center justify-center h-full">
       </div>
     </div>

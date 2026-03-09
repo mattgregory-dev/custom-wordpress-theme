@@ -12,8 +12,8 @@ get_header(
 ?>
 
 <div class="bg-white">
-  <section class="h-screen relative border-b-2 border-gray-300">
-    <div class="absolute inset-0 border-2 border-gray-300 bg-[#c3ddd5]">
+  <section id="orientation-hero" class="page-hero h-screen relative border-b-2 border-gray-300">
+    <div class="absolute inset-0">
       <div class="flex items-center justify-center h-full">
       </div>
     </div>
@@ -96,8 +96,12 @@ get_header(
   <section class="py-24 px-8">
     <div class="max-w-4xl mx-auto">
       <div class="mb-16">
-        <div class="w-24 h-24 rounded-full border-2 border-gray-300 mx-auto mb-8 flex items-center justify-center">
-          <span class="text-gray-400 text-xs">ICON</span>
+        <div class="w-36 h-36 mx-auto mb-8 flex items-center justify-center"><!--rounded-full border-2 border-gray-300 -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 58.415 39.35"><g transform="translate(0.5 0.5)"><g transform="translate(0 0)"><path d="M491.939,190.138a19.11,19.11,0,0,1-21.945-18.963c0-.053,0,.054,0,0s0,.054,0,0a19.094,19.094,0,1,1,38.188-.081c0,.054,0,.107,0,.161v-.161q0,.081,0,.162a19.08,19.08,0,0,1-8.834,16.106" transform="translate(-469.993 -152)" fill="none" stroke="#aea17e" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path><line x2="9.02" y2="7.684" transform="translate(19.646 18.257)" fill="none" stroke="#aea17e" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></line><path d="M567.09,200.014s3.238,2.537,7.318,6.364" transform="translate(-545.742 -189.457)" fill="none" stroke="#aea17e" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path><line x1="9.02" y2="7.684" transform="translate(28.666 18.257)" fill="none" stroke="#aea17e" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></line><path d="M607.693,200.014s-3.238,2.537-7.318,6.364" transform="translate(-571.709 -189.457)" fill="none" stroke="#aea17e" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path><path d="M573.74,152.205a19.1,19.1,0,0,1,21.891,18.889c0,.054,0,.107,0,.161v-.161c0,.054,0,.108,0,.162a19.094,19.094,0,1,1-38.188-.081c0-.053,0,.054,0,0s0,.054,0,0a19.214,19.214,0,0,1,9.288-16.446" transform="translate(-538.216 -152)" fill="none" stroke="#aea17e" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path><line y2="32.407" transform="translate(28.666 2.889)" fill="none" stroke="#aea17e" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></line></g></g></svg>
+          <svg class="hidden" xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 45.944 42.646"><g transform="translate(0.495 0.413)"><g transform="translate(0 0)"><path d="M838.018,866.051c.294-3.833,4.183-6.437,6.211-9.4,2.093-3.052,3.173-7.595,6.508-9.2,3.233-1.554,7.412.394,11.246.688s8.261-.994,11.219,1.034c3.052,2.092,3.426,6.747,5.029,10.082,1.554,3.233,5,6.4,4.706,10.232s-4.183,6.437-6.211,9.4c-2.093,3.052-3.172,7.595-6.508,9.2-3.233,1.554-7.412-.394-11.246-.688s-8.261.994-11.219-1.034c-3.052-2.093-3.426-6.747-5.029-10.082C841.171,873.05,837.724,869.884,838.018,866.051Z" transform="translate(-838.001 -846.864)" fill="none" stroke="#aea17e" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path><path d="M851.591,864.652c.992-3.386,5.172-4.867,7.555-7.137,2.458-2.342,4.182-6.414,7.482-7.22,3.2-.781,6.575,1.988,9.961,2.98s7.723.484,9.994,2.867c2.342,2.458,1.6,6.817,2.4,10.116.781,3.2,3.5,6.7,2.507,10.086s-5.172,4.867-7.554,7.137c-2.459,2.343-4.183,6.414-7.482,7.22-3.2.781-6.575-1.988-9.961-2.981s-7.723-.484-9.994-2.867c-2.342-2.458-1.6-6.817-2.4-10.115C853.318,871.54,850.6,868.038,851.591,864.652Z" transform="translate(-849.064 -849.589)" fill="none" stroke="#aea17e" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path></g></g></svg>
+          <!-- <img
+                class="h-36"
+                src="<?php echo esc_url( get_template_directory_uri() . '/images/icons/wjkiXOyV3o.png' ); ?>"> -->
         </div>
       </div>
 

@@ -12,8 +12,8 @@ get_header(
 ?>
 
 <div class="min-h-screen bg-white">
-  <section class="relative h-screen flex items-center justify-center">
-    <div class="absolute inset-0 border-2 border-gray-400 bg-[#c3ddd5]">
+  <section id="approach-hero" class="page-hero relative h-screen flex items-center justify-center">
+    <div class="absolute inset-0">
       <div class="absolute inset-0 flex items-center justify-center">
       </div>
     </div>
@@ -43,9 +43,9 @@ get_header(
   </section>
 
   <section class="py-32 px-8">
-    <div class="max-w-3xl mx-auto text-center">
-      <div class="w-20 h-20 rounded-full bg-gray-200 border-2 border-gray-400 mx-auto mb-12 flex items-center justify-center">
-        <span class="text-gray-500 text-xs">Icon</span>
+    <div class="max-w-2xl mx-auto text-center">
+      <div style="height:120px;" class="mx-auto mb-12 flex items-center justify-center">
+        <img style="max-height:100%;" src="<?php echo esc_url( get_template_directory_uri() . '/images/icons/geometric.svg' ); ?>">
       </div>
 
       <p class="text-xs uppercase tracking-[0.2em] mb-6 text-gray-600">
@@ -53,10 +53,13 @@ get_header(
       </p>
 
       <p class="text-lg leading-relaxed text-gray-700 mb-6">
-        At Lumina, healing is not passive &mdash; it is an active, soul-centered journey of rediscovering one&rsquo;s inherent wholeness. With experienced facilitators and compassionate care, we create the conditions for real transformation.
+        At Lumina, healing is not passive &mdash; it is an active, soul-centered journey of rediscovering one&rsquo;s inherent wholeness. 
+      </p>
+      <p class="text-lg leading-relaxed text-gray-700 mb-6">
+        With experienced facilitators and compassionate care, we aim to create the conditions for real transformation.
       </p>
       <p class="text-lg leading-relaxed text-gray-700">
-        We welcome individuals from all paths who are ready to engage in deep growth and lasting change.
+        We welcome those from all paths who are ready to engage in deep growth and lasting change.
       </p>
     </div>
   </section>
@@ -123,8 +126,8 @@ get_header(
   <section class="py-32 px-8">
     <div class="max-w-7xl mx-auto">
       <div class="grid md:grid-cols-2 gap-16 items-center">
-        <div class="aspect-[3/4] bg-gray-200 border-2 border-gray-400 flex items-center justify-center">
-          <span class="text-gray-500 text-sm uppercase tracking-wider">Portrait Placeholder</span>
+        <div class="aspect-[3/4] flex items-center justify-center">
+          <img src="<?php echo esc_url( get_template_directory_uri() . '/images/V8NoTp7Y10.webp' ); ?>">
         </div>
 
         <div class="space-y-6">
@@ -138,7 +141,7 @@ get_header(
 
           <div class="space-y-4 text-gray-700 leading-relaxed">
             <p>
-              Lumina is a retreat for people seeking meaningful personal healing and inner clarity.
+              <strong>Lumina is a retreat for people seeking meaningful personal healing and inner clarity.</strong>
             </p>
             <p>
               Our work centers around carefully guided plant medicine ceremonies held in a safe and supportive environment. These ceremonies are part of a larger process that includes preparation, integration, and thoughtful support throughout the experience.
@@ -168,48 +171,49 @@ get_header(
 
       <div class="grid md:grid-cols-3 gap-8">
         <div class="bg-white border border-gray-300 p-8">
-          <div class="w-16 h-16 rounded-full bg-gray-200 border-2 border-gray-400 mb-6 flex items-center justify-center">
-            <span class="text-gray-500 text-xs">Icon</span>
+          <div class="w-16 h-16 rounded-full mb-6 flex items-center justify-center">
+            <img style="max-height:100%;" src="<?php echo esc_url( get_template_directory_uri() . '/images/icons/geometric-2.svg' ); ?>">
           </div>
           <h3 class="text-xl mb-3 text-gray-900 font-medium">Medicine Ceremony</h3>
           <p class="text-gray-600 leading-relaxed">Guided ceremonial experiences held within a safe and respectful container.</p>
         </div>
 
         <div class="bg-white border border-gray-300 p-8">
-          <div class="w-16 h-16 rounded-full bg-gray-200 border-2 border-gray-400 mb-6 flex items-center justify-center">
-            <span class="text-gray-500 text-xs">Icon</span>
+          <!-- bg-gray-200 border-2 border-gray-400 -->
+          <div class="w-16 h-16 rounded-full mb-6 flex items-center justify-center">
+            <img style="max-height:100%;" src="<?php echo esc_url( get_template_directory_uri() . '/images/icons/geometric-2.svg' ); ?>">
           </div>
           <h3 class="text-xl mb-3 text-gray-900 font-medium">Somatic Therapy</h3>
           <p class="text-gray-600 leading-relaxed">Body-based practices that support emotional release and grounded awareness.</p>
         </div>
 
         <div class="bg-white border border-gray-300 p-8">
-          <div class="w-16 h-16 rounded-full bg-gray-200 border-2 border-gray-400 mb-6 flex items-center justify-center">
-            <span class="text-gray-500 text-xs">Icon</span>
+          <div class="w-16 h-16 rounded-full mb-6 flex items-center justify-center">
+            <img style="max-height:100%;" src="<?php echo esc_url( get_template_directory_uri() . '/images/icons/geometric-2.svg' ); ?>">
           </div>
           <h3 class="text-xl mb-3 text-gray-900 font-medium">Self Inquiry</h3>
           <p class="text-gray-600 leading-relaxed">Reflection practices that invite honesty, curiosity, and deeper understanding.</p>
         </div>
 
         <div class="bg-white border border-gray-300 p-8">
-          <div class="w-16 h-16 rounded-full bg-gray-200 border-2 border-gray-400 mb-6 flex items-center justify-center">
-            <span class="text-gray-500 text-xs">Icon</span>
+          <div class="w-16 h-16 rounded-full mb-6 flex items-center justify-center">
+            <img style="max-height:100%;" src="<?php echo esc_url( get_template_directory_uri() . '/images/icons/geometric-2.svg' ); ?>">
           </div>
           <h3 class="text-xl mb-3 text-gray-900 font-medium">Movement Practices</h3>
           <p class="text-gray-600 leading-relaxed">Breath, gentle movement, and embodiment exercises to support integration.</p>
         </div>
 
         <div class="bg-white border border-gray-300 p-8">
-          <div class="w-16 h-16 rounded-full bg-gray-200 border-2 border-gray-400 mb-6 flex items-center justify-center">
-            <span class="text-gray-500 text-xs">Icon</span>
+          <div class="w-16 h-16 rounded-full mb-6 flex items-center justify-center">
+            <img style="max-height:100%;" src="<?php echo esc_url( get_template_directory_uri() . '/images/icons/geometric-2.svg' ); ?>">
           </div>
           <h3 class="text-xl mb-3 text-gray-900 font-medium">Nourishing Meals</h3>
           <p class="text-gray-600 leading-relaxed">Simple, supportive meals designed to care for the body and nervous system.</p>
         </div>
 
         <div class="bg-white border border-gray-300 p-8">
-          <div class="w-16 h-16 rounded-full bg-gray-200 border-2 border-gray-400 mb-6 flex items-center justify-center">
-            <span class="text-gray-500 text-xs">Icon</span>
+          <div class="w-16 h-16 rounded-full mb-6 flex items-center justify-center">
+            <img style="max-height:100%;" src="<?php echo esc_url( get_template_directory_uri() . '/images/icons/geometric-2.svg' ); ?>">
           </div>
           <h3 class="text-xl mb-3 text-gray-900 font-medium">Reflective Space</h3>
           <p class="text-gray-600 leading-relaxed">Quiet time for rest, journaling, and personal contemplation.</p>

@@ -3,14 +3,14 @@ get_header(
   null,
   array(
     'header_variant' => 'absolute',
-    //'header_color' => 'white',
+    'header_color' => 'white',
   )
 );
 ?>
 
 <div class="min-h-screen bg-white">
-  <section class="relative min-h-[90vh] flex items-center justify-center px-8 py-32">
-    <div class="absolute inset-0 bg-gray-300 border-2 border-gray-400">
+  <section id="front-page-hero" class="relative min-h-[90vh] flex items-center justify-center px-8 py-32 page-hero h-screen">
+    <div class="absolute inset-0">
       <div class="absolute inset-0 flex items-center justify-center">
       </div>
     </div>
@@ -51,11 +51,9 @@ get_header(
     </div>
   </section>
 
-  <section class="py-32 px-8">
+  <section class="py-24 px-8">
     <div class="max-w-3xl mx-auto text-center space-y-8">
-      <div class="w-12 h-12 mx-auto rounded-full bg-gray-200 border-2 border-gray-400 flex items-center justify-center">
-        <span class="text-gray-500 text-xs">&bull;</span>
-      </div>
+      <?php get_template_part('partials/aya-motif') ?>
 
       <div class="text-gray-600 text-sm uppercase tracking-[0.2em]">
         OUR ORIENTATION

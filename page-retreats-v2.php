@@ -12,8 +12,8 @@ get_header(
 ?>
 
 <div class="min-h-screen bg-white">
-  <section class="relative min-h-[85vh] flex items-center justify-center px-8 py-24">
-    <div class="absolute inset-0 border-2 border-gray-400 bg-[#c3ddd5]">
+  <section id="retreats-hero" class="page-hero relative min-h-[85vh] flex items-center justify-center px-8 py-24">
+    <div class="absolute inset-0">
       <div class="absolute inset-0 flex items-center justify-center">
       </div>
     </div>

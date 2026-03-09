@@ -6,14 +6,14 @@ get_header(
   null,
   array(
     'header_variant' => 'absolute',
-    //'header_color' => 'white',
+    'header_color' => 'white',
   )
 );
 ?>
 
 <div class="bg-white">
-  <section class="h-screen relative border-b-2 border-gray-300">
-    <div class="absolute inset-0 border-2 border-gray-300 bg-[#c3ddd5]">
+  <section id="ceremony-hero" class="page-hero h-screen relative border-b-2 border-gray-300">
+    <div class="absolute inset-0">
       <div class="flex items-center justify-center h-full">
       </div>
     </div>
