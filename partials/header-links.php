@@ -20,7 +20,7 @@
       </a>
     </li>
     <li class="no-sub-menu">
-      <a href="<?php echo esc_url( home_url( '/approach/' ) ); ?>">
+      <a href="<?php echo esc_url( home_url( '/approach-v2/' ) ); ?>">
         <span class="menu-item">Approach</span>
         <span class="menu-item2">Approach</span>
       </a>

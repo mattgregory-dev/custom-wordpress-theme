@@ -13,7 +13,7 @@ get_header(
 
 <div class="bg-white">
   <section class="h-screen relative border-b-2 border-gray-300">
-    <div class="absolute inset-0 bg-gray-100 border-2 border-gray-300">
+    <div class="absolute inset-0 border-2 border-gray-300 bg-[#c3ddd5]">
       <div class="flex items-center justify-center h-full">
         <span class="text-gray-400 text-sm">[ IMAGE PLACEHOLDER ]</span>
       </div>
@@ -431,7 +431,7 @@ get_header(
     </div>
   </section>
 
-  <section class="py-32 px-8 border-t-2 border-gray-300">
+  <section class="py-32 px-8 border-t-2 border-gray-300 bg-[#c3ddd5]">
     <div class="max-w-4xl mx-auto">
       <div class="grid grid-cols-12 gap-12 items-center">
         <div class="col-span-5">
