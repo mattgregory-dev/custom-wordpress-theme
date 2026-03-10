@@ -60,11 +60,20 @@ function cwp_assets() {
   wp_enqueue_style( 'cwp-main', $dist . '/assets/main.css', array( 'cwp-tailwind' ), null );
 
   // Main JS bundle (ES module).
-  wp_enqueue_script( 'cwp-main', $dist . '/assets/main.js', array(), null, true );
+  wp_enqueue_script( 'cwp-main', $dist . '/main.js', array(), null, true );
 
   wp_script_add_data( 'cwp-main', 'type', 'module' );
 }
 add_action( 'wp_enqueue_scripts', 'cwp_assets', 999 );
+
+// Ensure Vite-built block scripts load as ES modules.
+function cwp_block_module_scripts( $tag, $handle, $src ) {
+  if ( false !== strpos( $src, '/dist/blocks/' ) ) {
+    return '<script type="module" src="' . esc_url( $src ) . '"></script>';
+  }
+  return $tag;
+}
+add_filter( 'script_loader_tag', 'cwp_block_module_scripts', 10, 3 );
 
 // Remove WordPress markup that is not needed
 function cwp_cleanup_head() {
@@ -73,19 +82,8 @@ function cwp_cleanup_head() {
   remove_action( 'wp_head', 'wp_shortlink_wp_head' );
   remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10 );
   remove_action( 'wp_head', 'wp_generator' );
-  remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
-  remove_action( 'wp_head', 'wp_oembed_add_host_js' );
 }
 add_action( 'after_setup_theme', 'cwp_cleanup_head' );
-
-function cwp_disable_oembed() {
-  wp_deregister_script( 'wp-embed' );
-  add_filter( 'embed_oembed_discover', '__return_false' );
-  remove_filter( 'oembed_dataparse', 'wp_filter_oembed_result', 10 );
-  remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
-  remove_action( 'wp_head', 'wp_oembed_add_host_js' );
-}
-add_action( 'init', 'cwp_disable_oembed', 20 );
 
 function cwp_dequeue_styles() {
   remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
@@ -118,9 +116,62 @@ function cwp_disable_emoji_dns_prefetch( $urls, $relation_type ) {
   return $urls;
 }
 
+// Remove titles from WordPress upon import
+add_filter('wp_insert_attachment_data', function ($data, $postarr) {
+    // Prevent auto-titling from filename (keep blank unless user sets it)
+    if (!empty($data['post_title']) && !empty($postarr['file'])) {
+        $filename = pathinfo($postarr['file'], PATHINFO_FILENAME);
+
+        // If title equals filename-derived title, blank it out
+        $normalized_title = sanitize_title($data['post_title']);
+        $normalized_file  = sanitize_title($filename);
+
+        if ($normalized_title === $normalized_file) {
+            $data['post_title'] = '';
+        }
+    }
+
+    // Optional: also clear caption if it's being auto-set somewhere
+    if (!empty($data['post_excerpt'])) {
+        $data['post_excerpt'] = '';
+    }
+
+    return $data;
+}, 10, 2);
+
+function shortcode_current_year() {
+    return date('Y');
+}
+add_shortcode('current_year', 'shortcode_current_year');
+
+// Register Gutenburg custom blocks
+function theme_register_blocks() {
+    register_block_type( __DIR__ . '/blocks/hero');
+}
+add_action( 'init', 'theme_register_blocks' );
+
+/*
+function cwp_cleanup_head() {
+  remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
+  remove_action( 'wp_head', 'wp_oembed_add_host_js' );
+}
+add_action( 'after_setup_theme', 'cwp_cleanup_head' );
+
+function cwp_disable_oembed() {
+  wp_deregister_script( 'wp-embed' );
+  add_filter( 'embed_oembed_discover', '__return_false' );
+  remove_filter( 'oembed_dataparse', 'wp_filter_oembed_result', 10 );
+  remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
+  remove_action( 'wp_head', 'wp_oembed_add_host_js' );
+}
+add_action( 'init', 'cwp_disable_oembed', 20 );
+*/
+
 //////////////////////////////////////////////////////////////////
 ///////////// [START: FOR DEVELOPMENT ONLY] //////////////////////
 //////////////////////////////////////////////////////////////////
+
+/*
 function cwp_dev_disable_block_editor() {
   if ( ! cwp_is_vite_dev() ) {
     return;
@@ -170,34 +221,8 @@ function cwp_dev_dequeue_block_assets() {
   wp_dequeue_style( 'classic-theme-styles' );
 }
 add_action( 'wp_enqueue_scripts', 'cwp_dev_dequeue_block_assets', 100 );
+*/
+
 //////////////////////////////////////////////////////////////////
 ///////////// [END: FOR DEVELOPMENT ONLY] ////////////////////////
 //////////////////////////////////////////////////////////////////
-
-// Remove titles from WordPress upon import
-add_filter('wp_insert_attachment_data', function ($data, $postarr) {
-    // Prevent auto-titling from filename (keep blank unless user sets it)
-    if (!empty($data['post_title']) && !empty($postarr['file'])) {
-        $filename = pathinfo($postarr['file'], PATHINFO_FILENAME);
-
-        // If title equals filename-derived title, blank it out
-        $normalized_title = sanitize_title($data['post_title']);
-        $normalized_file  = sanitize_title($filename);
-
-        if ($normalized_title === $normalized_file) {
-            $data['post_title'] = '';
-        }
-    }
-
-    // Optional: also clear caption if it's being auto-set somewhere
-    if (!empty($data['post_excerpt'])) {
-        $data['post_excerpt'] = '';
-    }
-
-    return $data;
-}, 10, 2);
-
-function shortcode_current_year() {
-    return date('Y');
-}
-add_shortcode('current_year', 'shortcode_current_year');
