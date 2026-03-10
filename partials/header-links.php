@@ -33,17 +33,17 @@
         <span class="menu-item2">Your Journey</span>
       </a>
       <ul class="sub-menu">
-        <li><a href="<?php echo esc_url( home_url( '/orientation-v3/' ) ); ?>">Orientation</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/orientation/' ) ); ?>">Orientation</a></li>
         <li><a href="<?php echo esc_url( home_url( '/intentions/' ) ); ?>">Intentions</a></li>
         <li><a href="<?php echo esc_url( home_url( '/preparation-v2/' ) ); ?>">Preparation</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/ceremony-v2/' ) ); ?>">The Ceremony</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/integration-v3/' ) ); ?>">Integration</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/safety-v2/' ) ); ?>">Safety</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/ceremony/' ) ); ?>">The Ceremony</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/integration/' ) ); ?>">Integration</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/safety/' ) ); ?>">Safety</a></li>
       </ul>
     </li>
 
     <li class="no-sub-menu">
-      <a href="<?php echo esc_url( home_url( '/retreats-v2/' ) ); ?>">
+      <a href="<?php echo esc_url( home_url( '/retreats/' ) ); ?>">
         <span class="menu-item">Retreats</span>
         <span class="menu-item2">Retreats</span>
       </a>
