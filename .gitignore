@@ -30,5 +30,5 @@ src/styles/base/_base.scss
 html/
 aero-dest/
 /components/
-images/aero/
 src/styles/aero/
+images/

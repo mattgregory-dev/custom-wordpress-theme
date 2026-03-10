@@ -383,8 +383,8 @@ get_header(
 
       <div class="grid md:grid-cols-2 gap-12">
         <div class="space-y-6">
-          <div class="aspect-[3/4] bg-gray-200 border-2 border-gray-400 flex items-center justify-center">
-            <span class="text-gray-500 text-sm uppercase tracking-wider">Portrait</span>
+          <div class="flex items-center justify-center">
+            <img src="<?php echo esc_url( get_template_directory_uri() . '/images/team/marco.jpg' ); ?>">
           </div>
           <div class="space-y-3">
             <div>
@@ -398,8 +398,8 @@ get_header(
         </div>
 
         <div class="space-y-6">
-          <div class="aspect-[3/4] bg-gray-200 border-2 border-gray-400 flex items-center justify-center">
-            <span class="text-gray-500 text-sm uppercase tracking-wider">Portrait</span>
+          <div class="flex items-center justify-center">
+            <img src="<?php echo esc_url( get_template_directory_uri() . '/images/team/marco.jpg' ); ?>">
           </div>
           <div class="space-y-3">
             <div>

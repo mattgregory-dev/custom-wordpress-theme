@@ -127,7 +127,7 @@ get_header(
     <div class="max-w-7xl mx-auto">
       <div class="grid md:grid-cols-2 gap-16 items-center">
         <div class="aspect-[3/4] flex items-center justify-center">
-          <img src="<?php echo esc_url( get_template_directory_uri() . '/images/V8NoTp7Y10.webp' ); ?>">
+          <img src="<?php echo esc_url( get_template_directory_uri() . '/images/bg/V8NoTp7Y10.webp' ); ?>">
         </div>
 
         <div class="space-y-6">
@@ -311,10 +311,13 @@ get_header(
 
   <section class="py-32 px-8">
     <div class="max-w-6xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-12">
+      <div class="text-center max-w-3xl mx-auto">
+        <h2 class="text-4xl">Meet Your Guides</h2>
+      </div>
+      <div class="grid mt-12 md:grid-cols-2 gap-12">
         <div class="border border-gray-300 p-8">
-          <div class="aspect-[3/4] bg-gray-200 border-2 border-gray-400 mb-6 flex items-center justify-center">
-            <span class="text-gray-500 text-sm uppercase tracking-wider">Portrait</span>
+          <div class="mb-6 flex items-center justify-center">
+            <img src="<?php echo esc_url( get_template_directory_uri() . '/images/team/ash.webp' ); ?>">
           </div>
 
           <h3 class="text-2xl mb-2 text-gray-900 font-normal">Ash</h3>
@@ -322,11 +325,12 @@ get_header(
           <p class="text-gray-700 leading-relaxed">
             Ash holds the ceremonial container and supports participants through guided presence, inquiry, and compassionate awareness.
           </p>
+          <div class="mt-4 text-sm border border-black/30 inline-block px-3 py-1">Read Bio</div>
         </div>
 
         <div class="border border-gray-300 p-8">
-          <div class="aspect-[3/4] bg-gray-200 border-2 border-gray-400 mb-6 flex items-center justify-center">
-            <span class="text-gray-500 text-sm uppercase tracking-wider">Portrait</span>
+          <div class="mb-6 flex items-center justify-center">
+            <img src="<?php echo esc_url( get_template_directory_uri() . '/images/team/marco.jpg' ); ?>">
           </div>
 
           <h3 class="text-2xl mb-2 text-gray-900 font-normal">Marco</h3>
@@ -334,6 +338,7 @@ get_header(
           <p class="text-gray-700 leading-relaxed">
             Marco helps steward the retreat environment, ensuring the experience is structured with clarity, safety, and care.
           </p>
+          <div class="mt-4 text-sm border border-black/30 inline-block px-3 py-1">Read Bio</div>
         </div>
       </div>
     </div>
@@ -341,7 +346,7 @@ get_header(
 
   <section class="py-32 px-8 bg-gray-50 bg-[#c3ddd5]">
     <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-[2.75rem] font-light mb-8 text-gray-900 leading-[1.4]">
+      <h2 class="text-[2.4rem] font-light mb-8 text-gray-900 leading-[1.4]">
         Healing does not give you something new.<br />
         It reveals what has always been present.
       </h2>
