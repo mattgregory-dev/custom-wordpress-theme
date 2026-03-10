@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Retreats v2
+ * Template Name: Retreats
  */
 get_header(
   null,

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Safety v2
+ * Template Name: Safety
  */
 get_header(
   null,

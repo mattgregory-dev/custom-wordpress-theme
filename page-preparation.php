@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Preparation v2
+ * Template Name: Preparation
  */
 get_header(
   null,

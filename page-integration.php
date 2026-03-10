@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Integration v3
+ * Template Name: Integration
  */
 get_header(
   null,

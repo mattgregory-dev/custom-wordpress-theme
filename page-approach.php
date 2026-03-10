@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Approach v2
+ * Template Name: Approach
  */
 get_header(
   null,

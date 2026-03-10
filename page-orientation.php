@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Orientation v3
+ * Template Name: Orientation
  */
 get_header(
   null,
