@@ -1,7 +1,7 @@
 const { registerBlockType } = wp.blocks;
 const { createElement, Fragment } = wp.element;
-const { MediaUpload, MediaUploadCheck } = wp.blockEditor;
-const { Button, ColorPicker, TextControl } = wp.components;
+const { InspectorControls, MediaUpload, MediaUploadCheck } = wp.blockEditor;
+const { Button, ColorPicker, PanelBody, TextControl } = wp.components;
 
 const normalizeColorValue = (value) => {
   if (typeof value === 'string') {
@@ -89,81 +89,122 @@ const renderHero = ({
   )
 );
 
+const renderEditorPreview = ({
+  eyebrow,
+  title,
+  description,
+  button1Text,
+  button2Text,
+  backgroundImageUrl,
+  overlayColor,
+}) => (
+  createElement(
+    'div',
+    {
+      className: 'hero-editor-preview',
+      style: backgroundImageUrl
+        ? {
+            backgroundImage: `url(${backgroundImageUrl})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            '--hero-overlay': overlayColor || 'rgba(0, 0, 0, 0.4)',
+          }
+        : { '--hero-overlay': overlayColor || 'rgba(0, 0, 0, 0.4)' },
+    },
+    createElement(
+      'div',
+      { className: 'hero-editor-preview__inner' },
+      createElement('span', { className: 'hero-editor-eyebrow' }, eyebrow || 'Hero eyebrow'),
+      createElement('h1', null, title || 'Hero title'),
+      createElement('p', null, description || 'Hero description'),
+      createElement(
+        'div',
+        { className: 'hero-editor-buttons' },
+        createElement('a', { href: '#' }, button1Text || 'Button 1 text'),
+        createElement('a', { href: '#' }, button2Text || 'Button 2 text')
+      )
+    )
+  )
+);
+
 registerBlockType('cwp/hero', {
   edit: ({ attributes, setAttributes }) => (
     createElement(
       Fragment,
       null,
-      createElement(TextControl, {
-        label: 'Hero Eyebrow',
-        value: attributes.eyebrow,
-        onChange: (value) => setAttributes({ eyebrow: value }),
-      }),
-      createElement(TextControl, {
-        label: 'Hero Title',
-        value: attributes.title,
-        onChange: (value) => setAttributes({ title: value }),
-      }),
-      createElement(TextControl, {
-        label: 'Hero Description',
-        value: attributes.description,
-        onChange: (value) => setAttributes({ description: value }),
-      }),
-      createElement(TextControl, {
-        label: 'Hero Button 1 Text',
-        value: attributes.button1Text,
-        onChange: (value) => setAttributes({ button1Text: value }),
-      }),
-      createElement(TextControl, {
-        label: 'Hero Button 1 URL',
-        value: attributes.button1Url,
-        onChange: (value) => setAttributes({ button1Url: value }),
-      }),
-      createElement(TextControl, {
-        label: 'Hero Button 2 Text',
-        value: attributes.button2Text,
-        onChange: (value) => setAttributes({ button2Text: value }),
-      }),
-      createElement(TextControl, {
-        label: 'Hero Button 2 URL',
-        value: attributes.button2Url,
-        onChange: (value) => setAttributes({ button2Url: value }),
-      }),
       createElement(
-        MediaUploadCheck,
+        InspectorControls,
         null,
-        createElement(MediaUpload, {
-          onSelect: (media) => setAttributes({
-            backgroundImageId: media?.id || null,
-            backgroundImageUrl: media?.url || '',
+        createElement(
+          PanelBody,
+          { title: 'Hero Content', initialOpen: true },
+          createElement(TextControl, {
+            label: 'Hero Eyebrow',
+            value: attributes.eyebrow,
+            onChange: (value) => setAttributes({ eyebrow: value }),
           }),
-          allowedTypes: ['image'],
-          value: attributes.backgroundImageId,
-          render: ({ open }) => (
-            createElement(
-              Button,
-              { variant: 'secondary', onClick: open },
-              attributes.backgroundImageUrl ? 'Replace Background Image' : 'Select Background Image'
-            )
+          createElement(TextControl, {
+            label: 'Hero Title',
+            value: attributes.title,
+            onChange: (value) => setAttributes({ title: value }),
+          }),
+          createElement(TextControl, {
+            label: 'Hero Description',
+            value: attributes.description,
+            onChange: (value) => setAttributes({ description: value }),
+          }),
+          createElement(TextControl, {
+            label: 'Hero Button 1 Text',
+            value: attributes.button1Text,
+            onChange: (value) => setAttributes({ button1Text: value }),
+          }),
+          createElement(TextControl, {
+            label: 'Hero Button 1 URL',
+            value: attributes.button1Url,
+            onChange: (value) => setAttributes({ button1Url: value }),
+          }),
+          createElement(TextControl, {
+            label: 'Hero Button 2 Text',
+            value: attributes.button2Text,
+            onChange: (value) => setAttributes({ button2Text: value }),
+          }),
+          createElement(TextControl, {
+            label: 'Hero Button 2 URL',
+            value: attributes.button2Url,
+            onChange: (value) => setAttributes({ button2Url: value }),
+          })
+        ),
+        createElement(
+          PanelBody,
+          { title: 'Hero Media', initialOpen: false },
+          createElement(
+            MediaUploadCheck,
+            null,
+            createElement(MediaUpload, {
+              onSelect: (media) => setAttributes({
+                backgroundImageId: media?.id || null,
+                backgroundImageUrl: media?.url || '',
+              }),
+              allowedTypes: ['image'],
+              value: attributes.backgroundImageId,
+              render: ({ open }) => (
+                createElement(
+                  Button,
+                  { variant: 'secondary', onClick: open },
+                  attributes.backgroundImageUrl ? 'Replace Background Image' : 'Select Background Image'
+                )
+              ),
+            })
           ),
-        })
+          createElement('p', null, 'Hero Overlay Color'),
+          createElement(ColorPicker, {
+            color: attributes.overlayColor || 'rgba(0, 0, 0, 0.4)',
+            onChangeComplete: (value) => setAttributes({ overlayColor: normalizeColorValue(value) }),
+            disableAlpha: false,
+          })
+        )
       ),
-      createElement('p', null, 'Hero Overlay Color'),
-      createElement(ColorPicker, {
-        color: attributes.overlayColor || 'rgba(0, 0, 0, 0.4)',
-        onChangeComplete: (value) => {
-          console.log('[cwp/hero] ColorPicker value:', value);
-          console.log('[cwp/hero] ColorPicker type:', typeof value);
-          if (value && typeof value === 'object') {
-            console.log('[cwp/hero] ColorPicker keys:', Object.keys(value));
-          }
-
-          setAttributes({ overlayColor: normalizeColorValue(value) });
-        },
-        disableAlpha: false,
-      }),
-      createElement('p', null, `Overlay value: ${attributes.overlayColor || 'rgba(0, 0, 0, 0.4)'}`),
-      renderHero(attributes)
+      renderEditorPreview(attributes)
     )
   ),
   save: ({ attributes }) => renderHero(attributes),

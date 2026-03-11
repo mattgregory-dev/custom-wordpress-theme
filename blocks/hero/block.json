@@ -6,6 +6,7 @@
   "icon": "cover-image",
   "description": "Minimal hero block with title and description.",
   "editorScript": "file:../../dist/blocks/hero.js",
+  "editorStyle": "file:./editor.css",
   "attributes": {
     "eyebrow": {
       "type": "string",
