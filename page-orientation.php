@@ -11,40 +11,18 @@ get_header(
 );
 ?>
 
+<?php
+if ( have_posts() ) :
+  while ( have_posts() ) :
+    the_post();
+
+    $raw_content = get_post_field( 'post_content', get_the_ID() );
+    $blocks = parse_blocks( $raw_content );
+    ?>
+
 <div class="bg-white">
-  <section id="orientation-hero" class="page-hero h-screen relative border-b-2 border-gray-300">
-    <div class="absolute inset-0">
-      <div class="flex items-center justify-center h-full">
-      </div>
-    </div>
 
-    <div class="relative h-full flex items-center justify-center">
-      <div class="max-w-3xl mx-auto px-8 text-center">
-        <div class="mb-6">
-          <span class="text-xs tracking-[0.2em] border border-gray-400 px-4 py-2 inline-block">
-            YOUR JOURNEY
-          </span>
-        </div>
-
-        <h1 class="text-7xl mb-8 tracking-tight border-b-2 border-gray-900 pb-6 inline-block">
-          Orientation
-        </h1>
-
-        <p class="text-xl leading-relaxed mb-12 max-w-2xl mx-auto">
-          Before preparation. Before ceremony. Before intention. A moment to pause and notice what is already here.
-        </p>
-
-        <div class="flex gap-4 justify-center">
-          <a class="px-8 py-4 border-2 border-gray-900 bg-gray-900 text-white" href="#">
-            Continue to Intentions
-          </a>
-          <a class="px-8 py-4 border-2 border-gray-900" href="#">
-            View the Full Journey
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <?php include get_template_directory() . '/partials/slots/hero-slot.php'; ?>
 
   <section class="py-24 px-8">
     <div class="max-w-5xl mx-auto">
@@ -501,5 +479,10 @@ get_header(
     </div>
   </section>
 </div>
+
+    <?php
+  endwhile;
+endif;
+?>
 
 <?php get_footer(); ?>

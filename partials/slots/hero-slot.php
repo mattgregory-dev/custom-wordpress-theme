@@ -7,8 +7,6 @@ echo '<section class="hero-slot">';
 
 if ( $hero_block ) {
   echo render_block( $hero_block );
-} else {
-  echo '<p>No hero block found.</p>';
 }
 
 echo '</section>';
