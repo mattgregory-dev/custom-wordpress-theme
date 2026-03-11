@@ -1070,7 +1070,8 @@ if (document.readyState === "loading") {
 } else {
   init();
 }
-
+/*
 window.addEventListener('load', () => {
   resizeHeaderHeight();
 });
+*/

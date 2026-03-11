@@ -4,6 +4,9 @@ module.exports = {
     // "./src/**/*.{html,js,scss}",
     "./**/*.php",
     "../**/*.php",
+    "!./.git/**",
+    "!./node_modules/**",
+    "!./dist/**",
   ],
   theme: {
     // screens: {

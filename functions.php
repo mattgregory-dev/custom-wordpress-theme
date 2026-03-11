@@ -44,9 +44,11 @@ function cwp_assets() {
 
     // Vite HMR client.
     wp_enqueue_script( 'vite-client', $vite . '/@vite/client', array(), null, false );
+    wp_script_add_data( 'vite-client', 'type', 'module' );
 
     // Main JS entry served by Vite (imports SCSS in dev).
     wp_enqueue_script( 'cwp-main', $vite . '/main.js', array(), null, false );
+    wp_script_add_data( 'cwp-main', 'type', 'module' );
 
     // Static stylesheet served from Vite public/ during dev.
     wp_enqueue_style( 'cwp-tailwind', $vite . '/tailwind.css', array(), null );
@@ -66,6 +68,18 @@ function cwp_assets() {
 }
 add_action( 'wp_enqueue_scripts', 'cwp_assets', 999 );
 
+// Load Vite client in the block editor so block scripts can HMR in dev.
+function cwp_admin_vite_assets() {
+  if ( ! cwp_is_vite_dev() ) {
+    return;
+  }
+
+  $vite = 'http://localhost:5175';
+  wp_enqueue_script( 'vite-client', $vite . '/@vite/client', array(), null, false );
+  wp_script_add_data( 'vite-client', 'type', 'module' );
+}
+add_action( 'admin_enqueue_scripts', 'cwp_admin_vite_assets' );
+
 // Ensure Vite-built block scripts load as ES modules.
 function cwp_block_module_scripts( $tag, $handle, $src ) {
   if ( false !== strpos( $src, '/dist/blocks/' ) ) {
@@ -74,6 +88,29 @@ function cwp_block_module_scripts( $tag, $handle, $src ) {
   return $tag;
 }
 add_filter( 'script_loader_tag', 'cwp_block_module_scripts', 10, 3 );
+
+// In dev, load block editor scripts directly from Vite for faster iteration.
+function cwp_block_vite_metadata_settings( $settings, $metadata ) {
+  if ( ! cwp_is_vite_dev() ) {
+    return $settings;
+  }
+
+  if ( empty( $metadata['name'] ) || 0 !== strpos( $metadata['name'], 'cwp/' ) ) {
+    return $settings;
+  }
+
+  $slug = str_replace( 'cwp/', '', $metadata['name'] );
+  $handle = 'cwp-block-' . $slug;
+  $vite = 'http://localhost:5175';
+  $src = $vite . '/blocks/' . $slug . '/index.js';
+
+  wp_register_script( $handle, $src, array(), null, true );
+  wp_script_add_data( $handle, 'type', 'module' );
+  $settings['editor_script'] = $handle;
+
+  return $settings;
+}
+add_filter( 'block_type_metadata_settings', 'cwp_block_vite_metadata_settings', 10, 2 );
 
 // Remove WordPress markup that is not needed
 function cwp_cleanup_head() {
