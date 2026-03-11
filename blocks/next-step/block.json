@@ -1,0 +1,40 @@
+{
+  "apiVersion": 2,
+  "name": "cwp/next-step",
+  "title": "Next Step",
+  "category": "design",
+  "icon": "schedule",
+  "description": "Minimal next step block with image and CTA.",
+  "editorScript": "file:../../dist/blocks/next-step.js",
+  "editorStyle": "file:./editor.css",
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "default": "NEXT STEP"
+    },
+    "title": {
+      "type": "string",
+      "default": "Title"
+    },
+    "description": {
+      "type": "string",
+      "default": "Description text"
+    },
+    "buttonText": {
+      "type": "string",
+      "default": "Continue"
+    },
+    "buttonUrl": {
+      "type": "string",
+      "default": "#"
+    },
+    "imageId": {
+      "type": "number",
+      "default": null
+    },
+    "imageUrl": {
+      "type": "string",
+      "default": ""
+    }
+  }
+}

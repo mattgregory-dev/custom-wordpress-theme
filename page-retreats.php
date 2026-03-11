@@ -28,7 +28,34 @@ if ( have_posts() ) :
           </div>
         </div>
 
-        <?php include get_template_directory() . '/partials/journey-steps.php'; ?>
+        <div class="relative z-10 max-w-3xl mx-auto text-center space-y-8">
+          <p class="text-gray-600 uppercase tracking-[0.2em] text-sm">
+            Retreats
+          </p>
+
+          <h1 class="text-gray-900 text-[3.5rem] font-normal leading-[1.1]">
+            Upcoming Retreats in Sedona
+          </h1>
+
+          <p class="text-gray-700 text-lg leading-relaxed max-w-2xl mx-auto">
+            Small group retreats designed for depth, care, and meaningful personal transformation.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+            <a class="px-8 py-3 bg-gray-900 text-white border-2 border-gray-900 hover:bg-gray-800 transition-colors" href="#">
+              View Upcoming Retreats
+            </a>
+            <a class="px-8 py-3 bg-white text-gray-900 border-2 border-gray-900 hover:bg-gray-50 transition-colors" href="#">
+              Apply
+            </a>
+          </div>
+
+          <div class="flex flex-wrap gap-3 justify-center pt-6">
+            <span class="px-4 py-2 border border-gray-400 text-gray-700 text-sm">Small Groups</span>
+            <span class="px-4 py-2 border border-gray-400 text-gray-700 text-sm">Sedona, Arizona</span>
+            <span class="px-4 py-2 border border-gray-400 text-gray-700 text-sm">Guided Ceremonies</span>
+          </div>
+        </div>
       </section>
 
       <section class="py-32 px-8">

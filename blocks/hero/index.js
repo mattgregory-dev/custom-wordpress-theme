@@ -1,7 +1,7 @@
 // WordPress globals (no npm imports in this theme).
 const { registerBlockType } = wp.blocks;
 const { createElement, Fragment } = wp.element;
-const { InspectorControls, MediaUpload, MediaUploadCheck } = wp.blockEditor;
+const { InspectorControls, MediaUpload, MediaUploadCheck, useBlockProps } = wp.blockEditor;
 const { Button, ColorPicker, PanelBody, TextControl } = wp.components;
 
 // Normalize ColorPicker output into a stable string for block attributes.
@@ -38,16 +38,10 @@ const renderHero = ({
   button2Url,
   backgroundImageUrl,
   overlayColor,
-}) => (
+}, blockProps) => (
   createElement(
     'section',
-    {
-      className: 'page-hero h-screen relative',
-      style: {
-        ...(backgroundImageUrl ? { backgroundImage: `url(${backgroundImageUrl})` } : {}),
-        '--hero-overlay': overlayColor || 'rgba(0, 0, 0, 0.4)',
-      },
-    },
+    blockProps,
     createElement(
       'div',
       { className: 'relative h-full flex items-center justify-center' },
@@ -102,29 +96,19 @@ const renderEditorPreview = ({
   button2Text,
   backgroundImageUrl,
   overlayColor,
-}) => (
+}, blockProps) => (
   createElement(
     'div',
-    {
-      className: 'hero-editor-preview',
-      style: backgroundImageUrl
-        ? {
-            backgroundImage: `url(${backgroundImageUrl})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            '--hero-overlay': overlayColor || 'rgba(0, 0, 0, 0.4)',
-          }
-        : { '--hero-overlay': overlayColor || 'rgba(0, 0, 0, 0.4)' },
-    },
+    blockProps,
     createElement(
       'div',
-      { className: 'hero-editor-preview__inner' },
-      createElement('span', { className: 'hero-editor-eyebrow' }, eyebrow || 'Hero eyebrow'),
-      createElement('h1', null, title || 'Hero title'),
-      createElement('p', null, description || 'Hero description'),
+      { className: 'cwp-hero-editor__inner' },
+      createElement('span', { className: 'cwp-hero-editor__eyebrow' }, eyebrow || 'Hero eyebrow'),
+      createElement('h1', { className: 'cwp-hero-editor__title' }, title || 'Hero title'),
+      createElement('p', { className: 'cwp-hero-editor__description' }, description || 'Hero description'),
       createElement(
         'div',
-        { className: 'hero-editor-buttons' },
+        { className: 'cwp-hero-editor__buttons' },
         createElement('a', { href: '#' }, button1Text || 'Button 1 text'),
         createElement('a', { href: '#' }, button2Text || 'Button 2 text')
       )
@@ -134,8 +118,20 @@ const renderEditorPreview = ({
 
 registerBlockType('cwp/hero', {
   // Sidebar controls + canvas preview.
-  edit: ({ attributes, setAttributes }) => (
-    createElement(
+  edit: ({ attributes, setAttributes }) => {
+    const editorProps = useBlockProps({
+      className: 'cwp-hero-editor',
+      style: attributes.backgroundImageUrl
+        ? {
+            backgroundImage: `url(${attributes.backgroundImageUrl})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            '--hero-overlay': attributes.overlayColor || 'rgba(0, 0, 0, 0.4)',
+          }
+        : { '--hero-overlay': attributes.overlayColor || 'rgba(0, 0, 0, 0.4)' },
+    });
+
+    return createElement(
       Fragment,
       null,
       createElement(
@@ -214,9 +210,19 @@ registerBlockType('cwp/hero', {
         )
       ),
       // Canvas preview updates live as attributes change.
-      renderEditorPreview(attributes)
-    )
-  ),
+      renderEditorPreview(attributes, editorProps)
+    );
+  },
   // Saved markup for the front end.
-  save: ({ attributes }) => renderHero(attributes),
+  save: ({ attributes }) => {
+    const blockProps = useBlockProps.save({
+      className: 'page-hero h-screen relative',
+      style: {
+        ...(attributes.backgroundImageUrl ? { backgroundImage: `url(${attributes.backgroundImageUrl})` } : {}),
+        '--hero-overlay': attributes.overlayColor || 'rgba(0, 0, 0, 0.4)',
+      },
+    });
+
+    return renderHero(attributes, blockProps);
+  },
 });

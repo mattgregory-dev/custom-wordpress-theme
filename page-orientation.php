@@ -406,40 +406,7 @@ if ( have_posts() ) :
         </div>
       </section>
 
-      <section class="py-32 px-8 border-t-2 border-gray-300 bg-[#c3ddd5]">
-        <div class="max-w-4xl mx-auto">
-          <div class="grid grid-cols-12 gap-12 items-center">
-            <div class="col-span-5">
-              <div class="aspect-square border-2 border-gray-300 bg-gray-100 flex items-center justify-center">
-                <span class="text-gray-400 text-sm">[ IMAGE ]</span>
-              </div>
-            </div>
-
-            <div class="col-span-7">
-              <div class="mb-6">
-                <span class="text-xs tracking-[0.2em] text-gray-600">NEXT STEP</span>
-              </div>
-
-              <h2 class="text-5xl mb-8 tracking-tight">
-                Intentions
-              </h2>
-
-              <p class="text-lg leading-relaxed mb-10 max-w-lg">
-                A gentle invitation to explore what you are willing to see, feel, and meet with honesty and curiosity.
-              </p>
-
-              <div class="space-y-4">
-                <a class="w-full px-8 py-4 border-2 border-gray-900 bg-gray-900 text-white text-left block" href="#">
-                  Continue to Intentions &rarr;
-                </a>
-                <a class="px-8 py-3 border-b border-gray-900 text-sm inline-block" href="#">
-                  Back to Your Journey
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <?php include get_template_directory() . '/partials/slots/next-step-slot.php'; ?>
     </div>
 
     <?php
