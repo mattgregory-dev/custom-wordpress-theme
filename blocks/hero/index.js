@@ -1,7 +1,29 @@
 const { registerBlockType } = wp.blocks;
 const { createElement, Fragment } = wp.element;
 const { MediaUpload, MediaUploadCheck } = wp.blockEditor;
-const { Button, TextControl } = wp.components;
+const { Button, ColorPicker, TextControl } = wp.components;
+
+const normalizeColorValue = (value) => {
+  if (typeof value === 'string') {
+    return value;
+  }
+
+  if (value && typeof value === 'object') {
+    if (value.hex) {
+      return value.hex;
+    }
+
+    if (value.rgb) {
+      const { r, g, b, a } = value.rgb;
+      if (typeof a === 'number') {
+        return `rgba(${r}, ${g}, ${b}, ${a})`;
+      }
+      return `rgb(${r}, ${g}, ${b})`;
+    }
+  }
+
+  return '';
+};
 
 const renderHero = ({
   eyebrow,
@@ -12,12 +34,16 @@ const renderHero = ({
   button2Text,
   button2Url,
   backgroundImageUrl,
+  overlayColor,
 }) => (
   createElement(
     'section',
     {
       className: 'page-hero h-screen relative border-b-2 border-gray-300',
-      style: backgroundImageUrl ? { backgroundImage: `url(${backgroundImageUrl})` } : undefined,
+      style: {
+        ...(backgroundImageUrl ? { backgroundImage: `url(${backgroundImageUrl})` } : {}),
+        '--hero-overlay': overlayColor || 'rgba(0, 0, 0, 0.4)',
+      },
     },
     createElement(
       'div',
@@ -122,6 +148,21 @@ registerBlockType('cwp/hero', {
           ),
         })
       ),
+      createElement('p', null, 'Hero Overlay Color'),
+      createElement(ColorPicker, {
+        color: attributes.overlayColor || 'rgba(0, 0, 0, 0.4)',
+        onChangeComplete: (value) => {
+          console.log('[cwp/hero] ColorPicker value:', value);
+          console.log('[cwp/hero] ColorPicker type:', typeof value);
+          if (value && typeof value === 'object') {
+            console.log('[cwp/hero] ColorPicker keys:', Object.keys(value));
+          }
+
+          setAttributes({ overlayColor: normalizeColorValue(value) });
+        },
+        disableAlpha: false,
+      }),
+      createElement('p', null, `Overlay value: ${attributes.overlayColor || 'rgba(0, 0, 0, 0.4)'}`),
       renderHero(attributes)
     )
   ),

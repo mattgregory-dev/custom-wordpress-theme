@@ -187,7 +187,8 @@ section#preparation {
   background-position-y: center;
   overflow: hidden;
   &::before {
-    background-color: rgb(255 255 255 / 0%);
+    //background-color: rgb(255 255 255 / 0%);
+    background-color: var(--hero-overlay);
     content: '';
     height: 100vh;
     width: 100%;

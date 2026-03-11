@@ -42,6 +42,10 @@
     "backgroundImageUrl": {
       "type": "string",
       "default": ""
+    },
+    "overlayColor": {
+      "type": "string",
+      "default": "rgba(0, 0, 0, 0.4)"
     }
   }
 }
