@@ -1,0 +1,19 @@
+{
+  "apiVersion": 2,
+  "name": "cwp/hero",
+  "title": "Hero",
+  "category": "design",
+  "icon": "cover-image",
+  "description": "Minimal hero block with title and description.",
+  "editorScript": "file:../../dist/blocks/hero.js",
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Hero Title"
+    },
+    "description": {
+      "type": "string",
+      "default": "Hero description text"
+    }
+  }
+}
