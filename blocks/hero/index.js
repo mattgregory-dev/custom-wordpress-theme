@@ -1,8 +1,10 @@
+// WordPress globals (no npm imports in this theme).
 const { registerBlockType } = wp.blocks;
 const { createElement, Fragment } = wp.element;
 const { InspectorControls, MediaUpload, MediaUploadCheck } = wp.blockEditor;
 const { Button, ColorPicker, PanelBody, TextControl } = wp.components;
 
+// Normalize ColorPicker output into a stable string for block attributes.
 const normalizeColorValue = (value) => {
   if (typeof value === 'string') {
     return value;
@@ -25,6 +27,7 @@ const normalizeColorValue = (value) => {
   return '';
 };
 
+// Front-end markup (save output). Matches the theme's Tailwind-driven structure.
 const renderHero = ({
   eyebrow,
   title,
@@ -89,6 +92,8 @@ const renderHero = ({
   )
 );
 
+// Editor-only preview (no inputs in the canvas).
+// Uses lightweight styling from blocks/hero/editor.css.
 const renderEditorPreview = ({
   eyebrow,
   title,
@@ -128,6 +133,7 @@ const renderEditorPreview = ({
 );
 
 registerBlockType('cwp/hero', {
+  // Sidebar controls + canvas preview.
   edit: ({ attributes, setAttributes }) => (
     createElement(
       Fragment,
@@ -138,6 +144,7 @@ registerBlockType('cwp/hero', {
         createElement(
           PanelBody,
           { title: 'Hero Content', initialOpen: true },
+          // Text fields update block attributes.
           createElement(TextControl, {
             label: 'Hero Eyebrow',
             value: attributes.eyebrow,
@@ -177,6 +184,7 @@ registerBlockType('cwp/hero', {
         createElement(
           PanelBody,
           { title: 'Hero Media', initialOpen: false },
+          // Media picker saves ID + URL so front end can render a background image.
           createElement(
             MediaUploadCheck,
             null,
@@ -196,6 +204,7 @@ registerBlockType('cwp/hero', {
               ),
             })
           ),
+          // Overlay color sets a CSS variable used by ::before in theme CSS.
           createElement('p', null, 'Hero Overlay Color'),
           createElement(ColorPicker, {
             color: attributes.overlayColor || 'rgba(0, 0, 0, 0.4)',
@@ -204,8 +213,10 @@ registerBlockType('cwp/hero', {
           })
         )
       ),
+      // Canvas preview updates live as attributes change.
       renderEditorPreview(attributes)
     )
   ),
+  // Saved markup for the front end.
   save: ({ attributes }) => renderHero(attributes),
 });
