@@ -29,44 +29,7 @@ if ( have_posts() ) :
             <span class="text-xs tracking-[0.2em] text-gray-600">THE JOURNEY</span>
           </div>
 
-          <div class="relative flex justify-between items-start gap-4">
-            <div class="absolute left-0 right-0 top-8 h-px bg-gray-300"></div>
-
-            <div class="relative flex-1 flex flex-col items-center">
-              <div class="w-16 h-16 rounded-full border-2 border-gray-900 bg-white flex items-center justify-center mb-4">
-                <span class="text-xs text-gray-400">1</span>
-              </div>
-              <span class="text-sm text-gray-600">Orientation</span>
-            </div>
-
-            <div class="relative flex-1 flex flex-col items-center">
-              <div class="w-16 h-16 rounded-full border-2 border-gray-900 bg-white flex items-center justify-center mb-4">
-                <span class="text-xs text-gray-400">2</span>
-              </div>
-              <span class="text-sm text-gray-600">Intentions</span>
-            </div>
-
-            <div class="relative flex-1 flex flex-col items-center">
-              <div class="w-16 h-16 rounded-full border-2 border-gray-900 bg-gray-900 flex items-center justify-center mb-4">
-                <span class="text-xs text-white">3</span>
-              </div>
-              <span class="text-sm font-semibold">Preparation</span>
-            </div>
-
-            <div class="relative flex-1 flex flex-col items-center">
-              <div class="w-16 h-16 rounded-full border-2 border-gray-300 bg-white flex items-center justify-center mb-4">
-                <span class="text-xs text-gray-400">4</span>
-              </div>
-              <span class="text-sm text-gray-400">Ceremony</span>
-            </div>
-
-            <div class="relative flex-1 flex flex-col items-center">
-              <div class="w-16 h-16 rounded-full border-2 border-gray-300 bg-white flex items-center justify-center mb-4">
-                <span class="text-xs text-gray-400">5</span>
-              </div>
-              <span class="text-sm text-gray-400">Integration</span>
-            </div>
-          </div>
+          <?php include get_template_directory() . '/partials/journey-steps.php'; ?>
         </div>
       </section>
 

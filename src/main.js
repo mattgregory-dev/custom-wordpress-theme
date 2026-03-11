@@ -934,6 +934,7 @@ const animateHeadings = () => {
 */
 
 // Give hero header top padding based on header height
+/*
 const resizeHeaderHeight = () => {
   const header = document.querySelector('.cwp-header-absolute');
   const hero = document.getElementById('hero-header');
@@ -956,6 +957,7 @@ const resizeHeaderHeight = () => {
 
   resizeObserver.observe(header);
 };
+*/
 
 // Active menu highlighting for desktop + mobile menus.
 const activeMenu = () => {

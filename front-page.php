@@ -62,61 +62,7 @@ if ( have_posts() ) :
             </p>
           </div>
 
-          <div class="grid md:grid-cols-5 gap-8">
-            <div class="space-y-4 relative">
-              <div class="w-12 h-12 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center text-gray-600 font-light text-lg">
-                1
-              </div>
-              <div class="space-y-2">
-                <h3 class="text-xl text-gray-900 font-normal">Orientation</h3>
-                <p class="text-sm text-gray-600 leading-relaxed">Begin with perspective and grounding.</p>
-              </div>
-              <div class="hidden md:block absolute top-6 left-full w-8 h-0.5 bg-gray-300" style="transform: translateX(-50%);"></div>
-            </div>
-
-            <div class="space-y-4 relative">
-              <div class="w-12 h-12 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center text-gray-600 font-light text-lg">
-                2
-              </div>
-              <div class="space-y-2">
-                <h3 class="text-xl text-gray-900 font-normal">Intentions</h3>
-                <p class="text-sm text-gray-600 leading-relaxed">Clarify curiosity and inner direction.</p>
-              </div>
-              <div class="hidden md:block absolute top-6 left-full w-8 h-0.5 bg-gray-300" style="transform: translateX(-50%);"></div>
-            </div>
-
-            <div class="space-y-4 relative">
-              <div class="w-12 h-12 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center text-gray-600 font-light text-lg">
-                3
-              </div>
-              <div class="space-y-2">
-                <h3 class="text-xl text-gray-900 font-normal">Preparation</h3>
-                <p class="text-sm text-gray-600 leading-relaxed">Support the body and nervous system.</p>
-              </div>
-              <div class="hidden md:block absolute top-6 left-full w-8 h-0.5 bg-gray-300" style="transform: translateX(-50%);"></div>
-            </div>
-
-            <div class="space-y-4 relative">
-              <div class="w-12 h-12 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center text-gray-600 font-light text-lg">
-                4
-              </div>
-              <div class="space-y-2">
-                <h3 class="text-xl text-gray-900 font-normal">Ceremony</h3>
-                <p class="text-sm text-gray-600 leading-relaxed">Engage the experience with guidance and care.</p>
-              </div>
-              <div class="hidden md:block absolute top-6 left-full w-8 h-0.5 bg-gray-300" style="transform: translateX(-50%);"></div>
-            </div>
-
-            <div class="space-y-4">
-              <div class="w-12 h-12 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center text-gray-600 font-light text-lg">
-                5
-              </div>
-              <div class="space-y-2">
-                <h3 class="text-xl text-gray-900 font-normal">Integration</h3>
-                <p class="text-sm text-gray-600 leading-relaxed">Living the insights into daily life.</p>
-              </div>
-            </div>
-          </div>
+          <?php include get_template_directory() . '/partials/journey-steps.php'; ?>
         </div>
       </section>
 
