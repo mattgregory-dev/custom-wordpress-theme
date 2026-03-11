@@ -19,6 +19,12 @@ A custom, performance-first WordPress theme made with caffeine, mindnight oil, a
 - Source files live in `src/`. Compiled output is in `dist/`.
 - `dist/` is generated and should not be edited manually.
 
+## Gutenberg Blocks
+- Custom blocks live in `blocks/` and are registered in `functions.php`.
+- Each block uses `block.json` with `editorScript` pointing to `dist/blocks/*.js`.
+- Vite auto-discovers `blocks/*/index.js` and outputs compiled bundles to `dist/blocks/`.
+- Editor-only styles are defined per block (for example, `blocks/hero/editor.css`).
+
 ## Local Development (Reference)
 1. `npm install`
 2. `npm run dev:all`
