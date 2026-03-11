@@ -7,6 +7,10 @@
   "description": "Minimal hero block with title and description.",
   "editorScript": "file:../../dist/blocks/hero.js",
   "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "default": "YOUR JOURNEY"
+    },
     "title": {
       "type": "string",
       "default": "Hero Title"
@@ -14,6 +18,14 @@
     "description": {
       "type": "string",
       "default": "Hero description text"
+    },
+    "button1Text": {
+      "type": "string",
+      "default": "Continue to Intentions"
+    },
+    "button2Text": {
+      "type": "string",
+      "default": "View the Full Journey"
     }
   }
 }
