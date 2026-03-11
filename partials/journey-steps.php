@@ -17,48 +17,48 @@ $title_classes = function ( $is_active ) {
 ?>
 
 <div class="relative steps">
-  <div class="absolute top-10 left-0 right-0 h-[2px] bg-gray-300 hidden md:block"></div>
+  <div class="absolute top-16 left-0 right-0 h-[2px] bg-gray-300 hidden md:block"></div>
   <div class="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-4">
     <?php $is_active = ( $current_slug === 'orientation' ); ?>
-    <a class="relative flex flex-col items-center text-center" href="/orientation/"<?php echo $is_active ? ' aria-current="page"' : ''; ?>>
-      <div class="<?php echo esc_attr( $circle_classes( $is_active ) ); ?>">
-        <span class="<?php echo esc_attr( $number_classes( $is_active ) ); ?>">1</span>
+    <a class="relative flex flex-col items-center text-center hover:bg-gray-900/10 transition-colors rounded-xl px-4 py-6 group" href="/orientation/"<?php echo $is_active ? ' aria-current="page"' : ''; ?>>
+      <div class="<?php echo esc_attr( $circle_classes( $is_active ) ); ?> group-hover:bg-gray-900 group-hover:border-gray-900 transition-colors">
+        <span class="<?php echo esc_attr( $number_classes( $is_active ) ); ?> group-hover:text-white transition-colors">1</span>
       </div>
       <h3 class="<?php echo esc_attr( $title_classes( $is_active ) ); ?>">Orientation</h3>
       <p class="text-sm text-gray-600 leading-relaxed">Beginning with perspective and grounding.</p>
     </a>
 
     <?php $is_active = ( $current_slug === 'intentions' ); ?>
-    <a class="relative flex flex-col items-center text-center" href="/intentions/"<?php echo $is_active ? ' aria-current="page"' : ''; ?>>
-      <div class="<?php echo esc_attr( $circle_classes( $is_active ) ); ?>">
-        <span class="<?php echo esc_attr( $number_classes( $is_active ) ); ?>">2</span>
+    <a class="relative flex flex-col items-center text-center hover:bg-gray-900/10 transition-colors rounded-xl px-4 py-6 group" href="/intentions/"<?php echo $is_active ? ' aria-current="page"' : ''; ?>>
+      <div class="<?php echo esc_attr( $circle_classes( $is_active ) ); ?> group-hover:bg-gray-900 group-hover:border-gray-900 transition-colors">
+        <span class="<?php echo esc_attr( $number_classes( $is_active ) ); ?> group-hover:text-white transition-colors">2</span>
       </div>
       <h3 class="<?php echo esc_attr( $title_classes( $is_active ) ); ?>">Intentions</h3>
       <p class="text-sm text-gray-600 leading-relaxed">Clarifying curiosity rather than controlling outcomes.</p>
     </a>
 
     <?php $is_active = ( $current_slug === 'preparation' ); ?>
-    <a class="relative flex flex-col items-center text-center" href="/preparation/"<?php echo $is_active ? ' aria-current="page"' : ''; ?>>
-      <div class="<?php echo esc_attr( $circle_classes( $is_active ) ); ?>">
-        <span class="<?php echo esc_attr( $number_classes( $is_active ) ); ?>">3</span>
+    <a class="relative flex flex-col items-center text-center hover:bg-gray-900/10 transition-colors rounded-xl px-4 py-6 group" href="/preparation/"<?php echo $is_active ? ' aria-current="page"' : ''; ?>>
+      <div class="<?php echo esc_attr( $circle_classes( $is_active ) ); ?> group-hover:bg-gray-900 group-hover:border-gray-900 transition-colors">
+        <span class="<?php echo esc_attr( $number_classes( $is_active ) ); ?> group-hover:text-white transition-colors">3</span>
       </div>
       <h3 class="<?php echo esc_attr( $title_classes( $is_active ) ); ?>">Preparation</h3>
       <p class="text-sm text-gray-600 leading-relaxed">Supporting the body and nervous system.</p>
     </a>
 
     <?php $is_active = ( $current_slug === 'ceremony' ); ?>
-    <a class="relative flex flex-col items-center text-center" href="/ceremony/"<?php echo $is_active ? ' aria-current="page"' : ''; ?>>
-      <div class="<?php echo esc_attr( $circle_classes( $is_active ) ); ?>">
-        <span class="<?php echo esc_attr( $number_classes( $is_active ) ); ?>">4</span>
+    <a class="relative flex flex-col items-center text-center hover:bg-gray-900/10 transition-colors rounded-xl px-4 py-6 group" href="/ceremony/"<?php echo $is_active ? ' aria-current="page"' : ''; ?>>
+      <div class="<?php echo esc_attr( $circle_classes( $is_active ) ); ?> group-hover:bg-gray-900 group-hover:border-gray-900 transition-colors">
+        <span class="<?php echo esc_attr( $number_classes( $is_active ) ); ?> group-hover:text-white transition-colors">4</span>
       </div>
       <h3 class="<?php echo esc_attr( $title_classes( $is_active ) ); ?>">Ceremony</h3>
       <p class="text-sm text-gray-600 leading-relaxed">Entering the experience with guidance and care.</p>
     </a>
 
     <?php $is_active = ( $current_slug === 'integration' ); ?>
-    <a class="relative flex flex-col items-center text-center" href="/integration/"<?php echo $is_active ? ' aria-current="page"' : ''; ?>>
-      <div class="<?php echo esc_attr( $circle_classes( $is_active ) ); ?>">
-        <span class="<?php echo esc_attr( $number_classes( $is_active ) ); ?>">5</span>
+    <a class="relative flex flex-col items-center text-center hover:bg-gray-900/10 transition-colors rounded-xl px-4 py-6 group" href="/integration/"<?php echo $is_active ? ' aria-current="page"' : ''; ?>>
+      <div class="<?php echo esc_attr( $circle_classes( $is_active ) ); ?> group-hover:bg-gray-900 group-hover:border-gray-900 transition-colors">
+        <span class="<?php echo esc_attr( $number_classes( $is_active ) ); ?> group-hover:text-white transition-colors">5</span>
       </div>
       <h3 class="<?php echo esc_attr( $title_classes( $is_active ) ); ?>">Integration</h3>
       <p class="text-sm text-gray-600 leading-relaxed">Living the insights within daily life.</p>
