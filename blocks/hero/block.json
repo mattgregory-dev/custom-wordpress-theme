@@ -23,9 +23,25 @@
       "type": "string",
       "default": "Continue to Intentions"
     },
+    "button1Url": {
+      "type": "string",
+      "default": "#"
+    },
     "button2Text": {
       "type": "string",
       "default": "View the Full Journey"
+    },
+    "button2Url": {
+      "type": "string",
+      "default": "#"
+    },
+    "backgroundImageId": {
+      "type": "number",
+      "default": null
+    },
+    "backgroundImageUrl": {
+      "type": "string",
+      "default": ""
     }
   }
 }

@@ -1,11 +1,24 @@
 const { registerBlockType } = wp.blocks;
 const { createElement, Fragment } = wp.element;
-const { TextControl } = wp.components;
+const { MediaUpload, MediaUploadCheck } = wp.blockEditor;
+const { Button, TextControl } = wp.components;
 
-const renderHero = ({ eyebrow, title, description, button1Text, button2Text }) => (
+const renderHero = ({
+  eyebrow,
+  title,
+  description,
+  button1Text,
+  button1Url,
+  button2Text,
+  button2Url,
+  backgroundImageUrl,
+}) => (
   createElement(
     'section',
-    { className: 'page-hero h-screen relative border-b-2 border-gray-300' },
+    {
+      className: 'page-hero h-screen relative border-b-2 border-gray-300',
+      style: backgroundImageUrl ? { backgroundImage: `url(${backgroundImageUrl})` } : undefined,
+    },
     createElement(
       'div',
       { className: 'relative h-full flex items-center justify-center' },
@@ -36,12 +49,12 @@ const renderHero = ({ eyebrow, title, description, button1Text, button2Text }) =
           { className: 'flex gap-4 justify-center' },
           createElement(
             'a',
-            { className: 'px-8 py-4 border-2 border-gray-900 bg-gray-900 text-white', href: '#' },
+            { className: 'px-8 py-4 border-2 border-gray-900 bg-gray-900 text-white', href: button1Url || '#' },
             button1Text || 'Button 1 text'
           ),
           createElement(
             'a',
-            { className: 'px-8 py-4 border-2 border-gray-900', href: '#' },
+            { className: 'px-8 py-4 border-2 border-gray-900', href: button2Url || '#' },
             button2Text || 'Button 2 text'
           )
         )
@@ -76,10 +89,39 @@ registerBlockType('cwp/hero', {
         onChange: (value) => setAttributes({ button1Text: value }),
       }),
       createElement(TextControl, {
+        label: 'Hero Button 1 URL',
+        value: attributes.button1Url,
+        onChange: (value) => setAttributes({ button1Url: value }),
+      }),
+      createElement(TextControl, {
         label: 'Hero Button 2 Text',
         value: attributes.button2Text,
         onChange: (value) => setAttributes({ button2Text: value }),
       }),
+      createElement(TextControl, {
+        label: 'Hero Button 2 URL',
+        value: attributes.button2Url,
+        onChange: (value) => setAttributes({ button2Url: value }),
+      }),
+      createElement(
+        MediaUploadCheck,
+        null,
+        createElement(MediaUpload, {
+          onSelect: (media) => setAttributes({
+            backgroundImageId: media?.id || null,
+            backgroundImageUrl: media?.url || '',
+          }),
+          allowedTypes: ['image'],
+          value: attributes.backgroundImageId,
+          render: ({ open }) => (
+            createElement(
+              Button,
+              { variant: 'secondary', onClick: open },
+              attributes.backgroundImageUrl ? 'Replace Background Image' : 'Select Background Image'
+            )
+          ),
+        })
+      ),
       renderHero(attributes)
     )
   ),
