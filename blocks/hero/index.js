@@ -39,7 +39,7 @@ const renderHero = ({
   createElement(
     'section',
     {
-      className: 'page-hero h-screen relative border-b-2 border-gray-300',
+      className: 'page-hero h-screen relative',
       style: {
         ...(backgroundImageUrl ? { backgroundImage: `url(${backgroundImageUrl})` } : {}),
         '--hero-overlay': overlayColor || 'rgba(0, 0, 0, 0.4)',
@@ -62,7 +62,7 @@ const renderHero = ({
         ),
         createElement(
           'h1',
-          { className: 'text-7xl mb-8 tracking-tight border-b-2 border-gray-900 pb-6 inline-block' },
+          { className: 'text-7xl mb-8 tracking-tight text-gray-900 border-b-2 border-gray-900 pb-6 inline-block' },
           title || 'Hero title'
         ),
         createElement(

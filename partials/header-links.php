@@ -35,7 +35,7 @@
       <ul class="sub-menu">
         <li><a href="<?php echo esc_url( home_url( '/orientation/' ) ); ?>">Orientation</a></li>
         <li><a href="<?php echo esc_url( home_url( '/intentions/' ) ); ?>">Intentions</a></li>
-        <li><a href="<?php echo esc_url( home_url( '/preparation-v2/' ) ); ?>">Preparation</a></li>
+        <li><a href="<?php echo esc_url( home_url( '/preparation/' ) ); ?>">Preparation</a></li>
         <li><a href="<?php echo esc_url( home_url( '/ceremony/' ) ); ?>">The Ceremony</a></li>
         <li><a href="<?php echo esc_url( home_url( '/integration/' ) ); ?>">Integration</a></li>
         <li><a href="<?php echo esc_url( home_url( '/safety/' ) ); ?>">Safety</a></li>
