@@ -51,18 +51,18 @@ if ( have_posts() ) :
         </div>
       </section>
 
-      <section class="py-32 px-8 bg-gray-50">
+      <section id="steps" class="py-32 px-8 bg-gray-50">
         <div class="max-w-6xl mx-auto">
           <div class="text-center space-y-4 mb-16">
             <h2 class="text-4xl text-gray-900 font-normal">
               The Journey of the Work
             </h2>
             <p class="text-gray-700 leading-relaxed max-w-2xl mx-auto">
-              Each retreat unfolds through a thoughtful process designed to support safety, insight, and integration.
+              Each retreat unfolds through a thoughtful process designed to support safety, insight, and integration. Explore all steps.
             </p>
           </div>
 
-          <?php include get_template_directory() . '/partials/journey-steps.php'; ?>
+          <?php get_template_part( 'partials/journey-steps', null, [ 'start' => true ] ); ?>
         </div>
       </section>
 
@@ -181,7 +181,7 @@ if ( have_posts() ) :
         </div>
       </section>
 
-      <section class="py-32 px-8">
+      <section id="retreats" class="py-32 px-8">
         <div class="max-w-6xl mx-auto">
           <div class="text-center space-y-4 mb-16">
             <h2 class="text-4xl text-gray-900 font-normal">
@@ -367,7 +367,7 @@ if ( have_posts() ) :
         </div>
       </section>
 
-      <section class="py-32 px-8 bg-gray-50">
+      <section class="py-32 px-8 bg-[#c3ddd5]">
         <div class="max-w-3xl mx-auto">
           <div class="text-center space-y-4 mb-12">
             <h2 class="text-4xl text-gray-900 font-normal">

@@ -31,11 +31,11 @@ if ( have_posts() ) :
           <h1 class="hero-title">Upcoming Retreats in Sedona</h1>
           <p class="hero-description">Small group retreats designed for depth, care, and meaningful personal transformation.</p>
           <div class="hero-actions-wrapper">
-            <a class="cwp-btn cwp-btn--primary" href="#">
-              View Upcoming Retreats
-            </a>
-            <a class="cwp-btn cwp-btn--secondary" href="#">
+            <a class="cwp-btn cwp-btn--primary" href="/apply/">
               Apply
+            </a>
+            <a class="cwp-btn cwp-btn--secondary" href="#retreats">
+              View Upcoming Retreats
             </a>
           </div>
           <div class="flex flex-wrap gap-3 justify-center pt-12">
@@ -46,7 +46,7 @@ if ( have_posts() ) :
         </div>
       </section>
 
-      <section class="py-32 px-8">
+      <section id="retreats" class="py-32 px-8">
         <div class="max-w-7xl mx-auto">
           <div class="max-w-3xl mx-auto text-center mb-20">
             <h2 class="text-gray-900 mb-6 text-[2.5rem] font-normal">

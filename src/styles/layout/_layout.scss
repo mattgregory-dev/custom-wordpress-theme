@@ -169,6 +169,7 @@ section#preparation {
     .hero-eyebrow-wrapper {
       margin-bottom: 1.5rem;
       .hero-eyebrow {
+        text-transform: uppercase;
         font-size: 0.75rem;
         line-height: 1rem;
         letter-spacing: 0.2em;
@@ -176,6 +177,7 @@ section#preparation {
         border: 1px solid rgb(156 163 175);
         display: inline-block;
         background-color: var(--white);
+        border-radius: 3px;
       }
     }
     .hero-title {
@@ -400,4 +402,18 @@ section#preparation {
   .home .hero-band::after {
     display: none;
   }
+}
+
+
+
+.down-caret {
+  width: 20px;
+  height: 20px;
+}
+
+.hero-description::before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
 }

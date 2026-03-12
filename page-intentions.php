@@ -29,11 +29,11 @@ if ( have_posts() ) :
             <span class="text-xs tracking-[0.2em] text-gray-600">THE JOURNEY</span>
           </div>
 
-          <?php include get_template_directory() . '/partials/journey-steps.php'; ?>
+          <?php get_template_part( 'partials/journey-steps' ); ?>
         </div>
       </section>
 
-      <section class="py-24 px-8">
+      <section id="start" class="py-24 px-8">
         <div class="max-w-4xl mx-auto">
           <div class="mb-16">
             <div class="w-24 h-24 rounded-full border-2 border-gray-300 mx-auto mb-8 flex items-center justify-center">

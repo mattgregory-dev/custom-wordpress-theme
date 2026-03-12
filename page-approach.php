@@ -24,7 +24,7 @@ if ( have_posts() ) :
       <?php include get_template_directory() . '/partials/slots/hero-slot.php'; ?>
 
       <section class="py-32 px-8">
-        <div class="max-w-2xl mx-auto text-center">
+        <div class="max-w-lg mx-auto text-center">
           <div style="height:120px;" class="mx-auto mb-12 flex items-center justify-center">
             <img style="max-height:100%;" src="<?php echo esc_url( get_template_directory_uri() . '/images/icons/geometric.svg' ); ?>">
           </div>
@@ -45,7 +45,7 @@ if ( have_posts() ) :
         </div>
       </section>
 
-      <section class="py-32 px-8 bg-gray-50">
+      <section id="steps" class="py-32 px-8 bg-gray-50">
         <div class="max-w-6xl mx-auto">
           <div class="max-w-3xl mx-auto text-center mb-16">
             <h2 class="text-[2.5rem] font-normal mb-6 text-gray-900">
@@ -56,7 +56,7 @@ if ( have_posts() ) :
             </p>
           </div>
 
-          <?php include get_template_directory() . '/partials/journey-steps.php'; ?>
+          <?php get_template_part( 'partials/journey-steps' ); ?>
 
         </div>
       </section>
@@ -247,7 +247,7 @@ if ( have_posts() ) :
         </div>
       </section>
 
-      <section class="py-32 px-8">
+      <section id="guides" class="py-32 px-8">
         <div class="max-w-6xl mx-auto">
           <div class="text-center max-w-3xl mx-auto">
             <h2 class="text-4xl">Meet Your Guides</h2>

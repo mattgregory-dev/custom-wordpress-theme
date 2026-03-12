@@ -29,7 +29,7 @@ if ( have_posts() ) :
             <span class="text-xs tracking-[0.2em] text-gray-600">THE JOURNEY</span>
           </div>
 
-          <?php include get_template_directory() . '/partials/journey-steps.php'; ?>
+          <?php get_template_part( 'partials/journey-steps' ); ?>
         </div>
       </section>
 
