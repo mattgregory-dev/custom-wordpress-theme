@@ -252,37 +252,11 @@ if ( have_posts() ) :
           <div class="text-center max-w-3xl mx-auto">
             <h2 class="text-4xl">Meet Your Guides</h2>
           </div>
-          <div class="grid mt-12 md:grid-cols-2 gap-12">
-            <div class="border border-gray-300 p-8">
-              <div class="mb-6 flex items-center justify-center">
-                <img src="<?php echo esc_url( get_template_directory_uri() . '/images/team/ash.webp' ); ?>">
-              </div>
-
-              <h3 class="text-2xl mb-2 text-gray-900 font-normal">Ash</h3>
-              <p class="text-sm uppercase tracking-wider text-gray-600 mb-4">Ceremony Facilitator</p>
-              <p class="text-gray-700 leading-relaxed">
-                Ash holds the ceremonial container and supports participants through guided presence, inquiry, and compassionate awareness.
-              </p>
-              <div class="mt-4 text-sm border border-black/30 inline-block px-3 py-1">Read Bio</div>
-            </div>
-
-            <div class="border border-gray-300 p-8">
-              <div class="mb-6 flex items-center justify-center">
-                <img src="<?php echo esc_url( get_template_directory_uri() . '/images/team/marco.jpg' ); ?>">
-              </div>
-
-              <h3 class="text-2xl mb-2 text-gray-900 font-normal">Marco</h3>
-              <p class="text-sm uppercase tracking-wider text-gray-600 mb-4">Retreat Director</p>
-              <p class="text-gray-700 leading-relaxed">
-                Marco helps steward the retreat environment, ensuring the experience is structured with clarity, safety, and care.
-              </p>
-              <div class="mt-4 text-sm border border-black/30 inline-block px-3 py-1">Read Bio</div>
-            </div>
-          </div>
+          <?php include get_template_directory() . '/partials/meet-guides-grid.php'; ?>
         </div>
       </section>
 
-      <section class="py-32 px-8 bg-gray-50 bg-[#c3ddd5]">
+      <section class="py-32 px-8 bg-[#c3ddd5]">
         <div class="max-w-3xl mx-auto text-center">
           <h2 class="text-[2.4rem] font-light mb-8 text-gray-900 leading-[1.4]">
             Healing does not give you something new.<br />

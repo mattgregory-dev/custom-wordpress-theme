@@ -296,37 +296,7 @@ if ( have_posts() ) :
             </h2>
           </div>
 
-          <div class="grid md:grid-cols-2 gap-12">
-            <div class="space-y-6">
-              <div class="flex items-center justify-center">
-                <img src="<?php echo esc_url( get_template_directory_uri() . '/images/team/marco.jpg' ); ?>">
-              </div>
-              <div class="space-y-3">
-                <div>
-                  <h3 class="text-2xl text-gray-900 font-normal">Ash</h3>
-                  <div class="text-sm text-gray-600 uppercase tracking-wider mt-1">Ceremony Facilitator</div>
-                </div>
-                <p class="text-gray-700 leading-relaxed">
-                  Ash holds the ceremonial container and supports participants through guided presence, inquiry, and compassionate awareness.
-                </p>
-              </div>
-            </div>
-
-            <div class="space-y-6">
-              <div class="flex items-center justify-center">
-                <img src="<?php echo esc_url( get_template_directory_uri() . '/images/team/marco.jpg' ); ?>">
-              </div>
-              <div class="space-y-3">
-                <div>
-                  <h3 class="text-2xl text-gray-900 font-normal">Marco</h3>
-                  <div class="text-sm text-gray-600 uppercase tracking-wider mt-1">Retreat Director</div>
-                </div>
-                <p class="text-gray-700 leading-relaxed">
-                  Marco helps steward the retreat environment, ensuring the experience is structured with clarity, safety, and care.
-                </p>
-              </div>
-            </div>
-          </div>
+          <?php include get_template_directory() . '/partials/meet-guides-grid.php'; ?>
         </div>
       </section>
 
@@ -379,7 +349,7 @@ if ( have_posts() ) :
       <section class="py-32 px-8">
         <div class="max-w-3xl mx-auto text-center space-y-8">
           <h2 class="text-4xl md:text-5xl text-gray-900 font-normal leading-[1.3]">
-            Begin the Journey
+            Ready to explore this work?
           </h2>
 
           <p class="text-lg text-gray-700 leading-relaxed">
@@ -401,7 +371,7 @@ if ( have_posts() ) :
         <div class="max-w-3xl mx-auto">
           <div class="text-center space-y-4 mb-12">
             <h2 class="text-4xl text-gray-900 font-normal">
-              Begin a Conversation
+              Have Questions? Let's Talk
             </h2>
             <p class="text-gray-700 leading-relaxed">
               If you have questions or would like to learn more, reach out and we will respond with care.
