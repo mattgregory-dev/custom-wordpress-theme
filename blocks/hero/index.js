@@ -36,50 +36,44 @@ const renderHero = ({
   button1Url,
   button2Text,
   button2Url,
-  backgroundImageUrl,
-  overlayColor,
 }, blockProps) => (
   createElement(
     'section',
     blockProps,
     createElement(
       'div',
-      { className: 'relative h-full flex items-center justify-center' },
+      { className: 'hero-wrapper' },
       createElement(
         'div',
-        { className: 'max-w-3xl mx-auto px-8 text-center' },
+        { className: 'hero-eyebrow-wrapper' },
         createElement(
-          'div',
-          { className: 'mb-6' },
-          createElement(
-            'span',
-            { className: 'text-xs tracking-[0.2em] border border-gray-400 px-4 py-2 inline-block' },
-            eyebrow || 'Hero eyebrow'
-          )
+          'span',
+          { className: 'hero-eyebrow' },
+          eyebrow || 'Hero eyebrow'
+        )
+      ),
+      createElement(
+        'h1',
+        { className: 'hero-title' },
+        title || 'Hero title'
+      ),
+      createElement(
+        'p',
+        { className: 'hero-description' },
+        description || 'Hero description'
+      ),
+      createElement(
+        'div',
+        { className: 'hero-actions-wrapper' },
+        createElement(
+          'a',
+          { className: 'cwp-btn cwp-btn--primary', href: button1Url || '#' },
+          button1Text || 'Button 1 text'
         ),
         createElement(
-          'h1',
-          { className: 'text-7xl mb-8 tracking-tight text-gray-900 border-b-2 border-gray-900 pb-6 inline-block' },
-          title || 'Hero title'
-        ),
-        createElement(
-          'p',
-          { className: 'text-xl leading-relaxed mb-12 max-w-2xl mx-auto' },
-          description || 'Hero description'
-        ),
-        createElement(
-          'div',
-          { className: 'flex gap-4 justify-center' },
-          createElement(
-            'a',
-            { className: 'px-8 py-4 border-2 border-gray-900 bg-gray-900 text-white', href: button1Url || '#' },
-            button1Text || 'Button 1 text'
-          ),
-          createElement(
-            'a',
-            { className: 'px-8 py-4 border-2 border-gray-900', href: button2Url || '#' },
-            button2Text || 'Button 2 text'
-          )
+          'a',
+          { className: 'cwp-btn cwp-btn--secondary', href: button2Url || '#' },
+          button2Text || 'Button 2 text'
         )
       )
     )
@@ -94,8 +88,6 @@ const renderEditorPreview = ({
   description,
   button1Text,
   button2Text,
-  backgroundImageUrl,
-  overlayColor,
 }, blockProps) => (
   createElement(
     'div',
@@ -216,7 +208,7 @@ registerBlockType('cwp/hero', {
   // Saved markup for the front end.
   save: ({ attributes }) => {
     const blockProps = useBlockProps.save({
-      className: 'page-hero h-screen relative',
+      className: 'page-hero',
       style: {
         ...(attributes.backgroundImageUrl ? { backgroundImage: `url(${attributes.backgroundImageUrl})` } : {}),
         '--hero-overlay': attributes.overlayColor || 'rgba(0, 0, 0, 0.4)',

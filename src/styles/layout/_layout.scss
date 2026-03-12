@@ -157,15 +157,59 @@ section#preparation {
 
 // Hero header images
 .page-hero {
-  h1 {
-    font-size: 3rem;
-    line-height: 1.4;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .hero-wrapper {
+    max-width: 48rem;
+    margin-inline: auto;
+    padding-inline: 2rem;
+    text-align: center;
+
+    .hero-eyebrow-wrapper {
+      margin-bottom: 1.5rem;
+      .hero-eyebrow {
+        font-size: 0.75rem;
+        line-height: 1rem;
+        letter-spacing: 0.2em;
+        padding: 0.5rem 1rem;
+        border: 1px solid rgb(156 163 175);
+        display: inline-block;
+        background-color: var(--white);
+      }
+    }
+    h1 {
+      font-size: 4.5rem;
+      line-height: 1.4;
+      color: rgb(17 24 39 / 100%);
+      letter-spacing: -0.025em;
+      display: inline-block;
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid rgb(17 24 39 / 100%);
+      font-weight: 400;
+    }
+    .hero-description {
+      font-size: 1.25rem;
+      line-height: 1.625;
+      max-width: 42rem;
+      margin-bottom: 3rem;
+      margin-inline: auto;
+      color: var(--black);
+    }
+
+    .hero-actions-wrapper {
+      gap: 1rem;
+      justify-content: center;
+      display: flex;
+    }
+
   }
-  .description {
-    font-size: 1.25rem;
-    line-height: 1.6;
-    color: var(--muted);
-  }
+
+
   &.white {
     .label {
       color: var(--white);
