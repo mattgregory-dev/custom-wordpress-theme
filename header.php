@@ -13,7 +13,7 @@
 </head>
 <body <?php body_class(); ?>>
 <?php get_template_part( 'partials/preloader' ); ?>
-<button id="themeBtn"><i class="far fa-moon"></i></button>
+<?php /* <button id="themeBtn"><i class="far fa-moon"></i></button> */ ?>
 <?php get_template_part('partials/sticky-header') ?>
 <?php get_template_part('partials/search-popup') ?>
 
@@ -46,5 +46,13 @@ $header_class = implode( ' ', $header_classes );
     </button>
   </div>
 </header>
-<?php get_template_part('partials/mobile-menu') ?>
+<?php
+get_template_part(
+  'partials/mobile-menu',
+  null,
+  array(
+    'header_color' => $header_color,
+  )
+);
+?>
 <main id="main-content">

@@ -1,5 +1,16 @@
+<?php
+$menu_args = isset( $args ) && is_array( $args ) ? $args : array();
+$menu_classes = array( 'side-menu' );
+
+if ( isset( $menu_args['header_color'] ) && $menu_args['header_color'] === 'white' ) {
+  $menu_classes[] = 'white';
+}
+
+$menu_class = implode( ' ', $menu_classes );
+?>
+
 <!-- New Mobile Menu -->
-<div data-menu="mobileMenu" class="side-menu" data-lenis-prevent>
+<div data-menu="mobileMenu" class="<?php echo esc_attr( $menu_class ); ?>" data-lenis-prevent>
   <div class="menu-btns">
     <a href="#" class="popup-search" data-popup="1"><i class="fa fa-search"></i></a>
     <button id="mobileCloseBtn" class="close-btn"></button>

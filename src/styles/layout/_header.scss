@@ -99,6 +99,11 @@
         filter: invert(1);
       }
     }
+    .hamburger {
+      span {
+        background-color: #fff;
+      }
+    }
   }
   a {
     color: var(--white);

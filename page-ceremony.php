@@ -131,11 +131,11 @@ if ( have_posts() ) :
       </div>
     </section>
 
-    <section class="py-24 px-8">
+    <section class="py-16 sm:py-20 lg:py-24 px-6 sm:px-8">
       <div class="max-w-5xl mx-auto">
-        <div class="grid grid-cols-12 gap-16">
-          <div class="col-span-4">
-            <div class="sticky top-24">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+          <div class="col-span-1 lg:col-span-4 mb-10 lg:mb-0">
+            <div class="lg:sticky lg:top-24">
               <h2 class="text-3xl tracking-tight mb-6">
                 When Sensation Feels Strong
               </h2>
@@ -143,7 +143,7 @@ if ( have_posts() ) :
             </div>
           </div>
 
-          <div class="col-span-8 space-y-8 text-lg leading-relaxed">
+          <div class="col-span-1 lg:col-span-8 space-y-8 text-lg leading-relaxed">
             <p>Physical sensations may include:</p>
 
             <div class="grid grid-cols-2 gap-4">
@@ -293,16 +293,16 @@ if ( have_posts() ) :
       </div>
     </section>
 
-    <section class="py-32 px-8">
+    <section class="py-20 sm:py-24 lg:py-32 px-6 sm:px-8">
       <div class="max-w-5xl mx-auto">
-        <div class="grid grid-cols-12 gap-12 items-start">
-          <div class="col-span-5">
-            <div class="flex items-center justify-center sticky top-24">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+          <div class="col-span-1 lg:col-span-5 mb-10 lg:mb-0">
+            <div class="flex items-center justify-center lg:sticky lg:top-24">
               <img class="page-image" src="<?php echo esc_url( get_template_directory_uri() . '/images/bg/NybqKGVGizI.webp' ); ?>">
             </div>
           </div>
 
-          <div class="col-span-7">
+          <div class="col-span-1 lg:col-span-7">
             <h2 class="text-3xl mb-12 tracking-tight">
               Breath as an Anchor
             </h2>
@@ -371,7 +371,7 @@ if ( have_posts() ) :
               If you feel stuck, looping, disoriented, or overwhelmed:
             </p>
 
-            <div class="grid grid-cols-3 gap-6">
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
               <div class="border-2 border-gray-900 p-8 text-center bg-gray-50 flex justify-center items-center">
                 <p>Raise your hand</p>
               </div>
@@ -443,7 +443,7 @@ if ( have_posts() ) :
           </p>
 
           <div class="py-12">
-            <div class="flex justify-center gap-8">
+              <div class="flex flex-col sm:flex-row justify-center gap-6 sm:gap-8">
               <div class="flex-1 max-w-xs border-2 border-gray-300 p-8 text-center bg-white">
                 <p>No lesson that must land.</p>
               </div>

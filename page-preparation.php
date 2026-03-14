@@ -94,11 +94,11 @@ if ( have_posts() ) :
       </div>
     </section>
 
-    <section class="py-24 px-8">
+    <section class="py-16 sm:py-20 lg:py-24 px-6 sm:px-8">
       <div class="max-w-5xl mx-auto">
-        <div class="grid grid-cols-12 gap-16">
-          <div class="col-span-4">
-            <div class="sticky top-24">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+          <div class="col-span-1 lg:col-span-4 mb-10 lg:mb-0">
+            <div class="lg:sticky lg:top-24">
               <h2 class="text-3xl tracking-tight mb-6">
                 The Dieta (Reframed)
               </h2>
@@ -106,7 +106,7 @@ if ( have_posts() ) :
             </div>
           </div>
 
-          <div class="col-span-8 space-y-8 text-lg leading-relaxed">
+          <div class="col-span-1 lg:col-span-8 space-y-8 text-lg leading-relaxed">
             <p>
               The dieta is not a test.<br />
               It is not a moral measure.<br />
@@ -228,25 +228,25 @@ if ( have_posts() ) :
       </div>
     </section>
 
-    <section class="py-32 px-8">
+    <section class="py-20 sm:py-24 lg:py-32 px-6 sm:px-8">
       <div class="max-w-5xl mx-auto">
-        <div class="grid grid-cols-12 gap-12 items-start">
-          <div class="col-span-5">
-            <div class="flex items-center justify-center sticky top-24">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+          <div class="col-span-1 lg:col-span-5 mb-10 lg:mb-0">
+            <div class="flex items-center justify-center lg:sticky lg:top-24">
               <img class="page-image" src="<?php echo esc_url( get_template_directory_uri() . '/images/bg/ZahNAlIc3o.webp' ); ?>">
             </div>
           </div>
 
-          <div class="col-span-7">
+          <div class="col-span-1 lg:col-span-7">
             <h2 class="text-3xl mb-12 tracking-tight">
               Sleep, Rest, and Rhythm
             </h2>
 
-            <div class="space-y-8 text-lg leading-relaxed">
-              <div class="flex justify-start gap-8">
-                <div class="flex-1 border-2 border-gray-900 p-6 text-center bg-white">
-                  <p>Fatigue amplifies intensity.</p>
-                </div>
+              <div class="space-y-8 text-lg leading-relaxed">
+                <div class="flex flex-col sm:flex-row justify-start gap-6 sm:gap-8">
+                  <div class="flex-1 border-2 border-gray-900 p-6 text-center bg-white">
+                    <p>Fatigue amplifies intensity.</p>
+                  </div>
                 <div class="flex-1 border-2 border-gray-900 p-6 text-center bg-white">
                   <p>Rest supports resilience.</p>
                 </div>
@@ -362,14 +362,14 @@ if ( have_posts() ) :
           <span class="text-xs tracking-[0.2em] text-gray-600">GENTLE REFLECTION</span>
         </div>
 
-        <div class="grid grid-cols-12 gap-12">
-          <div class="col-span-5">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
+          <div class="col-span-1 lg:col-span-5 mb-10 lg:mb-0">
             <p class="text-lg leading-relaxed">
               You might ask yourself:
             </p>
           </div>
 
-          <div class="col-span-7 space-y-6">
+          <div class="col-span-1 lg:col-span-7 space-y-6">
             <div class="bg-gray-50 border-2 border-gray-300 p-8">
               <p class="text-lg leading-relaxed">
                 What does my body need more of right now?
@@ -479,7 +479,7 @@ if ( have_posts() ) :
           <div class="w-32 h-px bg-gray-300 mx-auto"></div>
         </div>
 
-        <div class="grid grid-cols-2 gap-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12">
 
           <div class="border-2 border-gray-300 p-10 bg-white">
             <h3 class="text-2xl mb-6 tracking-tight">
@@ -615,7 +615,7 @@ if ( have_posts() ) :
             In the week leading up to ceremony:
           </p>
 
-          <div class="grid grid-cols-2 gap-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             <div class="border-2 border-gray-300 p-8 bg-white">
               <p>Prioritize rest</p>
             </div>
@@ -641,11 +641,11 @@ if ( have_posts() ) :
       </div>
     </section>
 
-    <section class="py-24 px-8">
+    <section class="py-16 sm:py-20 lg:py-24 px-6 sm:px-8">
       <div class="max-w-5xl mx-auto">
-        <div class="grid grid-cols-12 gap-12 items-start">
-          <div class="col-span-5">
-            <div class="sticky top-24">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+          <div class="col-span-1 lg:col-span-5 mb-10 lg:mb-0">
+            <div class="lg:sticky lg:top-24">
               <span class="text-xs tracking-[0.2em] text-gray-600 mb-6 block">INTEGRATION</span>
               <h2 class="text-3xl tracking-tight mb-8">
                 After Ceremony (Integration Dieta)
@@ -654,7 +654,7 @@ if ( have_posts() ) :
             </div>
           </div>
 
-          <div class="col-span-7 space-y-8 text-lg leading-relaxed">
+          <div class="col-span-1 lg:col-span-7 space-y-8 text-lg leading-relaxed">
             <p>
               For 3&ndash;7 days after ceremony, we recommend continuing gentle care.
             </p>

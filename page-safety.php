@@ -60,16 +60,16 @@ if ( have_posts() ) :
       </div>
     </section>
 
-    <section class="py-24 px-8">
+    <section class="py-16 sm:py-20 lg:py-24 px-6 sm:px-8">
       <div class="max-w-6xl mx-auto">
-        <div class="grid grid-cols-12 gap-12 items-start">
-          <div class="col-span-5">
-            <div class="flex items-center justify-center sticky top-24">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+          <div class="col-span-1 lg:col-span-5 mb-10 lg:mb-0">
+            <div class="flex items-center justify-center lg:sticky lg:top-24">
               <img class="page-image" src="<?php echo esc_url( get_template_directory_uri() . '/images/bg/EwKXn5CapA4.webp' ); ?>">
             </div>
           </div>
 
-          <div class="col-span-7">
+          <div class="col-span-1 lg:col-span-7">
             <h2 class="text-4xl tracking-tight mb-12">
               Asking for Support Is Wisdom
             </h2>
@@ -123,7 +123,7 @@ if ( have_posts() ) :
 
           <div class="py-12">
             <p class="text-sm text-gray-600 mb-6 text-center">This is why we emphasize:</p>
-            <div class="grid grid-cols-2 gap-6">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <div class="border-2 border-gray-300 p-6 text-center bg-white">
                 <div class="w-12 h-12 rounded-full border border-gray-300 mx-auto mb-4 flex items-center justify-center">
                   <span class="text-xs text-gray-400">&check;</span>
@@ -166,11 +166,11 @@ if ( have_posts() ) :
       </div>
     </section>
 
-    <section class="py-24 px-8">
+    <section class="py-16 sm:py-20 lg:py-24 px-6 sm:px-8">
       <div class="max-w-5xl mx-auto">
-        <div class="grid grid-cols-12 gap-16">
-          <div class="col-span-4">
-            <div class="sticky top-24">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+          <div class="col-span-1 lg:col-span-4 mb-10 lg:mb-0">
+            <div class="lg:sticky lg:top-24">
               <div class="w-24 h-24 mb-6 flex items-center justify-center">
                 <svg class="cwp-icon" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg">
                   <path d="m255.995 463.497c-.863-.001-1.727-.222-2.492-.661-.03-.018-180.075-108.045-180.075-108.045-1.506-.903-2.428-2.531-2.428-4.287 0 0 0-189 0-189.044.016-1.753.988-3.417 2.507-4.291l179.921-107.953c1.583-.95 3.563-.95 5.145 0 0 0 179.843 107.906 179.921 107.953 1.54.924 2.491 2.53 2.507 4.335v189c0 1.756-.922 3.384-2.428 4.287l-179.912 107.947c-.807.507-1.736.76-2.666.759zm5.005-96.64v82.815l170-102v-177.338l-71 42.6v92.569c0 1.769-.934 3.405-2.456 4.305zm-180-19.184 170 102v-82.815l-96.543-57.049c-1.522-.899-2.457-2.536-2.457-4.305v-92.569l-71-42.6zm180-75.338v82.906l89-52.591v-83.716zm-99 30.315 89 52.591v-82.906l-89-53.4zm5.529-92.06 88.471 53.083 88.472-53.083-88.472-52.279zm88.471-63.087c.88 0 1.759.232 2.544.695l95.681 56.539 72.058-43.234-170.283-102.169-170.281 102.169 72.057 43.234 95.681-56.539c.784-.463 1.664-.695 2.543-.695z" fill="rgb(0,0,0)"/>
@@ -183,7 +183,7 @@ if ( have_posts() ) :
             </div>
           </div>
 
-          <div class="col-span-8">
+          <div class="col-span-1 lg:col-span-8">
             <div class="space-y-8 text-lg leading-relaxed">
               <p class="mb-8">Questions about:</p>
 

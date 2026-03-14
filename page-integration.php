@@ -79,16 +79,16 @@ if ( have_posts() ) :
       </div>
     </section>
 
-    <section class="py-24 px-8">
+    <section class="py-16 sm:py-20 lg:py-24 px-6 sm:px-8">
       <div class="max-w-5xl mx-auto">
-        <div class="grid grid-cols-12 gap-12">
-          <div class="col-span-5">
-            <h2 class="text-4xl tracking-tight sticky top-24">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
+          <div class="col-span-1 lg:col-span-5 mb-10 lg:mb-0">
+            <h2 class="text-4xl tracking-tight lg:sticky lg:top-24">
               A Nondual Reframing of Integration
             </h2>
           </div>
 
-          <div class="col-span-7 space-y-8 text-lg leading-relaxed">
+          <div class="col-span-1 lg:col-span-7 space-y-8 text-lg leading-relaxed">
             <p>
               Integration is often described as &ldquo;doing the work afterward.&rdquo;
             </p>
@@ -162,16 +162,16 @@ if ( have_posts() ) :
       </div>
     </section>
 
-    <section class="py-24 px-8">
+    <section class="py-16 sm:py-20 lg:py-24 px-6 sm:px-8">
       <div class="max-w-5xl mx-auto">
-        <div class="grid grid-cols-12 gap-16">
-          <div class="col-span-4">
-            <div class="flex items-center justify-center sticky top-24">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+          <div class="col-span-1 lg:col-span-4 mb-10 lg:mb-0">
+            <div class="flex items-center justify-center lg:sticky lg:top-24">
               <img class="page-image" src="<?php echo esc_url( get_template_directory_uri() . '/images/bg/47JaGXkaZU2.webp' ); ?>">
             </div>
           </div>
 
-          <div class="col-span-8">
+          <div class="col-span-1 lg:col-span-8">
             <h2 class="text-4xl mb-12 tracking-tight">
               When Old Patterns Reappear
             </h2>
@@ -262,7 +262,7 @@ if ( have_posts() ) :
           </h2>
         </div>
 
-        <div class="grid grid-cols-2 gap-16">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-16">
           <div class="space-y-8 text-lg leading-relaxed">
             <p>
               The body may feel sensitive for a while.
@@ -337,16 +337,16 @@ if ( have_posts() ) :
       </div>
     </section>
 
-    <section class="py-24 px-8">
+    <section class="py-16 sm:py-20 lg:py-24 px-6 sm:px-8">
       <div class="max-w-5xl mx-auto">
-        <div class="grid grid-cols-12 gap-12">
-          <div class="col-span-5">
-            <h2 class="text-4xl tracking-tight sticky top-24">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
+          <div class="col-span-1 lg:col-span-5 mb-10 lg:mb-0">
+            <h2 class="text-4xl tracking-tight lg:sticky lg:top-24">
               No Special Identity Required
             </h2>
           </div>
 
-          <div class="col-span-7 space-y-8 text-lg leading-relaxed">
+          <div class="col-span-1 lg:col-span-7 space-y-8 text-lg leading-relaxed">
             <p>
               You do not need to become:
             </p>

@@ -110,14 +110,14 @@ if ( have_posts() ) :
       </div>
     </section>
 
-    <section class="py-24 px-8">
+    <section class="py-16 sm:py-20 lg:py-24 px-6 sm:px-8">
       <div class="max-w-6xl mx-auto">
-        <div class="grid grid-cols-12 gap-12">
-          <div class="col-span-5">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+          <div class="col-span-1 lg:col-span-5">
             <img class="page-image" src="<?php echo esc_url( get_template_directory_uri() . '/images/bg/8n00CqwnqO8.webp' ); ?>">
           </div>
 
-          <div class="col-span-7">
+          <div class="col-span-1 lg:col-span-7">
             <h2 class="text-4xl tracking-tight mb-12">
               What This Preparation Is Really For
             </h2>
@@ -255,11 +255,11 @@ if ( have_posts() ) :
       </div>
     </section>
 
-    <section class="py-24 px-8">
+    <section class="py-16 sm:py-20 lg:py-24 px-6 sm:px-8">
       <div class="max-w-5xl mx-auto">
-        <div class="grid grid-cols-12 gap-16">
-          <div class="col-span-4">
-            <div class="sticky top-24">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+          <div class="col-span-1 lg:col-span-4 mb-10 lg:mb-0">
+            <div class="lg:sticky lg:top-24">
               <div class="w-16 h-16 border-0 border-gray-900 mb-6 flex items-center justify-center">
                 <svg class="cwp-icon" xmlns="http://www.w3.org/2000/svg" width="512px" height="512px" viewBox="-49 141 512 512">
                   <polygon points="205,152 -38,396 -26,413 205,642 227,626 452,397"/>
@@ -280,7 +280,7 @@ if ( have_posts() ) :
             </div>
           </div>
 
-          <div class="col-span-8 space-y-8 text-lg leading-relaxed">
+          <div class="col-span-1 lg:col-span-8 space-y-8 text-lg leading-relaxed">
             <p>
               You may have visions.<br />
               You may purge.<br />
@@ -376,10 +376,10 @@ if ( have_posts() ) :
       </div>
     </section>
 
-    <section class="py-32 px-8">
+    <section class="py-20 sm:py-24 lg:py-32 px-6 sm:px-8">
       <div class="max-w-6xl mx-auto">
-        <div class="grid grid-cols-12 gap-12 items-center">
-          <div class="col-span-7">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start lg:items-center">
+          <div class="col-span-1 lg:col-span-7">
             <h2 class="text-4xl mb-12 tracking-tight">
               A Simple Invitation
             </h2>
@@ -415,7 +415,7 @@ if ( have_posts() ) :
             </div>
           </div>
 
-          <div class="col-span-5">
+          <div class="col-span-1 lg:col-span-5 mt-8 lg:mt-0">
             <div class="aspect-square flex items-center justify-center">
               <img class="page-image" src="<?php echo esc_url( get_template_directory_uri() . '/images/bg/IQwFRLTQPLY.webp' ); ?>">
             </div>
