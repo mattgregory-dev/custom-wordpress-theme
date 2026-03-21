@@ -387,16 +387,16 @@ get_header();
                     $related_date = get_the_date();
                   }
                 ?>
-              <div class="bg-white border border-gray-300 rounded-lg soft-shadow">
+              <div class="bg-white border border-gray-300 rounded-lg soft-shadow flex flex-col">
                 <div class="w-full aspect-video bg-gray-300 overflow-hidden rounded-t-lg">
                   <?php if ( has_post_thumbnail() ) : ?>
                     <?php the_post_thumbnail( 'large', array( 'class' => 'h-full w-full object-cover' ) ); ?>
                   <?php endif; ?>
                 </div>
-                <div class="p-4 space-y-2">
+                <div class="flex min-h-[165px] flex-col p-4">
                   <h3 class="font-bold text-gray-900"><?php the_title(); ?></h3>
-                  <p class="text-sm text-gray-600"><?php echo esc_html( $related_date ); ?></p>
-                  <a class="w-full cwp-btn cwp-btn--secondary small" href="<?php the_permalink(); ?>">
+                  <p class="text-sm text-gray-600 mt-2"><?php echo esc_html( $related_date ); ?></p>
+                  <a class="mt-auto w-full cwp-btn cwp-btn--secondary small" href="<?php the_permalink(); ?>">
                     Learn More
                   </a>
                 </div>
