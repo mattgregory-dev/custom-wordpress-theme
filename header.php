@@ -9,6 +9,11 @@
       as="font"
       type="font/woff2"
       crossorigin>
+
+  <?php if ( is_singular( 'event' ) ) : ?>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhXc-P0oJLSCbmNRnLOO-Q5XnjcpISEQs&callback=Function.prototype"></script>
+  <?php endif; ?>
+
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>

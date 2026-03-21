@@ -5,11 +5,11 @@
 get_header();
 ?>
 
-<section id="terms-header" class="page-hero">
-  <div class="header-content">
+<section class="page-title">
+  <div class="page-title-container">
     <h1>Terms &amp; Conditions</h1>
     <p class="description">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Our lawyers made us do it.
     </p>
   </div>
 </section>

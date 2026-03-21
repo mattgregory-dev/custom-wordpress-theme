@@ -47,7 +47,7 @@ if ( have_posts() ) :
     </section>
 
     <!-- Upcoming Events -->
-    <section id="retreat-events" class="pt-24 pb-24 px-8">
+    <section id="retreats" class="pt-24 pb-24 px-8">
       <div class="max-w-7xl mx-auto">
         <div class="max-w-3xl mx-auto text-center mb-20">
           <h2 class="text-gray-900 mb-6 text-[2.5rem] font-normal">
@@ -66,6 +66,9 @@ if ( have_posts() ) :
               'post_status' => 'publish',
               'posts_per_page' => -1,
               'no_found_rows' => true,
+              'meta_key' => 'start_date',
+              'orderby' => 'meta_value_num',
+              'order' => 'ASC',
             )
           );
 
@@ -106,13 +109,15 @@ if ( have_posts() ) :
               ?>
               <div class="rounded-b-lg">
                 <div class="flex items-center justify-center relative">
-                  <img class="retreat-thumb" src="<?php echo esc_url( $event_image ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>">
+                  <a href="<?php echo esc_url( get_permalink() ); ?>">
+                    <img class="retreat-thumb" src="<?php echo esc_url( $event_image ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>">
+                  </a>
                   <span class="absolute top-4 right-4 px-3 py-1 bg-white border border-gray-400 text-gray-700 text-xs uppercase tracking-wider rounded-md">
                     <?php echo esc_html( $event_type_name ); ?>
                   </span>
                 </div>
                 <div class="p-8 space-y-6 border-2 border-gray-300 border-t-[0] rounded-b-lg bg-white">
-                  <h3 class="text-gray-900 text-[1.75rem] font-normal"><?php the_title(); ?></h3>
+                  <h3 class="text-gray-900 text-[1.75rem] font-normal"><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a></h3>
                   <div class="grid grid-cols-2 gap-4 text-sm">
                     <!-- Start: Date Range -->
                     <div>

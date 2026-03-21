@@ -22,9 +22,18 @@
   // Woocommerce cart styles
   &.woocommerce-cart {
     table.wc-block-cart-items {
+      td.wc-block-cart-item__image img {
+        border-radius: 6px;
+      }
       .wc-block-cart-items__row {
         .wc-block-components-product-name {
           font-size: 1.2rem;
+        }
+        .wc-block-components-formatted-money-amount {
+          font-size: 1.2rem;
+        }
+        .wc-block-components-product-details__payment-type {
+          font-size: 1rem;
         }
       }
     }

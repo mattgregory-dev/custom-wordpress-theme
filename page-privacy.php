@@ -5,12 +5,11 @@
 get_header();
 ?>
 
-<section id="privacy-header" class="page-hero">
-  <div class="header-content">
+<section class="page-title">
+  <div class="page-title-container">
     <h1>Privacy Policy</h1>
     <p class="description">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, justo eget cursus tincidunt, lorem
-      neque laoreet libero, a posuere nisi metus nec mauris.
+      We take your privacy seriously. Read how we safeguard your personal information.
     </p>
   </div>
 </section>

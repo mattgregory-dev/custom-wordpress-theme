@@ -80,6 +80,10 @@
     outline: 2px solid currentColor;
     outline-offset: 3px;
   }
+  &.small {
+    padding: .6rem 1rem;
+    font-size: .8rem;
+  }
 }
 
 .cwp-btn--primary {
