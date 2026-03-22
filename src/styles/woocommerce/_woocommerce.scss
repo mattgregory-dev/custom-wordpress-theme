@@ -137,7 +137,8 @@
   .wc-block-components-checkout-return-to-cart-button,
   .woocommerce-MyAccount-content .edit,
   .woocommerce-Button.button,
-  .woocommerce button.button {
+  .woocommerce button.button,
+  .browse-retreats {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -168,7 +169,8 @@
   }
 
   // Primary button styles
-  .wc-block-components-button {
+  .wc-block-components-button,
+  .browse-retreats {
     background-color: var(--black);
     color: var(--white);
     border-color: var(--black);
