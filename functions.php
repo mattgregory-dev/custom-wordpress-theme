@@ -98,7 +98,7 @@ function cwp_add_woocommerce_support() {
 add_action( 'after_setup_theme', 'cwp_add_woocommerce_support' );
 
 // Cart/Checkout blocks: link cart items back to the related Event (ACF: event_post).
-add_filter( 'woocommerce_cart_item_permalink', function( $permalink, $cart_item, $cart_item_key ) {
+function cwp_cart_item_permalink_event_link( $permalink, $cart_item, $cart_item_key ) {
   if ( ! function_exists( 'get_field' ) || empty( $cart_item['data'] ) ) {
     return $permalink;
   }
@@ -116,16 +116,18 @@ add_filter( 'woocommerce_cart_item_permalink', function( $permalink, $cart_item,
   }
 
   return $permalink;
-}, 10, 3 );
+}
+add_filter( 'woocommerce_cart_item_permalink', 'cwp_cart_item_permalink_event_link', 10, 3 );
 
 // Remove Downloads from My Account navigation.
-add_filter( 'woocommerce_account_menu_items', function( $items ) {
+function cwp_remove_account_downloads_menu_item( $items ) {
   unset( $items['downloads'] );
   return $items;
-} );
+}
+add_filter( 'woocommerce_account_menu_items', 'cwp_remove_account_downloads_menu_item' );
 
 // Rename "Browse products" to "View Retreats" on My Account notices.
-add_filter( 'gettext', function( $translated, $text, $domain ) {
+function cwp_rename_browse_products_text( $translated, $text, $domain ) {
   if ( 'woocommerce' !== $domain ) {
     return $translated;
   }
@@ -135,12 +137,37 @@ add_filter( 'gettext', function( $translated, $text, $domain ) {
   }
 
   return $translated;
-}, 10, 3 );
+}
+add_filter( 'gettext', 'cwp_rename_browse_products_text', 10, 3 );
 
 // Point "return to shop" links to Retreats.
-add_filter( 'woocommerce_return_to_shop_redirect', function( $url ) {
+function cwp_return_to_shop_redirect( $url ) {
   return home_url( '/retreats/' );
-} );
+}
+add_filter( 'woocommerce_return_to_shop_redirect', 'cwp_return_to_shop_redirect' );
+
+// Move orders from processing to complete after webhook triggers for successful payment
+function auto_complete_paid_orders($order_id) {
+  $order = wc_get_order($order_id);
+
+  if (!$order) {
+      return;
+  }
+
+  // Only act if order is currently processing
+  if ($order->has_status('processing')) {
+      $order->update_status('completed', 'Auto-completed after successful payment.');
+  }
+}
+add_action('woocommerce_payment_complete', 'auto_complete_paid_orders');
+
+// Disable messages about the mobile apps in WooCommerce emails
+function cwp_disable_woocommerce_email_mobile_messages( $mailer ) {
+  foreach ( $mailer->emails as $email ) {
+    remove_action( 'woocommerce_email_footer', array( $email, 'mobile_messaging' ), 9 );
+  }
+}
+add_action( 'woocommerce_email', 'cwp_disable_woocommerce_email_mobile_messages' );
 
 // function cwp_wc_is_cart_or_checkout() {
 //   $is_cart = function_exists( 'is_cart' ) && is_cart();
@@ -290,27 +317,28 @@ function cwp_disable_emoji_dns_prefetch( $urls, $relation_type ) {
 }
 
 // Remove titles from WordPress upon import
-add_filter('wp_insert_attachment_data', function ($data, $postarr) {
-    // Prevent auto-titling from filename (keep blank unless user sets it)
-    if (!empty($data['post_title']) && !empty($postarr['file'])) {
-        $filename = pathinfo($postarr['file'], PATHINFO_FILENAME);
+function cwp_strip_auto_attachment_title( $data, $postarr ) {
+  // Prevent auto-titling from filename (keep blank unless user sets it).
+  if ( ! empty( $data['post_title'] ) && ! empty( $postarr['file'] ) ) {
+    $filename = pathinfo( $postarr['file'], PATHINFO_FILENAME );
 
-        // If title equals filename-derived title, blank it out
-        $normalized_title = sanitize_title($data['post_title']);
-        $normalized_file  = sanitize_title($filename);
+    // If title equals filename-derived title, blank it out.
+    $normalized_title = sanitize_title( $data['post_title'] );
+    $normalized_file = sanitize_title( $filename );
 
-        if ($normalized_title === $normalized_file) {
-            $data['post_title'] = '';
-        }
+    if ( $normalized_title === $normalized_file ) {
+      $data['post_title'] = '';
     }
+  }
 
-    // Optional: also clear caption if it's being auto-set somewhere
-    if (!empty($data['post_excerpt'])) {
-        $data['post_excerpt'] = '';
-    }
+  // Optional: also clear caption if it's being auto-set somewhere.
+  if ( ! empty( $data['post_excerpt'] ) ) {
+    $data['post_excerpt'] = '';
+  }
 
-    return $data;
-}, 10, 2);
+  return $data;
+}
+add_filter( 'wp_insert_attachment_data', 'cwp_strip_auto_attachment_title', 10, 2 );
 
 // Conveinent way to keep copyright updated
 function shortcode_current_year() {

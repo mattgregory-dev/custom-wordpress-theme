@@ -82,6 +82,17 @@ if ( have_posts() ) :
               }
               $event_duration = function_exists( 'get_field' ) ? get_field( 'duration' ) : '';
               $event_duration = '' !== $event_duration ? (int) $event_duration : 0;
+              $capacity_raw = function_exists( 'get_field' ) ? get_field( 'capacity' ) : '';
+              $capacity = $capacity_raw !== '' ? (int) $capacity_raw : 0;
+              $full_product_id = function_exists( 'get_field' ) ? get_field( 'full_product_id' ) : '';
+              $full_product_id = $full_product_id ? (int) $full_product_id : 0;
+              $full_price_display = '';
+              if ( $full_product_id && function_exists( 'wc_get_product' ) ) {
+                $full_product = wc_get_product( $full_product_id );
+                if ( $full_product && '' !== $full_product->get_price() ) {
+                  $full_price_display = wc_price( wc_get_price_to_display( $full_product ) );
+                }
+              }
               $event_start_raw = function_exists( 'get_field' ) ? get_field( 'start_date' ) : '';
               $event_end_raw = function_exists( 'get_field' ) ? get_field( 'end_date' ) : '';
               $event_start = $event_start_raw ? strtotime( (string) $event_start_raw ) : 0;
@@ -143,6 +154,18 @@ if ( have_posts() ) :
                       <p class="text-gray-900">Sedona, Arizona</p>
                     </div>
                     <!-- End: Location -->
+
+                    <!-- Start: Availability -->
+                    <?php if ( $capacity ) : ?>
+                      <div>
+                        <p class="text-gray-500 uppercase tracking-wider text-xs mb-1">Availability</p>
+                        <p class="text-gray-900">
+                          <?php echo esc_html( $capacity . ' ' . ( 1 === $capacity ? 'spot' : 'spots' ) . ' available' ); ?>
+                        </p>
+                      </div>
+                    <?php endif; ?>
+                    <!-- End: Availability -->
+
                   </div>
                   <p class="text-gray-700 leading-relaxed">
                     <?php
@@ -153,6 +176,10 @@ if ( have_posts() ) :
                     echo esc_html( $event_excerpt );
                     ?>
                   </p>
+                  <?php if ( $full_price_display ) : ?>
+                    <p class="text-gray-900 text-2xl"><?php echo wp_kses_post( $full_price_display ); ?></p>
+                  <?php endif; ?>
+
                   <div class="grid md:grid-cols-2 gap-4 hack">
                     <a class="cwp-btn cwp-btn--primary" href="<?php echo esc_url( get_permalink() ); ?>">Details</a>
                     <a class="cwp-btn cwp-btn--secondary" href="<?php echo esc_url( home_url( '/apply/' ) ); ?>">Apply</a>

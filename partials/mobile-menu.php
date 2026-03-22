@@ -7,6 +7,10 @@ if ( isset( $menu_args['header_color'] ) && $menu_args['header_color'] === 'whit
 }
 
 $menu_class = implode( ' ', $menu_classes );
+$cart_count = 0;
+if ( function_exists( 'WC' ) && WC()->cart ) {
+  $cart_count = (int) WC()->cart->get_cart_contents_count();
+}
 ?>
 
 <!-- New Mobile Menu -->
@@ -18,13 +22,15 @@ $menu_class = implode( ' ', $menu_classes );
 
   <div class="mobile-menu">
 
-    <div class="mobile-menu-phone text-center">
-      <a href="tel:9284755551">928-475-5551</a>
-    </div>
-
     <div class="mobile-menu-actions">
+      <?php if ( $cart_count > 0 ) : ?>
+        <a class="mb-[10px]" href="<?php echo esc_url( home_url( '/cart' ) ); ?>">
+          <i class="fa fa-solid fa-cart-shopping"></i> Cart (<?php echo esc_html( $cart_count ); ?>)
+        </a>
+      <?php endif; ?>
       <a class="mb-[10px]" href="<?php echo esc_url( home_url( '/apply' ) ); ?>">Apply</a>
-      <a class="mb-[10px]" href="<?php echo esc_url( home_url( '/contact' ) ); ?>">Contact</a>
+      <a class="mb-[10px]" href="<?php echo esc_url( home_url( '/contact' ) ); ?>">Message</a>
+      <a class="mb-[10px]" href="tel:9284755551">Call 928-475-5551</a>
     </div>
 
     <nav class="mobile-menu-nav">

@@ -274,7 +274,7 @@ get_header();
                   </a>
                 <?php endif; ?>
               </div>
-            <div>
+            <div class="hidden">
               <div class="text-xs text-gray-600 mb-1">EVENT TYPE</div>
               <div class="text-sm text-gray-900"><?php echo esc_html( $event_type_list ? $event_type_list : $event_type_label ); ?></div>
             </div>

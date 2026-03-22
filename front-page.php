@@ -237,51 +237,141 @@ if ( have_posts() ) :
         </div>
 
         <div class="grid md:grid-cols-2 gap-8 mb-8">
+          <?php
+          $events_query = new WP_Query(
+            array(
+              'post_type' => 'event',
+              'post_status' => 'publish',
+              'posts_per_page' => 2,
+              'no_found_rows' => true,
+              'meta_key' => 'start_date',
+              'orderby' => 'meta_value_num',
+              'order' => 'ASC',
+            )
+          );
 
-          <div class="overflow-hidden soft-shadow rounded-b-lg">
-            <div class="flex items-center justify-center">
-              <img class="retreat-thumb" src="<?php echo esc_url( get_template_directory_uri() . '/images/bg/7AcMUSYRZpU-800.webp' ); ?>">
-            </div>
-            <div class="p-8 space-y-6 border-2 border-gray-300 border-t-[0] rounded-b-lg">
-              <div class="space-y-3">
-                <h3 class="text-2xl text-gray-900 font-normal leading-[1.4] sm:leading-8 text-center sm:text-left">Quiet River Retreat</h3>
-                <div class="text-sm text-gray-600">
-                  <div>May 12&ndash;16</div>
-                  <div>5 Days &bull; Sedona, Arizona</div>
+          if ( $events_query->have_posts() ) :
+            while ( $events_query->have_posts() ) :
+              $events_query->the_post();
+              $event_type_name = 'Event';
+              $event_types = get_the_terms( get_the_ID(), 'event_type' );
+              if ( ! empty( $event_types ) && ! is_wp_error( $event_types ) ) {
+                $event_type_name = $event_types[0]->name;
+              }
+              $event_duration = function_exists( 'get_field' ) ? get_field( 'duration' ) : '';
+              $event_duration = '' !== $event_duration ? (int) $event_duration : 0;
+              $capacity_raw = function_exists( 'get_field' ) ? get_field( 'capacity' ) : '';
+              $capacity = $capacity_raw !== '' ? (int) $capacity_raw : 0;
+              $full_product_id = function_exists( 'get_field' ) ? get_field( 'full_product_id' ) : '';
+              $full_product_id = $full_product_id ? (int) $full_product_id : 0;
+              $full_price_display = '';
+              if ( $full_product_id && function_exists( 'wc_get_product' ) ) {
+                $full_product = wc_get_product( $full_product_id );
+                if ( $full_product && '' !== $full_product->get_price() ) {
+                  $full_price_display = wc_price( wc_get_price_to_display( $full_product ) );
+                }
+              }
+              $event_start_raw = function_exists( 'get_field' ) ? get_field( 'start_date' ) : '';
+              $event_end_raw = function_exists( 'get_field' ) ? get_field( 'end_date' ) : '';
+              $event_start = $event_start_raw ? strtotime( (string) $event_start_raw ) : 0;
+              $event_end = $event_end_raw ? strtotime( (string) $event_end_raw ) : 0;
+              $event_date_range = '';
+              if ( $event_start && $event_end ) {
+                $start_month = date( 'F', $event_start );
+                $start_day = date( 'j', $event_start );
+                $end_month = date( 'F', $event_end );
+                $end_day = date( 'j', $event_end );
+                if ( $start_month === $end_month ) {
+                  $event_date_range = $start_month . ' ' . $start_day . '-' . $end_day;
+                } else {
+                  $event_date_range = $start_month . ' ' . $start_day . '-' . $end_month . ' ' . $end_day;
+                }
+              } elseif ( $event_start ) {
+                $event_date_range = date( 'F j', $event_start );
+              } elseif ( $event_end ) {
+                $event_date_range = date( 'F j', $event_end );
+              }
+              $event_image = get_the_post_thumbnail_url( get_the_ID(), 'large' );
+              if ( ! $event_image ) {
+                $event_image = get_template_directory_uri() . '/images/bg/7AcMUSYRZpU-800.webp';
+              }
+              ?>
+              <div class="rounded-b-lg">
+                <div class="flex items-center justify-center relative">
+                  <a href="<?php echo esc_url( get_permalink() ); ?>">
+                    <img class="retreat-thumb" src="<?php echo esc_url( $event_image ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>">
+                  </a>
+                  <span class="absolute top-4 right-4 px-3 py-1 bg-white border border-gray-400 text-gray-700 text-xs uppercase tracking-wider rounded-md">
+                    <?php echo esc_html( $event_type_name ); ?>
+                  </span>
+                </div>
+                <div class="p-8 space-y-6 border-2 border-gray-300 border-t-[0] rounded-b-lg bg-white">
+                  <h3 class="text-gray-900 text-[1.75rem] font-normal"><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a></h3>
+                  <div class="grid grid-cols-2 gap-4 text-sm">
+                    <!-- Start: Date Range -->
+                    <div>
+                      <p class="text-gray-500 uppercase tracking-wider text-xs mb-1">Dates</p>
+                      <p class="text-gray-900"><?php echo esc_html( $event_date_range ); ?></p>
+                    </div>
+                    <!-- End: Date Range -->
+                    <!-- Start: Duration (Days) -->
+                    <div>
+                      <p class="text-gray-500 uppercase tracking-wider text-xs mb-1">Duration</p>
+                      <p class="text-gray-900">
+                        <?php
+                        if ( $event_duration ) {
+                          echo esc_html( $event_duration . ' ' . ( 1 === $event_duration ? 'Day' : 'Days' ) );
+                        }
+                        ?>
+                      </p>
+                    </div>
+                    <!-- End: Duration (Days) -->
+                    <!-- Start: Location -->
+                    <div>
+                      <p class="text-gray-500 uppercase tracking-wider text-xs mb-1">Location</p>
+                      <p class="text-gray-900">Sedona, Arizona</p>
+                    </div>
+                    <!-- End: Location -->
+
+                    <!-- Start: Availability -->
+                    <?php if ( $capacity ) : ?>
+                      <div>
+                        <p class="text-gray-500 uppercase tracking-wider text-xs mb-1">Availability</p>
+                        <p class="text-gray-900">
+                          <?php echo esc_html( $capacity . ' ' . ( 1 === $capacity ? 'spot' : 'spots' ) . ' available' ); ?>
+                        </p>
+                      </div>
+                    <?php endif; ?>
+                    <!-- End: Availability -->
+
+                  </div>
+                  <p class="text-gray-700 leading-relaxed">
+                    <?php
+                    $event_excerpt = trim( get_the_excerpt() );
+                    if ( '' === $event_excerpt ) {
+                      $event_excerpt = wp_trim_words( wp_strip_all_tags( get_the_content() ), 100 );
+                    }
+                    echo esc_html( $event_excerpt );
+                    ?>
+                  </p>
+                  <?php if ( $full_price_display ) : ?>
+                    <p class="text-gray-900 text-2xl"><?php echo wp_kses_post( $full_price_display ); ?></p>
+                  <?php endif; ?>
+
+                  <div class="grid md:grid-cols-2 gap-4 hack">
+                    <a class="cwp-btn cwp-btn--primary" href="<?php echo esc_url( get_permalink() ); ?>">Details</a>
+                    <a class="cwp-btn cwp-btn--secondary" href="<?php echo esc_url( home_url( '/apply/' ) ); ?>">Apply</a>
+                  </div>
                 </div>
               </div>
-              <p class="text-gray-700 leading-relaxed">
-                A small group retreat designed for deep personal reflection, guided ceremony, and integration support.
-              </p>
-              <div class="grid md:grid-cols-2 gap-4">
-                <a class="cwp-btn cwp-btn--primary" href="<?php echo esc_url( home_url( '/apply/' ) ); ?>">Apply</a>
-                <a style="display:none;" class="cwp-btn cwp-btn--secondary hidden" href="<?php echo esc_url( home_url( '/' ) ); ?>">View Details</a>
-              </div>
-            </div>
-          </div>
+            <?php endwhile; ?>
+          <?php else : ?>
+            <p class="text-gray-700 text-center md:col-span-2">
+              No events scheduled yet. Check back soon.
+            </p>
+          <?php endif; ?>
 
-          <div class="overflow-hidden soft-shadow rounded-b-lg">
-            <div class="aspect-[16/10] flex items-center justify-center">
-              <img class="retreat-thumb" src="<?php echo esc_url( get_template_directory_uri() . '/images/bg/7AcMUSYRZpU-800.webp' ); ?>">
-            </div>
-            <div class="p-8 space-y-6 border-2 border-gray-300 border-t-[0] rounded-b-lg">
-              <div class="space-y-3">
-                <h3 class="text-2xl text-gray-900 font-normal leading-[1.4] sm:leading-8 text-center sm:text-left">Desert Spring Retreat</h3>
-                <div class="text-sm text-gray-600">
-                  <div>June 8&ndash;12</div>
-                  <div>5 Days &bull; Sedona, Arizona</div>
-                </div>
-              </div>
-              <p class="text-gray-700 leading-relaxed">
-                An intimate retreat experience focused on inner clarity, nervous system care, and supported transformation.
-              </p>
-              <div class="grid md:grid-cols-2 gap-4">
-                <a class="cwp-btn cwp-btn--primary" href="<?php echo esc_url( home_url( '/apply/' ) ); ?>">Apply</a>
-                <a style="display:none;" class="cwp-btn cwp-btn--secondary" href="<?php echo esc_url( home_url( '/' ) ); ?>">View Details</a>
-              </div>
-            </div>
-          </div>
-
+          <?php wp_reset_postdata(); ?>
         </div>
 
         <div class="text-center mt-18">

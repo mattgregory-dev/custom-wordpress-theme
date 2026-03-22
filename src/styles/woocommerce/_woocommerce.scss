@@ -18,6 +18,17 @@
       @media (max-width: 1240px) {
         margin: 0 20px 3rem;
       }
+      @media (max-width:480px) {
+        padding: 0 1rem;
+      }
+    }
+  }
+
+  &.woocommerce-cart {
+    @media (max-width:800px) {
+      .wc-block-cart-item__total {
+        display: none;
+      }
     }
   }
 
