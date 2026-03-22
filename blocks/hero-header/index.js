@@ -3,6 +3,7 @@ const { registerBlockType } = wp.blocks;
 const { createElement, Fragment } = wp.element;
 const { InspectorControls, MediaUpload, MediaUploadCheck, useBlockProps } = wp.blockEditor;
 const { Button, ColorPicker, PanelBody, SelectControl, TextControl } = wp.components;
+const { useSelect } = wp.data;
 
 // Normalize ColorPicker output into a stable string for block attributes.
 const normalizeColorValue = (value) => {
@@ -27,67 +28,25 @@ const normalizeColorValue = (value) => {
   return '';
 };
 
-// Front-end markup (save output). Matches the theme's Tailwind-driven structure.
-const renderHero = ({
-  eyebrow,
-  title,
-  titleSize,
-  heroTextColor,
-  description,
-  button1Text,
-  button1Url,
-  button2Text,
-  button2Url,
-}, blockProps) => (
-  createElement(
-    'section',
-    blockProps,
-    createElement(
-      'div',
-      {
-        className: heroTextColor === 'white'
-          ? 'hero-wrapper white'
-          : 'hero-wrapper',
-      },
-      createElement(
-        'div',
-        { className: 'hero-eyebrow-wrapper' },
-        createElement(
-          'span',
-          { className: 'hero-eyebrow' },
-          eyebrow || 'Hero eyebrow'
-        )
-      ),
-      createElement(
-        'h1',
-        { className: titleSize === 'large' ? 'hero-title large' : 'hero-title' },
-        title || 'Hero title'
-      ),
-      createElement(
-        'p',
-        { className: 'hero-description' },
-        description || 'Hero description'
-      ),
-      createElement(
-        'div',
-        { className: 'hero-actions-wrapper' },
-        createElement(
-          'a',
-          { className: 'cwp-btn cwp-btn--primary', href: button1Url || '#' },
-          button1Text || 'Button 1 text'
-        ),
-        createElement(
-          'a',
-          { className: 'cwp-btn cwp-btn--secondary', href: button2Url || '#' },
-          button2Text || 'Button 2 text'
-        )
-      )
-    )
-  )
-);
+const getMediaPreviewUrl = (media) => {
+  if (!media) {
+    return '';
+  }
+
+  if (media.source_url) {
+    return media.source_url;
+  }
+
+  const sizes = media.media_details?.sizes;
+  if (sizes?.full?.source_url) {
+    return sizes.full.source_url;
+  }
+
+  return '';
+};
 
 // Editor-only preview (no inputs in the canvas).
-// Uses lightweight styling from blocks/hero/editor.css.
+// Uses lightweight styling from blocks/hero-header/editor.css.
 const renderEditorPreview = ({
   eyebrow,
   title,
@@ -102,13 +61,13 @@ const renderEditorPreview = ({
     blockProps,
     createElement(
       'div',
-      { className: 'cwp-hero-editor__inner' },
+      { className: 'cwp-hero-header-editor__inner' },
       createElement(
         'span',
         {
           className: heroTextColor === 'white'
-            ? 'cwp-hero-editor__eyebrow cwp-hero-editor__eyebrow--white'
-            : 'cwp-hero-editor__eyebrow',
+            ? 'cwp-hero-header-editor__eyebrow cwp-hero-header-editor__eyebrow--white'
+            : 'cwp-hero-header-editor__eyebrow',
         },
         eyebrow || 'Hero eyebrow'
       ),
@@ -116,9 +75,9 @@ const renderEditorPreview = ({
         'h1',
         {
           className: [
-            'cwp-hero-editor__title',
-            titleSize === 'large' ? 'cwp-hero-editor__title--large' : '',
-            heroTextColor === 'white' ? 'cwp-hero-editor__title--white' : '',
+            'cwp-hero-header-editor__title',
+            titleSize === 'large' ? 'cwp-hero-header-editor__title--large' : '',
+            heroTextColor === 'white' ? 'cwp-hero-header-editor__title--white' : '',
           ].filter(Boolean).join(' '),
         },
         title || 'Hero title'
@@ -127,14 +86,14 @@ const renderEditorPreview = ({
         'p',
         {
           className: heroTextColor === 'white'
-            ? 'cwp-hero-editor__description cwp-hero-editor__description--white'
-            : 'cwp-hero-editor__description',
+            ? 'cwp-hero-header-editor__description cwp-hero-header-editor__description--white'
+            : 'cwp-hero-header-editor__description',
         },
         description || 'Hero description'
       ),
       createElement(
         'div',
-        { className: 'cwp-hero-editor__buttons' },
+        { className: 'cwp-hero-header-editor__buttons' },
         createElement('a', { href: '#' }, button1Text || 'Button 1 text'),
         createElement('a', { href: '#' }, button2Text || 'Button 2 text')
       )
@@ -142,14 +101,23 @@ const renderEditorPreview = ({
   )
 );
 
-registerBlockType('cwp/hero', {
+registerBlockType('cwp/hero-header', {
   // Sidebar controls + canvas preview.
   edit: ({ attributes, setAttributes }) => {
+    const media = useSelect(
+      (select) => (
+        attributes.backgroundImageId
+          ? select('core').getMedia(attributes.backgroundImageId)
+          : null
+      ),
+      [attributes.backgroundImageId]
+    );
+    const previewImageUrl = getMediaPreviewUrl(media);
     const editorProps = useBlockProps({
-      className: 'cwp-hero-editor',
-      style: attributes.backgroundImageUrl
+      className: 'cwp-hero-header-editor',
+      style: previewImageUrl
         ? {
-            backgroundImage: `url(${attributes.backgroundImageUrl})`,
+            backgroundImage: `url(${previewImageUrl})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             '--hero-overlay': attributes.overlayColor || 'rgba(0, 0, 0, 0.4)',
@@ -224,14 +192,13 @@ registerBlockType('cwp/hero', {
         createElement(
           PanelBody,
           { title: 'Hero Media', initialOpen: false },
-          // Media picker saves ID + URL so front end can render a background image.
+          // Media picker saves ID only; preview resolves via wp.data.
           createElement(
             MediaUploadCheck,
             null,
             createElement(MediaUpload, {
               onSelect: (media) => setAttributes({
                 backgroundImageId: media?.id || null,
-                backgroundImageUrl: media?.url || '',
               }),
               allowedTypes: ['image'],
               value: attributes.backgroundImageId,
@@ -239,11 +206,22 @@ registerBlockType('cwp/hero', {
                 createElement(
                   Button,
                   { variant: 'secondary', onClick: open },
-                  attributes.backgroundImageUrl ? 'Replace Background Image' : 'Select Background Image'
+                  attributes.backgroundImageId ? 'Replace Background Image' : 'Select Background Image'
                 )
               ),
             })
           ),
+          attributes.backgroundImageId
+            ? createElement(
+                Button,
+                {
+                  variant: 'tertiary',
+                  isDestructive: true,
+                  onClick: () => setAttributes({ backgroundImageId: null }),
+                },
+                'Remove Background Image'
+              )
+            : null,
           // Overlay color sets a CSS variable used by ::before in theme CSS.
           createElement('p', null, 'Hero Overlay Color'),
           createElement(ColorPicker, {
@@ -257,16 +235,6 @@ registerBlockType('cwp/hero', {
       renderEditorPreview(attributes, editorProps)
     );
   },
-  // Saved markup for the front end.
-  save: ({ attributes }) => {
-    const blockProps = useBlockProps.save({
-      className: 'page-hero',
-      style: {
-        ...(attributes.backgroundImageUrl ? { backgroundImage: `url(${attributes.backgroundImageUrl})` } : {}),
-        '--hero-overlay': attributes.overlayColor || 'rgba(0, 0, 0, 0.4)',
-      },
-    });
-
-    return renderHero(attributes, blockProps);
-  },
+  // Dynamic block; front-end renders in PHP.
+  save: () => null,
 });

@@ -7,6 +7,7 @@
   "description": "Minimal next step block with image and CTA.",
   "editorScript": "file:../../dist/blocks/next-step.js",
   "editorStyle": "file:./editor.css",
+  "render": "file:./render.php",
   "attributes": {
     "eyebrow": {
       "type": "string",
@@ -31,10 +32,6 @@
     "imageId": {
       "type": "number",
       "default": null
-    },
-    "imageUrl": {
-      "type": "string",
-      "default": ""
     }
   }
 }

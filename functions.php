@@ -320,8 +320,8 @@ add_shortcode('current_year', 'shortcode_current_year');
 
 // Register Gutenburg custom blocks
 function theme_register_blocks() {
-    register_block_type( __DIR__ . '/blocks/hero');
-    register_block_type( __DIR__ . '/blocks/next-step');
+  register_block_type( __DIR__ . '/blocks/hero-header');
+  register_block_type( __DIR__ . '/blocks/next-step');
 }
 add_action( 'init', 'theme_register_blocks' );
 

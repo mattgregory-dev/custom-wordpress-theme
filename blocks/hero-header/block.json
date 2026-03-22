@@ -1,12 +1,13 @@
 {
   "apiVersion": 2,
-  "name": "cwp/hero",
-  "title": "Hero",
+  "name": "cwp/hero-header",
+  "title": "Hero Header",
   "category": "design",
   "icon": "cover-image",
-  "description": "Minimal hero block with title and description.",
-  "editorScript": "file:../../dist/blocks/hero.js",
+  "description": "Dynamic hero header block with title, description, and background image.",
+  "editorScript": "file:../../dist/blocks/hero-header.js",
   "editorStyle": "file:./editor.css",
+  "render": "file:./render.php",
   "attributes": {
     "eyebrow": {
       "type": "string",
@@ -47,10 +48,6 @@
     "backgroundImageId": {
       "type": "number",
       "default": null
-    },
-    "backgroundImageUrl": {
-      "type": "string",
-      "default": ""
     },
     "overlayColor": {
       "type": "string",

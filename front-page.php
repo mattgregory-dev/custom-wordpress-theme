@@ -17,7 +17,7 @@ if ( have_posts() ) :
     $blocks = parse_blocks( $raw_content );
     ?>
 
-    <?php include get_template_directory() . '/partials/slots/hero-slot.php'; ?>
+    <?php include get_template_directory() . '/partials/slots/hero-header-slot.php'; ?>
 
     <!-- A Moment to Step Away -->
     <section class="py-24 px-8">

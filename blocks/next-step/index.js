@@ -3,73 +3,24 @@ const { registerBlockType } = wp.blocks;
 const { createElement, Fragment } = wp.element;
 const { InspectorControls, MediaUpload, MediaUploadCheck, useBlockProps } = wp.blockEditor;
 const { Button, PanelBody, TextControl } = wp.components;
+const { useSelect } = wp.data;
 
-const renderNextStep = ({
-  eyebrow,
-  title,
-  description,
-  buttonText,
-  buttonUrl,
-  imageUrl,
-}, blockProps) => (
-  createElement(
-    'section',
-    blockProps,
-    createElement(
-      'div',
-      { className: 'footer-banner-wrapper' },
-      createElement(
-        'div',
-        { className: 'footer-banner-grid' },
-        createElement(
-          'div',
-          { className: 'footer-banner-grid-col-5' },
-          createElement(
-            'div',
-            { className: 'image-wrapper' },
-            imageUrl
-              ? createElement('img', {
-                  src: imageUrl,
-                  alt: '',
-                })
-              : createElement('span', { className: 'text-gray-400 text-sm' }, '[ IMAGE ]')
-          )
-        ),
-        createElement(
-          'div',
-          { className: 'footer-banner-grid-col-7' },
-          createElement(
-            'div',
-            { className: 'footer-eyebrow' },
-            eyebrow || 'eyebrow'
-          ),
-          createElement(
-            'h2',
-            { className: 'footer-banner-title' },
-            title || 'title'
-          ),
-          createElement(
-            'p',
-            { className: 'footer-banner-description' },
-            description || 'description'
-          ),
-          createElement(
-            'div',
-            { className: 'footer-button-wrapper' },
-            createElement(
-              'a',
-              {
-                className: 'cwp-btn cwp-btn--primary',
-                href: buttonUrl || '/',
-              },
-              `${buttonText || 'button text'} \u2192`
-            )
-          )
-        )
-      )
-    )
-  )
-);
+const getMediaPreviewUrl = (media) => {
+  if (!media) {
+    return '';
+  }
+
+  if (media.source_url) {
+    return media.source_url;
+  }
+
+  const sizes = media.media_details?.sizes;
+  if (sizes?.full?.source_url) {
+    return sizes.full.source_url;
+  }
+
+  return '';
+};
 
 const renderEditorPreview = ({
   eyebrow,
@@ -77,8 +28,7 @@ const renderEditorPreview = ({
   description,
   buttonText,
   buttonUrl,
-  imageUrl,
-}, blockProps) => (
+}, previewImageUrl, blockProps) => (
   createElement(
     'section',
     blockProps,
@@ -94,9 +44,9 @@ const renderEditorPreview = ({
           createElement(
             'div',
             { className: 'cwp-next-step-editor__media-frame' },
-            imageUrl
+            previewImageUrl
               ? createElement('img', {
-                  src: imageUrl,
+                  src: previewImageUrl,
                   alt: '',
                   className: 'cwp-next-step-editor__media-image',
                 })
@@ -137,6 +87,15 @@ const renderEditorPreview = ({
 
 registerBlockType('cwp/next-step', {
   edit: ({ attributes, setAttributes }) => {
+    const media = useSelect(
+      (select) => (
+        attributes.imageId
+          ? select('core').getMedia(attributes.imageId)
+          : null
+      ),
+      [attributes.imageId]
+    );
+    const previewImageUrl = getMediaPreviewUrl(media);
     const editorProps = useBlockProps({
       className: 'cwp-next-step-editor',
     });
@@ -179,13 +138,13 @@ registerBlockType('cwp/next-step', {
         createElement(
           PanelBody,
           { title: 'Next Step Image', initialOpen: false },
+          // Media picker saves ID only; preview resolves via wp.data.
           createElement(
             MediaUploadCheck,
             null,
             createElement(MediaUpload, {
               onSelect: (media) => setAttributes({
                 imageId: media?.id || null,
-                imageUrl: media?.url || '',
               }),
               allowedTypes: ['image'],
               value: attributes.imageId,
@@ -193,21 +152,26 @@ registerBlockType('cwp/next-step', {
                 createElement(
                   Button,
                   { variant: 'secondary', onClick: open },
-                  attributes.imageUrl ? 'Replace Image' : 'Select Image'
+                  attributes.imageId ? 'Replace Image' : 'Select Image'
                 )
               ),
             })
-          )
+          ),
+          attributes.imageId
+            ? createElement(
+                Button,
+                {
+                  variant: 'tertiary',
+                  isDestructive: true,
+                  onClick: () => setAttributes({ imageId: null }),
+                },
+                'Remove Image'
+              )
+            : null
         )
       ),
-      renderEditorPreview(attributes, editorProps)
+      renderEditorPreview(attributes, previewImageUrl, editorProps)
     );
   },
-  save: ({ attributes }) => {
-    const blockProps = useBlockProps.save({
-      className: 'footer-banner',
-    });
-
-    return renderNextStep(attributes, blockProps);
-  },
+  save: () => null,
 });
